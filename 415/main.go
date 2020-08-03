@@ -4,18 +4,6 @@ import (
 	"fmt"
 )
 
-//var numList = map[rune]uint8{
-//	'0': 0,
-//	'1': 1,
-//	'2': 2,
-//	'3': 3,
-//	'4': 4,
-//	'5': 5,
-//	'6': 6,
-//	'7': 7,
-//	'8': 8,
-//	'9': 9,
-//}
 func getNum(b byte) int {
 	return int(b - 48)
 }
