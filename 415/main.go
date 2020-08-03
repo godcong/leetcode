@@ -27,16 +27,16 @@ func getMin(num1 string, num2 string) (string, string) {
 	return num1, num2
 }
 
-func sumString(num []byte, index int, add int) (ret []byte, up int) {
+func sumString(num []byte, index int, add int) (ret []byte) {
 	if index < 0 {
-		return append([]byte{'1'}, num...), index
+		return append([]byte{'1'}, num...)
 	}
 	indexByte := strings.IndexByte(numList, num[index])
 	num[index] = numList[indexByte+add]
 	if (indexByte + add) > 9 {
-		num, up = sumString(num, index-1, 1)
+		num = sumString(num, index-1, 1)
 	}
-	return num, index - 1
+	return num
 }
 
 func addStrings(num1 string, num2 string) string {
@@ -45,7 +45,8 @@ func addStrings(num1 string, num2 string) string {
 	n2 := []byte(num2)
 	for i := len(num2) - 1; loop >= 0; loop-- {
 		indexByte := strings.IndexByte(numList, num1[loop])
-		n2, i = sumString([]byte(num2), i, indexByte)
+		n2 = sumString(n2, i, indexByte)
+		i--
 	}
 	return string(n2)
 }
@@ -56,4 +57,5 @@ func main() {
 	fmt.Println("test string 9+1", addStrings("9", "1"))
 	fmt.Println("test string 99+1", addStrings("99", "1"))
 	fmt.Println("test string 99+1", addStrings("999", "999"))
+	fmt.Println("test string 99+1", addStrings("123", "456"))
 }
