@@ -18,13 +18,13 @@ func reverse(x int) int {
 		ret *= 10
 	}
 	ret += x
-	if abs {
+	if abs && -ret >= math.MinInt32 {
 		return -ret
 	}
-	if ret > math.MaxInt32 {
-		return 0
+	if ret <= math.MaxInt32 {
+		return ret
 	}
-	return ret
+	return 0
 }
 
 func main() {
@@ -32,4 +32,5 @@ func main() {
 	fmt.Println("-123", reverse(-123))
 	fmt.Println("120", reverse(120))
 	fmt.Println("1534236469", reverse(1534236469))
+	fmt.Println("-2147483648", reverse(-2147483648))
 }
