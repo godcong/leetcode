@@ -7,17 +7,9 @@ import (
 
 func reverse(x int) int {
 	ret := 0
-	abs := false
-	if x < 0 {
-		abs = true
-		x = -x
-	}
-	for x > 0 {
+	for x != 0 {
 		ret = ret*10 + x%10
 		x /= 10
-	}
-	if abs {
-		ret = -ret
 	}
 	if ret <= math.MaxInt32 && ret >= math.MinInt32 {
 		return ret
