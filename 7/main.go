@@ -12,16 +12,14 @@ func reverse(x int) int {
 		abs = true
 		x = -x
 	}
-	for x > 9 {
-		ret += x % 10
+	for x > 0 {
+		ret = ret*10 + x%10
 		x /= 10
-		ret *= 10
 	}
-	ret += x
-	if abs && -ret >= math.MinInt32 {
-		return -ret
+	if abs {
+		ret = -ret
 	}
-	if ret <= math.MaxInt32 {
+	if ret <= math.MaxInt32 && ret >= math.MinInt32 {
 		return ret
 	}
 	return 0
