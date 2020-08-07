@@ -12,6 +12,13 @@ import (
 //	return strings.Join(strings.Split(address, "."), "[.]")
 //}
 
+/*
+62 / 62 个通过测试用例
+状态：通过
+执行用时：0 ms
+内存消耗：1.9 MB
+https://leetcode-cn.com/submissions/detail/95620031/
+ */
 func defangIPaddr(address string) string {
 	ret := make([]byte, len(address)+6)
 	start := 0
