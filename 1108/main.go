@@ -13,14 +13,17 @@ import (
 //}
 
 func defangIPaddr(address string) string {
-	var ret []byte
-	for i := range address {
+	ret := make([]byte, len(address)+6)
+	start := 0
+	j := 0
+	for i := 1; i < len(address)-1; i++ {
 		if address[i] == '.' {
-			ret = append(ret, '[', '.', ']')
-		} else {
-			ret = append(ret, address[i])
+			start += copy(ret[start:], address[j:i])
+			start += copy(ret[start:], "[.]")
+			j = i + 1
 		}
 	}
+	copy(ret[start:], address[j:])
 	return string(ret)
 }
 
