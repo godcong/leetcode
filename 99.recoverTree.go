@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"container/list"
 	"sort"
 )
 
@@ -52,8 +51,6 @@ import (
 */
 
 func recoverTree(root *TreeNode) {
-	l := list.New()
-	l.PushBack(root)
 	nums := new([]int)
 	nodes := getAllTreeNodeValues(root, nums)
 	sort.Ints(*nums)
