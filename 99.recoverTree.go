@@ -60,14 +60,12 @@ func recoverTree(root *TreeNode) {
 }
 
 func getAllTreeNodeValues(root *TreeNode, nums *[]int) []*TreeNode {
-	var nodes []*TreeNode
-	nodes = append(nodes, root)
+	if root == nil {
+		return nil
+	}
 	*nums = append(*nums, root.Val)
-	if root.Left != nil {
-		nodes = append(getAllTreeNodeValues(root.Left, nums), nodes...)
-	}
-	if root.Right != nil {
-		nodes = append(nodes, getAllTreeNodeValues(root.Right, nums)...)
-	}
+	nodes := []*TreeNode{root}
+	nodes = append(getAllTreeNodeValues(root.Left, nums), nodes...)
+	nodes = append(nodes, getAllTreeNodeValues(root.Right, nums)...)
 	return nodes
 }
