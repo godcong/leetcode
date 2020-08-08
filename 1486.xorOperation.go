@@ -1,23 +1,14 @@
-package main
-
-import "fmt"
-
-func xorOperation(n int, start int) int {
-	var ret int
-	for i := 0; i < n; i++ {
-		ret ^= start + 2*i
-	}
-	return ret
-}
+package leetcode
 
 /*
+1486. 数组异或操作
 给你两个整数，n 和 start 。
 
 数组 nums 定义为：nums[i] = start + 2*i（下标从 0 开始）且 n == nums.length 。
 
 请返回 nums 中所有元素按位异或（XOR）后得到的结果。
 
- 
+
 
 示例 1：
 
@@ -38,21 +29,18 @@ func xorOperation(n int, start int) int {
 
 输入：n = 10, start = 5
 输出：2
- 
+
 
 提示：
 
 1 <= n <= 1000
 0 <= start <= 1000
 n == nums.length
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/xor-operation-in-an-array
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
-func main() {
-	fmt.Println("n = 5, start = 0", xorOperation(5, 0))
-	fmt.Println("n = 4, start = 3", xorOperation(4, 3))
-	fmt.Println("n = 1, start = 7", xorOperation(1, 7))
-	fmt.Println("n = 10, start = 5", xorOperation(10, 5))
+func xorOperation(n int, start int) int {
+	var ret int
+	for i := 0; i < n; i++ {
+		ret ^= start + 2*i
+	}
+	return ret
 }
