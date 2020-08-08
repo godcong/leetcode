@@ -12,14 +12,14 @@ func Test_minCount(t *testing.T) {
 		want int
 	}{
 		{
-			name: "1",
+			name: "",
 			args: args{
 				coins: []int{4, 2, 1},
 			},
 			want: 4,
 		},
 		{
-			name: "1",
+			name: "",
 			args: args{
 				coins: []int{2, 3, 10},
 			},
