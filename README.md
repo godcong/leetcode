@@ -9,4 +9,4 @@ Num.Function_test
 #def.go
 Some common definitions
 
-num => leetcode num
+Num => leetcode num
