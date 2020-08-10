@@ -1,5 +1,7 @@
 package leetcode
 
+import "fmt"
+
 /*
 130. 被围绕的区域
 给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。
@@ -24,19 +26,71 @@ X O X X
 */
 func solve(board [][]byte) {
 	tmp := make([][]byte, len(board))
-	copy(tmp, board)
+	if len(board) <= 2 {
+		return
+	}
 
-	for i := 0; i < len(board); i++ {
-		for j := 0; j < len(board[i]); j++ {
-			board[i][j] = 'X'
+	y, x := 0, 0
+	for y = 0; y < len(board); y++ {
+		tmp[y] = make([]byte, len(board[y]))
+		for x = 0; x < len(board[y]); x++ {
+			tmp[y][x] = board[y][x]
+		}
+	}
+
+	for y = 1; y < len(board)-1; y++ {
+		for x = 1; x < len(board[y])-1; x++ {
+			board[y][x] = 'X'
+		}
+	}
+
+	y = 0
+	for x = 1; x < len(board[0]); x++ {
+		if tmp[y][x] == 'O' {
+			board[y][x] = 'O'
+			check(tmp, board, x, y+1, len(board[0]))
+		}
+	}
+	y = len(board) - 1
+	for x = 1; x < len(board[0]); x++ {
+		if tmp[y][x] == 'O' {
+			board[y][x] = 'O'
+			check(tmp, board, x, y-1, len(board[0]))
+		}
+	}
+
+	x = 0
+	for y = 1; y < len(board); y++ {
+		if tmp[y][x] == 'O' {
+			board[y][x] = 'O'
+			check(tmp, board, x+1, y, len(board))
+		}
+	}
+
+	x = len(board[0]) - 1
+	for y = 1; y < len(board); y++ {
+		if tmp[y][x] == 'O' {
+			board[y][x] = 'O'
+			check(tmp, board, x-1, y, len(board))
 		}
 	}
 }
 
-func checkHorizontal(board [][]byte, h int) {
+func check(tmp, board [][]byte, x, y int, max int) {
+	fmt.Printf("x:%d,y:%d,tmp:%s,val:%s,max:%d\n", x, y, tmp, board, max)
+	if max <= 0 {
+		return
+	}
+	if (x < 1) || (y < 1) || (x >= len(board[y])-1) || (y >= len(board)-1) {
+		return
+	}
 
-}
-
-func checkVertical(board [][]byte, v int) {
-
+	max--
+	if tmp[y][x] == 'O' {
+		board[y][x] = 'O'
+		check(tmp, board, x-1, y, max)
+		check(tmp, board, x+1, y, max)
+		check(tmp, board, x, y-1, max)
+		check(tmp, board, x, y+1, max)
+	}
 }

@@ -18,6 +18,45 @@ func Test_solve(t *testing.T) {
 			name: "",
 			args: args{
 				board: [][]byte{
+					[]byte("O"),
+				},
+			},
+			want: [][]byte{
+				[]byte("O"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("OO"),
+					[]byte("OO"),
+				},
+			},
+			want: [][]byte{
+				[]byte("OO"),
+				[]byte("OO"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("OOO"),
+					[]byte("OOO"),
+					[]byte("OOO"),
+				},
+			},
+			want: [][]byte{
+				[]byte("OOO"),
+				[]byte("OOO"),
+				[]byte("OOO"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
 					[]byte("XXXX"),
 					[]byte("XOOX"),
 					[]byte("XXOX"),
@@ -29,6 +68,65 @@ func Test_solve(t *testing.T) {
 				[]byte("XXXX"),
 				[]byte("XXXX"),
 				[]byte("XOXX"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("XXXXX"),
+					[]byte("XXOOX"),
+					[]byte("XXXOX"),
+					[]byte("XXOXX"),
+					[]byte("XXOXX"),
+				},
+			},
+			want: [][]byte{
+				[]byte("XXXXX"),
+				[]byte("XXXXX"),
+				[]byte("XXXXX"),
+				[]byte("XXOXX"),
+				[]byte("XXOXX"),
+			},
+		},
+
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("XOXOXO"),
+					[]byte("OXOXOX"),
+					[]byte("XOXOXO"),
+					[]byte("OXOXOX"),
+				},
+			},
+			want: [][]byte{
+				[]byte("XOXOXO"),
+				[]byte("OXXXXX"),
+				[]byte("XXXXXO"),
+				[]byte("OXOXOX"),
+				[]byte("XXOXX"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("XXXXOX"),
+					[]byte("OXXOOX"),
+					[]byte("XOXOOO"),
+					[]byte("XOOOXO"),
+					[]byte("OOXXOX"),
+					[]byte("XOXOXX"),
+				},
+			},
+			want: [][]byte{
+				[]byte("XXXXOX"),
+				[]byte("OXXOOX"),
+				[]byte("XOXOOO"),
+				[]byte("XOOOXO"),
+				[]byte("OOXXXX"),
+				[]byte("XOXOXX"),
 			},
 		},
 	}
