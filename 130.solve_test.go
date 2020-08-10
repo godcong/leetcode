@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"reflect"
+	"bytes"
 	"testing"
 )
 
@@ -35,8 +35,10 @@ func Test_solve(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			solve(tt.args.board)
-			if !reflect.DeepEqual(tt.args.board, tt.want) {
-				t.Errorf("solve() = %s, want %s", tt.args.board, tt.want)
+			for i := range tt.args.board {
+				if bytes.Compare(tt.args.board[i], tt.want[i]) != 0 {
+					t.Errorf("solve(%d) = %s, want %s", i, tt.args.board[i], tt.want[i])
+				}
 			}
 		})
 	}

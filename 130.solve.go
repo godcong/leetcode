@@ -25,9 +25,18 @@ X O X X
 func solve(board [][]byte) {
 	tmp := make([][]byte, len(board))
 	copy(tmp, board)
-	for i := 0; i < len(board)-1; i++ {
-		for j := 0; j < len(board[i])-1; j++ {
 
+	for i := 0; i < len(board); i++ {
+		for j := 0; j < len(board[i]); j++ {
+			board[i][j] = 'X'
 		}
 	}
+}
+
+func checkHorizontal(board [][]byte, h int) {
+
+}
+
+func checkVertical(board [][]byte, v int) {
+
 }
