@@ -29,7 +29,7 @@ func solve(board [][]byte) {
 	y, x := 0, 0
 	for y = 0; y < len(board); y++ {
 		for x = 0; x < len(board[y]); x++ {
-			if (x == 0) || (y == 0) || (x == len(board[0])-1) || (y == len(board)-1) {
+			if x == 0 || y == 0 || x == len(board[y])-1 || y == len(board)-1 {
 				if board[y][x] == 'O' {
 					board[y][x] = '#'
 					replaceO(board, x-1, y)
