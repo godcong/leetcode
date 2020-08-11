@@ -41,12 +41,11 @@ func solve(board [][]byte) {
 		}
 	}
 
-	for y = range board {
-		for x = range board[y] {
+	for y = 0; y < len(board); y++ {
+		for x = 0; x < len(board[y]); x++ {
 			if board[y][x] == 'O' {
 				board[y][x] = 'X'
-			}
-			if board[y][x] == '#' {
+			} else if board[y][x] == '#' {
 				board[y][x] = 'O'
 			}
 		}
@@ -55,13 +54,6 @@ func solve(board [][]byte) {
 
 func replaceO(board [][]byte, x, y int) {
 	if (x <= 0) || (y <= 0) || (x >= len(board[0])-1) || (y >= len(board)-1) {
-		return
-	}
-	if board[y][x] == 'X' {
-		return
-	}
-
-	if board[y][x] == '#' {
 		return
 	}
 
