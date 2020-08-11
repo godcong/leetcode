@@ -105,7 +105,7 @@ func Test_solve(t *testing.T) {
 				[]byte("OXXXXX"),
 				[]byte("XXXXXO"),
 				[]byte("OXOXOX"),
-				[]byte("XXOXX"),
+				[]byte("XXOXXX"),
 			},
 		},
 		{
@@ -129,10 +129,53 @@ func Test_solve(t *testing.T) {
 				[]byte("XOXOXX"),
 			},
 		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("OXOOXX"),
+					[]byte("OXXXOX"),
+					[]byte("XOOXOO"),
+					[]byte("XOXXXX"),
+					[]byte("OOXOXX"),
+					[]byte("XXOOOO"),
+				},
+			},
+			want: [][]byte{
+				[]byte("OXOOXX"),
+				[]byte("OXXXOX"),
+				[]byte("XOOXOO"),
+				[]byte("XOXXXX"),
+				[]byte("OOXOXX"),
+				[]byte("XXOOOO"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				board: [][]byte{
+					[]byte("OXOOXX"),
+					[]byte("XOXXOO"),
+					[]byte("XOOOOX"),
+					[]byte("XOXXXX"),
+					[]byte("XOXOXX"),
+					[]byte("XXOOOO"),
+				},
+			},
+			want: [][]byte{
+				[]byte("OXOOXX"),
+				[]byte("XOXXOO"),
+				[]byte("XOOOOX"),
+				[]byte("XOXXXX"),
+				[]byte("XOXOXX"),
+				[]byte("XXOOOO"),
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			solve(tt.args.board)
+			t.Logf("board:%s\n", tt.args.board)
 			for i := range tt.args.board {
 				if bytes.Compare(tt.args.board[i], tt.want[i]) != 0 {
 					t.Errorf("solve(%d) = %s, want %s", i, tt.args.board[i], tt.want[i])
