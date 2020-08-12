@@ -1,8 +1,6 @@
 package leetcode
 
-import (
-	"math"
-)
+import "math"
 
 /*
 8. 字符串转换整数 (atoi)
@@ -54,31 +52,34 @@ import (
 func myAtoi(str string) int {
 	min := byte(0)
 	ret := 0
-	start := 0
+	start := false
 	max := len(str)
 ForLoop:
 	for i := 0; i < max; i++ {
-		switch str[i] {
-		case '-', '+':
-			if start >= 1 {
+		switch {
+		case str[i] == '-' || str[i] == '+':
+			if start {
 				break ForLoop
 			}
-			start = 1
+			start = true
 			min = str[i]
-		case '0':
+		case str[i] == '0':
 			if ret == 0 {
-				start = 1
+				start = true
 				continue
 			}
 			fallthrough
-		case '1', '2', '3', '4', '5', '6', '7', '8', '9':
-			if start > 12 {
-				break ForLoop
-			}
-			start += 1
+		case str[i] >= '1' && str[i] <= '9':
+			start = true
 			ret = ret*10 + int(str[i]-'0')
-		case ' ':
-			if start > 0 {
+			if ret > math.MaxInt32 {
+				if min == '-' {
+					return math.MinInt32
+				}
+				return math.MaxInt32
+			}
+		case str[i] == ' ':
+			if start {
 				break ForLoop
 			}
 		default:
@@ -86,12 +87,7 @@ ForLoop:
 		}
 	}
 	if min == '-' {
-		ret = -ret
-	}
-	if ret > math.MaxInt32 {
-		return math.MaxInt32
-	} else if ret < math.MinInt32 {
-		return math.MinInt32
+		return -ret
 	}
 	return ret
 }
