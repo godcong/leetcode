@@ -33,9 +33,9 @@ func multiply(num1 string, num2 string) string {
 	for i = 1; i <= iSize; i++ {
 		for j = 1; j <= jSize; j++ {
 			m = (num1[iSize-i] - '0') * (num2[jSize-j] - '0')
-			byteAdd(&num, i+j-2, m%10)
+			byteAdd(&num, i+j-1, m%10)
 			if m = m / 10; m > 0 {
-				byteAdd(&num, i+j-1, m)
+				byteAdd(&num, i+j, m)
 			}
 
 		}
@@ -52,7 +52,7 @@ func multiply(num1 string, num2 string) string {
 }
 
 func byteAdd(num *[]byte, index int, b byte) {
-	nidx := len(*num) - 1 - (index)
+	nidx := len(*num) - (index)
 	b += (*num)[nidx]
 	if b < 10 {
 		(*num)[nidx] = b
