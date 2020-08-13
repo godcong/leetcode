@@ -34,11 +34,11 @@ func multiply(num1 string, num2 string) string {
 		for j = 0; j <= jSize; j++ {
 			m = (num1[iSize-i] - '0') * (num2[jSize-j] - '0')
 			if m < 10 {
-				byteDec(&num, i+j, m)
+				byteAdd(&num, i+j, m)
 				continue
 			}
-			byteDec(&num, i+j, m%10)
-			byteDec(&num, i+j+1, m/10)
+			byteAdd(&num, i+j, m%10)
+			byteAdd(&num, i+j+1, m/10)
 		}
 	}
 	for i = range num {
@@ -47,7 +47,7 @@ func multiply(num1 string, num2 string) string {
 	return string(num)
 }
 
-func byteDec(num *[]byte, index int, b byte) {
+func byteAdd(num *[]byte, index int, b byte) {
 	nidx := len(*num) - (index) - 1
 	if nidx < 0 {
 		*num = []byte(string(b) + string(*num))
@@ -60,5 +60,5 @@ func byteDec(num *[]byte, index int, b byte) {
 		return
 	}
 	(*num)[nidx] = b % 10
-	byteDec(num, index+1, b/10)
+	byteAdd(num, index+1, b/10)
 }
