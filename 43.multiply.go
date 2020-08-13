@@ -26,10 +26,10 @@ func multiply(num1 string, num2 string) string {
 	if num1 == "0" || num2 == "0" {
 		return "0"
 	}
-	var num []byte
 	i, j := 0, 0
 	iSize := len(num1) - 1
 	jSize := len(num2) - 1
+	num := make([]byte, iSize+jSize)
 	m := byte(0)
 	for i := range num1 {
 		for j = range num2 {
