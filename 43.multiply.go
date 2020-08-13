@@ -27,31 +27,32 @@ func multiply(num1 string, num2 string) string {
 		return "0"
 	}
 	i, j := 0, 0
-	iSize, jSize := len(num1)-1, len(num2)-1
+	iSize, jSize := len(num1), len(num2)
 	num := make([]byte, iSize+jSize)
 	m := byte(0)
-	for i = 0; i <= iSize; i++ {
-		for j = 0; j <= jSize; j++ {
+	for i = 1; i <= iSize; i++ {
+		for j = 1; j <= jSize; j++ {
 			m = (num1[iSize-i] - '0') * (num2[jSize-j] - '0')
-			byteAdd(&num, i+j, m%10)
+			byteAdd(&num, i+j-2, m%10)
 			if m = m / 10; m > 0 {
-				byteAdd(&num, i+j+1, m)
+				byteAdd(&num, i+j-1, m)
 			}
 
 		}
 	}
+	if num[0] == 0 {
+		num = num[1:]
+	}
+
 	for i = range num {
 		(num)[i] += '0'
 	}
+
 	return string(num)
 }
 
 func byteAdd(num *[]byte, index int, b byte) {
-	nidx := len(*num) - (index) - 1
-	if nidx < 0 {
-		*num = []byte(string(b) + string(*num))
-		return
-	}
+	nidx := len(*num) - 1 - (index)
 	b += (*num)[nidx]
 	if b < 10 {
 		(*num)[nidx] = b
