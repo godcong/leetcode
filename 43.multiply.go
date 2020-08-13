@@ -27,17 +27,18 @@ func multiply(num1 string, num2 string) string {
 		return "0"
 	}
 	i, j := 0, 0
-	iSize := len(num1) - 1
-	jSize := len(num2) - 1
+	iSize, jSize := len(num1)-1, len(num2)-1
 	num := make([]byte, iSize+jSize)
 	m := byte(0)
-	for i := range num1 {
-		for j = range num2 {
+	for i = 0; i <= iSize; i++ {
+		for j = 0; j <= jSize; j++ {
 			m = (num1[iSize-i] - '0') * (num2[jSize-j] - '0')
-			byteDec(&num, i+j, m%10)
-			if m = m / 10; m > 0 {
-				byteDec(&num, i+j+1, m)
+			if m < 10 {
+				byteDec(&num, i+j, m)
+				continue
 			}
+			byteDec(&num, i+j, m%10)
+			byteDec(&num, i+j+1, m/10)
 		}
 	}
 	for i = range num {
@@ -52,12 +53,12 @@ func byteDec(num *[]byte, index int, b byte) {
 		*num = []byte(string(b) + string(*num))
 		return
 	}
-	if b == 0 {
+
+	b += (*num)[nidx]
+	if b < 10 {
+		(*num)[nidx] = b
 		return
 	}
-	b += (*num)[nidx]
 	(*num)[nidx] = b % 10
-	if b > 9 {
-		byteDec(num, index+1, b/10)
-	}
+	byteDec(num, index+1, b/10)
 }
