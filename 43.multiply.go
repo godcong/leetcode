@@ -30,13 +30,12 @@ func multiply(num1 string, num2 string) string {
 	iSize, jSize := len(num1), len(num2)
 	nSize := iSize + jSize
 	num := make([]byte, nSize)
-
-	m := &[2]byte{0, 0}
+	m := [2]byte{0, 0}
 	for i = 1; i <= iSize; i++ {
 		for j = 1; j <= jSize; j++ {
 			m[0], m[1] = num1[iSize-i]-'0', num2[jSize-j]-'0'
 			m[0], m[1] = (m[0])*(m[1])/10, (m[0])*(m[1])%10
-			byteAdd(&num, nSize-(i+j-1), m)
+			byteAdd(&num, nSize-(i+j)+1, m)
 		}
 	}
 	if num[0] == 0 {
@@ -50,7 +49,7 @@ func multiply(num1 string, num2 string) string {
 	return string(num)
 }
 
-func byteAdd(num *[]byte, index int, b *[2]byte) {
+func byteAdd(num *[]byte, index int, b [2]byte) {
 	(*num)[index] += b[1]
 	if b[0] == 0 && (*num)[index] <= 9 {
 		return
