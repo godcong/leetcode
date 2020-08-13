@@ -26,32 +26,38 @@ func multiply(num1 string, num2 string) string {
 	if num1 == "0" || num2 == "0" {
 		return "0"
 	}
-	num := new([]byte)
+	var num []byte
 	i, j := 0, 0
 	iSize := len(num1) - 1
 	jSize := len(num2) - 1
 	m := byte(0)
-	for i = 0; i <= iSize; i++ {
-		for j = 0; j <= jSize; j++ {
+	for i := range num1 {
+		for j = range num2 {
 			m = (num1[iSize-i] - '0') * (num2[jSize-j] - '0')
-			byteDec(num, i+j, m%10)
-			if m/10 > 0 {
-				byteDec(num, i+j+1, m/10)
+			byteDec(&num, i+j, m%10)
+			if m = m / 10; m > 0 {
+				byteDec(&num, i+j+1, m)
 			}
 		}
 	}
-	return string(*num)
+	for i = range num {
+		(num)[i] += '0'
+	}
+	return string(num)
 }
 
 func byteDec(num *[]byte, index int, b byte) {
 	nidx := len(*num) - (index) - 1
 	if nidx < 0 {
-		*num = []byte(string(b+'0') + string(*num))
+		*num = []byte(string(b) + string(*num))
 		return
 	}
-	m := ((*num)[nidx] - '0') + (b)
-	(*num)[nidx] = m%10 + '0'
-	if m > 9 {
-		byteDec(num, index+1, m/10)
+	if b == 0 {
+		return
+	}
+	b += (*num)[nidx]
+	(*num)[nidx] = b % 10
+	if b > 9 {
+		byteDec(num, index+1, b/10)
 	}
 }

@@ -31,6 +31,14 @@ func Test_multiply(t *testing.T) {
 		{
 			name: "",
 			args: args{
+				num1: "408",
+				num2: "5",
+			},
+			want: "2040",
+		},
+		{
+			name: "",
+			args: args{
 				num1: "12",
 				num2: "0",
 			},
