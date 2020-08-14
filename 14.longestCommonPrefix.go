@@ -23,20 +23,20 @@ func longestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
 	}
-	i, max := 1, len(strs[0])
-	str, pre := "", byte(0)
 
-	for ; i < len(strs); i++ {
-		if max > len(strs[i]) {
-			max = len(strs[i])
-		}
-	}
+	j := len(strs) - 1
+	i, max := 1, len(strs[0])
+
+	//for ; i <= j; i++ {
+	//	if max > (len(strs[i])) {
+	//		max = len(strs[i])
+	//	}
+	//}
 
 Loop:
 	for i = 0; i < max; i++ {
-		pre = strs[0][i]
-		for _, str = range strs[1:] {
-			if pre != str[i] {
+		for j = len(strs) - 1; j > 0; j-- {
+			if i > len(strs[j])-1 || strs[0][i] != strs[j][i] {
 				break Loop
 			}
 		}
