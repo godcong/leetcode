@@ -32,5 +32,22 @@ package leetcode
 输出: true
 */
 func isValid(s string) bool {
-	return false
+	if s == "" {
+		return true
+	}
+
+	pre := make([]byte, len(s)/2)
+	count := 0
+	for i := 0; i < len(s); i++ {
+		if s[i] == '[' || s[i] == '(' || s[i] == '{' {
+			pre[count] = s[i]
+			count++
+			continue
+		}
+		if s[i]-pre[count-1] > 2 {
+			return false
+		}
+		count--
+	}
+	return true
 }
