@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -28,7 +29,7 @@ func main() {
 		fmt.Println("line:", string(line))
 		panicErr(err)
 		headLine = append(headLine, line)
-		if strings.Compare("#STA#", string(line)) == 0 {
+		if strings.Compare("<!--STA-->", string(line)) == 0 {
 			break
 		}
 	}
@@ -47,10 +48,13 @@ func main() {
 		_, _ = bw.Write(bytes)
 		_, _ = bw.WriteString("\n")
 	}
+
+	_, _ = bw.WriteString("### 总完成:" + strconv.Itoa(len(files)) + " ###" + "  \n")
 	for _, file := range files {
 		templeWrite(bw, file)
 	}
-	_, _ = bw.WriteString("#END#\n")
+	_, _ = bw.WriteString("<!--END-->\n")
+
 	err = bw.Flush()
 	panicErr(err)
 }
