@@ -1,12 +1,15 @@
 # leetcode
 
 # Implementation
-Num.Function
+Name rule #Index#.#Function#.go
+Index represents the number in leecode
 
 # Test case
-Num.Function_test
+Name rule #Index#.#Function#_test.go
 
-# def.go
-Some common definitions
+# Common definitions
+All append into def.go
 
-Num => leetcode num
+#STA#
+
+#END#
