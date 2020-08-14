@@ -36,18 +36,13 @@ func isValid(s string) bool {
 		return true
 	}
 
-	pre := make([]byte, len(s)/2+1)
-	count := 0
+	count, pre := 0, make([]byte, len(s)/2+1)
 	for i := 0; i < len(s); i++ {
 		if s[i] == '[' || s[i] == '(' || s[i] == '{' {
-			pre[count] = s[i]
-			count++
+			count, pre[count] = count+1, s[i]
 			continue
 		}
-		if count < 1 {
-			return false
-		}
-		if s[i]-pre[count-1] > 2 {
+		if count < 1 || s[i]-pre[count-1] > 2 {
 			return false
 		}
 		count--
