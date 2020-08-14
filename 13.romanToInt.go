@@ -45,18 +45,18 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 解释: M = 1000, CM = 900, XC = 90, IV = 4.
 */
 func romanToInt(s string) int {
-	i := len(s) - 1
+	i := int32(len(s) - 1)
 	ret, min := romanToIntNumTable[s[i]], s[i]
 	for i--; i >= 0; i-- {
 		if romanToIntNumTable[s[i]] < romanToIntNumTable[min] {
 			ret -= romanToIntNumTable[s[i]]
-			continue
+		} else {
+			min, ret = s[i], ret+romanToIntNumTable[s[i]]
 		}
-		min, ret = s[i], ret+romanToIntNumTable[s[i]]
 	}
 	return ret
 }
 
-var romanToIntNumTable = map[byte]int{
+var romanToIntNumTable = []int{
 	'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000,
 }
