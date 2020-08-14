@@ -1,0 +1,102 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io/ioutil"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+var headLine [][]byte
+
+func getCurrentPath() string {
+	getwd, err := os.Getwd()
+	panicErr(err)
+	return getwd
+}
+
+//create readme
+func main() {
+	fmt.Println("path:", filepath.Join(getCurrentPath(), "README.md"))
+	rd, err := os.Open(filepath.Join(getCurrentPath(), "README.md"))
+	panicErr(err)
+	reader := bufio.NewReader(rd)
+	for {
+		line, _, err := reader.ReadLine()
+		fmt.Println("line:", string(line))
+		panicErr(err)
+		headLine = append(headLine, line)
+		if strings.Compare("#STA#", string(line)) == 0 {
+			break
+		}
+	}
+	err = rd.Close()
+	panicErr(err)
+
+	files := getAllFiles(filterList, true)
+	fmt.Println(files)
+
+	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
+	defer rd.Close()
+	panicErr(err)
+	bw := bufio.NewWriter(rd)
+
+	for _, bytes := range headLine {
+		_, _ = bw.Write(bytes)
+		_, _ = bw.WriteString("\n")
+	}
+	for _, file := range files {
+		templeWrite(bw, file)
+	}
+	_, _ = bw.WriteString("#END#\n")
+	err = bw.Flush()
+	panicErr(err)
+}
+
+func panicErr(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+var filterList = []string{
+	"README.md",
+	"LICENSE",
+	"def.go",
+	"go.mod",
+	"go.sum",
+	".gitignore",
+}
+
+func getAllFiles(filters []string, filterTest bool) []string {
+	dir, err := ioutil.ReadDir(getCurrentPath())
+	panicErr(err)
+	need := false
+	var ret []string
+	for _, info := range dir {
+		need = true
+		if info.IsDir() {
+			continue
+		}
+		if filterTest && strings.Index(info.Name(), "_test.go") > 0 {
+			continue
+		}
+
+		for _, filter := range filters {
+			if info.Name() == filter {
+				need = false
+			}
+		}
+		if need {
+			ret = append(ret, onlyName(info.Name()))
+		}
+	}
+	return ret
+}
+
+func onlyName(s string) string {
+	i := strings.LastIndex(s, ".")
+	return s[:i]
+}
