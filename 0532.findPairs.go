@@ -27,5 +27,19 @@ package leetcode
 所有输入的整数的范围在 [-1e7, 1e7]。
 */
 func findPairs(nums []int, k int) int {
-	panic("todo")
+	if k < 0 {
+		return 0
+	}
+	exists := make(map[int]bool)
+	diff := make(map[int]bool)
+	for i := range nums {
+		if exists[nums[i]-k] {
+			diff[nums[i]-k] = true
+		}
+		if exists[nums[i]+k] {
+			diff[nums[i]] = true
+		}
+		exists[nums[i]] = true
+	}
+	return len(diff)
 }
