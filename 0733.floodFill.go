@@ -30,25 +30,25 @@ image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。
 func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 	currColor := image[sr][sc]
 	if currColor != newColor {
-		dfs(image, sr, sc, currColor, newColor)
+		floodFillDFS(image, sr, sc, currColor, newColor)
 	}
 	return image
 }
 
-func dfs(image [][]int, x, y, color, newColor int) {
+func floodFillDFS(image [][]int, x, y, color, newColor int) {
 	if image[x][y] == color {
 		image[x][y] = newColor
 		if x < len(image)-1 {
-			dfs(image, x+1, y, color, newColor)
+			floodFillDFS(image, x+1, y, color, newColor)
 		}
 		if y < len(image[0])-1 {
-			dfs(image, x, y+1, color, newColor)
+			floodFillDFS(image, x, y+1, color, newColor)
 		}
 		if x > 0 {
-			dfs(image, x-1, y, color, newColor)
+			floodFillDFS(image, x-1, y, color, newColor)
 		}
 		if y > 0 {
-			dfs(image, x, y-1, color, newColor)
+			floodFillDFS(image, x, y-1, color, newColor)
 		}
 	}
 }
