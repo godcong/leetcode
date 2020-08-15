@@ -30,7 +30,7 @@ All append into def.go
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
-| 0204 | 统计所有小于非负整数 n 的质数的数量。 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
+| 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes_test.go) |  
 | 0581 | 最短无序连续子数组 | findUnsortedSubarray | [GO](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray_test.go) |  
