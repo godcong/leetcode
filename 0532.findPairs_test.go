@@ -26,6 +26,16 @@ func Test_findPairs(t *testing.T) {
 			name: "",
 			args: args{
 				nums: []int{
+					1, 1, 1, 2, 1,
+				},
+				k: 1,
+			},
+			want: 1,
+		},
+		{
+			name: "",
+			args: args{
+				nums: []int{
 					1, 2, 3, 4, 5,
 				},
 				k: 1,
