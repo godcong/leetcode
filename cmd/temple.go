@@ -3,6 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -17,5 +19,18 @@ func templeWrite(writer *bufio.Writer, s string) {
 	_, _ = writer.WriteString(" | " + title)
 	_, _ = writer.WriteString(" | " + codeName)
 	_, _ = writer.WriteString(" | " + fmt.Sprintf("[GO](%v)", root+s+".go"))
-	_, _ = writer.WriteString(" | " + fmt.Sprintf("[TEST](%v)", root+s+"_test.go") + " |" + "  \n")
+	if isExist(s + "_test.go") {
+		_, _ = writer.WriteString(" | " + fmt.Sprintf("[TEST](%v)", root+s+"_test.go") + " |" + "  \n")
+	} else {
+		_, _ = writer.WriteString(" | " + "TEST" + " |" + "  \n")
+	}
+
+}
+
+func isExist(name string) bool {
+	_, err := os.Stat(filepath.Join(getCurrentPath(), name))
+	if err != nil {
+		return !os.IsNotExist(err)
+	}
+	return true
 }
