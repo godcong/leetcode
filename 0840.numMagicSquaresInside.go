@@ -38,7 +38,7 @@ func numMagicSquaresInside(grid [][]int) int {
 	for y := 0; y < ySize-2; y++ {
 		for x := 0; x < xSize-2; x++ {
 			if grid[y+1][x+1] != 5 {
-				continue // optional skip
+				continue
 			}
 			if magic(grid[y][x], grid[y][x+1], grid[y][x+2],
 				grid[y+1][x], grid[y+1][x+1], grid[y+1][x+2],
