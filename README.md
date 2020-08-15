@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:27 ###  
+### 总完成:28 ###  
 ### 索引号: 1 ###  
 实现函数: twoSum  
 实现代码: [1.twoSum.go](https://github.com/godcong/leetcode/blob/master/1.twoSum.go)  
@@ -108,6 +108,11 @@ All append into def.go
 实现函数: multiply  
 实现代码: [43.multiply.go](https://github.com/godcong/leetcode/blob/master/43.multiply.go)  
 测试代码: [43.multiply_test.go](https://github.com/godcong/leetcode/blob/master/43.multiply_test.go)  
+
+### 索引号: 546 ###  
+实现函数: removeBoxes  
+实现代码: [546.removeBoxes.go](https://github.com/godcong/leetcode/blob/master/546.removeBoxes.go)  
+测试代码: [546.removeBoxes_test.go](https://github.com/godcong/leetcode/blob/master/546.removeBoxes_test.go)  
 
 ### 索引号: 665 ###  
 实现函数: checkPossibility  
