@@ -25,61 +25,35 @@ package leetcode
 1 <= boxes.length <= 100
 1 <= boxes[i] <= 100
 */
+
 func removeBoxes(boxes []int) int {
-	//size := len(boxes)
-	//if size < 2 {
-	//	return 1
-	//}
-	//
-	//tmpBox := make([]int, len(boxes))
-	//last := boxes[0]
-	//count, max := 1, 0
-	//
-	//for i := 1; i < size; i++ {
-	//	if boxes[i] != last {
-	//		copy(tmpBox, boxes[:i-count])
-	//		copy(tmpBox[i-count:], boxes[i:])
-	//		if v := removeBoxesAction(tmpBox[:size-count]); (v + count*count) > max {
-	//			max = v + count*count
-	//		}
-	//		count, last = 1, boxes[i]
-	//		continue
-	//	}
-	//	count, last = count+1, boxes[i]
-	//}
-	//if count > 1 {
-	//	return max + count*count
-	//}
-	//
-	//return max
-	return removeBoxesAction(boxes)
+	dp := [100][100][100]int{}
+	var removeBoxesAction func(left, right, k int) int
+	removeBoxesAction = func(l, r, k int) int {
+		if l > r {
+			return 0
+		}
+		if dp[l][r][k] != 0 {
+			return dp[l][r][k]
+		}
+		for l < r && boxes[l] == boxes[l+1] {
+			l++
+			k++
+		}
+		dp[l][r][k] = removeBoxesAction(l+1, r, 0) + (k+1)*(k+1)
+		for i := l + 1; i <= r; i++ {
+			if boxes[i] == boxes[l] {
+				dp[l][r][k] = max(dp[l][r][k], removeBoxesAction(i, r, k+1)+removeBoxesAction(l+1, i-1, 0))
+			}
+		}
+		return dp[l][r][k]
+	}
+	return removeBoxesAction(0, len(boxes)-1, 0)
 }
 
-func removeBoxesAction(boxes []int) int {
-	size := len(boxes)
-	if size < 2 {
-		return 1
+func max(l, r int) int {
+	if l > r {
+		return l
 	}
-
-	tmpBox := make([]int, len(boxes))
-	last := boxes[0]
-	count, max, maxCount := 1, 0, false
-
-	for i := 1; i < size; i++ {
-		if boxes[i] != last {
-			copy(tmpBox, boxes[:i-count])
-			copy(tmpBox[i-count:], boxes[i:])
-			if v := removeBoxesAction(tmpBox[:size-count]); (v + count*count) > max {
-				max = v + count*count
-				maxCount = true
-			}
-			count, last = 1, boxes[i]
-			continue
-		}
-		count, last = count+1, boxes[i]
-	}
-	if !maxCount {
-		return max + count*count
-	}
-	return max
+	return r
 }
