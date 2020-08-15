@@ -50,6 +50,8 @@ func main() {
 	}
 
 	_, _ = bw.WriteString("### 总完成:" + strconv.Itoa(len(files)) + " ###" + "  \n")
+	_, _ = bw.WriteString("| 目录     |  函数名                                                       |  实现代码 |  测试代码 |  \n")
+	_, _ = bw.WriteString("|:--------:|:------------------------------------------------------------:|:--------:|:--------:|  \n")
 	for _, file := range files {
 		templeWrite(bw, file)
 	}
