@@ -23,5 +23,5 @@ func twoSum(nums []int, target int) []int {
 		}
 		tmp[num] = idx
 	}
-	panic("unreachable")
+	return nil
 }
