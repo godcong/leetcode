@@ -36,8 +36,8 @@ func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	left := isBalancedDepth(root.Left)
-	if left -= isBalancedDepth(root.Right); left < 0 {
+	left := isBalancedDepth(root.Left) - isBalancedDepth(root.Right)
+	if left < 0 {
 		left = -left
 	}
 	return left <= 1 && isBalanced(root.Left) && isBalanced(root.Right)
