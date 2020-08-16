@@ -71,6 +71,7 @@ var filterList = []string{
 	"README.md",
 	"LICENSE",
 	"def.go",
+	"common.go",
 	"go.mod",
 	"go.sum",
 	".gitignore",
