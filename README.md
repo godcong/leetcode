@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:37 ###  
+### 总完成:38 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -53,4 +53,5 @@ All append into def.go
 | Offer.10.i | 斐波那契数列 | fib | [GO](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib_test.go) |  
 | Offer.43 | 1～n整数中1出现的次数 | countDigitOne | [GO](https://github.com/godcong/leetcode/blob/master/Offer.43.countDigitOne.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.43.countDigitOne_test.go) |  
 | Offer.58.ii | 左旋转字符串 | reverseLeftWords | [GO](https://github.com/godcong/leetcode/blob/master/Offer.58.ii.reverseLeftWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.58.ii.reverseLeftWords_test.go) |  
+| interview.02 | 删除中间节点 | 03 | [GO](https://github.com/godcong/leetcode/blob/master/interview.02.03.go) | [TEST](https://github.com/godcong/leetcode/blob/master/interview.02.03_test.go) |  
 <!--END-->
