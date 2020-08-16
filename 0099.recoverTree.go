@@ -52,20 +52,20 @@ import (
 
 func recoverTree(root *TreeNode) {
 	nums := new([]int)
-	nodes := getAllTreeNodeValues(root, nums)
+	nodes := recoverTreeGetAll(root, nums)
 	sort.Ints(*nums)
 	for idx := range nodes {
 		nodes[idx].Val = (*nums)[idx]
 	}
 }
 
-func getAllTreeNodeValues(root *TreeNode, nums *[]int) []*TreeNode {
+func recoverTreeGetAll(root *TreeNode, nums *[]int) []*TreeNode {
 	if root == nil {
 		return nil
 	}
 	*nums = append(*nums, root.Val)
 	nodes := []*TreeNode{root}
-	nodes = append(getAllTreeNodeValues(root.Left, nums), nodes...)
-	nodes = append(nodes, getAllTreeNodeValues(root.Right, nums)...)
+	nodes = append(recoverTreeGetAll(root.Left, nums), nodes...)
+	nodes = append(nodes, recoverTreeGetAll(root.Right, nums)...)
 	return nodes
 }
