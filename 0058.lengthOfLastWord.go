@@ -16,26 +16,17 @@ package leetcode
 输出: 5
 */
 func lengthOfLastWord(s string) int {
-	i := len(s) - 1
-	for i >= 0 && s[i] == ' ' {
-		s = s[:i]
-		i--
+	end := len(s) - 1
+	for end >= 0 && s[end] == ' ' {
+		end--
 	}
-	for i >= 0 && s[0] == ' ' {
-		s = s[1:]
-		i--
+	if end < 0 {
+		return 0
 	}
-	for ; i > 0; i-- {
-		if !lengthOfLastWordIsWord(s[i]) {
-			break
-		}
+	start := end
+	for start >= 0 && s[start] != ' ' {
+		start--
 	}
-	if i <= 0 {
-		return len(s)
-	}
-	return len(s) - (i + 1)
-}
 
-func lengthOfLastWordIsWord(b byte) bool {
-	return (b >= 'A' && b <= 'Z') || (b >= 'a' && b <= 'z')
+	return end - start
 }
