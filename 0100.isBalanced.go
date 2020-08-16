@@ -36,26 +36,20 @@ func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	return isBalancedSub(isBalancedDepth(root.Left), isBalancedDepth(root.Right)) <= 1 && isBalanced(root.Left) && isBalanced(root.Right)
+	left := isBalancedDepth(root.Left)
+	if left -= isBalancedDepth(root.Right); left < 0 {
+		left = -left
+	}
+	return left <= 1 && isBalanced(root.Left) && isBalanced(root.Right)
 }
 
-func isBalancedDepth(root *TreeNode) int {
+func isBalancedDepth(root *TreeNode) (ret int) {
 	if root == nil {
 		return 0
 	}
-	return isBalancedMax(isBalancedDepth(root.Left), isBalancedDepth(root.Right)) + 1
-}
-
-func isBalancedMax(x, y int) int {
-	if x > y {
-		return x
+	ret = isBalancedDepth(root.Left)
+	if v := isBalancedDepth(root.Right); v > ret {
+		ret = v
 	}
-	return y
-}
-
-func isBalancedSub(x, y int) int {
-	if y > x {
-		return y - x
-	}
-	return x - y
+	return ret + 1
 }
