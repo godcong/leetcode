@@ -26,5 +26,23 @@ package leetcode
 - 10 ^ 5 <= nums[i] <= 10 ^ 5
 */
 func checkPossibility(nums []int) bool {
-	panic("todo")
+	s := len(nums)
+	if s < 3 {
+		return true
+	}
+	fix := false
+	for i := 0; i < s-1; i++ {
+		if nums[i] > nums[i+1] {
+			if fix {
+				return false
+			}
+			fix = true
+			if i == 0 || nums[i+1] >= nums[i-1] {
+				nums[i] = nums[i+1]
+			} else {
+				nums[i+1] = nums[i]
+			}
+		}
+	}
+	return true
 }
