@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:41 ###  
+### 总完成:42 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
