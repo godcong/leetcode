@@ -34,30 +34,28 @@ E C   I H   N
 T     S     G
 */
 func convert(s string, numRows int) string {
+	if numRows == 1 {
+		return s
+	}
 	table := make([]string, numRows)
-	var i int
-	row := 0
-	reverse := false
 
+	i, row := 0, 0
+	reverse := false
 	for i = range s {
 		table[row] += string(s[i])
 		if !reverse {
-			if row+1 < numRows {
+			if row < numRows-1 {
 				row++
 				continue
 			}
-			if row > 0 {
-				row--
-			}
+			row--
 			reverse = true
 		} else {
 			if row > 0 {
 				row--
 				continue
 			}
-			if row+1 < numRows {
-				row++
-			}
+			row++
 			reverse = false
 		}
 	}
