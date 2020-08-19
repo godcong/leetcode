@@ -1,8 +1,6 @@
 package leetcode
 
-import (
-	"strings"
-)
+import "strings"
 
 /*
 6. Z 字形变换
@@ -37,27 +35,24 @@ func convert(s string, numRows int) string {
 	if numRows == 1 {
 		return s
 	}
-	table := make([]string, numRows)
 
-	i, row := 0, 0
-	reverse := false
-	for i = range s {
+	table := make([]string, numRows, numRows)
+	row, reverse := 0, false
+	for i := range s {
 		table[row] += string(s[i])
-		if !reverse {
-			if row < numRows-1 {
-				row++
-				continue
-			}
-			row--
-			reverse = true
-		} else {
+		if reverse {
 			if row > 0 {
 				row--
 				continue
 			}
-			row++
-			reverse = false
+			row, reverse = row+1, false
+			continue
 		}
+		if row < numRows-1 {
+			row++
+			continue
+		}
+		row, reverse = row-1, true
 	}
 	return strings.Join(table, "")
 }
