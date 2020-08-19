@@ -21,12 +21,13 @@ func longestPalindrome(s string) string {
 		return s
 	}
 	gmin, gmax := 0, 0
+	min, max := 0, 0
 	for i := 0; i < size; i++ {
-		if min, max := longestPalindromeMax(s, i, i); max-min > gmax-gmin {
+		if min, max = longestPalindromeMax(s, i, i); max-min > gmax-gmin {
 			gmax = max
 			gmin = min
 		}
-		if min, max := longestPalindromeMax(s, i, i+1); max-min > gmax-gmin {
+		if min, max = longestPalindromeMax(s, i, i+1); max-min > gmax-gmin {
 			gmax = max
 			gmin = min
 		}
