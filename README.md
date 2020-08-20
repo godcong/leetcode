@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:46 ###  
+### 总完成:49 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -57,6 +57,9 @@ All append into def.go
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1480.runningSum_test.go) |  
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1486.xorOperation_test.go) |  
 | 1512 | 好数对的数目 | numIdenticalPairs | [GO](https://github.com/godcong/leetcode/blob/master/1512.numIdenticalPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1512.numIdenticalPairs_test.go) |  
+| 1539 | 第 k 个缺失的正整数 | findKthPositive | [GO](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive_test.go) |  
+| 1544 | 整理字符串 | makeGood | [GO](https://github.com/godcong/leetcode/blob/master/1544.makeGood.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1544.makeGood_test.go) |  
+| 1550 | 存在连续三个奇数的数组 | threeConsecutiveOdds | [GO](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds_test.go) |  
 | Interview.02.03 | 删除中间节点 | deleteNode | [GO](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode_test.go) |  
 | LCP.6 | 拿硬币 | minCount | [GO](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount.go) | [TEST](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount_test.go) |  
 | Offer.10.i | 斐波那契数列 | fib | [GO](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib_test.go) |  
