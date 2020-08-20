@@ -42,7 +42,7 @@ s 只包含小写和大写英文字母
 func makeGood(s string) string {
 	tmp := []byte(s)
 	for i := 0; i < len(tmp)-1; {
-		if i >= 0 && (tmp[i]-'a' == tmp[i+1]-'A' || tmp[i]-'A' == tmp[i+1]-'a') {
+		if i >= 0 && (tmp[i]-tmp[i+1] == 32 || tmp[i+1]-tmp[i] == 32) {
 			tmp = append(tmp[:i], tmp[i+2:]...)
 			i--
 			continue
