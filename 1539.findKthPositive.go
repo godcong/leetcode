@@ -28,7 +28,11 @@ package leetcode
 对于所有 1 <= i < j <= arr.length 的 i 和 j 满足 arr[i] < arr[j]
 */
 func findKthPositive(arr []int, k int) int {
+	if arr[0] > k {
+		return k
+	}
 	i, count := 0, 1
+
 	for k != 0 {
 		if i < len(arr) && arr[i] == count {
 			i, count = i+1, count+1
