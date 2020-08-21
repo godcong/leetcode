@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:49 ###  
+### 总完成:50 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -35,6 +35,7 @@ All append into def.go
 | 0100 | 平衡二叉树 | isBalanced | [GO](https://github.com/godcong/leetcode/blob/master/0100.isBalanced.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isBalanced_test.go) |  
 | 0100 | 相同的树 | isSameTree | [GO](https://github.com/godcong/leetcode/blob/master/0100.isSameTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isSameTree_test.go) |  
 | 0109 | 有序链表转换二叉搜索树 | sortedListToBST | [GO](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST_test.go) |  
+| 0111 | 二叉树的最小深度 | minDepth | [GO](https://github.com/godcong/leetcode/blob/master/0111.minDepth.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0111.minDepth_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
