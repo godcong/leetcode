@@ -67,6 +67,15 @@ func judgePoint24Cal4(h, i, j, k float32) bool {
 	return false
 }
 
+func judgePoint24Cal2(a, b float32) bool {
+	for i := range calList {
+		if v := judgePoint24Cal(a, b, calList[i]); v < TargetMax && v > TargetMin {
+			return true
+		}
+	}
+	return false
+}
+
 func judgePoint24Cal(a, b float32, symb byte) float32 {
 	switch symb {
 	case '+':
@@ -83,18 +92,4 @@ func judgePoint24Cal(a, b float32, symb byte) float32 {
 		return b / a
 	}
 	return 0
-}
-
-func judgePoint24Cal2(a, b float32) bool {
-	switch {
-	case a+b < TargetMax && a+b > TargetMin:
-	case a*b < TargetMax && a*b > TargetMin:
-	case a-b < TargetMax && a-b > TargetMin:
-	case b-a < TargetMax && b-a > TargetMin:
-	case a/b < TargetMax && a/b > TargetMin:
-	case b/a < TargetMax && b/a > TargetMin:
-	default:
-		return false
-	}
-	return true
 }
