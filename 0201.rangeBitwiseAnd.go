@@ -14,6 +14,7 @@ package leetcode
 输出: 0
 */
 func rangeBitwiseAnd(m int, n int) int {
+	//Brian Kernighan 算法
 	for m < n {
 		n &= n - 1
 	}
