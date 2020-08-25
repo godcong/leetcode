@@ -17,6 +17,7 @@ import "math"
 给定数组中可能包含重复数字，相等的数字应该被视为递增的一种情况。
 */
 func findSubsequences(nums []int) [][]int {
+	//todo:optimize
 	var ans [][]int
 	var tmp []int
 	var dfs func(cur int, last int, nums []int)
