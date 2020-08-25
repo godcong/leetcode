@@ -37,45 +37,71 @@ package leetcode
 -30000 <= obstacle[i][1] <= 30000
 答案保证小于 2 ^ 31
 */
+const (
+	robotSimN = iota //北
+	robotSimS        //东
+	robotSimE        //南
+	robotSimW        //西
+)
 
 func robotSim(commands []int, obstacles [][]int) int {
 	current := [2]int{0, 0}
-	direction := byte('N')
-	robotSimDirection(direction, 0)
-	robotSimCoordinate(current, direction, 0)
-	//todo
-	return 0
-}
-func robotSimCoordinate(coordinate [2]int, b byte, n int) [2]int {
-	return coordinate
-}
-
-func robotSimDirection(b byte, n int) byte {
-	switch b {
-	case 'N': //北
-		if n == -1 {
-			return 'S'
-		} else if n == -2 {
-			return 'W'
+	direction := robotSimN
+	max := -1
+	obstaclesMap := make(map[[2]int]bool, len(obstacles))
+	for i := range obstacles {
+		obstaclesMap[[2]int{obstacles[i][0], obstacles[i][1]}] = true
+	}
+	var robotSimCoordinate func(d int, n int)
+	robotSimCoordinate = func(d int, n int) {
+		if n == 0 {
+			return
 		}
-	case 'W': //西
-		if n == -1 {
-			return 'N'
-		} else if n == -2 {
-			return 'E'
+		switch d {
+		case robotSimN:
+			if obstaclesMap[[2]int{current[0], current[1] + 1}] {
+				return
+			}
+			current[1]++
+		case robotSimW:
+			if obstaclesMap[[2]int{current[0] - 1, current[1]}] {
+				return
+			}
+			current[0]--
+		case robotSimE:
+			if obstaclesMap[[2]int{current[0], current[1] - 1}] {
+				return
+			}
+			current[1]--
+		case robotSimS:
+			if obstaclesMap[[2]int{current[0] + 1, current[1]}] {
+				return
+			}
+			current[0]++
 		}
-	case 'E': //南
-		if n == -1 {
-			return 'W'
-		} else if n == -2 {
-			return 'S'
-		}
-	case 'S': //东
-		if n == -1 {
-			return 'E'
-		} else if n == -2 {
-			return 'N'
+		robotSimCoordinate(d, n-1)
+	}
+	for i := range commands {
+		if commands[i] < 0 {
+			direction = robotSimDirection(direction, commands[i])
+		} else {
+			robotSimCoordinate(direction, commands[i])
+			max = robotSimDirectionMax(max, current[0]*current[0]+current[1]*current[1])
 		}
 	}
-	return 0
+	return max
+}
+
+func robotSimDirectionMax(old, new int) int {
+	if old > new {
+		return old
+	}
+	return new
+}
+
+func robotSimDirection(d int, n int) int {
+	if n == -2 {
+		return (d + 3) % 4
+	}
+	return (d + 1) % 4
 }
