@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:70 ###  
+### 总完成:71 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -77,6 +77,7 @@ All append into def.go
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1486.xorOperation_test.go) |  
 | 1496 | 判断路径是否相交 | isPathCrossing | [GO](https://github.com/godcong/leetcode/blob/master/1496.isPathCrossing.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1496.isPathCrossing_test.go) |  
 | 1502 | 判断能否形成等差数列 | canMakeArithmeticProgression | [GO](https://github.com/godcong/leetcode/blob/master/1502.canMakeArithmeticProgression.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1502.canMakeArithmeticProgression_test.go) |  
+| 1507 | 转变日期格式 | reformatDate | [GO](https://github.com/godcong/leetcode/blob/master/1507.reformatDate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1507.reformatDate_test.go) |  
 | 1512 | 好数对的数目 | numIdenticalPairs | [GO](https://github.com/godcong/leetcode/blob/master/1512.numIdenticalPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1512.numIdenticalPairs_test.go) |  
 | 1539 | 第 k 个缺失的正整数 | findKthPositive | [GO](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive_test.go) |  
 | 1544 | 整理字符串 | makeGood | [GO](https://github.com/godcong/leetcode/blob/master/1544.makeGood.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1544.makeGood_test.go) |  
