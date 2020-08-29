@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:71 ###  
+### 总完成:74 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -44,6 +44,8 @@ All append into def.go
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
+| 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
+| 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
 | 0459 | 重复的子字符串 | repeatedSubstringPattern | [GO](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern_test.go) |  
@@ -57,6 +59,7 @@ All append into def.go
 | 0617 | 合并二叉树 | mergeTrees | [GO](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees_test.go) |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum_test.go) |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings_test.go) |  
+| 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle_test.go) |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility_test.go) |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24_test.go) |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch_test.go) |  
