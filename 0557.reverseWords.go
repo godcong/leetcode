@@ -19,9 +19,8 @@ import "bytes"
 在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。
 */
 func reverseWords(s string) string {
-	size := len(s)
-	b := bytes.NewBuffer(nil)
 	sta := 0
+	b := bytes.NewBuffer(nil)
 	var reverseWordsRevere = func(end int) {
 		for end >= sta {
 			b.WriteByte(s[end])
@@ -36,6 +35,6 @@ func reverseWords(s string) string {
 			sta = i + 1
 		}
 	}
-	reverseWordsRevere(size - 1)
+	reverseWordsRevere(len(s) - 1)
 	return b.String()
 }
