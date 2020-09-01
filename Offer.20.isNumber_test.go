@@ -14,6 +14,20 @@ func Test_isNumber(t *testing.T) {
 		{
 			name: "",
 			args: args{
+				s: "1 ",
+			},
+			want: true,
+		},
+		{
+			name: "",
+			args: args{
+				s: ".2e81",
+			},
+			want: true,
+		},
+		{
+			name: "",
+			args: args{
 				s: "+100",
 			},
 			want: true,
