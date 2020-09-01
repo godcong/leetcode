@@ -29,23 +29,6 @@ const (
 	CharMax
 )
 
-func toCharType(ch byte) int {
-	switch ch {
-	case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
-		return CharNumber
-	case 'e', 'E':
-		return CharExp
-	case '.':
-		return CharPoint
-	case '+', '-':
-		return CharSign
-	case ' ':
-		return CharSpace
-	default:
-		return CharIllegal
-	}
-}
-
 var isNumberTransfer = [StateMax][CharMax]int{
 	StateInitial: {
 		CharSpace:  StateInitial,
@@ -92,15 +75,30 @@ var isNumberTransfer = [StateMax][CharMax]int{
 	},
 }
 
+func isNumberToCharType(ch byte) int {
+	switch ch {
+	case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+		return CharNumber
+	case 'e', 'E':
+		return CharExp
+	case '.':
+		return CharPoint
+	case '+', '-':
+		return CharSign
+	case ' ':
+		return CharSpace
+	default:
+		return CharIllegal
+	}
+}
+
 func isNumber(s string) bool {
-	state := StateInitial
+	st, ct := StateInitial, 0
 	for i := 0; i < len(s); i++ {
-		typ := toCharType(s[i])
-		if s := isNumberTransfer[state][typ]; s == 0 {
+		ct = isNumberToCharType(s[i])
+		if st = isNumberTransfer[st][ct]; st == 0 {
 			return false
-		} else {
-			state = isNumberTransfer[state][typ]
 		}
 	}
-	return state == StateInteger || state == StatePoint || state == StateFraction || state == StateExpNumber || state == StateEnd
+	return st == StateInteger || st == StatePoint || st == StateFraction || st == StateExpNumber || st == StateEnd
 }
