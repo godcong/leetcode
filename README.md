@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:80 ###  
+### 总完成:79 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -29,8 +29,8 @@ All append into def.go
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0043 | 字符串相乘 | multiply | [GO](https://github.com/godcong/leetcode/blob/master/0043.multiply.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0043.multiply_test.go) |  
-| 0051 | N 皇后 | solveNQueens | [GO](https://github.com/godcong/leetcode/blob/master/0051.solveNQueens.go) | TEST |  
 | 0058 | 最后一个单词的长度 | lengthOfLastWord | [GO](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord_test.go) |  
+| 0060 | 第k个排列 | getPermutation | [GO](https://github.com/godcong/leetcode/blob/master/0060.getPermutation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0060.getPermutation_test.go) |  
 | 0067 | 二进制求和 | addBinary | [GO](https://github.com/godcong/leetcode/blob/master/0067.addBinary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0067.addBinary_test.go) |  
 | 0070 | 爬楼梯 | climbStairs | [GO](https://github.com/godcong/leetcode/blob/master/0070.climbStairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0070.climbStairs_test.go) |  
 | 0093 | 复原IP地址 | restoreIpAddresses | [GO](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses_test.go) |  
@@ -46,7 +46,6 @@ All append into def.go
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
-| 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
