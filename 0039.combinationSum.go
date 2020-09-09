@@ -45,16 +45,19 @@ func combinationSum(candidates []int, target int) [][]int {
 			return
 		}
 		if i == 0 {
-			ret = append(ret, c)
-			return
-		}
-		for sta := begin; sta < len(candidates); sta++ {
 			tmp := make([]int, len(c))
 			copy(tmp, c)
-			tmp = append(tmp, candidates[sta])
-			combinationSumDFS(tmp, sta, i-candidates[sta])
+			ret = append(ret, tmp)
+			return
+		}
+		c = append(c, 0)
+		lens := len(c) - 1
+		for sta := begin; sta < len(candidates); sta++ {
+			c[lens-1] = candidates[sta]
+			combinationSumDFS(c, sta, i-candidates[sta])
 		}
 	}
+
 	combinationSumDFS(nil, 0, target)
 	return ret
 }
