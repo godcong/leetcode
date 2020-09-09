@@ -53,7 +53,7 @@ func combinationSum(candidates []int, target int) [][]int {
 		c = append(c, 0)
 		lens := len(c) - 1
 		for sta := begin; sta < len(candidates); sta++ {
-			c[lens-1] = candidates[sta]
+			c[lens] = candidates[sta]
 			combinationSumDFS(c, sta, i-candidates[sta])
 		}
 	}
