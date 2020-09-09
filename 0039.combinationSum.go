@@ -38,23 +38,21 @@ candidate 中的每个元素都是独一无二的。
 */
 func combinationSum(candidates []int, target int) [][]int {
 	var ret [][]int
-
 	var combinationSumDFS func([]int, int, int)
 	combinationSumDFS = func(c []int, begin, i int) {
-		if i < 0 {
-			return
-		}
 		if i == 0 {
-			tmp := make([]int, len(c))
+			tmp := make([]int, len(c), len(c))
 			copy(tmp, c)
 			ret = append(ret, tmp)
 			return
 		}
 		c = append(c, 0)
-		lens := len(c) - 1
-		for sta := begin; sta < len(candidates); sta++ {
-			c[lens] = candidates[sta]
-			combinationSumDFS(c, sta, i-candidates[sta])
+		for ; begin < len(candidates); begin++ {
+			if i-candidates[begin] < 0 {
+				continue
+			}
+			c[len(c)-1] = candidates[begin]
+			combinationSumDFS(c, begin, i-candidates[begin])
 		}
 	}
 
