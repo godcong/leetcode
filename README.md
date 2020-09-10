@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:85 ###  
+### 总完成:86 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -29,6 +29,7 @@ All append into def.go
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
+| 0040 | 组合总和 II | combinationSum2 | [GO](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2_test.go) |  
 | 0043 | 字符串相乘 | multiply | [GO](https://github.com/godcong/leetcode/blob/master/0043.multiply.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0043.multiply_test.go) |  
 | 0051 | N 皇后 | solveNQueens | [GO](https://github.com/godcong/leetcode/blob/master/0051.solveNQueens.go) | TEST |  
 | 0058 | 最后一个单词的长度 | lengthOfLastWord | [GO](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord_test.go) |  
