@@ -41,14 +41,12 @@ func combinationSum(candidates []int, target int) [][]int {
 	var combinationSumDFS func([]int, int, int)
 	combinationSumDFS = func(c []int, begin, i int) {
 		if i == 0 {
-			tmp := make([]int, len(c), len(c))
-			copy(tmp, c)
-			ret = append(ret, tmp)
+			ret = append(ret, append([]int{}, c...))
 			return
 		}
 		c = append(c, 0)
 		for ; begin < len(candidates); begin++ {
-			if i-candidates[begin] < 0 {
+			if i < candidates[begin] {
 				continue
 			}
 			c[len(c)-1] = candidates[begin]
