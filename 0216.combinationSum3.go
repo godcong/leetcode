@@ -19,26 +19,27 @@ package leetcode
 */
 func combinationSum3(k int, n int) [][]int {
 	var ret [][]int
-	var combinationSum3DFS func([]int, int, int)
-	combinationSum3DFS = func(c []int, begin, t int) {
-		if t == 0 && len(c) == k {
+	var combinationSum3DFS func([]int, int, int, int)
+	combinationSum3DFS = func(c []int, idx, begin, t int) {
+		if t == 0 && idx == k {
 			ret = append(ret, append([]int{}, c...))
 			return
 		}
-		if len(c) >= k {
+		if idx >= k {
 			return
 		}
-		c = append(c, 0)
+		if c == nil {
+			c = make([]int, k, k)
+		}
 		for i := begin; i <= 9; i++ {
 			if i > t {
 				return
 			}
-			c[len(c)-1] = i
-			combinationSum3DFS(c, i+1, t-i)
+			c[idx] = i
+			combinationSum3DFS(c, idx+1, i+1, t-i)
 		}
 	}
 
-	combinationSum3DFS(nil, 1, n)
+	combinationSum3DFS(nil, 0, 1, n)
 	return ret
-
 }

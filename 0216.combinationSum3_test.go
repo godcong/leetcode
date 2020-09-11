@@ -35,6 +35,14 @@ func Test_combinationSum3(t *testing.T) {
 				{1, 2, 6}, {1, 3, 5}, {2, 3, 4},
 			},
 		},
+		{
+			name: "",
+			args: args{
+				k: 4,
+				n: 54,
+			},
+			want: nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
