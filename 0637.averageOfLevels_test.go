@@ -14,7 +14,6 @@ func Test_averageOfLevels(t *testing.T) {
 		args args
 		want []float64
 	}{
-		// TODO: Add test cases.
 		{
 			name: "",
 			args: args{
