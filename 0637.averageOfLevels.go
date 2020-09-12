@@ -26,7 +26,7 @@ package leetcode
 type data struct{ sum, count int }
 
 func averageOfLevels(root *TreeNode) []float64 {
-	levelData := []data{}
+	var levelData []data
 	var dfs func(node *TreeNode, level int)
 	dfs = func(node *TreeNode, level int) {
 		if node == nil {
