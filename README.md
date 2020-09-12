@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:87 ###  
+### 总完成:88 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -69,6 +69,7 @@ All append into def.go
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers_test.go) |  
 | 0617 | 合并二叉树 | mergeTrees | [GO](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees_test.go) |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum_test.go) |  
+| 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels_test.go) |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings_test.go) |  
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle_test.go) |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility_test.go) |  
