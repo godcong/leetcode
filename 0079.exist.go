@@ -29,7 +29,41 @@ board 和 word 中只包含大写和小写英文字母。
 1 <= board[i].length <= 200
 1 <= word.length <= 10^3
 */
+type existPair struct{ x, y int }
+
+var directions = []existPair{{-1, 0}, {1, 0}, {0, -1}, {0, 1}} // 上下左右
 
 func exist(board [][]byte, word string) bool {
+	h, w := len(board), len(board[0])
+	vis := make([]bool, h*w)
+	var checkExist func(i, j, k int) bool
+	checkExist = func(i, j, k int) bool {
+		if board[i][j] != word[k] { // 剪枝：当前字符不匹配
+			return false
+		}
+		if k == len(word)-1 { // 单词存在于网格中
+			return true
+		}
+		vis[i*w+j] = true
+		for _, dir := range directions {
+			newI, newJ := i+dir.x, j+dir.y
+			if 0 <= newI && newI < h && 0 <= newJ && newJ < w {
+				if !vis[newI*w+newJ] {
+					if checkExist(newI, newJ, k+1) {
+						return true
+					}
+				}
+			}
+		}
+		vis[i*w+j] = false
+		return false
+	}
+	for i, row := range board {
+		for j := range row {
+			if checkExist(i, j, 0) {
+				return true
+			}
+		}
+	}
 	return false
 }
