@@ -33,16 +33,18 @@ Note:
 func solveSudoku(board [][]byte) {
 	var line, column, block [9][9]bool
 	var spaces [81]bool
+	var x, y int
 	for step := 0; step < 81; step++ {
-		b := board[step/9][step%9]
-		if b == '.' {
+		x, y = step/9, step%9
+		blockNum := (x / 3 * 3) + (y)/3
+		if board[x][y] == '.' {
 			spaces[step] = true
 			continue
 		}
-		num := b - '1'
-		blockNum := (step / 9 / 3 * 3) + (step%9)/3
-		line[step/9][num] = true
-		column[step%9][num] = true
+		num := board[x][y] - '1'
+
+		line[x][num] = true
+		column[y][num] = true
 		block[blockNum][num] = true
 	}
 
@@ -59,7 +61,7 @@ func solveSudoku(board [][]byte) {
 		}
 
 		x, y := pos/9, pos%9
-		blockNum := (pos / 9 / 3 * 3) + (pos%9)/3
+		blockNum := (x / 3 * 3) + (y)/3
 		for digit := byte(0); digit < 9; digit++ {
 			if !line[x][digit] && !column[y][digit] && !block[blockNum][digit] {
 				line[x][digit] = true
