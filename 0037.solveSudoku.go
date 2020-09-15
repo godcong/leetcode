@@ -31,26 +31,26 @@ Note:
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
 func solveSudoku(board [][]byte) {
-	var line, column, block [9][9]bool
+	var line, column [9][9]bool
+	var block [3][3][9]bool
 	var spaces [81]bool
-	var x, y int
-	for step := 0; step < 81; step++ {
+	var x, y byte
+	var num byte
+	for step := byte(0); step < 81; step++ {
 		x, y = step/9, step%9
-		blockNum := (x / 3 * 3) + (y)/3
 		if board[x][y] == '.' {
 			spaces[step] = true
 			continue
 		}
-		num := board[x][y] - '1'
-
+		num = board[x][y] - '1'
 		line[x][num] = true
 		column[y][num] = true
-		block[blockNum][num] = true
+		block[x/3][y/3][num] = true
 	}
 
-	var solveSudokuDFS func(int) bool
-	solveSudokuDFS = func(pos int) bool {
-		if pos == len(spaces) {
+	var solveSudokuDFS func(byte) bool
+	solveSudokuDFS = func(pos byte) bool {
+		if pos == 81 {
 			return true
 		}
 		if !spaces[pos] {
@@ -59,21 +59,19 @@ func solveSudoku(board [][]byte) {
 			}
 			return false
 		}
-
 		x, y := pos/9, pos%9
-		blockNum := (x / 3 * 3) + (y)/3
 		for digit := byte(0); digit < 9; digit++ {
-			if !line[x][digit] && !column[y][digit] && !block[blockNum][digit] {
+			if !line[x][digit] && !column[y][digit] && !block[x/3][y/3][digit] {
 				line[x][digit] = true
 				column[y][digit] = true
-				block[blockNum][digit] = true
+				block[x/3][y/3][digit] = true
 				board[x][y] = digit + '1'
 				if solveSudokuDFS(pos + 1) {
 					return true
 				}
 				line[x][digit] = false
 				column[y][digit] = false
-				block[blockNum][digit] = false
+				block[x/3][y/3][digit] = false
 			}
 		}
 		return false
