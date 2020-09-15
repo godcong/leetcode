@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:89 ###  
+### 总完成:91 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -28,6 +28,7 @@ All append into def.go
 | 0017 | 电话号码的字母组合 | letterCombinations | [GO](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations_test.go) |  
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
+| 0037 | 解数独 | solveSudoku | [GO](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku_test.go) |  
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
 | 0040 | 组合总和 II | combinationSum2 | [GO](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2_test.go) |  
 | 0043 | 字符串相乘 | multiply | [GO](https://github.com/godcong/leetcode/blob/master/0043.multiply.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0043.multiply_test.go) |  
@@ -39,6 +40,7 @@ All append into def.go
 | 0077 | 组合 | combine | [GO](https://github.com/godcong/leetcode/blob/master/0077.combine.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0077.combine_test.go) |  
 | 0079 | 单词搜索 | exist | [GO](https://github.com/godcong/leetcode/blob/master/0079.exist.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0079.exist_test.go) |  
 | 0093 | 复原IP地址 | restoreIpAddresses | [GO](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses_test.go) |  
+| 0094 | 二叉树的中序遍历 | inorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal_test.go) |  
 | 0099 | 恢复二叉搜索树 | recoverTree | [GO](https://github.com/godcong/leetcode/blob/master/0099.recoverTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0099.recoverTree_test.go) |  
 | 0100 | 平衡二叉树 | isBalanced | [GO](https://github.com/godcong/leetcode/blob/master/0100.isBalanced.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isBalanced_test.go) |  
 | 0100 | 相同的树 | isSameTree | [GO](https://github.com/godcong/leetcode/blob/master/0100.isSameTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isSameTree_test.go) |  
