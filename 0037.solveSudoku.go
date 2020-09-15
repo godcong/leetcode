@@ -32,18 +32,18 @@ Note:
 */
 func solveSudoku(board [][]byte) {
 	var line, column, block [9][9]bool
-	var spaces [][2]int
-	for x := range board {
-		for y := range board[x] {
-			if board[x][y] == '.' {
-				spaces = append(spaces, [2]int{x, y})
-			} else {
-				digit := board[x][y] - '1'
-				line[x][digit] = true
-				column[y][digit] = true
-				block[solveSudokuBlockIndex(x, y)][digit] = true
-			}
+	var spaces [81]bool
+	for step := 0; step < 81; step++ {
+		b := board[step/9][step%9]
+		if b == '.' {
+			spaces[step] = true
+			continue
 		}
+		num := b - '1'
+		blockNum := (step / 9 / 3 * 3) + (step%9)/3
+		line[step/9][num] = true
+		column[step%9][num] = true
+		block[blockNum][num] = true
 	}
 
 	var solveSudokuDFS func(int) bool
@@ -51,46 +51,30 @@ func solveSudoku(board [][]byte) {
 		if pos == len(spaces) {
 			return true
 		}
-		x, y := spaces[pos][0], spaces[pos][1]
+		if !spaces[pos] {
+			if solveSudokuDFS(pos + 1) {
+				return true
+			}
+			return false
+		}
+
+		x, y := pos/9, pos%9
+		blockNum := (pos / 9 / 3 * 3) + (pos%9)/3
 		for digit := byte(0); digit < 9; digit++ {
-			if !line[x][digit] && !column[y][digit] && !block[solveSudokuBlockIndex(x, y)][digit] {
+			if !line[x][digit] && !column[y][digit] && !block[blockNum][digit] {
 				line[x][digit] = true
 				column[y][digit] = true
-				block[solveSudokuBlockIndex(x, y)][digit] = true
+				block[blockNum][digit] = true
 				board[x][y] = digit + '1'
 				if solveSudokuDFS(pos + 1) {
 					return true
 				}
 				line[x][digit] = false
 				column[y][digit] = false
-				block[solveSudokuBlockIndex(x, y)][digit] = false
+				block[blockNum][digit] = false
 			}
 		}
 		return false
 	}
 	solveSudokuDFS(0)
-}
-
-func solveSudokuBlockIndex(x, y int) int {
-	switch {
-	case x < 3 && y < 3:
-		return 0
-	case x >= 3 && x < 6 && y < 3:
-		return 1
-	case x >= 6 && y < 3:
-		return 2
-	case x < 3 && y >= 3 && y < 6:
-		return 3
-	case x >= 3 && x < 6 && y >= 3 && y < 6:
-		return 4
-	case x >= 6 && y >= 3 && y < 6:
-		return 5
-	case x < 3 && y >= 6:
-		return 6
-	case x >= 3 && x < 6 && y >= 6:
-		return 7
-	case x >= 6 && y >= 6:
-		return 8
-	}
-	return -1
 }
