@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:91 ###  
+### 总完成:92 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -55,6 +55,7 @@ All append into def.go
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3_test.go) |  
+| 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0226.invertTree_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
