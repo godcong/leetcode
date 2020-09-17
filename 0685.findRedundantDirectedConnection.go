@@ -37,13 +37,12 @@ func findRedundantDirectedConnection(edges [][]int) []int {
 	numNodes := len(edges)
 	a := newAncestor(numNodes + 1)
 	parent := make([]int, numNodes+1)
-	for i := range parent {
-		parent[i] = i
-	}
+	copy(parent, a)
 
+	var from, to int
 	var conflictEdge, cycleEdge []int
 	for _, edge := range edges {
-		from, to := edge[0], edge[1]
+		from, to = edge[0], edge[1]
 		if parent[to] != to {
 			conflictEdge = edge
 		} else {
