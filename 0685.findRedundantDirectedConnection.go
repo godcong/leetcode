@@ -34,5 +34,54 @@ v   v
 二维数组中的每个整数在1到N之间，其中 N 是二维数组的大小。
 */
 func findRedundantDirectedConnection(edges [][]int) []int {
-	return nil
+	numNodes := len(edges)
+	a := newAncestor(numNodes + 1)
+	parent := make([]int, numNodes+1)
+	for i := range parent {
+		parent[i] = i
+	}
+
+	var conflictEdge, cycleEdge []int
+	for _, edge := range edges {
+		from, to := edge[0], edge[1]
+		if parent[to] != to {
+			conflictEdge = edge
+		} else {
+			parent[to] = from
+			if a.find(from) == a.find(to) {
+				cycleEdge = edge
+			} else {
+				a.union(from, to)
+			}
+		}
+	}
+
+	if conflictEdge == nil {
+		return cycleEdge
+	}
+	if cycleEdge != nil {
+		return []int{parent[conflictEdge[1]], conflictEdge[1]}
+	}
+	return conflictEdge
+}
+
+type ancestor []int
+
+func newAncestor(n int) ancestor {
+	ancestor := make([]int, n)
+	for i := 0; i < n; i++ {
+		ancestor[i] = i
+	}
+	return ancestor
+}
+
+func (a ancestor) find(x int) int {
+	if a[x] != x {
+		a[x] = a.find(a[x])
+	}
+	return a[x]
+}
+
+func (a ancestor) union(from, to int) {
+	a[a.find(from)] = a.find(to)
 }
