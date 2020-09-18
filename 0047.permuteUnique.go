@@ -15,5 +15,26 @@ package leetcode
 ]
 */
 func permuteUnique(nums []int) [][]int {
-	return nil
+	var ret [][]int
+	var permuteUniqueDFS func(int)
+	permuteUniqueDFS = func(cur int) {
+		if cur == len(nums) {
+			res := make([]int, len(nums))
+			copy(res, nums[:])
+			ret = append(ret, res)
+			return
+		}
+		for i := cur; i < len(nums); i++ {
+			for j := cur; j < i; j++ {
+				if nums[j] == nums[i] {
+					break
+				}
+			}
+			nums[i], nums[cur] = nums[cur], nums[i]
+			permuteUniqueDFS(cur + 1)
+			nums[i], nums[cur] = nums[cur], nums[i]
+		}
+	}
+	permuteUniqueDFS(0)
+	return ret
 }
