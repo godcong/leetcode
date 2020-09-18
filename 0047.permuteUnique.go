@@ -19,15 +19,14 @@ func permuteUnique(nums []int) [][]int {
 	var permuteUniqueDFS func(int)
 	permuteUniqueDFS = func(cur int) {
 		if cur == len(nums) {
-			res := make([]int, len(nums))
-			copy(res, nums[:])
-			ret = append(ret, res)
+			ret = append(ret, append([]int{}, nums...))
 			return
 		}
+	Loop:
 		for i := cur; i < len(nums); i++ {
 			for j := cur; j < i; j++ {
 				if nums[j] == nums[i] {
-					break
+					continue Loop
 				}
 			}
 			nums[i], nums[cur] = nums[cur], nums[i]
