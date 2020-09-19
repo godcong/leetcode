@@ -16,18 +16,12 @@ package leetcode
 */
 func sumOfLeftLeaves(root *TreeNode) int {
 	var ret int
-	var sumOfLeftLeaves func(*TreeNode)
-	sumOfLeftLeaves = func(node *TreeNode) {
-		if node == nil {
-			return
-		}
-		if node.Left != nil && node.Left.Left == nil && node.Left.Right == nil {
-			ret += node.Left.Val
-		}
-
-		sumOfLeftLeaves(node.Left)
-		sumOfLeftLeaves(node.Right)
+	if root == nil {
+		return 0
 	}
-	sumOfLeftLeaves(root)
-	return ret
+	if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil {
+		ret += root.Left.Val
+	}
+
+	return ret + sumOfLeftLeaves(root.Left) + sumOfLeftLeaves(root.Right)
 }
