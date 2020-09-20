@@ -22,5 +22,16 @@ package leetcode
 ]
 */
 func subsets(nums []int) [][]int {
-	return nil
+	n := len(nums)
+	var ret [][]int
+	for mask := 0; mask < 1<<n; mask++ {
+		var set []int
+		for i, v := range nums {
+			if mask>>i&1 > 0 {
+				set = append(set, v)
+			}
+		}
+		ret = append(ret, append([]int(nil), set...))
+	}
+	return ret
 }
