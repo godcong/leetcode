@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:92 ###  
+### 总完成:95 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -38,6 +38,7 @@ All append into def.go
 | 0067 | 二进制求和 | addBinary | [GO](https://github.com/godcong/leetcode/blob/master/0067.addBinary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0067.addBinary_test.go) |  
 | 0070 | 爬楼梯 | climbStairs | [GO](https://github.com/godcong/leetcode/blob/master/0070.climbStairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0070.climbStairs_test.go) |  
 | 0077 | 组合 | combine | [GO](https://github.com/godcong/leetcode/blob/master/0077.combine.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0077.combine_test.go) |  
+| 0078 | 子集 | subsets | [GO](https://github.com/godcong/leetcode/blob/master/0078.subsets.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0078.subsets_test.go) |  
 | 0079 | 单词搜索 | exist | [GO](https://github.com/godcong/leetcode/blob/master/0079.exist.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0079.exist_test.go) |  
 | 0093 | 复原IP地址 | restoreIpAddresses | [GO](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses_test.go) |  
 | 0094 | 二叉树的中序遍历 | inorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal_test.go) |  
@@ -60,6 +61,7 @@ All append into def.go
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
+| 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
 | 0459 | 重复的子字符串 | repeatedSubstringPattern | [GO](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern_test.go) |  
 | 0461 | 汉明距离 | hammingDistance | [GO](https://github.com/godcong/leetcode/blob/master/0461.hammingDistance.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0461.hammingDistance_test.go) |  
@@ -78,6 +80,7 @@ All append into def.go
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle_test.go) |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility_test.go) |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24_test.go) |  
+| 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection_test.go) |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch_test.go) |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
