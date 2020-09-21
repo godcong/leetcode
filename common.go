@@ -1,5 +1,7 @@
 package leetcode
 
+import "testing"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -36,4 +38,17 @@ type Node struct {
 type ListNode struct {
 	Val  int
 	Next *ListNode
+}
+
+func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
+	if root.Left != nil {
+		treeNodeDeepEqual(t, root.Left, want.Left)
+	}
+	if root.Right != nil {
+		treeNodeDeepEqual(t, root.Right, want.Right)
+	}
+	if root.Val != want.Val {
+		t.Errorf("recoverTree() = %v, want %v", root.Val, want.Val)
+	}
+	return true
 }
