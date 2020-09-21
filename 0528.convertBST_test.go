@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"reflect"
 	"testing"
 )
 
@@ -33,41 +32,49 @@ func Test_convertBST(t *testing.T) {
 			name: "",
 			args: args{
 				root: &TreeNode{
-					Val: 5,
+					Val: 2,
 					Left: &TreeNode{
-						Val: 6,
+						Val: 0,
 						Left: &TreeNode{
-							Val:   3,
+							Val:   -4,
 							Left:  nil,
 							Right: nil,
 						},
 						Right: &TreeNode{
-							Val:   2,
+							Val:   1,
 							Left:  nil,
 							Right: nil,
 						},
 					},
 					Right: &TreeNode{
 						Val: 3,
-						Left: &TreeNode{
-							Val:   6,
-							Left:  nil,
-							Right: nil,
-						},
 					},
 				},
 			},
 			want: &TreeNode{
-				Val:   18,
-				Left:  &TreeNode{Val: 20},
-				Right: &TreeNode{Val: 13},
+				Val: 5,
+				Left: &TreeNode{
+					Val: 6,
+					Left: &TreeNode{
+						Val:   2,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val:   6,
+						Left:  nil,
+						Right: nil,
+					},
+				},
+				Right: &TreeNode{
+					Val: 3,
+				},
 			},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := convertBST(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				deepEqual(t, got, tt.want)
+			if got := convertBST(tt.args.root); !treeNodeDeepEqual(t, got, tt.want) {
 				t.Errorf("convertBST() = %v, want %v", got, tt.want)
 			}
 		})
