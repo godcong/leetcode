@@ -19,17 +19,16 @@ package leetcode
           20     13
 */
 func convertBST(root *TreeNode) *TreeNode {
-	if root == nil {
-		return nil
+	total := 0
+	var convertBSTDFS func(*TreeNode)
+	convertBSTDFS = func(node *TreeNode) {
+		if node != nil {
+			convertBSTDFS(node.Right)
+			total += node.Val
+			node.Val = total
+			convertBSTDFS(node.Left)
+		}
 	}
-
-	if root.Right != nil {
-		convertBST(root.Right)
-		root.Val += root.Right.Val
-	}
-	if root.Left != nil {
-		convertBST(root.Left)
-		root.Left.Val += root.Val
-	}
+	convertBSTDFS(root)
 	return root
 }

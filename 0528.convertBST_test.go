@@ -36,14 +36,10 @@ func Test_convertBST(t *testing.T) {
 					Left: &TreeNode{
 						Val: 0,
 						Left: &TreeNode{
-							Val:   -4,
-							Left:  nil,
-							Right: nil,
+							Val: -4,
 						},
 						Right: &TreeNode{
-							Val:   1,
-							Left:  nil,
-							Right: nil,
+							Val: 1,
 						},
 					},
 					Right: &TreeNode{
@@ -56,14 +52,10 @@ func Test_convertBST(t *testing.T) {
 				Left: &TreeNode{
 					Val: 6,
 					Left: &TreeNode{
-						Val:   2,
-						Left:  nil,
-						Right: nil,
+						Val: 2,
 					},
 					Right: &TreeNode{
-						Val:   6,
-						Left:  nil,
-						Right: nil,
+						Val: 6,
 					},
 				},
 				Right: &TreeNode{
