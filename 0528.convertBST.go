@@ -19,5 +19,17 @@ package leetcode
           20     13
 */
 func convertBST(root *TreeNode) *TreeNode {
-	return nil
+	if root == nil {
+		return nil
+	}
+
+	if root.Right != nil {
+		convertBST(root.Right)
+		root.Val += root.Right.Val
+	}
+	if root.Left != nil {
+		convertBST(root.Left)
+		root.Left.Val += root.Val
+	}
+	return root
 }
