@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 	"testing"
@@ -44,16 +45,38 @@ type ListNode struct {
 	Next *ListNode
 }
 
+func treeNodeDeepPrint(root *TreeNode) {
+	fmt.Println(getTreeNodeIntArray(root))
+}
+
+func getTreeNodeIntArray(root *TreeNode) []string {
+	var ret []string
+	ret = append(ret, strconv.Itoa(root.Val))
+	if root.Left != nil {
+		ret = append(ret, getTreeNodeIntArray(root.Left)...)
+	} else {
+		ret = append(ret, "null")
+	}
+	if root.Right != nil {
+		ret = append(ret, getTreeNodeIntArray(root.Right)...)
+	} else {
+		//ret = append(ret, "null")
+	}
+	return ret
+}
+
 func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
 	if root == nil {
 		return root == want
 	}
 
-	if root.Left != nil {
-		treeNodeDeepEqual(t, root.Left, want.Left)
+	if !treeNodeDeepEqual(t, root.Left, want.Left) {
+		t.Errorf("recoverTree(Left) = %v, want %v", root.Left, want.Left)
+		return false
 	}
-	if root.Right != nil {
-		treeNodeDeepEqual(t, root.Right, want.Right)
+	if !treeNodeDeepEqual(t, root.Right, want.Right) {
+		t.Errorf("recoverTree(Right) = %v, want %v", root.Right, want.Right)
+		return false
 	}
 	if root.Val != want.Val {
 		t.Errorf("recoverTree() = %v, want %v", root.Val, want.Val)
@@ -73,7 +96,7 @@ func strToTreeNode(nums string) *TreeNode {
 	}
 
 	sNums := strings.Split(nums[sta:end], ",")
-
+	fmt.Println(sNums)
 	nodes := make([]*TreeNode, len(sNums))
 	for idx, num := range sNums {
 		if num == strings.ToLower("null") || num == "" {
@@ -84,17 +107,27 @@ func strToTreeNode(nums string) *TreeNode {
 		nodes[idx] = &TreeNode{Val: i}
 	}
 	for i := range sNums {
+		if nodes[i] == nil && i+1 < len(sNums) {
+			strToTreeNodeDFS(nodes[i+1], i*2+1, nodes)
+			continue
+		}
 		strToTreeNodeDFS(nodes[i], i*2+1, nodes)
 	}
 	return nodes[0]
 }
 
 func strToTreeNodeDFS(node *TreeNode, idx int, nodes []*TreeNode) {
-	if node == nil || idx > len(nodes)-1 {
+	if node == nil {
 		return
 	}
-	node.Left = nodes[idx]
-	node.Right = nodes[idx+1]
+	if idx < len(nodes) {
+		node.Left = nodes[idx]
+		idx++
+	}
+	if idx < len(nodes) {
+		node.Right = nodes[idx]
+		idx++
+	}
 }
 
 func throughErrorPanic(err error) {

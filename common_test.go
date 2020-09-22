@@ -128,6 +128,25 @@ func Test_strToTreeNode(t *testing.T) {
 				Right: nil,
 			},
 		},
+		{
+			name: "",
+			args: args{
+				nums: "[1,null,2,3]",
+			},
+			want: &TreeNode{
+				Val:  1,
+				Left: nil,
+				Right: &TreeNode{
+					Val: 2,
+					Left: &TreeNode{
+						Val:   3,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: nil,
+				},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

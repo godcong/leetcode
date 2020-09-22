@@ -17,15 +17,7 @@ func Test_inorderTraversal(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
+				root: strToTreeNode("[1,null,2,3]"),
 			},
 			want: []int{1, 3, 2},
 		},
