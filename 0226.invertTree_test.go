@@ -17,19 +17,7 @@ func Test_invertTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 4,
-					Left: &TreeNode{
-						Val:   2,
-						Left:  &TreeNode{Val: 1},
-						Right: &TreeNode{Val: 3},
-					},
-					Right: &TreeNode{
-						Val:   7,
-						Left:  &TreeNode{Val: 6},
-						Right: &TreeNode{Val: 9},
-					},
-				},
+				root: strToTreeNode("[4,2,7,1,3,6,9]"),
 			},
 			want: &TreeNode{
 				Val: 4,
