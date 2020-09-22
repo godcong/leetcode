@@ -36,6 +36,98 @@ func Test_strToTreeNode(t *testing.T) {
 				Right: nil,
 			},
 		},
+		{
+			name: "",
+			args: args{
+				nums: "0,0,null,0,0]",
+			},
+			want: &TreeNode{
+				Val: 0,
+				Left: &TreeNode{
+					Val: 0,
+					Left: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+				},
+				Right: nil,
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nums: "0,0,null,0,0",
+			},
+			want: &TreeNode{
+				Val: 0,
+				Left: &TreeNode{
+					Val: 0,
+					Left: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+				},
+				Right: nil,
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nums: "0,0,null,0,0,",
+			},
+			want: &TreeNode{
+				Val: 0,
+				Left: &TreeNode{
+					Val: 0,
+					Left: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+				},
+				Right: nil,
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nums: "0,0,null,0,0,",
+			},
+			want: &TreeNode{
+				Val: 0,
+				Left: &TreeNode{
+					Val: 0,
+					Left: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val:   0,
+						Left:  nil,
+						Right: nil,
+					},
+				},
+				Right: nil,
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

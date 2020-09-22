@@ -78,7 +78,7 @@ func strToTreeNode(nums string) *TreeNode {
 
 	nodes := make([]*TreeNode, len(sNums))
 	for idx, num := range sNums {
-		if num == strings.ToLower("null") {
+		if num == strings.ToLower("null") || num == "" {
 			continue
 		}
 		i, err := strconv.Atoi(num)
