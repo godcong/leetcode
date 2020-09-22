@@ -134,6 +134,9 @@ func strToTreeNode(nums string) *TreeNode {
 		}
 		idx++
 		if idx < len(sNums) {
+			if nodes[idx] == nil && nodes[idx-1] == nil {
+				next -= 2
+			}
 			nodes[i].Right = nodes[idx]
 		}
 	}

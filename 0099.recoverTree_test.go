@@ -16,72 +16,16 @@ func Test_recoverTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val:  3,
-						Left: nil,
-						Right: &TreeNode{
-							Val:   2,
-							Left:  nil,
-							Right: nil,
-						},
-					},
-					Right: nil,
-				},
+				root: strToTreeNode("[1,3,null,null,2]"),
 			},
-			want: &TreeNode{
-				Val: 3,
-				Left: &TreeNode{
-					Val:  1,
-					Left: nil,
-					Right: &TreeNode{
-						Val:   2,
-						Left:  nil,
-						Right: nil,
-					},
-				},
-				Right: nil,
-			},
+			want: strToTreeNode("[3,1,null,null,2]"),
 		},
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 3,
-					Left: &TreeNode{
-						Val:   1,
-						Left:  nil,
-						Right: nil,
-					},
-					Right: &TreeNode{
-						Val: 4,
-						Left: &TreeNode{
-							Val:   2,
-							Left:  nil,
-							Right: nil,
-						},
-						Right: nil,
-					},
-				},
+				root: strToTreeNode("[3,1,4,null,null,2]"),
 			},
-			want: &TreeNode{
-				Val: 2,
-				Left: &TreeNode{
-					Val:   1,
-					Left:  nil,
-					Right: nil,
-				},
-				Right: &TreeNode{
-					Val: 4,
-					Left: &TreeNode{
-						Val:   3,
-						Left:  nil,
-						Right: nil,
-					},
-					Right: nil,
-				},
-			},
+			want: strToTreeNode("[2,1,4,null,null,3]"),
 		},
 	}
 	for _, tt := range tests {
