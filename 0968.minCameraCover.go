@@ -32,18 +32,16 @@ import "math"
 给定树的节点数的范围是 [1, 1000]。
 每个节点的值都是 0。
 */
-const inf = math.MaxInt32 // 或 math.MaxInt64 / 2
-
 func minCameraCover(root *TreeNode) int {
 	var minCameraCoverDFS func(*TreeNode) (a, b, c int)
 	minCameraCoverDFS = func(node *TreeNode) (a, b, c int) {
 		if node == nil {
-			return inf, 0, 0
+			return math.MaxInt32, 0, 0
 		}
 		la, lb, lc := minCameraCoverDFS(node.Left)
 		ra, rb, rc := minCameraCoverDFS(node.Right)
 		a = lc + rc + 1
-		b = minCameraCoverIntMin(a, minCameraCoverIntMin(la+rb, ra+lb))
+		b = minCameraCoverIntMin(a, la+rb, ra+lb)
 		c = minCameraCoverIntMin(a, lb+rb)
 		return
 	}
@@ -51,9 +49,12 @@ func minCameraCover(root *TreeNode) int {
 	return ans
 }
 
-func minCameraCoverIntMin(a, b int) int {
-	if a < b {
-		return a
+func minCameraCoverIntMin(nums ...int) (min int) {
+	min = math.MaxInt32
+	for _, num := range nums {
+		if num < min {
+			min = num
+		}
 	}
-	return b
+	return min
 }
