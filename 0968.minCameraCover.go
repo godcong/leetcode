@@ -43,15 +43,15 @@ func minCameraCover(root *TreeNode) int {
 		la, lb, lc := minCameraCoverDFS(node.Left)
 		ra, rb, rc := minCameraCoverDFS(node.Right)
 		a = lc + rc + 1
-		b = min(a, min(la+rb, ra+lb))
-		c = min(a, lb+rb)
+		b = minCameraCoverIntMin(a, minCameraCoverIntMin(la+rb, ra+lb))
+		c = minCameraCoverIntMin(a, lb+rb)
 		return
 	}
 	_, ans, _ := minCameraCoverDFS(root)
 	return ans
 }
 
-func min(a, b int) int {
+func minCameraCoverIntMin(a, b int) int {
 	if a < b {
 		return a
 	}
