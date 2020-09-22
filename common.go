@@ -108,7 +108,6 @@ func strToTreeNode(nums string) *TreeNode {
 	}
 
 	sNums := strings.Split(nums[sta:end], ",")
-	fmt.Println(sNums)
 	nodes := make([]*TreeNode, len(sNums))
 	for idx, num := range sNums {
 		if num == strings.ToLower("null") || num == "" {
@@ -118,7 +117,7 @@ func strToTreeNode(nums string) *TreeNode {
 		throughErrorPanic(err)
 		nodes[idx] = &TreeNode{Val: i}
 	}
-	printTreeNodeToArray(nodes)
+	//printTreeNodeToArray(nodes)
 
 	idx := 0
 	next := 0
@@ -140,16 +139,6 @@ func strToTreeNode(nums string) *TreeNode {
 	}
 
 	return nodes[0]
-}
-
-func strToTreeNodeDFS(node *TreeNode, idx int, nodes []*TreeNode) {
-	if node == nil {
-		return
-	}
-	node = nodes[idx]
-
-	//node.Right = nodes[idx]
-
 }
 
 func throughErrorPanic(err error) {
