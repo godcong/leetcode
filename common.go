@@ -3,7 +3,6 @@ package leetcode
 import (
 	"fmt"
 	"strconv"
-	"strings"
 	"testing"
 )
 
@@ -94,58 +93,4 @@ func printTreeNodeToArray(nodes []*TreeNode) {
 		fmt.Print(" ")
 	}
 	fmt.Println()
-}
-
-func strToTreeNode(nums string) *TreeNode {
-	sta := 0
-	end := len(nums)
-	if strings.Index(nums, "[") == 0 {
-		sta += 1
-	}
-
-	if strings.Index(nums, "]") == end-1 {
-		end -= 1
-	}
-
-	sNums := strings.Split(nums[sta:end], ",")
-	nodes := make([]*TreeNode, len(sNums))
-	for idx, num := range sNums {
-		if num == strings.ToLower("null") || num == "" {
-			continue
-		}
-		i, err := strconv.Atoi(num)
-		throughErrorPanic(err)
-		nodes[idx] = &TreeNode{Val: i}
-	}
-	//printTreeNodeToArray(nodes)
-
-	idx := 0
-	next := 0
-	for i := range sNums {
-		if nodes[i] == nil {
-			continue
-		}
-		idx = i*2 + 1 - next
-		if idx < len(sNums) {
-			if nodes[idx] == nil {
-				next += 2
-			}
-			nodes[i].Left = nodes[idx]
-		}
-		idx++
-		if idx < len(sNums) {
-			if nodes[idx] == nil && nodes[idx-1] == nil {
-				next -= 2
-			}
-			nodes[i].Right = nodes[idx]
-		}
-	}
-
-	return nodes[0]
-}
-
-func throughErrorPanic(err error) {
-	if err != nil {
-		panic(err)
-	}
 }
