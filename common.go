@@ -66,7 +66,7 @@ func getTreeNodeIntArray(root *TreeNode) []string {
 }
 
 func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
-	if root == nil {
+	if root == nil || want == nil {
 		return root == want
 	}
 
@@ -82,6 +82,18 @@ func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
 		t.Errorf("recoverTree() = %v, want %v", root.Val, want.Val)
 	}
 	return true
+}
+
+func printTreeNodeToArray(nodes []*TreeNode) {
+	for i := range nodes {
+		if nodes[i] == nil {
+			fmt.Print("null")
+		} else {
+			fmt.Print(nodes[i].Val)
+		}
+		fmt.Print(" ")
+	}
+	fmt.Println()
 }
 
 func strToTreeNode(nums string) *TreeNode {
@@ -106,13 +118,27 @@ func strToTreeNode(nums string) *TreeNode {
 		throughErrorPanic(err)
 		nodes[idx] = &TreeNode{Val: i}
 	}
+	printTreeNodeToArray(nodes)
+
+	idx := 0
+	next := 0
 	for i := range sNums {
-		if nodes[i] == nil && i+1 < len(sNums) {
-			strToTreeNodeDFS(nodes[i+1], i*2+1, nodes)
+		if nodes[i] == nil {
 			continue
 		}
-		strToTreeNodeDFS(nodes[i], i*2+1, nodes)
+		idx = i*2 + 1 - next
+		if idx < len(sNums) {
+			if nodes[idx] == nil {
+				next += 2
+			}
+			nodes[i].Left = nodes[idx]
+		}
+		idx++
+		if idx < len(sNums) {
+			nodes[i].Right = nodes[idx]
+		}
 	}
+
 	return nodes[0]
 }
 
@@ -120,14 +146,10 @@ func strToTreeNodeDFS(node *TreeNode, idx int, nodes []*TreeNode) {
 	if node == nil {
 		return
 	}
-	if idx < len(nodes) {
-		node.Left = nodes[idx]
-		idx++
-	}
-	if idx < len(nodes) {
-		node.Right = nodes[idx]
-		idx++
-	}
+	node = nodes[idx]
+
+	//node.Right = nodes[idx]
+
 }
 
 func throughErrorPanic(err error) {
