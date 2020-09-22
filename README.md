@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:95 ###  
+### 总完成:98 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -32,6 +32,7 @@ All append into def.go
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
 | 0040 | 组合总和 II | combinationSum2 | [GO](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2_test.go) |  
 | 0043 | 字符串相乘 | multiply | [GO](https://github.com/godcong/leetcode/blob/master/0043.multiply.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0043.multiply_test.go) |  
+| 0047 | 全排列 II | permuteUnique | [GO](https://github.com/godcong/leetcode/blob/master/0047.permuteUnique.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0047.permuteUnique_test.go) |  
 | 0051 | N 皇后 | solveNQueens | [GO](https://github.com/godcong/leetcode/blob/master/0051.solveNQueens.go) | TEST |  
 | 0058 | 最后一个单词的长度 | lengthOfLastWord | [GO](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord_test.go) |  
 | 0060 | 第k个排列 | getPermutation | [GO](https://github.com/godcong/leetcode/blob/master/0060.getPermutation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0060.getPermutation_test.go) |  
@@ -68,6 +69,7 @@ All append into def.go
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner_test.go) |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences_test.go) |  
+| 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0528.convertBST_test.go) |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0532.findPairs_test.go) |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes_test.go) |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0557.reverseWords_test.go) |  
@@ -89,6 +91,7 @@ All append into def.go
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
+| 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover_test.go) |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses_test.go) |  
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1051.heightChecker_test.go) |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr_test.go) |  
