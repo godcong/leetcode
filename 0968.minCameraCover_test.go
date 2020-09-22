@@ -11,7 +11,20 @@ func Test_minCameraCover(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				root: strToTreeNode("[0,0,null,0,0]"),
+			},
+			want: 1,
+		},
+		{
+			name: "",
+			args: args{
+				root: strToTreeNode("[0,0,null,0,null,0,null,null,0]"),
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

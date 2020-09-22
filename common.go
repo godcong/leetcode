@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 	"testing"
@@ -74,7 +73,6 @@ func strToTreeNode(nums string) *TreeNode {
 	}
 
 	sNums := strings.Split(nums[sta:end], ",")
-	fmt.Println("before", nums[sta:end], "after", sNums)
 
 	nodes := make([]*TreeNode, len(sNums))
 	for idx, num := range sNums {
