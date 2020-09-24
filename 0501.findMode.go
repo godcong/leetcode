@@ -32,5 +32,44 @@ package leetcode
  * }
  */
 func findMode(root *TreeNode) []int {
-	return nil
+	var base, count, maxCount int
+	var ans []int
+	if root == nil {
+		return nil
+	}
+
+	findModeDFS := func(node *TreeNode) {
+		if node.Val == base {
+			count++
+		} else {
+			base, count = node.Val, 1
+		}
+		if count == maxCount {
+			ans = append(ans, base)
+		} else if count > maxCount {
+			maxCount = count
+			ans = []int{base}
+		}
+	}
+	cur := root
+	for cur != nil {
+		if cur.Left == nil {
+			findModeDFS(cur)
+			cur = cur.Right
+			continue
+		}
+		pre := cur.Left
+		for pre.Right != nil && pre.Right != cur {
+			pre = pre.Right
+		}
+		if pre.Right == nil {
+			pre.Right = cur
+			cur = cur.Left
+		} else {
+			pre.Right = nil
+			findModeDFS(cur)
+			cur = cur.Right
+		}
+	}
+	return ans
 }
