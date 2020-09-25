@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:98 ###  
+### 总完成:100 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -46,6 +46,7 @@ All append into def.go
 | 0099 | 恢复二叉搜索树 | recoverTree | [GO](https://github.com/godcong/leetcode/blob/master/0099.recoverTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0099.recoverTree_test.go) |  
 | 0100 | 平衡二叉树 | isBalanced | [GO](https://github.com/godcong/leetcode/blob/master/0100.isBalanced.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isBalanced_test.go) |  
 | 0100 | 相同的树 | isSameTree | [GO](https://github.com/godcong/leetcode/blob/master/0100.isSameTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isSameTree_test.go) |  
+| 0106 | 从中序与后序遍历序列构造二叉树 | buildTree | [GO](https://github.com/godcong/leetcode/blob/master/0106.buildTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0106.buildTree_test.go) |  
 | 0107 | 二叉树的层次遍历 II | levelOrderBottom | [GO](https://github.com/godcong/leetcode/blob/master/0107.levelOrderBottom.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0107.levelOrderBottom_test.go) |  
 | 0109 | 有序链表转换二叉搜索树 | sortedListToBST | [GO](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST_test.go) |  
 | 0111 | 二叉树的最小深度 | minDepth | [GO](https://github.com/godcong/leetcode/blob/master/0111.minDepth.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0111.minDepth_test.go) |  
@@ -69,6 +70,7 @@ All append into def.go
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner_test.go) |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences_test.go) |  
+| 0501 | 二叉搜索树中的众数 | findMode | [GO](https://github.com/godcong/leetcode/blob/master/0501.findMode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0501.findMode_test.go) |  
 | 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0528.convertBST_test.go) |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0532.findPairs_test.go) |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes_test.go) |  
