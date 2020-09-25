@@ -28,24 +28,28 @@ package leetcode
  * }
  */
 func buildTree(inorder []int, postorder []int) *TreeNode {
-	idxMap := map[int]int{}
-	for i, v := range inorder {
-		idxMap[v] = i
+	if len(postorder) == 0 {
+		return nil
 	}
-
-	var buildTreeDFS func(int, int) *TreeNode
-	buildTreeDFS = func(inorderLeft, inorderRight int) *TreeNode {
-		if inorderLeft > inorderRight {
-			return nil
+	root := &TreeNode{Val: postorder[len(postorder)-1]}
+	stack := []*TreeNode{root}
+	inorderIndex := len(inorder) - 1
+	var node *TreeNode
+	for i := len(postorder) - 2; i >= 0; i-- {
+		postorderVal := postorder[i]
+		node = stack[len(stack)-1]
+		if node.Val != inorder[inorderIndex] {
+			node.Right = &TreeNode{Val: postorderVal}
+			stack = append(stack, node.Right)
+		} else {
+			for len(stack) > 0 && stack[len(stack)-1].Val == inorder[inorderIndex] {
+				node = stack[len(stack)-1]
+				stack = stack[:len(stack)-1]
+				inorderIndex--
+			}
+			node.Left = &TreeNode{Val: postorderVal}
+			stack = append(stack, node.Left)
 		}
-
-		postMax := len(postorder) - 1
-		root := &TreeNode{Val: postorder[postMax]}
-		postorder = postorder[:postMax]
-
-		root.Right = buildTreeDFS(idxMap[root.Val]+1, inorderRight)
-		root.Left = buildTreeDFS(inorderLeft, idxMap[root.Val]-1)
-		return root
 	}
-	return buildTreeDFS(0, len(inorder)-1)
+	return root
 }
