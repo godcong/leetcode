@@ -32,19 +32,19 @@ func buildTree(inorder []int, postorder []int) *TreeNode {
 	for i, v := range inorder {
 		idxMap[v] = i
 	}
+
 	var buildTreeDFS func(int, int) *TreeNode
 	buildTreeDFS = func(inorderLeft, inorderRight int) *TreeNode {
 		if inorderLeft > inorderRight {
 			return nil
 		}
 
-		val := postorder[len(postorder)-1]
-		postorder = postorder[:len(postorder)-1]
-		root := &TreeNode{Val: val}
+		postMax := len(postorder) - 1
+		root := &TreeNode{Val: postorder[postMax]}
+		postorder = postorder[:postMax]
 
-		inorderRootIndex := idxMap[val]
-		root.Right = buildTreeDFS(inorderRootIndex+1, inorderRight)
-		root.Left = buildTreeDFS(inorderLeft, inorderRootIndex-1)
+		root.Right = buildTreeDFS(idxMap[root.Val]+1, inorderRight)
+		root.Left = buildTreeDFS(inorderLeft, idxMap[root.Val]-1)
 		return root
 	}
 	return buildTreeDFS(0, len(inorder)-1)
