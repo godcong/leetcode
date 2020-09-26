@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 /*
 113. 路径总和 II
 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
@@ -47,7 +45,6 @@ func pathSum(root *TreeNode, sum int) [][]int {
 			ret = append(ret, append([]int{}, v...))
 			return
 		}
-		fmt.Println(t, v)
 		pathSumDFS(node.Left, t, v)
 		pathSumDFS(node.Right, t, v)
 	}
