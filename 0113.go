@@ -23,3 +23,14 @@ package leetcode
    [5,8,4,5]
 ]
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func pathSum(root *TreeNode, sum int) [][]int {
+	return nil
+}
