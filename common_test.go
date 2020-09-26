@@ -219,6 +219,53 @@ func Test_strToTreeNode(t *testing.T) {
 				},
 			},
 		},
+		{
+			name: "",
+			args: args{
+				nums: "[5,4,8,11,null,13,4,7,2,null,null,5,1]",
+			},
+			want: &TreeNode{
+				Val: 5,
+				Left: &TreeNode{
+					Val: 4,
+					Left: &TreeNode{
+						Val: 11,
+						Left: &TreeNode{
+							Val:   7,
+							Left:  nil,
+							Right: nil,
+						},
+						Right: &TreeNode{
+							Val:   2,
+							Left:  nil,
+							Right: nil,
+						},
+					},
+					Right: nil,
+				},
+				Right: &TreeNode{
+					Val: 8,
+					Left: &TreeNode{
+						Val:   13,
+						Left:  nil,
+						Right: nil,
+					},
+					Right: &TreeNode{
+						Val: 4,
+						Left: &TreeNode{
+							Val:   5,
+							Left:  nil,
+							Right: nil,
+						},
+						Right: &TreeNode{
+							Val:   1,
+							Left:  nil,
+							Right: nil,
+						},
+					},
+				},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -241,39 +288,37 @@ func strToTreeNode(nums string) *TreeNode {
 	}
 
 	sNums := strings.Split(nums[sta:end], ",")
-	nodes := make([]*TreeNode, len(sNums))
+	size := len(sNums)
+	nodes := make([]*TreeNode, size)
 	for idx, num := range sNums {
 		if num == strings.ToLower("null") || num == "" {
 			continue
 		}
+
 		i, err := strconv.Atoi(num)
 		throughErrorPanic(err)
 		nodes[idx] = &TreeNode{Val: i}
 	}
-	//printTreeNodeToArray(nodes)
 
-	idx := 0
-	next := 0
-	for i := range sNums {
-		if nodes[i] == nil {
-			continue
+	i := 1
+	queue := make([]*TreeNode, 1, size*2)
+	queue[0] = nodes[0]
+	for i < len(sNums) {
+		node := queue[0]
+		queue = queue[1:]
+
+		if i < len(sNums) && nodes[i] != nil {
+			node.Left = nodes[i]
+			queue = append(queue, node.Left)
 		}
-		idx = i*2 + 1 - next
-		if idx < len(sNums) {
-			if nodes[idx] == nil {
-				next += 2
-			}
-			nodes[i].Left = nodes[idx]
+		i++
+
+		if i < len(sNums) && nodes[i] != nil {
+			node.Right = nodes[i]
+			queue = append(queue, node.Right)
 		}
-		idx++
-		if idx < len(sNums) {
-			if nodes[idx] == nil && nodes[idx-1] == nil {
-				next -= 2
-			}
-			nodes[i].Right = nodes[idx]
-		}
+		i++
 	}
-
 	return nodes[0]
 }
 
