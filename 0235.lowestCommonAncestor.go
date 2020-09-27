@@ -38,5 +38,13 @@ p、q 为不同节点且均存在于给定的二叉搜索树中。
  * }
  */
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	return nil
+	for {
+		if p.Val < root.Val && q.Val < root.Val {
+			root = root.Left
+		} else if p.Val > root.Val && q.Val > root.Val {
+			root = root.Right
+		} else {
+			return root
+		}
+	}
 }
