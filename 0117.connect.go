@@ -36,3 +36,36 @@ struct Node {
 树中的节点数小于 6000
 -100 <= node.val <= 100
 */
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Left *Node
+ *     Right *Node
+ *     Next *Node
+ * }
+ */
+func connect(root *Node117) *Node117 {
+	start := root
+	for start != nil {
+		var nextStart, last *Node117
+		handle := func(cur *Node117) {
+			if cur == nil {
+				return
+			}
+			if nextStart == nil {
+				nextStart = cur
+			}
+			if last != nil {
+				last.Next = cur
+			}
+			last = cur
+		}
+		for p := start; p != nil; p = p.Next {
+			handle(p.Left)
+			handle(p.Right)
+		}
+		start = nextStart
+	}
+	return root
+}
