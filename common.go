@@ -37,3 +37,10 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
+
+type Node117 struct {
+	Val   int
+	Left  *Node117
+	Right *Node117
+	Next  *Node117
+}
