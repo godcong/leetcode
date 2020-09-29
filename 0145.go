@@ -25,5 +25,16 @@ package leetcode
  * }
  */
 func postorderTraversal(root *TreeNode) []int {
-	return nil
+	var ret []int
+	var postorderTraversalDFS func(*TreeNode)
+	postorderTraversalDFS = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		postorderTraversalDFS(node.Left)
+		postorderTraversalDFS(node.Right)
+		ret = append(ret, node.Val)
+	}
+	postorderTraversalDFS(root)
+	return ret
 }
