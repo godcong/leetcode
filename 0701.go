@@ -54,7 +54,7 @@ package leetcode
  */
 func insertIntoBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {
-		return nil
+		return &TreeNode{Val: val}
 	}
 	if root.Val >= val {
 		if root.Left == nil {
