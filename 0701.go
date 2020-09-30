@@ -44,3 +44,31 @@ package leetcode
 -10^8 <= val <= 10^8
 新值和原始二叉搜索树中的任意节点值都不同
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func insertIntoBST(root *TreeNode, val int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val >= val {
+		if root.Left == nil {
+			root.Left = &TreeNode{Val: val}
+		} else {
+			root.Left = insertIntoBST(root.Left, val)
+		}
+	}
+	if root.Val < val {
+		if root.Right == nil {
+			root.Right = &TreeNode{Val: val}
+		} else {
+			root.Right = insertIntoBST(root.Right, val)
+		}
+	}
+	return root
+}
