@@ -287,7 +287,13 @@ func strToTreeNode(nums string) *TreeNode {
 		end -= 1
 	}
 
-	sNums := strings.Split(nums[sta:end], ",")
+	var sNums []string
+	if nums == "" {
+		sNums = make([]string, 1)
+	} else {
+		sNums = strings.Split(nums[sta:end], ",")
+	}
+
 	size := len(sNums)
 	nodes := make([]*TreeNode, size)
 	for idx, num := range sNums {
