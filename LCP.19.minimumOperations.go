@@ -35,7 +35,7 @@ func minimumOperations(leaves string) int {
 		g = 1
 	}
 	gmin := g
-	ans := math.MinInt32
+	ret := math.MaxInt32
 	for i := 1; i < n; i++ {
 		if leaves[i] == 'y' {
 			g++
@@ -43,11 +43,11 @@ func minimumOperations(leaves string) int {
 			g--
 		}
 		if i != n-1 {
-			ans = minimumOperationsMin(ans, gmin-g)
+			ret = minimumOperationsMin(ret, gmin-g)
 		}
 		gmin = minimumOperationsMin(gmin, g)
 	}
-	return ans + (g+n)/2
+	return ret + (g+n)/2
 }
 
 func minimumOperationsMin(a, b int) int {
