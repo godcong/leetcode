@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 /*
 LCP 19. 秋叶收藏集
 小扣出去秋游，途中收集了一些红叶和黄叶，他利用这些叶子初步整理了一份秋叶收藏集 leaves， 字符串 leaves 仅包含小写字符 r 和 y， 其中字符 r 表示一片红叶，字符 y 表示一片黄叶。
@@ -27,5 +29,30 @@ LCP 19. 秋叶收藏集
 leaves 中只包含字符 'r' 和字符 'y'
 */
 func minimumOperations(leaves string) int {
-	return 0
+	n := len(leaves)
+	g := -1
+	if leaves[0] == 'y' {
+		g = 1
+	}
+	gmin := g
+	ans := math.MinInt32
+	for i := 1; i < n; i++ {
+		if leaves[i] == 'y' {
+			g++
+		} else {
+			g--
+		}
+		if i != n-1 {
+			ans = minimumOperationsMin(ans, gmin-g)
+		}
+		gmin = minimumOperationsMin(gmin, g)
+	}
+	return ans + (g+n)/2
+}
+
+func minimumOperationsMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
