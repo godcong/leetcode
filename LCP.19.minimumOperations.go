@@ -26,3 +26,6 @@ LCP 19. 秋叶收藏集
 3 <= leaves.length <= 10^5
 leaves 中只包含字符 'r' 和字符 'y'
 */
+func minimumOperations(leaves string) int {
+	return 0
+}
