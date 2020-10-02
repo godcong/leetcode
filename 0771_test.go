@@ -13,6 +13,14 @@ func Test_numJewelsInStones(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				J: "aA",
+				S: "aAAbbbb",
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

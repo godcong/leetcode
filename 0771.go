@@ -20,5 +20,13 @@ S 和 J 最多含有50个字母。
  J 中的字符不重复。
 */
 func numJewelsInStones(J string, S string) int {
-	return 0
+	mark := make(map[byte]uint8, len(J))
+	sum := 0
+	for i := range J {
+		mark[J[i]] = 1
+	}
+	for i := range S {
+		sum += int(mark[S[i]])
+	}
+	return sum
 }
