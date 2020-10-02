@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:105 ###  
+### 总完成:107 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -93,6 +93,7 @@ All append into def.go
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings_test.go) |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
+| 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations_test.go) |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
@@ -116,6 +117,7 @@ All append into def.go
 | 1544 | 整理字符串 | makeGood | [GO](https://github.com/godcong/leetcode/blob/master/1544.makeGood.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1544.makeGood_test.go) |  
 | 1550 | 存在连续三个奇数的数组 | threeConsecutiveOdds | [GO](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds_test.go) |  
 | Interview.02.03 | 删除中间节点 | deleteNode | [GO](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode_test.go) |  
+| LCP.19 | 秋叶收藏集 | minimumOperations | [GO](https://github.com/godcong/leetcode/blob/master/LCP.19.minimumOperations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/LCP.19.minimumOperations_test.go) |  
 | LCP.6 | 拿硬币 | minCount | [GO](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount.go) | [TEST](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount_test.go) |  
 | Offer.10.i | 斐波那契数列 | fib | [GO](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib_test.go) |  
 | Offer.20 | 表示数值的字符串 | isNumber | [GO](https://github.com/godcong/leetcode/blob/master/Offer.20.isNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.20.isNumber_test.go) |  
