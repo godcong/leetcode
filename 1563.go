@@ -34,3 +34,37 @@ package leetcode
 1 <= stoneValue.length <= 500
 1 <= stoneValue[i] <= 10^6
 */
+func stoneGameV(stoneValue []int) int {
+	dp := make(map[int]map[int]int, len(stoneValue))
+	prefixSum := make(map[int]int, len(stoneValue))
+
+	for i := range stoneValue {
+		dp[i] = make(map[int]int)
+		prefixSum[i+1] += prefixSum[i] + stoneValue[i]
+	}
+
+	for length := 2; length <= len(stoneValue); length++ {
+		for i := 0; i+length <= len(stoneValue); i++ {
+			j := i + length - 1
+
+			for k := i + 1; k <= j; k++ {
+				if prefixSum[k]-prefixSum[i] == prefixSum[j+1]-prefixSum[k] {
+					dp[i][j] = stoneGameVMaxInt(dp[i][j], stoneGameVMaxInt(dp[i][k-1], dp[k][j])+prefixSum[k]-prefixSum[i])
+				} else if prefixSum[k]-prefixSum[i] > prefixSum[j+1]-prefixSum[k] {
+					dp[i][j] = stoneGameVMaxInt(dp[i][j], dp[k][j]+prefixSum[j+1]-prefixSum[k])
+				} else {
+					dp[i][j] = stoneGameVMaxInt(dp[i][j], dp[i][k-1]+prefixSum[k]-prefixSum[i])
+				}
+			}
+		}
+	}
+
+	return dp[0][len(stoneValue)-1]
+}
+
+func stoneGameVMaxInt(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
