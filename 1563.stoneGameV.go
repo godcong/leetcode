@@ -35,11 +35,10 @@ package leetcode
 1 <= stoneValue[i] <= 10^6
 */
 func stoneGameV(stoneValue []int) int {
-	dp := make(map[int]map[int]int, len(stoneValue))
-	prefixSum := make(map[int]int, len(stoneValue))
+	var dp [501][501]int
+	var prefixSum [501]int
 
 	for i := range stoneValue {
-		dp[i] = make(map[int]int)
 		prefixSum[i+1] += prefixSum[i] + stoneValue[i]
 	}
 
