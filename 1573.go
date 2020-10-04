@@ -42,3 +42,6 @@ package leetcode
 s[i] == '0' 或者 s[i] == '1'
 3 <= s.length <= 10^5
 */
+func numWays(s string) int {
+	return 0
+}
