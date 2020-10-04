@@ -43,5 +43,29 @@ s[i] == '0' 或者 s[i] == '1'
 3 <= s.length <= 10^5
 */
 func numWays(s string) int {
-	return 0
+	var a [100002]int
+	P := 1000000007
+	n := len(s)
+	x := 0
+	y := 0
+	for i := 0; i < n; i++ {
+		if s[i] == '1' {
+			a[i+1] = a[i] + 1
+		}
+	}
+	if a[n] == 0 {
+		return (n - 1) * (n - 2) / 2 % P
+	}
+	if a[n]%3 != 0 {
+		return 0
+	}
+	for i := 0; i <= n; i++ {
+		if a[i] == a[n]/3 {
+			x++
+		}
+		if a[i] == a[n]/3*2 {
+			y++
+		}
+	}
+	return x * y % P
 }
