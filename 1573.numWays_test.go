@@ -26,6 +26,20 @@ func Test_numWays(t *testing.T) {
 			},
 			want: 0,
 		},
+		{
+			name: "",
+			args: args{
+				s: "0000",
+			},
+			want: 3,
+		},
+		{
+			name: "",
+			args: args{
+				s: "100100010100110",
+			},
+			want: 12,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
