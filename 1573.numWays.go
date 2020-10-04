@@ -53,8 +53,7 @@ func numWays(s string) int {
 		return 0
 	}
 	if tot == 0 {
-		rst := int64(n-1) * int64(n-2) / int64(2) % int64(1000000007)
-		return int(rst)
+		return (n - 1) * (n - 2) / (2) % (1000000007)
 	}
 	cnt, tmp := tot/3, 0
 	pos1, pos2 := 0, 0
@@ -69,6 +68,5 @@ func numWays(s string) int {
 			pos2++
 		}
 	}
-	rst := int64(pos1) * int64(pos2) % int64(1000000007)
-	return int(rst)
+	return (pos1) * (pos2) % (1000000007)
 }
