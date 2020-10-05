@@ -19,7 +19,9 @@ func Test_fourSum(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums:   nil,
+				nums: []int{
+					1, 0, -1, 0, -2, 2,
+				},
 				target: 0,
 			},
 			want: nil,
