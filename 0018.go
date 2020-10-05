@@ -19,3 +19,6 @@ package leetcode
   [-2,  0, 0, 2]
 ]
 */
+func fourSum(nums []int, target int) [][]int {
+	return nil
+}
