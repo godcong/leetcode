@@ -24,7 +24,7 @@ import "sort"
 func fourSum(nums []int, target int) [][]int {
 	count := len(nums)
 	sort.Ints(nums)
-	result := make([][]int, 0)
+	var result [][]int
 	for i := 0; i < count-3; i++ {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
@@ -57,9 +57,7 @@ func fourSum(nums []int, target int) [][]int {
 				}
 				sum := nums[i] + nums[j] + nums[left] + nums[right]
 				if sum == target {
-					temp := make([]int, 0)
-					temp = append(temp, nums[i], nums[j], nums[left], nums[right])
-					result = append(result, temp)
+					result = append(result, append([]int{}, nums[i], nums[j], nums[left], nums[right]))
 					left++
 					right--
 				} else if sum < target {
