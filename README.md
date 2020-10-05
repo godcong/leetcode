@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:107 ###  
+### 总完成:110 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -26,6 +26,7 @@ All append into def.go
 | 0013 | 罗马数字转整数 | romanToInt | [GO](https://github.com/godcong/leetcode/blob/master/0013.romanToInt.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0013.romanToInt_test.go) |  
 | 0014 | 最长公共前缀 | longestCommonPrefix | [GO](https://github.com/godcong/leetcode/blob/master/0014.longestCommonPrefix.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0014.longestCommonPrefix_test.go) |  
 | 0017 | 电话号码的字母组合 | letterCombinations | [GO](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations_test.go) |  
+| 0018 | 四数之和 | fourSum | [GO](https://github.com/godcong/leetcode/blob/master/0018.fourSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0018.fourSum_test.go) |  
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0037 | 解数独 | solveSudoku | [GO](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku_test.go) |  
@@ -116,6 +117,8 @@ All append into def.go
 | 1539 | 第 k 个缺失的正整数 | findKthPositive | [GO](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1539.findKthPositive_test.go) |  
 | 1544 | 整理字符串 | makeGood | [GO](https://github.com/godcong/leetcode/blob/master/1544.makeGood.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1544.makeGood_test.go) |  
 | 1550 | 存在连续三个奇数的数组 | threeConsecutiveOdds | [GO](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds_test.go) |  
+| 1563 | 石子游戏 V | stoneGameV | [GO](https://github.com/godcong/leetcode/blob/master/1563.stoneGameV.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1563.stoneGameV_test.go) |  
+| 1573 | 分割字符串的方案数 | numWays | [GO](https://github.com/godcong/leetcode/blob/master/1573.numWays.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1573.numWays_test.go) |  
 | Interview.02.03 | 删除中间节点 | deleteNode | [GO](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Interview.02.03.deleteNode_test.go) |  
 | LCP.19 | 秋叶收藏集 | minimumOperations | [GO](https://github.com/godcong/leetcode/blob/master/LCP.19.minimumOperations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/LCP.19.minimumOperations_test.go) |  
 | LCP.6 | 拿硬币 | minCount | [GO](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount.go) | [TEST](https://github.com/godcong/leetcode/blob/master/LCP.6.minCount_test.go) |  
