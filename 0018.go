@@ -20,5 +20,19 @@ package leetcode
 ]
 */
 func fourSum(nums []int, target int) [][]int {
-	return nil
+	var ret [][]int
+	var fourSum func(n []int, idx, t int)
+	fourSum = func(n []int, idx, t int) {
+		if t == 0 {
+			ret = append(ret, append([]int{}, n...))
+			return
+		}
+		for ; idx < len(nums); idx++ {
+			n = append(n, nums[idx])
+			fourSum(n, idx, target-nums[idx])
+		}
+	}
+	fourSum(nil, 0, target)
+
+	return ret
 }
