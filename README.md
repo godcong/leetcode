@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:110 ###  
+### 总完成:111 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -96,6 +96,7 @@ All append into def.go
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations_test.go) |  
+| 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree_test.go) |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
