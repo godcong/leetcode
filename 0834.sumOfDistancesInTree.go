@@ -25,36 +25,55 @@ package leetcode
 说明: 1 <= N <= 10000
 */
 func sumOfDistancesInTree(N int, edges [][]int) []int {
-	tree := make(map[int][]int, len(edges))
-	for _, node := range edges {
-		tree[node[0]] = append(tree[node[0]], node[1])
-		tree[node[1]] = append(tree[node[1]], node[0])
+	type vertex struct {
+		id, treePathSum, treeSize int
 	}
-	memo := make(map[[2]int][2]int, 2*N)
-	var dfs func(i, from int) [2]int
-	dfs = func(i, from int) [2]int {
-		if res, ok := memo[[2]int{from, i}]; ok {
-			return res
-		}
+	adjEdges := make([][]int, N)
+	for _, e := range edges {
+		u, v := e[0], e[1]
+		adjEdges[u] = append(adjEdges[u], v)
+		adjEdges[v] = append(adjEdges[v], u)
+	}
 
-		res := [2]int{1, 0}
-		for _, node := range tree[i] {
-			if node != from {
-				r := dfs(node, i)
-				res[0] += r[0]
-				res[1] += r[1] + r[0]
+	bfsQueue, parents := make([]*vertex, N), make([]*vertex, N)
+	bfsQueue[N-1] = &vertex{0, 0, 1}
+	head, tail := N-1, N-1
+	for head >= 0 {
+		v := bfsQueue[head]
+		head--
+		for _, u := range adjEdges[v.id] {
+			if nil != parents[u] || 0 == u {
+				continue
+			}
+
+			parents[u] = v
+			tail--
+			if tail >= 0 {
+				bfsQueue[tail] = &vertex{u, 0, 1}
 			}
 		}
-
-		memo[[2]int{from, i}] = res
-		return res
 	}
 
-	var res []int
-	for i := 0; i < N; i++ {
-		r := dfs(i, i)
-		res = append(res, r[1])
+	for i := 0; i < len(bfsQueue)-1; i++ {
+		v := bfsQueue[i]
+		p := parents[v.id]
+		p.treePathSum = p.treePathSum + v.treePathSum + v.treeSize
+		p.treeSize = p.treeSize + v.treeSize
 	}
 
-	return res
+	for i := len(bfsQueue) - 2; i >= 0; i-- {
+		v := bfsQueue[i]
+		p := parents[v.id]
+		v.treePathSum = v.treePathSum +
+			(p.treePathSum - (v.treePathSum + v.treeSize)) +
+			(p.treeSize - v.treeSize)
+		v.treeSize = p.treeSize
+	}
+
+	result := make([]int, N)
+	for _, v := range bfsQueue {
+		result[v.id] = v.treePathSum
+	}
+
+	return result
 }
