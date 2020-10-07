@@ -19,3 +19,27 @@ package leetcode
 首先，迭代计算出0、1 和 2 元素的个数，然后按照0、1、2的排序，重写当前数组。
 你能想出一个仅使用常数空间的一趟扫描算法吗？
 */
+func sortColors(nums []int) {
+	left := 0
+	right := len(nums) - 1
+
+	for cur := 0; cur <= len(nums)-1 && cur <= right; {
+		switch nums[cur] {
+		case 0:
+			tmp := nums[left]
+			nums[left] = nums[cur]
+			nums[cur] = tmp
+			left++
+			cur++
+		case 1:
+			cur++
+		case 2:
+			tmp := nums[right]
+			nums[right] = nums[cur]
+			nums[cur] = tmp
+			right--
+		default:
+			break
+		}
+	}
+}
