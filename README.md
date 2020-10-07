@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:111 ###  
+### 总完成:112 ###  
 | 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  
 |:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -39,6 +39,7 @@ All append into def.go
 | 0060 | 第k个排列 | getPermutation | [GO](https://github.com/godcong/leetcode/blob/master/0060.getPermutation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0060.getPermutation_test.go) |  
 | 0067 | 二进制求和 | addBinary | [GO](https://github.com/godcong/leetcode/blob/master/0067.addBinary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0067.addBinary_test.go) |  
 | 0070 | 爬楼梯 | climbStairs | [GO](https://github.com/godcong/leetcode/blob/master/0070.climbStairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0070.climbStairs_test.go) |  
+| 0075 | 颜色分类 | sortColors | [GO](https://github.com/godcong/leetcode/blob/master/0075.sortColors.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0075.sortColors_test.go) |  
 | 0077 | 组合 | combine | [GO](https://github.com/godcong/leetcode/blob/master/0077.combine.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0077.combine_test.go) |  
 | 0078 | 子集 | subsets | [GO](https://github.com/godcong/leetcode/blob/master/0078.subsets.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0078.subsets_test.go) |  
 | 0079 | 单词搜索 | exist | [GO](https://github.com/godcong/leetcode/blob/master/0079.exist.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0079.exist_test.go) |  
