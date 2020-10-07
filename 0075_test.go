@@ -30,7 +30,7 @@ func Test_sortColors(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			sortColors(tt.args.nums)
-			if reflect.DeepEqual(tt.args.nums, tt.want) {
+			if !reflect.DeepEqual(tt.args.nums, tt.want) {
 				t.Errorf("climbStairs() = %v, want %v", tt.args.nums, tt.want)
 			}
 		})
