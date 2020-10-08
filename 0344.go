@@ -20,5 +20,10 @@ package leetcode
 输出：["h","a","n","n","a","H"]
 */
 func reverseString(s []byte) {
+	end := len(s) - 1
+	for sta := 0; sta < end; sta++ {
+		s[sta], s[end] = s[end], s[sta]
+		end--
+	}
 
 }
