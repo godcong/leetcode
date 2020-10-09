@@ -295,18 +295,21 @@ func strToListNode(nums string, pos int) *ListNode {
 	}
 	size := len(sNums)
 	nodes := make([]*ListNode, size)
-	for i, node := range nodes {
+	for i := range nodes {
 		n, err := strconv.Atoi(sNums[i])
 		throughErrorPanic(err)
-		node.Val = n
+		if nodes[i] == nil {
+			nodes[i] = &ListNode{Val: n}
+		}
 		if i < size-1 {
-			node.Next = nodes[i+1]
+			nodes[i].Next = &ListNode{}
 		} else {
 			if pos >= 0 && pos < size {
-				node.Next = nodes[pos]
+				nodes[i].Next = nodes[pos]
 			}
 		}
 	}
+	fmt.Printf("%+v", nodes[0])
 	return nodes[0]
 }
 
