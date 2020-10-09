@@ -53,5 +53,5 @@ pos 为 -1 或者链表中的一个 有效索引 。
  * }
  */
 func hasCycle(head *ListNode) bool {
-
+	return false
 }
