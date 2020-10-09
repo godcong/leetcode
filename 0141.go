@@ -53,5 +53,12 @@ pos 为 -1 或者链表中的一个 有效索引 。
  * }
  */
 func hasCycle(head *ListNode) bool {
+	seen := map[*ListNode]bool{}
+	for head != nil {
+		if seen[head] {
+			return true
+		}
+		seen[head], head = true, head.Next
+	}
 	return false
 }
