@@ -276,6 +276,40 @@ func Test_strToTreeNode(t *testing.T) {
 	}
 }
 
+func strToListNode(nums string, pos int) *ListNode {
+	sta := 0
+	end := len(nums)
+	if strings.Index(nums, "[") == 0 {
+		sta += 1
+	}
+
+	if strings.Index(nums, "]") == end-1 {
+		end -= 1
+	}
+
+	var sNums []string
+	if nums == "" {
+		sNums = make([]string, 1)
+	} else {
+		sNums = strings.Split(nums[sta:end], ",")
+	}
+	size := len(sNums)
+	nodes := make([]*ListNode, size)
+	for i, node := range nodes {
+		n, err := strconv.Atoi(sNums[i])
+		throughErrorPanic(err)
+		node.Val = n
+		if i < size-1 {
+			node.Next = nodes[i+1]
+		} else {
+			if pos >= 0 && pos < size {
+				node.Next = nodes[pos]
+			}
+		}
+	}
+	return nodes[0]
+}
+
 func strToTreeNode(nums string) *TreeNode {
 	sta := 0
 	end := len(nums)
