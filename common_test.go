@@ -7,6 +7,76 @@ import (
 	"testing"
 )
 
+func Test_strToListNode(t *testing.T) {
+	type args struct {
+		nums string
+		pos  int
+	}
+	tests := []struct {
+		name string
+		args args
+		want *ListNode
+		deep int
+	}{
+		{
+			name: "",
+			args: args{
+				nums: "[3,2,0,-4]",
+				pos:  1,
+			},
+			want: &ListNode{
+				Val: 3,
+				Next: &ListNode{
+					Val: 2,
+					Next: &ListNode{
+						Val: 0,
+						Next: &ListNode{
+							Val: -4,
+							Next: &ListNode{
+								Val:  2,
+								Next: nil,
+							},
+						},
+					},
+				},
+			},
+			deep: 5,
+		},
+		{
+			name: "",
+			args: args{
+				nums: "[1,2]",
+				pos:  0,
+			},
+			want: &ListNode{
+				Val: 1,
+				Next: &ListNode{
+					Val:  2,
+					Next: nil,
+				},
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nums: "[1]",
+				pos:  -1,
+			},
+			want: &ListNode{
+				Val:  1,
+				Next: nil,
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := strToListNode(tt.args.nums, tt.args.pos); !listNodeDeepEqual(t, got, tt.want, tt.deep) {
+				t.Errorf("strToListNode() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func Test_strToTreeNode(t *testing.T) {
 	type args struct {
 		nums string
@@ -294,23 +364,22 @@ func strToListNode(nums string, pos int) *ListNode {
 		sNums = strings.Split(nums[sta:end], ",")
 	}
 	size := len(sNums)
-	nodes := make([]*ListNode, size)
+	nodes := make([]ListNode, size)
 	for i := range nodes {
 		n, err := strconv.Atoi(sNums[i])
+		fmt.Println("nums", n)
 		throughErrorPanic(err)
-		if nodes[i] == nil {
-			nodes[i] = &ListNode{Val: n}
-		}
+
+		nodes[i].Val = n
 		if i < size-1 {
 			nodes[i].Next = &ListNode{}
 		} else {
 			if pos >= 0 && pos < size {
-				nodes[i].Next = nodes[pos]
+				nodes[i].Next = &nodes[pos]
 			}
 		}
 	}
-	fmt.Printf("%+v", nodes[0])
-	return nodes[0]
+	return &nodes[0]
 }
 
 func strToTreeNode(nums string) *TreeNode {
@@ -389,6 +458,32 @@ func getTreeNodeIntArray(root *TreeNode) []string {
 		//ret = append(ret, "null")
 	}
 	return ret
+}
+
+func listNodeDeepEqual(t *testing.T, root *ListNode, want *ListNode, deep int) bool {
+	checked := make(map[*ListNode]bool)
+	left, right := root, want
+	deepCount := 1
+	for left != nil && right != nil && deepCount <= deep {
+		if root == nil || want == nil {
+			return root == want
+		}
+		t.Errorf("compare left:%+v,right:%+v\n", left.Val, right.Val)
+		if checked[left] {
+			return true
+		}
+
+		if left.Val != right.Val {
+			t.Errorf("count:%+v,got:%+v,want:%+v\n", deepCount, left.Val, right.Val)
+			return false
+		}
+
+		checked[left] = true
+		left = root.Next
+		right = want.Next
+		deepCount++
+	}
+	return false
 }
 
 func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
