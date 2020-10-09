@@ -51,10 +51,14 @@ func Test_strToListNode(t *testing.T) {
 			want: &ListNode{
 				Val: 1,
 				Next: &ListNode{
-					Val:  2,
-					Next: nil,
+					Val: 2,
+					Next: &ListNode{
+						Val:  1,
+						Next: nil,
+					},
 				},
 			},
+			deep: 3,
 		},
 		{
 			name: "",
@@ -66,6 +70,7 @@ func Test_strToListNode(t *testing.T) {
 				Val:  1,
 				Next: nil,
 			},
+			deep: 2,
 		},
 	}
 	for _, tt := range tests {
@@ -367,15 +372,17 @@ func strToListNode(nums string, pos int) *ListNode {
 	nodes := make([]ListNode, size)
 	for i := range nodes {
 		n, err := strconv.Atoi(sNums[i])
-		fmt.Println("nums", n)
+
 		throughErrorPanic(err)
 
 		nodes[i].Val = n
+		//fmt.Println("nodes", i, nodes[i])
 		if i < size-1 {
-			nodes[i].Next = &ListNode{}
+			nodes[i].Next = &nodes[i+1]
 		} else {
 			if pos >= 0 && pos < size {
 				nodes[i].Next = &nodes[pos]
+				//fmt.Println("nodes pos", pos, nodes[pos])
 			}
 		}
 	}
@@ -464,11 +471,11 @@ func listNodeDeepEqual(t *testing.T, root *ListNode, want *ListNode, deep int) b
 	checked := make(map[*ListNode]bool)
 	left, right := root, want
 	deepCount := 1
-	for left != nil && right != nil && deepCount <= deep {
-		if root == nil || want == nil {
-			return root == want
+	for deepCount <= deep {
+		if left == nil || right == nil {
+			return left == right
 		}
-		t.Errorf("compare left:%+v,right:%+v\n", left.Val, right.Val)
+
 		if checked[left] {
 			return true
 		}
