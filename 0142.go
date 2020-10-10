@@ -44,5 +44,12 @@ package leetcode
  * }
  */
 func detectCycle(head *ListNode) *ListNode {
+	seen := map[*ListNode]bool{}
+	for head != nil {
+		if seen[head] {
+			return head
+		}
+		seen[head], head = true, head.Next
+	}
 	return nil
 }
