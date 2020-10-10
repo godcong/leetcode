@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:113 ###  
+### 总完成:115 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -56,6 +56,8 @@ All append into def.go
 | 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | TEST |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
+| 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
+| 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
 | 0145 | 二叉树的后序遍历 | postorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
