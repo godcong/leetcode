@@ -490,7 +490,8 @@ func listNodeDeepEqual(t *testing.T, root *ListNode, want *ListNode, deep int) b
 		right = want.Next
 		deepCount++
 	}
-	return false
+
+	return true
 }
 
 func treeNodeDeepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
