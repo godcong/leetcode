@@ -20,8 +20,11 @@ func Test_detectCycle(t *testing.T) {
 				head: strToListNode("[3,2,0,-4]", 1),
 			},
 			want: &ListNode{
-				Val:  2,
-				Next: nil,
+				Val: 2,
+				Next: &ListNode{
+					Val:  0,
+					Next: nil,
+				},
 			},
 		},
 	}
