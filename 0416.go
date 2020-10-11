@@ -31,6 +31,10 @@ func canPartition(nums []int) bool {
 	flag := false
 	var canPartitionDFS func(sum int, nums []int, current, start int)
 	canPartitionDFS = func(sum int, nums []int, current, start int) {
+		if flag {
+			return
+		}
+
 		if current > sum {
 			return
 		}
@@ -38,15 +42,15 @@ func canPartition(nums []int) bool {
 			flag = true
 			return
 		}
-		if !flag {
-			for i := start; i < len(nums); i++ {
-				if current+nums[i] <= sum {
-					current += nums[i]
-					canPartitionDFS(sum, nums, current, i+1)
-					current -= nums[i]
-				}
+
+		for i := start; i < len(nums); i++ {
+			if current+nums[i] <= sum {
+				current += nums[i]
+				canPartitionDFS(sum, nums, current, i+1)
+				current -= nums[i]
 			}
 		}
+
 	}
 	sum := 0
 	for i := 0; i < len(nums); i++ {
@@ -58,7 +62,7 @@ func canPartition(nums []int) bool {
 	}
 
 	sort.Ints(nums)
-	for i := 0; i < len(nums); i++ {
+	for i := len(nums) - 1; i >= 0; i-- {
 		if nums[i] > sum/2 {
 			return false
 		}
