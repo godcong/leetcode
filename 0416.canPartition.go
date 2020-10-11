@@ -26,31 +26,25 @@ package leetcode
 解释: 数组不能分割成两个元素和相等的子集.
 */
 func canPartition(nums []int) bool {
-	sum := 0
-	for i := 0; i < len(nums); i++ {
-		sum = sum + nums[i]
+	totalNum := 0
+	for index := range nums {
+		totalNum += nums[index]
 	}
-
-	if sum%2 != 0 {
+	if totalNum%2 != 0 {
 		return false
 	}
+	numCount := len(nums)
 
-	dp := make([]bool, sum/2+1)
+	row := numCount
+	col := totalNum / 2
+	dp := make([]bool, col+1)
 	dp[0] = true
-	for i := 0; i < len(nums); i++ {
-		for j := len(dp) - 1; j >= 0; j-- {
-			if nums[i] > sum/2 {
-				return false
-			}
-
-			if j >= nums[i] {
-				dp[j] = dp[j-nums[i]] || dp[j]
-			}
-
-			if dp[sum/2] {
-				return true
+	for i := 1; i <= row; i++ {
+		for w := col; w > 0; w-- {
+			if w-nums[i-1] >= 0 {
+				dp[w] = dp[w] || dp[w-nums[i-1]]
 			}
 		}
 	}
-	return false
+	return dp[col]
 }

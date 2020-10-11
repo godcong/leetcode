@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:115 ###  
+### 总完成:116 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -74,6 +74,7 @@ All append into def.go
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
+| 0416 | 分割等和子集 | canPartition | [GO](https://github.com/godcong/leetcode/blob/master/0416.canPartition.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0416.canPartition_test.go) |  
 | 0459 | 重复的子字符串 | repeatedSubstringPattern | [GO](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern_test.go) |  
 | 0461 | 汉明距离 | hammingDistance | [GO](https://github.com/godcong/leetcode/blob/master/0461.hammingDistance.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0461.hammingDistance_test.go) |  
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
