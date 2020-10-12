@@ -33,7 +33,7 @@ import "math"
  * }
  */
 func getMinimumDifference(root *TreeNode) int {
-	ans, pre := math.MaxInt64, -1
+	ans, pre := math.MaxInt32, -1
 	var dfs func(*TreeNode)
 	dfs = func(node *TreeNode) {
 		if node == nil {
