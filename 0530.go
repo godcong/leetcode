@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 /*
 530. 二叉搜索树的最小绝对差
 给你一棵所有节点为非负值的二叉搜索树，请你计算树中任意两节点的差的绝对值的最小值。
@@ -31,5 +33,19 @@ package leetcode
  * }
  */
 func getMinimumDifference(root *TreeNode) int {
-	return 0
+	ans, pre := math.MaxInt64, -1
+	var dfs func(*TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		dfs(node.Left)
+		if pre != -1 && node.Val-pre < ans {
+			ans = node.Val - pre
+		}
+		pre = node.Val
+		dfs(node.Right)
+	}
+	dfs(root)
+	return ans
 }
