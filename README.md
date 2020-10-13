@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:116 ###  
+### 总完成:118 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -28,6 +28,7 @@ All append into def.go
 | 0017 | 电话号码的字母组合 | letterCombinations | [GO](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations_test.go) |  
 | 0018 | 四数之和 | fourSum | [GO](https://github.com/godcong/leetcode/blob/master/0018.fourSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0018.fourSum_test.go) |  
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
+| 0024 | 两两交换链表中的节点 | swapPairs | [GO](https://github.com/godcong/leetcode/blob/master/0024.swapPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0024.swapPairs_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0037 | 解数独 | solveSudoku | [GO](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku_test.go) |  
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
@@ -82,6 +83,7 @@ All append into def.go
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences_test.go) |  
 | 0501 | 二叉搜索树中的众数 | findMode | [GO](https://github.com/godcong/leetcode/blob/master/0501.findMode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0501.findMode_test.go) |  
 | 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0528.convertBST_test.go) |  
+| 0530 | 二叉搜索树的最小绝对差 | getMinimumDifference | [GO](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference_test.go) |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0532.findPairs_test.go) |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes_test.go) |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0557.reverseWords_test.go) |  
