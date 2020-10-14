@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:118 ###  
+### 总完成:119 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -109,6 +109,7 @@ All append into def.go
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover_test.go) |  
+| 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1002.commonChars_test.go) |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses_test.go) |  
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1051.heightChecker_test.go) |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr_test.go) |  
