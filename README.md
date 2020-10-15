@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:119 ###  
+### 总完成:120 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -54,7 +54,8 @@ All append into def.go
 | 0109 | 有序链表转换二叉搜索树 | sortedListToBST | [GO](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST_test.go) |  
 | 0111 | 二叉树的最小深度 | minDepth | [GO](https://github.com/godcong/leetcode/blob/master/0111.minDepth.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0111.minDepth_test.go) |  
 | 0113 | 路径总和 II | pathSum | [GO](https://github.com/godcong/leetcode/blob/master/0113.pathSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0113.pathSum_test.go) |  
-| 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | TEST |  
+| 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0114.connect_test.go) |  
+| 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0117.connect_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
