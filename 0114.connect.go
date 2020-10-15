@@ -35,6 +35,19 @@ struct Node {
  *     Next *Node
  * }
  */
-func connedct114(root *Node) *Node {
-	return nil
+func connect114(root *Node) *Node {
+	if root == nil {
+		return root
+	}
+
+	for leftmost := root; leftmost.Left != nil; leftmost = leftmost.Left {
+		for node := leftmost; node != nil; node = node.Next {
+			node.Left.Next = node.Right
+			if node.Next != nil {
+				node.Right.Next = node.Next.Left
+			}
+		}
+	}
+
+	return root
 }
