@@ -21,10 +21,10 @@ type TreeNode struct {
  *     Neighbors []*Node
  * }
  */
-type Node struct {
-	Val       int
-	Neighbors []*Node
-}
+//type Node struct {
+//	Val       int
+//	Neighbors []*Node
+//}
 
 /**
  * Definition for singly-linked list.
@@ -38,9 +38,9 @@ type ListNode struct {
 	Next *ListNode
 }
 
-type Node117 struct {
+type Node struct {
 	Val   int
-	Left  *Node117
-	Right *Node117
-	Next  *Node117
+	Left  *Node
+	Right *Node
+	Next  *Node
 }

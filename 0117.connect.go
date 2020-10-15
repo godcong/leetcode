@@ -45,11 +45,11 @@ struct Node {
  *     Next *Node
  * }
  */
-func connect(root *Node117) *Node117 {
+func connect117(root *Node) *Node {
 	start := root
 	for start != nil {
-		var nextStart, last *Node117
-		handle := func(cur *Node117) {
+		var nextStart, last *Node
+		handleDFS := func(cur *Node) {
 			if cur == nil {
 				return
 			}
@@ -62,8 +62,8 @@ func connect(root *Node117) *Node117 {
 			last = cur
 		}
 		for p := start; p != nil; p = p.Next {
-			handle(p.Left)
-			handle(p.Right)
+			handleDFS(p.Left)
+			handleDFS(p.Right)
 		}
 		start = nextStart
 	}
