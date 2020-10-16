@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 977. 有序数组的平方
 给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。
@@ -23,5 +25,10 @@ package leetcode
 A 已按非递减顺序排序。
 */
 func sortedSquares(A []int) []int {
-	return nil
+	ans := make([]int, len(A))
+	for i, v := range A {
+		ans[i] = v * v
+	}
+	sort.Ints(ans)
+	return ans
 }
