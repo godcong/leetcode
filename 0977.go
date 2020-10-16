@@ -25,10 +25,9 @@ import "sort"
 A 已按非递减顺序排序。
 */
 func sortedSquares(A []int) []int {
-	ans := make([]int, len(A))
-	for i, v := range A {
-		ans[i] = v * v
+	for i := range A {
+		A[i] = A[i] * A[i]
 	}
-	sort.Ints(ans)
-	return ans
+	sort.Ints(A)
+	return A
 }
