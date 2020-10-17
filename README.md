@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:118 ###  
+### 总完成:122 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -28,6 +28,7 @@ All append into def.go
 | 0017 | 电话号码的字母组合 | letterCombinations | [GO](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0017.letterCombinations_test.go) |  
 | 0018 | 四数之和 | fourSum | [GO](https://github.com/godcong/leetcode/blob/master/0018.fourSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0018.fourSum_test.go) |  
 | 0020 | 有效的括号 | isValid | [GO](https://github.com/godcong/leetcode/blob/master/0020.isValid.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0020.isValid_test.go) |  
+| 0024 | 两两交换链表中的节点 | swapPairs | [GO](https://github.com/godcong/leetcode/blob/master/0024.swapPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0024.swapPairs_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0037 | 解数独 | solveSudoku | [GO](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku_test.go) |  
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
@@ -54,7 +55,8 @@ All append into def.go
 | 0109 | 有序链表转换二叉搜索树 | sortedListToBST | [GO](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST_test.go) |  
 | 0111 | 二叉树的最小深度 | minDepth | [GO](https://github.com/godcong/leetcode/blob/master/0111.minDepth.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0111.minDepth_test.go) |  
 | 0113 | 路径总和 II | pathSum | [GO](https://github.com/godcong/leetcode/blob/master/0113.pathSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0113.pathSum_test.go) |  
-| 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | TEST |  
+| 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0114.connect_test.go) |  
+| 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0117.connect_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
@@ -83,6 +85,7 @@ All append into def.go
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences_test.go) |  
 | 0501 | 二叉搜索树中的众数 | findMode | [GO](https://github.com/godcong/leetcode/blob/master/0501.findMode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0501.findMode_test.go) |  
 | 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0528.convertBST_test.go) |  
+| 0530 | 二叉搜索树的最小绝对差 | getMinimumDifference | [GO](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference_test.go) |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0532.findPairs_test.go) |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes_test.go) |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0557.reverseWords_test.go) |  
@@ -109,6 +112,7 @@ All append into def.go
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover_test.go) |  
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares_test.go) |  
+| 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1002.commonChars_test.go) |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses_test.go) |  
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1051.heightChecker_test.go) |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr_test.go) |  
