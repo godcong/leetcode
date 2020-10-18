@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"reflect"
 	"testing"
 )
 
@@ -45,7 +44,7 @@ func Test_removeNthFromEnd(t *testing.T) {
 						Val: 4,
 						Next: &ListNode{
 							Val:  5,
-							Next: &ListNode{},
+							Next: nil,
 						},
 					},
 				},
@@ -54,9 +53,21 @@ func Test_removeNthFromEnd(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := removeNthFromEnd(tt.args.head, tt.args.n); !reflect.DeepEqual(got, tt.want) {
+			if got := removeNthFromEnd(tt.args.head, tt.args.n); !deepEqualRemoveNthFromEnd(t, got, tt.want) {
 				t.Errorf("removeNthFromEnd() = %v, want %v", got, tt.want)
 			}
 		})
 	}
+}
+
+func deepEqualRemoveNthFromEnd(t *testing.T, got, want *ListNode) bool {
+	if got == nil || want == nil {
+		t.Errorf("removeNthFromEnd() = %v, want %v", got, want)
+		return got == want
+	}
+	if got.Val == want.Val {
+		return deepEqualRemoveNthFromEnd(t, got.Next, want.Next)
+	}
+	t.Errorf("removeNthFromEnd() = %v, want %v", got.Val, want.Val)
+	return false
 }
