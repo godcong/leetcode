@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 /*
 19. 删除链表的倒数第N个节点
 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
@@ -27,19 +25,16 @@ import "fmt"
  * }
  */
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	if head == nil {
-		return head
-	}
-	cur := head
-	for n > 0 {
-		fmt.Println(cur.Val)
-		if n == 1 {
-			cur.Next = cur.Next.Next
-			break
+	dummy := &ListNode{Next: head}
+	pre := dummy
+	i := 1
+	for head != nil {
+		if i > n {
+			pre = pre.Next
 		}
-		cur = cur.Next
-		n--
+		head = head.Next
+		i++
 	}
-
-	return head
+	pre.Next = pre.Next.Next
+	return dummy.Next
 }
