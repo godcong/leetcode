@@ -62,7 +62,6 @@ func Test_removeNthFromEnd(t *testing.T) {
 
 func deepEqualRemoveNthFromEnd(t *testing.T, got, want *ListNode) bool {
 	if got == nil || want == nil {
-		t.Errorf("removeNthFromEnd() = %v, want %v", got, want)
 		return got == want
 	}
 	if got.Val == want.Val {
