@@ -25,5 +25,17 @@ package leetcode
  * }
  */
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	return nil
+	if head == nil {
+		return head
+	}
+	cur := head
+	for n > 0 {
+		cur = cur.Next
+		if n == 0 {
+			cur.Next = cur.Next.Next
+		}
+		n--
+	}
+
+	return cur
 }
