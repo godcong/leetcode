@@ -1,5 +1,10 @@
 package leetcode
 
+import (
+	"bytes"
+	"strings"
+)
+
 /*
 844. 比较含退格的字符串
 给定 S 和 T 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
@@ -42,5 +47,19 @@ S 和 T 只含有小写字母以及字符 '#'。
 你可以用 O(N) 的时间复杂度和 O(1) 的空间复杂度解决该问题吗？
 */
 func backspaceCompare(S string, T string) bool {
-	return true
+	var backspaceCompareStr func(string) string
+	backspaceCompareStr = func(s string) string {
+		b := bytes.NewBuffer(nil)
+		for i := range s {
+			if s[i] != '#' {
+				b.WriteByte(s[i])
+			} else if b.Len() > 0 {
+				b.Truncate(b.Len() - 1)
+			}
+		}
+		return b.String()
+	}
+	S = backspaceCompareStr(S)
+	T = backspaceCompareStr(T)
+	return strings.Compare(S, T) == 0
 }
