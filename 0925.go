@@ -36,5 +36,16 @@ typed.length <= 1000
 name 和 typed 的字符都是小写字母。
 */
 func isLongPressedName(name string, typed string) bool {
-	return true
+	i, j := 0, 0
+	for j < len(typed) {
+		if i < len(name) && name[i] == typed[j] {
+			i++
+			j++
+		} else if j > 0 && name[i-1] == typed[j] {
+			j++
+		} else {
+			return false
+		}
+	}
+	return i == len(name)
 }
