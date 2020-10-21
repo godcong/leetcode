@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:124 ###  
+### 总完成:125 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -111,6 +111,7 @@ All append into def.go
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
+| 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName_test.go) |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover_test.go) |  
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares_test.go) |  
