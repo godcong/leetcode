@@ -366,7 +366,11 @@ func strToListNode(nums string, pos int) *ListNode {
 	if nums == "" {
 		sNums = make([]string, 1)
 	} else {
-		sNums = strings.Split(nums[sta:end], ",")
+		if strings.Contains(nums[sta:end], "->") {
+			sNums = strings.Split(nums[sta:end], "->")
+		} else {
+			sNums = strings.Split(nums[sta:end], ",")
+		}
 	}
 	size := len(sNums)
 	nodes := make([]ListNode, size)
