@@ -43,6 +43,7 @@ func isLongPressedName(name string, typed string) bool {
 		} else if i <= 0 || name[idx-1] != typed[i] {
 			return false
 		}
+
 	}
 	return idx == len(name)
 }
