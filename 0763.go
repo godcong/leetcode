@@ -22,5 +22,20 @@ S的长度在[1, 500]之间。
 S只包含小写字母 'a' 到 'z' 。
 */
 func partitionLabels(S string) []int {
-	return nil
+	var last [26]int
+	var ret []int
+	for i, char := range S {
+		last[char-'a'] = i
+	}
+	start, end := 0, 0
+	for i, c := range S {
+		if last[c-'a'] > end {
+			end = last[c-'a']
+		}
+		if i == end {
+			ret = append(ret, end-start+1)
+			start = end + 1
+		}
+	}
+	return ret
 }
