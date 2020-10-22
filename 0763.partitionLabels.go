@@ -33,8 +33,8 @@ func partitionLabels(S string) []int {
 			end = last[c-'a']
 		}
 		if i == end {
-			ret = append(ret, end-start+1)
-			start = end + 1
+			ret = append(ret, i-start+1)
+			start = i + 1
 		}
 	}
 	return ret

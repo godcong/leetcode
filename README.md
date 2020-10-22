@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:126 ###  
+### 总完成:127 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -105,6 +105,7 @@ All append into def.go
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings_test.go) |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
+| 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels_test.go) |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations_test.go) |  
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree_test.go) |  
