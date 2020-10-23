@@ -23,13 +23,9 @@ package leetcode
  * }
  */
 func isPalindrome(head *ListNode) bool {
-	var vals []int
+	vals := []int{}
 	for ; head != nil; head = head.Next {
 		vals = append(vals, head.Val)
-	}
-
-	if vals == nil {
-		return true
 	}
 
 	n := len(vals)
