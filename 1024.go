@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 /*
 1024. 视频拼接
 你将会获得一系列视频片段，这些片段来自于一项持续时长为 T 秒的体育赛事。这些片段可能有所重叠，也可能长度不一。
@@ -46,5 +48,22 @@ package leetcode
 0 <= T <= 100
 */
 func videoStitching(clips [][]int, T int) int {
-	return 0
+	const inf = math.MaxInt32
+	dp := make([]int, T+1)
+	for i := range dp {
+		dp[i] = inf
+	}
+	dp[0] = 0
+	for i := 1; i <= T; i++ {
+		for _, c := range clips {
+			l, r := c[0], c[1]
+			if l < i && i <= r && dp[l]+1 < dp[i] {
+				dp[i] = dp[l] + 1
+			}
+		}
+	}
+	if dp[T] == inf {
+		return -1
+	}
+	return dp[T]
 }
