@@ -35,8 +35,9 @@ func longestMountain(A []int) int {
 	n := len(A)
 	ret := 0
 	left := 0
+	right := 0
 	for left+2 < n {
-		right := left + 1
+		right = left + 1
 		if A[left] < A[left+1] {
 			for right+1 < n && A[right] < A[right+1] {
 				right++
@@ -54,5 +55,5 @@ func longestMountain(A []int) int {
 		}
 		left = right
 	}
-	return
+	return ret
 }
