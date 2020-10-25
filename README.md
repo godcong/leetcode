@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:128 ###  
+### 总完成:130 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -113,6 +113,7 @@ All append into def.go
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
+| 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName_test.go) |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
@@ -120,6 +121,7 @@ All append into def.go
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares_test.go) |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1002.commonChars_test.go) |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses_test.go) |  
+| 1024 | 视频拼接 | videoStitching | [GO](https://github.com/godcong/leetcode/blob/master/1024.videoStitching.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1024.videoStitching_test.go) |  
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1051.heightChecker_test.go) |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr_test.go) |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1299.replaceElements_test.go) |  
