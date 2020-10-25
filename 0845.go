@@ -32,5 +32,27 @@ B.length >= 3
 0 <= A[i] <= 10000
 */
 func longestMountain(A []int) int {
-	return 0
+	n := len(A)
+	ret := 0
+	left := 0
+	for left+2 < n {
+		right := left + 1
+		if A[left] < A[left+1] {
+			for right+1 < n && A[right] < A[right+1] {
+				right++
+			}
+			if right < n-1 && A[right] > A[right+1] {
+				for right+1 < n && A[right] > A[right+1] {
+					right++
+				}
+				if right-left+1 > ret {
+					ret = right - left + 1
+				}
+			} else {
+				right++
+			}
+		}
+		left = right
+	}
+	return
 }
