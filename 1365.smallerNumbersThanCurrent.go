@@ -1,7 +1,5 @@
 package leetcode
 
-import "sort"
-
 /*
 1365. 有多少小于当前数字的数字
 给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。
@@ -38,23 +36,18 @@ import "sort"
 0 <= nums[i] <= 100
 */
 func smallerNumbersThanCurrent(nums []int) []int {
-	type mark struct{ val, idx int }
-	tmp := make([]mark, len(nums))
-	for i, num := range nums {
-		tmp[i] = mark{num, i}
+	cnt := [101]int{}
+	for _, v := range nums {
+		cnt[v]++
 	}
-	sort.Slice(tmp, func(i, j int) bool {
-		return tmp[i].val < tmp[j].val
-	})
-
-	ret := make([]int, len(nums))
-	for i, v := range tmp {
-		if i > 0 && v.val == tmp[i-1].val {
-			ret[v.idx] = ret[tmp[i-1].idx]
-			continue
+	for i := 0; i < 100; i++ {
+		cnt[i+1] += cnt[i]
+	}
+	ans := make([]int, len(nums))
+	for i, v := range nums {
+		if v > 0 {
+			ans[i] = cnt[v-1]
 		}
-		ret[v.idx] = i
 	}
-
-	return ret
+	return ans
 }
