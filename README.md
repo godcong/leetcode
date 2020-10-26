@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:130 ###  
+### 总完成:131 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -126,6 +126,7 @@ All append into def.go
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr_test.go) |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1299.replaceElements_test.go) |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1351.countNegatives_test.go) |  
+| 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent_test.go) |  
 | 1431 | 拥有最多糖果的孩子 | kidsWithCandies | [GO](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies_test.go) |  
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1470.shuffle_test.go) |  
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1480.runningSum_test.go) |  
