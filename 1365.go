@@ -50,7 +50,7 @@ func smallerNumbersThanCurrent(nums []int) []int {
 	ret := make([]int, len(nums))
 	for i, v := range tmp {
 		if i > 0 && v.val == tmp[i-1].val {
-			ret[v.idx] = ret[tmp[i-1].val]
+			ret[v.idx] = ret[tmp[i-1].idx]
 			continue
 		}
 		ret[v.idx] = i
