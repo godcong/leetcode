@@ -18,9 +18,13 @@ func Test_smallerNumbersThanCurrent(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: nil,
+				nums: []int{
+					6, 5, 4, 8,
+				},
 			},
-			want: nil,
+			want: []int{
+				2, 1, 0, 3,
+			},
 		},
 	}
 	for _, tt := range tests {

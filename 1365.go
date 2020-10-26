@@ -38,14 +38,22 @@ import "sort"
 0 <= nums[i] <= 100
 */
 func smallerNumbersThanCurrent(nums []int) []int {
-	sort.Ints(nums)
-	ret := make([]int, len(nums))
+	type mark struct{ val, idx int }
+	tmp := make([]mark, len(nums))
 	for i, num := range nums {
-		if i > 0 && num == nums[i-1] {
-			ret[i] = ret[i-1]
+		tmp[i] = mark{num, i}
+	}
+	sort.Slice(tmp, func(i, j int) bool {
+		return tmp[i].val < tmp[j].val
+	})
+
+	ret := make([]int, len(nums))
+	for i, v := range tmp {
+		if i > 0 && v.val == tmp[i-1].val {
+			ret[v.idx] = ret[tmp[i-1].val]
 			continue
 		}
-		ret[i] = i + 1
+		ret[v.idx] = i
 	}
 
 	return ret
