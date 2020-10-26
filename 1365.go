@@ -36,5 +36,5 @@ package leetcode
 0 <= nums[i] <= 100
 */
 func smallerNumbersThanCurrent(nums []int) []int {
-
+	return nil
 }
