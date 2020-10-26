@@ -36,18 +36,18 @@ package leetcode
 0 <= nums[i] <= 100
 */
 func smallerNumbersThanCurrent(nums []int) []int {
-	cnt := [101]int{}
+	mark := [101]int{}
 	for _, v := range nums {
-		cnt[v]++
+		mark[v]++
 	}
 	for i := 0; i < 100; i++ {
-		cnt[i+1] += cnt[i]
+		mark[i+1] += mark[i]
 	}
-	ans := make([]int, len(nums))
+	ret := make([]int, len(nums))
 	for i, v := range nums {
 		if v > 0 {
-			ans[i] = cnt[v-1]
+			ret[i] = mark[v-1]
 		}
 	}
-	return ans
+	return ret
 }
