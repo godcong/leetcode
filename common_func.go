@@ -6,6 +6,10 @@ import (
 )
 
 func strToIntArray(nums string) []int {
+	if nums == "" {
+		return nil
+	}
+
 	sta := 0
 	end := len(nums)
 	if strings.Index(nums, "[") == 0 {
