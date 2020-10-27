@@ -5,9 +5,9 @@ import (
 	"testing"
 )
 
-func Test_preorderTraversal(t *testing.T) {
+func Test_strToIntArray(t *testing.T) {
 	type args struct {
-		root *TreeNode
+		nums string
 	}
 	tests := []struct {
 		name string
@@ -18,7 +18,7 @@ func Test_preorderTraversal(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: strToTreeNode("[1,null,2,3]"),
+				nums: "[1,2,3]",
 			},
 			want: []int{
 				1, 2, 3,
@@ -27,8 +27,8 @@ func Test_preorderTraversal(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := preorderTraversal(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("preorderTraversal() = %v, want %v", got, tt.want)
+			if got := strToIntArray(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("strToIntArray() = %v, want %v", got, tt.want)
 			}
 		})
 	}
