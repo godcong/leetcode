@@ -24,6 +24,13 @@ func Test_strToIntArray(t *testing.T) {
 				1, 2, 3,
 			},
 		},
+		{
+			name: "",
+			args: args{
+				nums: "[]",
+			},
+			want: nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

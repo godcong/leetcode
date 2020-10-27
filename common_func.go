@@ -17,10 +17,11 @@ func strToIntArray(nums string) []int {
 	}
 
 	var sNums []string
+	nums = nums[sta:end]
 	if nums == "" {
-		sNums = make([]string, 1)
+		return nil
 	} else {
-		sNums = strings.Split(nums[sta:end], ",")
+		sNums = strings.Split(nums, ",")
 	}
 
 	size := len(sNums)
