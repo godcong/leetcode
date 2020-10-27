@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:131 ###  
+### 总完成:133 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -63,6 +63,7 @@ All append into def.go
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
 | 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
 | 0143 | 重排链表 | reorderList | [GO](https://github.com/godcong/leetcode/blob/master/0143.reorderList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0143.reorderList_test.go) |  
+| 0144 | 二叉树的前序遍历 | preorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0144.preorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0144.preorderTraversal_test.go) |  
 | 0145 | 二叉树的后序遍历 | postorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
@@ -146,5 +147,4 @@ All append into def.go
 | Offer.10.i | 斐波那契数列 | fib | [GO](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.10.i.fib_test.go) |  
 | Offer.20 | 表示数值的字符串 | isNumber | [GO](https://github.com/godcong/leetcode/blob/master/Offer.20.isNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.20.isNumber_test.go) |  
 | Offer.43 | 1～n整数中1出现的次数 | countDigitOne | [GO](https://github.com/godcong/leetcode/blob/master/Offer.43.countDigitOne.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.43.countDigitOne_test.go) |  
-| Offer.58.ii | 左旋转字符串 | reverseLeftWords | [GO](https://github.com/godcong/leetcode/blob/master/Offer.58.ii.reverseLeftWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.58.ii.reverseLeftWords_test.go) |  
-<!--END-->
+| Offer.58.ii | 左旋转字符串 | reverseLeftWords | [GO](https://github.com/godcong/leetcode/blob/master/Offer.58.ii.reverseLeftWords.go) | [TEST](https://github.com/godcong/leetcode/blob/master/Offer.5
