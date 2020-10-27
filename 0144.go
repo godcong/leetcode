@@ -25,5 +25,16 @@ package leetcode
  * }
  */
 func preorderTraversal(root *TreeNode) []int {
-	return nil
+	var vals []int
+	var preorderTraversalDFS func(*TreeNode)
+	preorderTraversalDFS = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		vals = append(vals, node.Val)
+		preorderTraversalDFS(node.Left)
+		preorderTraversalDFS(node.Right)
+	}
+	preorderTraversalDFS(root)
+	return vals
 }
