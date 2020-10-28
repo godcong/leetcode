@@ -29,5 +29,13 @@ package leetcode
 -1000 <= arr[i] <= 1000
 */
 func uniqueOccurrences(arr []int) bool {
-	return true
+	counts := make(map[int]int, len(arr))
+	for _, v := range arr {
+		counts[v]++
+	}
+	times := map[int]struct{}{}
+	for _, c := range counts {
+		times[c] = struct{}{}
+	}
+	return len(times) == len(counts)
 }
