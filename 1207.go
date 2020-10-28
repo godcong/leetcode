@@ -33,9 +33,9 @@ func uniqueOccurrences(arr []int) bool {
 	for _, v := range arr {
 		counts[v]++
 	}
-	times := map[int]struct{}{}
+	times := map[int]bool{}
 	for _, c := range counts {
-		times[c] = struct{}{}
+		times[c] = true
 	}
 	return len(times) == len(counts)
 }
