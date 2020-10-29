@@ -19,6 +19,13 @@ func Test_sumNumbers(t *testing.T) {
 			},
 			want: 25,
 		},
+		{
+			name: "",
+			args: args{
+				root: strToTreeNode("[4,9,0,5,1]"),
+			},
+			want: 1026,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
