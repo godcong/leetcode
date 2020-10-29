@@ -49,12 +49,17 @@ func sumNumbers(root *TreeNode) int {
 	var sumNumbersDFS func(node *TreeNode, val int)
 	sumNumbersDFS = func(node *TreeNode, val int) {
 		if node == nil {
-			ret += val
 			return
 		}
 		val = val*10 + node.Val
+		if node.Left == nil && node.Right == nil {
+			ret += val
+			return
+		}
+
 		sumNumbersDFS(node.Left, val)
 		sumNumbersDFS(node.Right, val)
 	}
+	sumNumbersDFS(root, 0)
 	return ret
 }
