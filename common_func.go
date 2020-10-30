@@ -53,6 +53,9 @@ func strToIntArrArray(nums string) [][]int {
 	end := strings.Index(nums, "]")
 	for end != -1 && sta != -1 {
 		ret = append(ret, strToIntArray(nums[sta:end]))
+		nums = nums[end+1:]
+		sta = strings.Index(nums, "[")
+		end = strings.Index(nums, "]")
 	}
 
 	return ret
