@@ -23,5 +23,30 @@ package leetcode
 解释: 它的周长是下面图片中的 16 个黄色的边：
 */
 func islandPerimeter(grid [][]int) int {
-	return 0
+	var ret int
+	if grid == nil {
+		return ret
+	}
+	maxRow := len(grid)
+	maxCel := len(grid[0])
+	var islandPerimeterSide func(x, y int)
+	islandPerimeterSide = func(x, y int) {
+		if x < 0 || y < 0 || x >= maxRow || y >= maxCel || grid[x][y] == 0 {
+			ret++
+			return
+		}
+		return
+	}
+
+	for x := 0; x < maxRow; x++ {
+		for y := 0; y < maxCel; y++ {
+			if grid[x][y] == 1 {
+				islandPerimeterSide(x+1, y)
+				islandPerimeterSide(x, y+1)
+				islandPerimeterSide(x-1, y)
+				islandPerimeterSide(x, y-1)
+			}
+		}
+	}
+	return ret
 }

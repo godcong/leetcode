@@ -15,9 +15,16 @@ func Test_islandPerimeter(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				grid: [][]int{},
+				grid: strToIntArrArray("[[0,1,0,0],\n [1,1,1,0],\n [0,1,0,0],\n [1,1,0,0]]"),
 			},
-			want: 0,
+			want: 16,
+		},
+		{
+			name: "",
+			args: args{
+				grid: strToIntArrArray("[[1,0]]"),
+			},
+			want: 4,
 		},
 	}
 	for _, tt := range tests {
