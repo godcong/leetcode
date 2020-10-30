@@ -6,22 +6,8 @@ import (
 )
 
 func strToIntArray(nums string) []int {
-	if nums == "" {
-		return nil
-	}
-
-	sta := 0
-	end := len(nums)
-	if strings.Index(nums, "[") == 0 {
-		sta += 1
-	}
-
-	if strings.Index(nums, "]") == end-1 {
-		end -= 1
-	}
-
+	nums = fixBrackets(nums)
 	var sNums []string
-	nums = nums[sta:end]
 	if nums == "" {
 		return nil
 	} else {
@@ -63,8 +49,10 @@ func strToIntArrArray(nums string) [][]int {
 	}
 
 	var ret [][]int
-	for end := strings.Index(nums, "]"); end != -1; {
-
+	sta := strings.Index(nums, "[")
+	end := strings.Index(nums, "]")
+	for end != -1 && sta != -1 {
+		ret = append(ret, strToIntArray(nums[sta:end]))
 	}
 
 	return ret
