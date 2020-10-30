@@ -38,6 +38,38 @@ func strToIntArray(nums string) []int {
 	return nodes
 }
 
+func fixBrackets(nums string) string {
+	if nums == "" {
+		return ""
+	}
+
+	sta := 0
+	end := len(nums)
+	if strings.Index(nums, "[") == 0 {
+		sta += 1
+	}
+
+	if strings.LastIndex(nums, "]") == end-1 {
+		end -= 1
+	}
+
+	return nums[sta:end]
+}
+
+func strToIntArrArray(nums string) [][]int {
+	nums = fixBrackets(nums)
+	if nums == "" {
+		return nil
+	}
+
+	var ret [][]int
+	for end := strings.Index(nums, "]"); end != -1; {
+
+	}
+
+	return ret
+}
+
 func strToListNode(nums string, pos int) *ListNode {
 	sta := 0
 	end := len(nums)
