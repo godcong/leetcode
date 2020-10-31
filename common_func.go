@@ -6,22 +6,8 @@ import (
 )
 
 func strToIntArray(nums string) []int {
-	if nums == "" {
-		return nil
-	}
-
-	sta := 0
-	end := len(nums)
-	if strings.Index(nums, "[") == 0 {
-		sta += 1
-	}
-
-	if strings.Index(nums, "]") == end-1 {
-		end -= 1
-	}
-
+	nums = fixBrackets(nums)
 	var sNums []string
-	nums = nums[sta:end]
 	if nums == "" {
 		return nil
 	} else {
@@ -38,25 +24,53 @@ func strToIntArray(nums string) []int {
 	return nodes
 }
 
-func strToListNode(nums string, pos int) *ListNode {
+func fixBrackets(nums string) string {
+	if nums == "" {
+		return ""
+	}
+
 	sta := 0
 	end := len(nums)
 	if strings.Index(nums, "[") == 0 {
 		sta += 1
 	}
 
-	if strings.Index(nums, "]") == end-1 {
+	if strings.LastIndex(nums, "]") == end-1 {
 		end -= 1
 	}
 
+	return nums[sta:end]
+}
+
+func strToIntArrArray(nums string) [][]int {
+	nums = fixBrackets(nums)
+	if nums == "" {
+		return nil
+	}
+
+	var ret [][]int
+	sta := strings.Index(nums, "[")
+	end := strings.Index(nums, "]")
+	for end != -1 && sta != -1 {
+		ret = append(ret, strToIntArray(nums[sta:end]))
+		nums = nums[end+1:]
+		sta = strings.Index(nums, "[")
+		end = strings.Index(nums, "]")
+	}
+
+	return ret
+}
+
+func strToListNode(nums string, pos int) *ListNode {
+	nums = fixBrackets(nums)
 	var sNums []string
 	if nums == "" {
 		sNums = make([]string, 1)
 	} else {
-		if strings.Contains(nums[sta:end], "->") {
-			sNums = strings.Split(nums[sta:end], "->")
+		if strings.Contains(nums, "->") {
+			sNums = strings.Split(nums, "->")
 		} else {
-			sNums = strings.Split(nums[sta:end], ",")
+			sNums = strings.Split(nums, ",")
 		}
 	}
 	size := len(sNums)
@@ -81,21 +95,12 @@ func strToListNode(nums string, pos int) *ListNode {
 }
 
 func strToTreeNode(nums string) *TreeNode {
-	sta := 0
-	end := len(nums)
-	if strings.Index(nums, "[") == 0 {
-		sta += 1
-	}
-
-	if strings.Index(nums, "]") == end-1 {
-		end -= 1
-	}
-
+	nums = fixBrackets(nums)
 	var sNums []string
 	if nums == "" {
 		sNums = make([]string, 1)
 	} else {
-		sNums = strings.Split(nums[sta:end], ",")
+		sNums = strings.Split(nums, ",")
 	}
 
 	size := len(sNums)
