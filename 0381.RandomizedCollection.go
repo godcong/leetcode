@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"math/rand"
 )
 
@@ -88,7 +87,6 @@ func (this *RandomizedCollection) Remove(val int) bool {
 
 /** Get a random element from the collection. */
 func (this *RandomizedCollection) GetRandom() int {
-	fmt.Println("GetRandom", this.nums)
 	return this.nums[rand.Intn(len(this.nums))]
 }
 
