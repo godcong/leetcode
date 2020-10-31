@@ -53,48 +53,36 @@ func Constructor() RandomizedCollection {
 func (this *RandomizedCollection) Insert(val int) bool {
 	idx, b := this.vals[val]
 	if !b {
-		idx = map[int]bool{
-			len(this.nums): true,
-		}
+		idx = map[int]bool{}
 		this.vals[val] = idx
-		this.nums = append(this.nums, val)
-		fmt.Println("Insert(0)", this.nums)
-		return true
 	}
 	idx[len(this.nums)] = true
 	this.nums = append(this.nums, val)
-	fmt.Println("Insert(1)", this.nums)
-	return false
+	return b
 }
 
 /** Removes a value from the collection. Returns true if the collection contained the specified element. */
 func (this *RandomizedCollection) Remove(val int) bool {
-	idx, b := this.vals[val]
-	if !b {
+	idx, has := this.vals[val]
+	if !has {
 		return false
 	}
 	var i int
-	for numIdx := range idx {
-		i = numIdx
+	for id := range idx {
+		i = id
 		break
 	}
-
 	last := len(this.nums) - 1
-	lastIdxList := this.vals[last]
-	delete(lastIdxList, last)
-	if lastIdxList == nil {
-		lastIdxList = map[int]bool{
-			i: true,
-		}
-	} else {
-		lastIdxList[i] = true
+	this.nums[i] = this.nums[last]
+	delete(idx, i)
+	delete(this.vals[this.nums[i]], last)
+	if i < last {
+		this.vals[this.nums[i]][i] = true
 	}
-
-	this.nums[i], this.nums[last] = this.nums[last], this.nums[i]
-	if last > 0 {
-		this.nums = this.nums[:last-1]
+	if len(idx) == 0 {
+		delete(this.vals, val)
 	}
-	fmt.Println("Remove", this.nums)
+	this.nums = this.nums[:last]
 	return true
 }
 
