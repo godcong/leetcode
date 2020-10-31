@@ -1,5 +1,10 @@
 package leetcode
 
+import (
+	"fmt"
+	"math/rand"
+)
+
 /*
 381. O(1) 时间插入、删除和获取随机元素 - 允许重复
 设计一个支持在平均 时间复杂度 O(1) 下， 执行以下操作的数据结构。
@@ -33,42 +38,70 @@ collection.remove(1);
 collection.getRandom();
 */
 type RandomizedCollection struct {
-	length int
-	data   map[int]int
+	vals map[int]map[int]bool
+	nums []int
 }
 
 /** Initialize your data structure here. */
 func Constructor() RandomizedCollection {
 	return RandomizedCollection{
-		data: make(map[int]int),
+		vals: make(map[int]map[int]bool),
 	}
 }
 
 /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
 func (this *RandomizedCollection) Insert(val int) bool {
-	_, b := this.data[val]
-	this.data[val]++
-	this.length++
-	return b
-
+	idx, b := this.vals[val]
+	if !b {
+		idx = map[int]bool{
+			len(this.nums): true,
+		}
+		this.vals[val] = idx
+		this.nums = append(this.nums, val)
+		fmt.Println("Insert(0)", this.nums)
+		return true
+	}
+	idx[len(this.nums)] = true
+	this.nums = append(this.nums, val)
+	fmt.Println("Insert(1)", this.nums)
+	return false
 }
 
 /** Removes a value from the collection. Returns true if the collection contained the specified element. */
 func (this *RandomizedCollection) Remove(val int) bool {
-	if _, b := this.data[val]; !b {
+	idx, b := this.vals[val]
+	if !b {
 		return false
 	}
-	this.data[val]--
-	this.length--
+	var i int
+	for numIdx := range idx {
+		i = numIdx
+		break
+	}
+
+	last := len(this.nums) - 1
+	lastIdxList := this.vals[last]
+	delete(lastIdxList, last)
+	if lastIdxList == nil {
+		lastIdxList = map[int]bool{
+			i: true,
+		}
+	} else {
+		lastIdxList[i] = true
+	}
+
+	this.nums[i], this.nums[last] = this.nums[last], this.nums[i]
+	if last > 0 {
+		this.nums = this.nums[:last-1]
+	}
+	fmt.Println("Remove", this.nums)
 	return true
 }
 
 /** Get a random element from the collection. */
 func (this *RandomizedCollection) GetRandom() int {
-	if this.length > 0 {
-		panic("todo")
-	}
-	return -1
+	fmt.Println("GetRandom", this.nums)
+	return this.nums[rand.Intn(len(this.nums))]
 }
 
 /**
