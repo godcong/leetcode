@@ -41,37 +41,38 @@ wordDict = ["cats", "dog", "sand", "and", "cat"]
 []
 */
 func wordBreak(s string, wordDict []string) []string {
-	var sentences []string
-	wordSet := map[string]struct{}{}
-	for _, w := range wordDict {
-		wordSet[w] = struct{}{}
+	if s == "" || len(s) == 0 || wordDict == nil || len(wordDict) == 0 {
+		return nil
+	}
+	var res []string
+	set := [26]bool{}
+
+	for _, v := range strings.Join(wordDict, "") {
+		set[v-'a'] = true
 	}
 
-	n := len(s)
-	dp := make([][][]string, n)
-	var backtrack func(index int) [][]string
-	backtrack = func(index int) [][]string {
-		if dp[index] != nil {
-			return dp[index]
+	for _, v := range s {
+		if !set[v-'a'] {
+			return res
 		}
-		var wordsList [][]string
-		for i := index + 1; i < n; i++ {
-			word := s[index:i]
-			if _, has := wordSet[word]; has {
-				for _, nextWords := range backtrack(i) {
-					wordsList = append(wordsList, append([]string{word}, nextWords...))
-				}
+	}
+	var wordBreakDFS func(nowString string, index int)
+	max := len(s)
+	wordBreakDFS = func(nowString string, index int) {
+
+		if index >= max {
+			res = append(res, nowString[1:])
+			return
+		}
+
+		for _, word := range wordDict {
+			lenWord := len(word)
+
+			if index+lenWord <= len(s) && s[index:index+lenWord] == word {
+				wordBreakDFS(nowString+" "+word, index+lenWord)
 			}
 		}
-		word := s[index:]
-		if _, has := wordSet[word]; has {
-			wordsList = append(wordsList, []string{word})
-		}
-		dp[index] = wordsList
-		return wordsList
 	}
-	for _, words := range backtrack(0) {
-		sentences = append(sentences, strings.Join(words, " "))
-	}
-	return sentences
+	wordBreakDFS("", 0)
+	return res
 }
