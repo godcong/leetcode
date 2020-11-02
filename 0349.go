@@ -16,5 +16,17 @@ package leetcode
 输出：[9,4]
 */
 func intersection(nums1 []int, nums2 []int) []int {
-	return nil
+	setNums1 := make(map[int]bool)
+	for i := range nums1 {
+		setNums1[i] = true
+	}
+
+	var ret []int
+	for i := range nums2 {
+		if add, b := setNums1[i]; b && add {
+			ret = append(ret, i)
+			setNums1[i] = false
+		}
+	}
+	return ret
 }
