@@ -36,5 +36,17 @@ A[i] > A[i+1] > ... > A[A.length - 1]
 0 <= A[i] <= 10000
 */
 func validMountainArray(A []int) bool {
-	return false
+	i, n := 0, len(A)
+
+	for ; i+1 < n && A[i] < A[i+1]; i++ {
+	}
+
+	if i == 0 || i == n-1 {
+		return false
+	}
+
+	for ; i+1 < n && A[i] > A[i+1]; i++ {
+	}
+
+	return i == n-1
 }
