@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:138 ###  
+### 总完成:139 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -59,6 +59,7 @@ All append into def.go
 | 0113 | 路径总和 II | pathSum | [GO](https://github.com/godcong/leetcode/blob/master/0113.pathSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0113.pathSum_test.go) |  
 | 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0114.connect_test.go) |  
 | 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0117.connect_test.go) |  
+| 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0127.ladderLength_test.go) |  
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
