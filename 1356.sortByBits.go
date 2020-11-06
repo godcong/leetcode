@@ -45,18 +45,36 @@ import "sort"
 1 <= arr.length <= 500
 0 <= arr[i] <= 10^4
 */
-func onesCount(x int) (c int) {
-	for ; x > 0; x /= 2 {
-		c += x % 2
+type arrSort []int
+
+func (s arrSort) Len() int {
+	return len(s)
+}
+
+func (s arrSort) Less(i, j int) bool {
+	c1, c2 := countSortByBits(s[i]), countSortByBits(s[j])
+	if c1 == c2 {
+		return s[i] < s[j]
 	}
-	return
+	return c1 < c2
+}
+
+func (s arrSort) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
 }
 
 func sortByBits(arr []int) []int {
-	sort.Slice(arr, func(i, j int) bool {
-		x, y := arr[i], arr[j]
-		cx, cy := onesCount(x), onesCount(y)
-		return cx < cy || cx == cy && x < y
-	})
-	return arr
+	var as arrSort
+	as = arr
+	sort.Sort(as)
+	return as
+}
+
+func countSortByBits(i int) int {
+	c := 0
+	for i != 0 {
+		i = i & (i - 1)
+		c++
+	}
+	return c
 }
