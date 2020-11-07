@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 327. 区间和的个数
 给定一个整数数组 nums，返回区间和在 [lower, upper] 之间的个数，包含 lower 和 upper。
@@ -15,5 +17,17 @@ package leetcode
 解释: 3个区间分别是: [0,0], [2,2], [0,2]，它们表示的和分别为: -2, -1, 2。
 */
 func countRangeSum(nums []int, lower int, upper int) int {
+	sort.Ints(nums)
+	li := 0
+	for ; li < len(nums)-1 && nums[li] < lower; li++ {
+	}
 
+	uj := len(nums) - 1
+	for ; uj > 0 && nums[uj] > upper; uj-- {
+	}
+
+	if uj > li {
+		return uj - li
+	}
+	return 0
 }
