@@ -43,7 +43,7 @@ func removeBoxes(boxes []int) int {
 		dp[l][r][k] = removeBoxesAction(l+1, r, 0) + (k+1)*(k+1)
 		for i := l + 1; i <= r; i++ {
 			if boxes[i] == boxes[l] {
-				dp[l][r][k] = max(dp[l][r][k], removeBoxesAction(i, r, k+1)+removeBoxesAction(l+1, i-1, 0))
+				dp[l][r][k] = removeBoxesMax(dp[l][r][k], removeBoxesAction(i, r, k+1)+removeBoxesAction(l+1, i-1, 0))
 			}
 		}
 		return dp[l][r][k]
@@ -51,7 +51,7 @@ func removeBoxes(boxes []int) int {
 	return removeBoxesAction(0, len(boxes)-1, 0)
 }
 
-func max(l, r int) int {
+func removeBoxesMax(l, r int) int {
 	if l > r {
 		return l
 	}
