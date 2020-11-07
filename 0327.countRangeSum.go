@@ -15,44 +15,76 @@ package leetcode
 解释: 3个区间分别是: [0,0], [2,2], [0,2]，它们表示的和分别为: -2, -1, 2。
 */
 func countRangeSum(nums []int, lower int, upper int) int {
-	var mergeCount func([]int) int
-	mergeCount = func(arr []int) int {
-		n := len(arr)
-		if n <= 1 {
-			return 0
-		}
-
-		n1 := append([]int(nil), arr[:n/2]...)
-		n2 := append([]int(nil), arr[n/2:]...)
-		cnt := mergeCount(n1) + mergeCount(n2)
-
-		l, r := 0, 0
-		for _, v := range n1 {
-			for l < len(n2) && n2[l]-v < lower {
-				l++
-			}
-			for r < len(n2) && n2[r]-v <= upper {
-				r++
-			}
-			cnt += r - l
-		}
-
-		p1, p2 := 0, 0
-		for i := range arr {
-			if p1 < len(n1) && (p2 == len(n2) || n1[p1] <= n2[p2]) {
-				arr[i] = n1[p1]
-				p1++
-			} else {
-				arr[i] = n2[p2]
-				p2++
-			}
-		}
-		return cnt
+	if nums == nil || len(nums) == 0 {
+		return 0
 	}
 
-	prefixSum := make([]int, len(nums)+1)
-	for i, v := range nums {
-		prefixSum[i+1] = prefixSum[i] + v
+	tmp := make([]int, len(nums)+1)
+
+	s := make([]int, len(nums)+1)
+	for i := 1; i <= len(nums); i++ {
+		s[i] = s[i-1] + nums[i-1]
 	}
-	return mergeCount(prefixSum)
+
+	return mergesort(s, 0, len(nums), tmp, lower, upper)
+}
+
+func mergesort(s []int, left, right int, tmp []int, lower, upper int) int {
+	if left >= right {
+		return 0
+	}
+	res := 0
+	mid := (right + left) / 2
+	res += mergesort(s, left, mid, tmp, lower, upper)
+	res += mergesort(s, mid+1, right, tmp, lower, upper)
+
+	l := left
+	low, upp := mid+1, mid+1
+	for l <= mid {
+
+		for low <= right && s[low]-s[l] < lower {
+			low++
+		}
+
+		for upp <= right && s[upp]-s[l] <= upper {
+			upp++
+		}
+
+		res += upp - low
+
+		l++
+	}
+
+	merge(s, tmp, left, mid, right)
+	return res
+}
+
+func merge(s []int, tmp []int, left, mid, right int) {
+	l := left
+	r := mid + 1
+	index := left
+	for l <= mid && r <= right {
+		if s[l] <= s[r] {
+			tmp[index] = s[l]
+			l++
+			index++
+		} else {
+			tmp[index] = s[r]
+			r++
+			index++
+		}
+	}
+	for l <= mid {
+		tmp[index] = s[l]
+		l++
+		index++
+	}
+	for r <= right {
+		tmp[index] = s[r]
+		r++
+		index++
+	}
+	for i := left; i <= right; i++ {
+		s[i] = tmp[i]
+	}
 }
