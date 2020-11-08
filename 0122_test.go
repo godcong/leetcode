@@ -26,7 +26,13 @@ func Test_maxProfit(t *testing.T) {
 			},
 			want: 4,
 		},
-		{},
+		{
+			name: "",
+			args: args{
+				prices: strToIntArray("[7,6,4,3,1]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
