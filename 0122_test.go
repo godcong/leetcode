@@ -12,6 +12,21 @@ func Test_maxProfit(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				prices: strToIntArray("[7,1,5,3,6,4]"),
+			},
+			want: 7,
+		},
+		{
+			name: "",
+			args: args{
+				prices: strToIntArray("[1,2,3,4,5]"),
+			},
+			want: 4,
+		},
+		{},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
