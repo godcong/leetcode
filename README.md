@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:139 ###  
+### 总完成:143 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -59,10 +59,12 @@ All append into def.go
 | 0113 | 路径总和 II | pathSum | [GO](https://github.com/godcong/leetcode/blob/master/0113.pathSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0113.pathSum_test.go) |  
 | 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0114.connect_test.go) |  
 | 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0117.connect_test.go) |  
+| 0122 | 买卖股票的最佳时机 II | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0122.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0122.maxProfit_test.go) |  
 | 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0127.ladderLength_test.go) |  
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
+| 0140 | 单词拆分 II | wordBreak | [GO](https://github.com/godcong/leetcode/blob/master/0140.wordBreak.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0140.wordBreak_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
 | 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
 | 0143 | 重排链表 | reorderList | [GO](https://github.com/godcong/leetcode/blob/master/0143.reorderList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0143.reorderList_test.go) |  
@@ -78,6 +80,7 @@ All append into def.go
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome_test.go) |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
+| 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
@@ -134,6 +137,7 @@ All append into def.go
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences_test.go) |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1299.replaceElements_test.go) |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1351.countNegatives_test.go) |  
+| 1356 | 根据数字二进制下 1 的数目排序 | sortByBits | [GO](https://github.com/godcong/leetcode/blob/master/1356.sortByBits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1356.sortByBits_test.go) |  
 | 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent_test.go) |  
 | 1431 | 拥有最多糖果的孩子 | kidsWithCandies | [GO](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies_test.go) |  
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1470.shuffle_test.go) |  
