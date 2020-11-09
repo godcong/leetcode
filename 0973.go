@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 973. 最接近原点的 K 个点
 我们有一个由平面上的点组成的列表 points。需要从中找出 K 个距离原点 (0, 0) 最近的点。
@@ -33,5 +35,9 @@ package leetcode
 -10000 < points[i][1] < 10000
 */
 func kClosest(points [][]int, K int) [][]int {
-	return nil
+	sort.Slice(points, func(i, j int) bool {
+		p, q := points[i], points[j]
+		return p[0]*p[0]+p[1]*p[1] < q[0]*q[0]+q[1]*q[1]
+	})
+	return points[:K]
 }
