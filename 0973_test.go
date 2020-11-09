@@ -24,6 +24,14 @@ func Test_kClosest(t *testing.T) {
 			},
 			want: strToIntArrArray("[[-2,2]]"),
 		},
+		{
+			name: "",
+			args: args{
+				points: strToIntArrArray("[[3,3],[5,-1],[-2,4]]"),
+				K:      2,
+			},
+			want: strToIntArrArray("[[3,3],[-2,4]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
