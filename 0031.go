@@ -14,23 +14,27 @@ package leetcode
 1,1,5 → 1,5,1
 */
 func nextPermutation(nums []int) {
-	n := len(nums)
-	i := n - 2
-	for i >= 0 && nums[i] >= nums[i+1] {
+	if nums == nil || len(nums) == 0 {
+		return
+	}
+	i := len(nums) - 1
+	for i > 0 && nums[i-1] >= nums[i] {
 		i--
 	}
-	if i >= 0 {
-		j := n - 1
-		for j >= 0 && nums[i] >= nums[j] {
+	if i == 0 {
+		for i := 0; i < len(nums)/2; i++ {
+			nums[i], nums[len(nums)-i-1] = nums[len(nums)-i-1], nums[i]
+		}
+		return
+	} else {
+		j := len(nums) - 1
+		for j >= i && nums[j] <= nums[i-1] {
 			j--
 		}
-		nums[i], nums[j] = nums[j], nums[i]
-	}
-	nextPermutationReverse(nums[i+1:])
-}
-
-func nextPermutationReverse(a []int) {
-	for i, n := 0, len(a); i < n/2; i++ {
-		a[i], a[n-1-i] = a[n-1-i], a[i]
+		nums[j], nums[i-1] = nums[i-1], nums[j]
+		for j = i; j < (len(nums)+i)/2; j++ {
+			nums[j], nums[len(nums)-j-1+i] = nums[len(nums)-j-1+i], nums[j]
+		}
+		return
 	}
 }
