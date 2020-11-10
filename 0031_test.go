@@ -22,6 +22,20 @@ func Test_nextPermutation(t *testing.T) {
 				after: strToIntArray("1,3,2"),
 			},
 		},
+		{
+			name: "",
+			args: args{
+				nums:  strToIntArray("3,2,1"),
+				after: strToIntArray("1,2,3"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nums:  strToIntArray("1,1,5"),
+				after: strToIntArray("1,5,1"),
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
