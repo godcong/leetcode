@@ -31,3 +31,6 @@ ring 和 key 的字符串长度取值范围均为 1 至 100；
 两个字符串中都只有小写字符，并且均可能存在重复字符；
 字符串 key 一定可以由字符串 ring 旋转拼出。
 */
+func findRotateSteps(ring string, key string) int {
+	return 0
+}
