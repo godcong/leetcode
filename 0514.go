@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 /*
 514. 自由之路
 电子游戏“辐射4”中，任务“通向自由”要求玩家到达名为“Freedom Trail Ring”的金属表盘，并使用表盘拼写特定关键词才能开门。
@@ -32,5 +34,45 @@ ring 和 key 的字符串长度取值范围均为 1 至 100；
 字符串 key 一定可以由字符串 ring 旋转拼出。
 */
 func findRotateSteps(ring string, key string) int {
-	return 0
+	const inf = math.MaxInt64 / 2
+	n, m := len(ring), len(key)
+	pos := [26][]int{}
+	for i, c := range ring {
+		pos[c-'a'] = append(pos[c-'a'], i)
+	}
+	dp := make([][]int, m)
+	for i := range dp {
+		dp[i] = make([]int, n)
+		for j := range dp[i] {
+			dp[i][j] = inf
+		}
+	}
+	for _, p := range pos[key[0]-'a'] {
+		dp[0][p] = min(p, n-p) + 1
+	}
+	for i := 1; i < m; i++ {
+		for _, j := range pos[key[i]-'a'] {
+			for _, k := range pos[key[i-1]-'a'] {
+				dp[i][j] = min(dp[i][j], dp[i-1][k]+min(abs(j-k), n-abs(j-k))+1)
+			}
+		}
+	}
+	return min(dp[m-1]...)
+}
+
+func min(a ...int) int {
+	res := a[0]
+	for _, v := range a[1:] {
+		if v < res {
+			res = v
+		}
+	}
+	return res
+}
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
