@@ -34,45 +34,41 @@ ring 和 key 的字符串长度取值范围均为 1 至 100；
 字符串 key 一定可以由字符串 ring 旋转拼出。
 */
 func findRotateSteps(ring string, key string) int {
-	const inf = math.MaxInt64 / 2
-	n, m := len(ring), len(key)
-	pos := [26][]int{}
-	for i, c := range ring {
-		pos[c-'a'] = append(pos[c-'a'], i)
+	pos := map[int]int{0: 0}
+	index := map[byte][]int{}
+	for i := 0; i < len(ring); i++ {
+		c := ring[i]
+		index[c] = append(index[c], i)
 	}
-	dp := make([][]int, m)
-	for i := range dp {
-		dp[i] = make([]int, n)
-		for j := range dp[i] {
-			dp[i][j] = inf
-		}
-	}
-	for _, p := range pos[key[0]-'a'] {
-		dp[0][p] = min(p, n-p) + 1
-	}
-	for i := 1; i < m; i++ {
-		for _, j := range pos[key[i]-'a'] {
-			for _, k := range pos[key[i-1]-'a'] {
-				dp[i][j] = min(dp[i][j], dp[i-1][k]+min(abs(j-k), n-abs(j-k))+1)
+	for i := 0; i < len(key); i++ {
+		c := key[i]
+		nextPos := map[int]int{}
+		for _, i0 := range index[c] {
+			nextPos[i0] = math.MaxInt64
+			for i1, d := range pos {
+				if dist := getDist(i0, i1, len(ring)) + d; dist < nextPos[i0] {
+					nextPos[i0] = dist
+				}
 			}
 		}
+		pos = nextPos
 	}
-	return min(dp[m-1]...)
-}
-
-func min(a ...int) int {
-	res := a[0]
-	for _, v := range a[1:] {
-		if v < res {
-			res = v
+	ret := math.MaxInt64
+	for _, d := range pos {
+		if d < ret {
+			ret = d
 		}
 	}
-	return res
+	return ret + len(key)
 }
 
-func abs(x int) int {
-	if x < 0 {
-		return -x
+func getDist(i, j, n int) int {
+	if i < j {
+		i, j = j, i
 	}
-	return x
+	ret := i - j
+	if n-(i-j) < ret {
+		ret = n - (i - j)
+	}
+	return ret
 }
