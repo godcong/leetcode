@@ -20,7 +20,7 @@ func Test_sortArrayByParityII(t *testing.T) {
 			args: args{
 				A: strToIntArray("[4,2,5,7]"),
 			},
-			want: strToIntArray("[4,7,2,5]"),
+			want: strToIntArray("[4,5,2,7]"),
 		},
 	}
 	for _, tt := range tests {
