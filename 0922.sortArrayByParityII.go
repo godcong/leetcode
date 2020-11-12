@@ -24,5 +24,13 @@ A.length % 2 == 0
 0 <= A[i] <= 1000
 */
 func sortArrayByParityII(A []int) []int {
-
+	for i, j := 0, 1; i < len(A); i += 2 {
+		if A[i]%2 == 1 {
+			for A[j]%2 == 1 {
+				j += 2
+			}
+			A[i], A[j] = A[j], A[i]
+		}
+	}
+	return A
 }
