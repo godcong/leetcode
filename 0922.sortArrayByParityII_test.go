@@ -15,7 +15,13 @@ func Test_sortArrayByParityII(t *testing.T) {
 		want []int
 	}{
 		// TODO: Add test cases.
-		{},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[4,2,5,7]"),
+			},
+			want: strToIntArray("[4,7,2,5]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
