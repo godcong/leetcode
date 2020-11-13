@@ -76,10 +76,12 @@ func strToListNode(nums string, pos int) *ListNode {
 	size := len(sNums)
 	nodes := make([]ListNode, size)
 	for i := range nodes {
+		if "null" == strings.ToLower(sNums[i]) {
+			nodes = nodes[:i-1]
+			break
+		}
 		n, err := strconv.Atoi(sNums[i])
-
 		throughErrorPanic(err)
-
 		nodes[i].Val = n
 		//fmt.Println("nodes", i, nodes[i])
 		if i < size-1 {

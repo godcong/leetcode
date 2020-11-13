@@ -42,5 +42,4 @@ func oddEvenList(head *ListNode) *ListNode {
 	}
 	odd.Next = evenHead
 	return head
-
 }
