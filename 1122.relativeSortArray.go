@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 1122. 数组的相对排序
 给你两个数组，arr1 和 arr2，
@@ -24,5 +26,19 @@ arr2 中的元素 arr2[i] 各不相同
 arr2 中的每个元素 arr2[i] 都出现在 arr1 中
 */
 func relativeSortArray(arr1 []int, arr2 []int) []int {
-	return nil
+	rank := map[int]int{}
+	for i, v := range arr2 {
+		rank[v] = i - len(arr2)
+	}
+	sort.Slice(arr1, func(i, j int) bool {
+		x, y := arr1[i], arr1[j]
+		if r, has := rank[x]; has {
+			x = r
+		}
+		if r, has := rank[y]; has {
+			y = r
+		}
+		return x < y
+	})
+	return arr1
 }
