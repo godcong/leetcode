@@ -19,13 +19,16 @@ import "sort"
 */
 func reconstructQueue(people [][]int) [][]int {
 	sort.Slice(people, func(i, j int) bool {
-		a, b := people[i], people[j]
-		return a[0] > b[0] || a[0] == b[0] && a[1] < b[1]
+		p, q := people[i], people[j]
+		return p[0] > q[0] || p[0] == q[0] && p[1] < q[1]
 	})
-	var ans [][]int
-	for _, person := range people {
-		idx := person[1]
-		ans = append(ans[:idx], append([][]int{person}, ans[idx:]...)...)
+	var tmp []int
+	for i := range people {
+		tmp = people[i]
+		for j := i; j > tmp[1]; j-- {
+			people[j] = people[j-1]
+		}
+		people[tmp[1]] = tmp
 	}
-	return ans
+	return people
 }
