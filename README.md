@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:148 ###  
+### 总完成:151 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -82,12 +82,15 @@ All append into def.go
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
+| 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
+| 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
+| 0406 | 根据身高重建队列 | reconstructQueue | [GO](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue_test.go) |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
 | 0416 | 分割等和子集 | canPartition | [GO](https://github.com/godcong/leetcode/blob/master/0416.canPartition.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0416.canPartition_test.go) |  
 | 0459 | 重复的子字符串 | repeatedSubstringPattern | [GO](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0459.repeatedSubstringPattern_test.go) |  
