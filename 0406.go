@@ -15,3 +15,6 @@ package leetcode
 输出:
 [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
 */
+func reconstructQueue(people [][]int) [][]int {
+	return nil
+}
