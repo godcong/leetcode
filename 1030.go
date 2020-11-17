@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 1030. 距离顺序排列矩阵单元格
 给出 R 行 C 列的矩阵，其中的单元格的整数坐标为 (r, c)，满足 0 <= r < R 且 0 <= c < C。
@@ -36,3 +38,23 @@ package leetcode
 0 <= r0 < R
 0 <= c0 < C
 */
+func allCellsDistOrder(R int, C int, r0 int, c0 int) [][]int {
+	ans := make([][]int, 0, R*C)
+	for i := 0; i < R; i++ {
+		for j := 0; j < C; j++ {
+			ans = append(ans, []int{i, j})
+		}
+	}
+	sort.Slice(ans, func(i, j int) bool {
+		a, b := ans[i], ans[j]
+		return allCellsDistOrderAbs(a[0]-r0)+allCellsDistOrderAbs(a[1]-c0) < allCellsDistOrderAbs(b[0]-r0)+allCellsDistOrderAbs(b[1]-c0)
+	})
+	return ans
+}
+
+func allCellsDistOrderAbs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
