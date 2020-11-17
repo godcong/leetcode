@@ -38,6 +38,16 @@ func Test_allCellsDistOrder(t *testing.T) {
 			},
 			want: strToIntArrArray("[[0,1],[0,0],[1,1],[1,0]]"),
 		},
+		{
+			name: "",
+			args: args{
+				R:  2,
+				C:  3,
+				r0: 1,
+				c0: 2,
+			},
+			want: strToIntArrArray("[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
