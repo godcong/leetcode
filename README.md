@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:148 ###  
+### 总完成:150 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -65,6 +65,7 @@ All append into def.go
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
+| 0134 | 加油站 | canCompleteCircuit | [GO](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit_test.go) |  
 | 0140 | 单词拆分 II | wordBreak | [GO](https://github.com/godcong/leetcode/blob/master/0140.wordBreak.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0140.wordBreak_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
 | 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
@@ -87,6 +88,7 @@ All append into def.go
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
+| 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0415.addStrings_test.go) |  
 | 0416 | 分割等和子集 | canPartition | [GO](https://github.com/godcong/leetcode/blob/master/0416.canPartition.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0416.canPartition_test.go) |  
