@@ -46,5 +46,5 @@ cost = [3,4,3]
 因此，无论怎样，你都不可能绕环路行驶一周。
 */
 func canCompleteCircuit(gas []int, cost []int) int {
-	retutn 0
+	return 0
 }
