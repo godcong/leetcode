@@ -27,7 +27,7 @@ num 不会包含任何前导零。
 解释: 从原数字移除所有的数字，剩余为空就是0。
 */
 func removeKdigits(num string, k int) string {
-	stack := []byte{}
+	var stack []byte
 	for i := range num {
 		digit := num[i]
 		for k > 0 && len(stack) > 0 && digit < stack[len(stack)-1] {

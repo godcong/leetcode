@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:152 ###  
+### 总完成:153 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -65,6 +65,7 @@ All append into def.go
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS_test.go) |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
+| 0134 | 加油站 | canCompleteCircuit | [GO](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit_test.go) |  
 | 0140 | 单词拆分 II | wordBreak | [GO](https://github.com/godcong/leetcode/blob/master/0140.wordBreak.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0140.wordBreak_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
 | 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
