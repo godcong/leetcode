@@ -34,5 +34,5 @@ package leetcode
  * }
  */
 func insertionSortList(head *ListNode) *ListNode {
-
+	return nil
 }
