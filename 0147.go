@@ -26,3 +26,13 @@ package leetcode
 输入: -1->5->3->4->0
 输出: -1->0->3->4->5
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func insertionSortList(head *ListNode) *ListNode {
+
+}
