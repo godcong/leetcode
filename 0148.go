@@ -38,5 +38,32 @@ package leetcode
  * }
  */
 func sortList(head *ListNode) *ListNode {
-	return nil
+	if head == nil || head.Next == nil {
+		return head
+	}
+	slow, fast := head, head
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	mid := slow.Next
+	slow.Next = nil
+
+	left := sortList(head)
+	right := sortList(mid)
+	return merge2SortedListNode(left, right)
+}
+
+func merge2SortedListNode(list1, list2 *ListNode) *ListNode {
+	if list1 == nil {
+		return list2
+	} else if list2 == nil {
+		return list1
+	} else if list1.Val < list2.Val {
+		list1.Next = merge2SortedListNode(list1.Next, list2)
+		return list1
+	} else {
+		list2.Next = merge2SortedListNode(list1, list2.Next)
+		return list2
+	}
 }
