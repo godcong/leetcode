@@ -30,3 +30,13 @@ package leetcode
 链表中节点的数目在范围 [0, 5 * 104] 内
 -105 <= Node.val <= 105
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func sortList(head *ListNode) *ListNode {
+	return nil
+}
