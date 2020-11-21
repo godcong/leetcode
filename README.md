@@ -82,6 +82,7 @@ All append into def.go
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome_test.go) |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
+| 0283 | 移动零 | moveZeroes | [GO](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
