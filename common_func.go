@@ -80,6 +80,9 @@ func strToListNode(nums string, pos int) *ListNode {
 			nodes = nodes[:i-1]
 			break
 		}
+		if sNums[i] == "" {
+			continue
+		}
 		n, err := strconv.Atoi(sNums[i])
 		throughErrorPanic(err)
 		nodes[i].Val = n
