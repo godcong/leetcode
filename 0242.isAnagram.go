@@ -1,7 +1,5 @@
 package leetcode
 
-import "sort"
-
 /*
 242. 有效的字母异位词
 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
@@ -21,8 +19,19 @@ import "sort"
 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
 */
 func isAnagram(s string, t string) bool {
-	s1, s2 := []byte(s), []byte(t)
-	sort.Slice(s1, func(i, j int) bool { return s1[i] < s1[j] })
-	sort.Slice(s2, func(i, j int) bool { return s2[i] < s2[j] })
-	return string(s1) == string(s2)
+	m, n := len(s), len(t)
+	if m != n {
+		return false
+	}
+	table := make([]int, 26)
+	for i := 0; i < m; i++ {
+		table[s[i] - 'a']++
+	}
+	for i := 0; i < n; i++ {
+		table[t[i] - 'a']--
+		if table[t[i] - 'a'] < 0 {
+			return false
+		}
+	}
+	return true
 }
