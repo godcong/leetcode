@@ -19,5 +19,5 @@ package leetcode
 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
 */
 func isAnagram(s string, t string) bool {
-
+	return true
 }
