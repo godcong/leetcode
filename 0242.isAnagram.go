@@ -23,13 +23,13 @@ func isAnagram(s string, t string) bool {
 	if m != n {
 		return false
 	}
-	table := make([]int, 26)
+	var table [26]int
 	for i := 0; i < m; i++ {
-		table[s[i] - 'a']++
+		table[s[i]-'a']++
 	}
 	for i := 0; i < n; i++ {
-		table[t[i] - 'a']--
-		if table[t[i] - 'a'] < 0 {
+		table[t[i]-'a']--
+		if table[t[i]-'a'] < 0 {
 			return false
 		}
 	}
