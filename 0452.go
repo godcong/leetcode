@@ -38,3 +38,6 @@ package leetcode
 points[i].length == 2
 -231 <= xstart < xend <= 231 - 1
 */
+func findMinArrowShots(points [][]int) int {
+	return 0
+}
