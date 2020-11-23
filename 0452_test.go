@@ -22,9 +22,30 @@ func Test_findMinArrowShots(t *testing.T) {
 		{
 			name: "",
 			args: args{
+				points: strToIntArrArray("[[1,2],[3,4],[5,6],[7,8]]"),
+			},
+			want: 4,
+		},
+		{
+			name: "",
+			args: args{
 				points: strToIntArrArray("[[1,2],[2,3],[3,4],[4,5]]"),
 			},
 			want: 2,
+		},
+		{
+			name: "",
+			args: args{
+				points: strToIntArrArray("[[1,2]]"),
+			},
+			want: 1,
+		},
+		{
+			name: "",
+			args: args{
+				points: strToIntArrArray("[[2,3],[2,3]]"),
+			},
+			want: 1,
 		},
 	}
 	for _, tt := range tests {
