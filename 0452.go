@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 452. 用最少数量的箭引爆气球
 在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。由于它是水平的，所以纵坐标并不重要，因此只要知道开始和结束的横坐标就足够了。开始坐标总是小于结束坐标。
@@ -39,5 +41,17 @@ points[i].length == 2
 -231 <= xstart < xend <= 231 - 1
 */
 func findMinArrowShots(points [][]int) int {
-	return 0
+	if len(points) == 0 {
+		return 0
+	}
+	sort.Slice(points, func(i, j int) bool { return points[i][1] < points[j][1] })
+	maxRight := points[0][1]
+	ret := 1
+	for _, p := range points {
+		if p[0] > maxRight {
+			maxRight = p[1]
+			ret++
+		}
+	}
+	return ret
 }
