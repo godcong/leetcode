@@ -51,5 +51,26 @@ package leetcode
 s 只包含小写英文字母。
 */
 func sortString(s string) string {
-	return ""
+	size := len(s)
+	tmp := [26]byte{}
+	for _, ch := range s {
+		tmp[ch-'a']++
+	}
+	var ret string
+	flag := false
+	cnt := 0
+	for len(ret) < size {
+		for ; cnt < 26; cnt++ {
+			if tmp[cnt] != 0 {
+				ret = ret + string(tmp[cnt]+'a')
+			}
+		}
+		for ; cnt >= 0; cnt-- {
+			if tmp[cnt] != 0 {
+				ret = ret + string(tmp[cnt]+'a')
+			}
+		}
+		flag = !flag
+	}
+	return ret
 }
