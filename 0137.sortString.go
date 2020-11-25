@@ -63,14 +63,14 @@ func sortString(s string) string {
 	for total < size {
 		for cnt = 0; cnt < 26; cnt++ {
 			if tmp[cnt] != 0 {
-				ret[total] = byte(cnt + 'a')
+				ret[total] = byte(cnt) + 'a'
 				tmp[cnt]--
 				total++
 			}
 		}
 		for cnt = 25; cnt >= 0; cnt-- {
 			if tmp[cnt] != 0 {
-				ret[total] = byte(cnt + 'a')
+				ret[total] = byte(cnt) + 'a'
 				tmp[cnt]--
 				total++
 			}
