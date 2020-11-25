@@ -60,14 +60,16 @@ func sortString(s string) string {
 	flag := false
 	cnt := 0
 	for len(ret) < size {
-		for ; cnt < 26; cnt++ {
+		for cnt = 0; cnt < 26; cnt++ {
 			if tmp[cnt] != 0 {
 				ret = ret + string(tmp[cnt]+'a')
+				tmp[cnt]--
 			}
 		}
-		for ; cnt >= 0; cnt-- {
+		for cnt = 25; cnt >= 0; cnt-- {
 			if tmp[cnt] != 0 {
 				ret = ret + string(tmp[cnt]+'a')
+				tmp[cnt]--
 			}
 		}
 		flag = !flag
