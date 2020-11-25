@@ -26,6 +26,13 @@ func Test_sortString(t *testing.T) {
 			},
 			want: "abccbaabccba",
 		},
+		{
+			name: "",
+			args: args{
+				s: "leetcode",
+			},
+			want: "cdelotee",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
