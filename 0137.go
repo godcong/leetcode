@@ -52,7 +52,7 @@ s 只包含小写英文字母。
 */
 func sortString(s string) string {
 	size := len(s)
-	tmp := [26]byte{}
+	tmp := [26]rune{}
 	for _, ch := range s {
 		tmp[ch-'a']++
 	}
@@ -62,13 +62,13 @@ func sortString(s string) string {
 	for len(ret) < size {
 		for cnt = 0; cnt < 26; cnt++ {
 			if tmp[cnt] != 0 {
-				ret = ret + string(tmp[cnt]+'a')
+				ret = ret + string(rune(cnt+'a'))
 				tmp[cnt]--
 			}
 		}
 		for cnt = 25; cnt >= 0; cnt-- {
 			if tmp[cnt] != 0 {
-				ret = ret + string(tmp[cnt]+'a')
+				ret = ret + string(rune(cnt+'a'))
 				tmp[cnt]--
 			}
 		}
