@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:159 ###  
+### 总完成:161 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -66,6 +66,7 @@ All append into def.go
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0130.solve_test.go) |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph_test.go) |  
 | 0134 | 加油站 | canCompleteCircuit | [GO](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit_test.go) |  
+| 0137 | 上升下降字符串 | sortString | [GO](https://github.com/godcong/leetcode/blob/master/0137.sortString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0137.sortString_test.go) |  
 | 0140 | 单词拆分 II | wordBreak | [GO](https://github.com/godcong/leetcode/blob/master/0140.wordBreak.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0140.wordBreak_test.go) |  
 | 0141 | 环形链表 | hasCycle | [GO](https://github.com/godcong/leetcode/blob/master/0141.hasCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0141.hasCycle_test.go) |  
 | 0142 | 环形链表 II | detectCycle | [GO](https://github.com/godcong/leetcode/blob/master/0142.detectCycle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0142.detectCycle_test.go) |  
@@ -74,6 +75,7 @@ All append into def.go
 | 0145 | 二叉树的后序遍历 | postorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0145.postorderTraversal_test.go) |  
 | 0147 | 对链表进行插入排序 | insertionSortList | [GO](https://github.com/godcong/leetcode/blob/master/0147.insertionSortList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0147.insertionSortList_test.go) |  
 | 0148 | 排序链表 | sortList | [GO](https://github.com/godcong/leetcode/blob/master/0148.sortList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0148.sortList_test.go) |  
+|  | 最大间距 | 0164 | [GO](https://github.com/godcong/leetcode/blob/master/0164.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0164_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
