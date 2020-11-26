@@ -19,6 +19,13 @@ func Test_maximumGap(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[10]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
