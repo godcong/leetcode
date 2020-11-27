@@ -6,22 +6,22 @@ import (
 
 func Test_cloneGraph(t *testing.T) {
 	type args struct {
-		node *Node
+		node *Node133
 	}
 
-	node1 := &Node{
+	node1 := &Node133{
 		Val:       1,
 		Neighbors: nil,
 	}
-	node2 := &Node{
+	node2 := &Node133{
 		Val:       2,
 		Neighbors: nil,
 	}
-	node3 := &Node{
+	node3 := &Node133{
 		Val:       3,
 		Neighbors: nil,
 	}
-	node4 := &Node{
+	node4 := &Node133{
 		Val:       4,
 		Neighbors: nil,
 	}
@@ -32,7 +32,7 @@ func Test_cloneGraph(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want *Node
+		want *Node133
 	}{
 		{
 			name: "",
@@ -51,7 +51,7 @@ func Test_cloneGraph(t *testing.T) {
 	}
 }
 
-func deepEqualCloneGraph(t *testing.T, got, want *Node, count int) bool {
+func deepEqualCloneGraph(t *testing.T, got, want *Node133, count int) bool {
 	if count <= 0 {
 		return true
 	}
