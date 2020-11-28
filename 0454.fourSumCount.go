@@ -30,12 +30,12 @@ func fourSumCount(A []int, B []int, C []int, D []int) int {
 		}
 	}
 
-	result := 0
+	ret := 0
 	for _, c := range C {
 		for _, d := range D {
-			result += recordAB[0-c-d]
+			ret += recordAB[0-c-d]
 		}
 	}
 
-	return result
+	return ret
 }
