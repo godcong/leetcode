@@ -19,6 +19,13 @@ func Test_reversePairs(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[2,4,3,5,1]"),
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
