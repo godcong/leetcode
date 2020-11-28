@@ -23,17 +23,19 @@ D = [ 0, 2]
 2. (1, 1, 0, 0) -> A[1] + B[1] + C[0] + D[0] = 2 + (-1) + (-1) + 0 = 0
 */
 func fourSumCount(A []int, B []int, C []int, D []int) int {
-	ret := 0
-	count := map[int]int{}
-	for _, v := range A {
-		for _, w := range B {
-			count[v+w]++
+	recordAB := make(map[int]int, len(A)*len(B))
+	for _, a := range A {
+		for _, b := range B {
+			recordAB[a+b]++
 		}
 	}
-	for _, v := range C {
-		for _, w := range D {
-			ret += count[-v-w]
+
+	result := 0
+	for _, c := range C {
+		for _, d := range D {
+			result += recordAB[0-c-d]
 		}
 	}
-	return ret
+
+	return result
 }
