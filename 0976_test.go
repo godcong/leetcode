@@ -19,6 +19,13 @@ func Test_largestPerimeter(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[1,2,1]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
