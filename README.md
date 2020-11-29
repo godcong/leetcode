@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:163 ###  
+### 总完成:164 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -109,7 +109,7 @@ All append into def.go
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner_test.go) |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences_test.go) |  
-|  | 翻转对 | 0493 | [GO](https://github.com/godcong/leetcode/blob/master/0493.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0493_test.go) |  
+| 0493 | 翻转对 | reversePairs | [GO](https://github.com/godcong/leetcode/blob/master/0493.reversePairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0493.reversePairs_test.go) |  
 | 0501 | 二叉搜索树中的众数 | findMode | [GO](https://github.com/godcong/leetcode/blob/master/0501.findMode.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0501.findMode_test.go) |  
 | 0514 | 自由之路 | findRotateSteps | [GO](https://github.com/godcong/leetcode/blob/master/0514.findRotateSteps.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0514.findRotateSteps_test.go) |  
 | 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0528.convertBST_test.go) |  
@@ -146,6 +146,7 @@ All append into def.go
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits_test.go) |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover_test.go) |  
 | 0973 | 最接近原点的 K 个点 | kClosest | [GO](https://github.com/godcong/leetcode/blob/master/0973.kClosest.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0973.kClosest_test.go) |  
+| 0976 | 三角形的最大周长 | largestPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter_test.go) |  
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares_test.go) |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1002.commonChars_test.go) |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses_test.go) |  
