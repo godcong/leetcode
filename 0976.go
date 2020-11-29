@@ -30,4 +30,7 @@ package leetcode
 
 3 <= A.length <= 10000
 1 <= A[i] <= 10^6
- */
+*/
+func largestPerimeter(A []int) int {
+	return 0
+}
