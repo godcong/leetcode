@@ -1,7 +1,5 @@
 package leetcode
 
-import "sort"
-
 /*
 976. 三角形的最大周长
 给定由一些正数（代表长度）组成的数组 A，返回由其中三个长度组成的、面积不为零的三角形的最大周长。
@@ -34,11 +32,24 @@ import "sort"
 1 <= A[i] <= 10^6
 */
 func largestPerimeter(A []int) int {
-	sort.Ints(A)
-	for i := len(A) - 1; i >= 2; i-- {
-		if A[i-2]+A[i-1] > A[i] {
-			return A[i-2] + A[i-1] + A[i]
+	if len(A) < 3{
+		return 0
+	}
+	for i := 0; i < len(A)-1; i++ {
+		for j := 0; j < len(A)-1-i; j++ {
+			if A[j] > A[j+1] {
+				A[j], A[j+1] = A[j+1], A[j]
+			}
 		}
+		if i >= 2 {
+			index := len(A) - 1 - i
+			if A[index]+A[index+1] > A[index+2] {
+				return A[index] + A[index+1] + A[index+2]
+			}
+		}
+	}
+	if A[0]+A[1] > A[2] {
+		return A[0] + A[1] + A[2]
 	}
 	return 0
 }
