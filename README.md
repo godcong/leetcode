@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:164 ###  
+### 总完成:165 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -32,6 +32,7 @@ All append into def.go
 | 0024 | 两两交换链表中的节点 | swapPairs | [GO](https://github.com/godcong/leetcode/blob/master/0024.swapPairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0024.swapPairs_test.go) |  
 | 0027 | 移除元素 | removeElement | [GO](https://github.com/godcong/leetcode/blob/master/0027.removeElement.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0027.removeElement_test.go) |  
 | 0031 | 下一个排列 | nextPermutation | [GO](https://github.com/godcong/leetcode/blob/master/0031.nextPermutation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0031.nextPermutation_test.go) |  
+| 0034 | 在排序数组中查找元素的第一个和最后一个位置 | searchRange | [GO](https://github.com/godcong/leetcode/blob/master/0034.searchRange.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0034.searchRange_test.go) |  
 | 0037 | 解数独 | solveSudoku | [GO](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0037.solveSudoku_test.go) |  
 | 0039 | 组合总和 | combinationSum | [GO](https://github.com/godcong/leetcode/blob/master/0039.combinationSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0039.combinationSum_test.go) |  
 | 0040 | 组合总和 II | combinationSum2 | [GO](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2_test.go) |  
