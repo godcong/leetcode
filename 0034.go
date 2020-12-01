@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 34. 在排序数组中查找元素的第一个和最后一个位置
 给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
@@ -33,5 +35,10 @@ nums 是一个非递减数组
 -109 <= target <= 109
 */
 func searchRange(nums []int, target int) []int {
-	return nil
+	leftmost := sort.SearchInts(nums, target)
+	if leftmost == len(nums) || nums[leftmost] != target {
+		return []int{-1, -1}
+	}
+	rightmost := sort.SearchInts(nums, target + 1) - 1
+	return []int{leftmost, rightmost}
 }
