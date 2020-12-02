@@ -33,3 +33,6 @@ k = 3
 输出:
 [9, 8, 9]
 */
+func maxNumber(nums1 []int, nums2 []int, k int) []int {
+	return nil
+}
