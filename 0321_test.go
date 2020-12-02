@@ -35,6 +35,15 @@ func Test_maxNumber(t *testing.T) {
 			},
 			wantRes: strToIntArray("[6, 7, 6, 0, 4]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums1: strToIntArray("[3, 9]"),
+				nums2: strToIntArray("[8, 9]"),
+				k:     3,
+			},
+			wantRes: strToIntArray("[9, 8, 9]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
