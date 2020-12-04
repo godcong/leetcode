@@ -34,27 +34,41 @@ package leetcode
 输出: False
 */
 func isPossible(nums []int) bool {
-	left := map[int]int{}
-	for _, v := range nums {
-		left[v]++
-	}
-	endCnt := map[int]int{}
-	for _, v := range nums {
-		if left[v] == 0 {
-			continue
+	dp1, dp2, dp3 := 0, 0, 0
+	i := 0
+	for i < len(nums) {
+		start := i
+		x := nums[i]
+		for i < len(nums) && nums[i] == x {
+			i ++
 		}
-		if endCnt[v-1] > 0 {
-			left[v]--
-			endCnt[v-1]--
-			endCnt[v]++
-		} else if left[v+1] > 0 && left[v+2] > 0 {
-			left[v]--
-			left[v+1]--
-			left[v+2]--
-			endCnt[v+2]++
+		cnt := i - start
+
+		if start > 0 && x != nums[start-1]+1 {
+			if dp1 + dp2 > 0 {
+				return false
+			} else {
+				dp1 = cnt
+				dp2, dp3 = 0, 0
+			}
 		} else {
-			return false
+			if dp1 + dp2 > cnt {
+				return false
+			}
+
+			left := cnt - dp1 - dp2
+
+			use3 := left
+			if left > dp3 {
+				use3 = dp3
+			}
+
+			dp3 = dp2 + use3
+			dp2 = dp1
+			dp1 = left - use3
+
 		}
+
 	}
-	return true
+	return dp1 == 0 && dp2 == 0
 }
