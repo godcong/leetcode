@@ -19,6 +19,20 @@ func Test_isPossible(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[1,2,3,3,4,4,5,5]"),
+			},
+			want: true,
+		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[1,2,3,4,4,5]"),
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
