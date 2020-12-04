@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:167 ###  
+### 总完成:168 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -126,6 +126,7 @@ All append into def.go
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels_test.go) |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings_test.go) |  
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle_test.go) |  
+| 0659 | 分割数组为连续子序列 | isPossible | [GO](https://github.com/godcong/leetcode/blob/master/0659.isPossible.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0659.isPossible_test.go) |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility_test.go) |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24_test.go) |  
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection_test.go) |  
