@@ -33,3 +33,6 @@ package leetcode
 输入: [1,2,3,4,4,5]
 输出: False
 */
+func isPossible(nums []int) bool {
+	return false
+}
