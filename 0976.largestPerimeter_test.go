@@ -2,48 +2,49 @@ package leetcode
 
 import "testing"
 
-func Test_countPrimes(t *testing.T) {
+func Test_largestPerimeter(t *testing.T) {
 	type args struct {
-		n int
+		A []int
 	}
 	tests := []struct {
 		name string
 		args args
 		want int
 	}{
+		// TODO: Add test cases.
 		{
 			name: "",
 			args: args{
-				n: 10,
+				A: strToIntArray("[2,1,2]"),
 			},
-			want: 4,
+			want: 5,
 		},
 		{
 			name: "",
 			args: args{
-				n: 0,
+				A: strToIntArray("[1,2,1]"),
 			},
 			want: 0,
 		},
 		{
 			name: "",
 			args: args{
-				n: 1,
+				A: strToIntArray("[3,2,3,4]"),
 			},
-			want: 0,
+			want: 10,
 		},
 		{
 			name: "",
 			args: args{
-				n: 2,
+				A: strToIntArray("[3,6,2,3]"),
 			},
-			want: 0,
+			want: 8,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countPrimes(tt.args.n); got != tt.want {
-				t.Errorf("countPrimes() = %v, want %v", got, tt.want)
+			if got := largestPerimeter(tt.args.A); got != tt.want {
+				t.Errorf("largestPerimeter() = %v, want %v", got, tt.want)
 			}
 		})
 	}

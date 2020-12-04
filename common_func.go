@@ -17,6 +17,7 @@ func strToIntArray(nums string) []int {
 	size := len(sNums)
 	nodes := make([]int, size)
 	for i, num := range sNums {
+		num = strings.TrimSpace(num)
 		atoi, err := strconv.Atoi(num)
 		throughErrorPanic(err)
 		nodes[i] = atoi

@@ -37,7 +37,7 @@ func main() {
 	panicErr(err)
 
 	files := getAllFiles(filterList, true)
-	fmt.Println(files)
+	printLineArray(files...)
 
 	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
 	defer rd.Close()
@@ -59,6 +59,12 @@ func main() {
 
 	err = bw.Flush()
 	panicErr(err)
+}
+
+func printLineArray(arr ...string) {
+	for i := range arr {
+		fmt.Println(arr[i])
+	}
 }
 
 func panicErr(err error) {
