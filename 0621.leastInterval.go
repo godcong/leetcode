@@ -1,5 +1,9 @@
 package leetcode
 
+import (
+	"sort"
+)
+
 /*
 621. 任务调度器
 给你一个用字符数组 tasks 表示的 CPU 需要执行的任务列表。其中每个字母表示一种不同种类的任务。任务可以以任意顺序执行，并且每个任务都可以在 1 个单位时间内执行完。在任何一个单位时间，CPU 可以完成一个任务，或者处于待命状态。
@@ -41,22 +45,28 @@ tasks[i] 是大写英文字母
 n 的取值范围为 [0, 100]
 */
 func leastInterval(tasks []byte, n int) int {
-	cnt := map[byte]int{}
-	for _, t := range tasks {
-		cnt[t]++
+	if n == 0 {
+		return len(tasks)
 	}
-
-	maxExec, maxExecCnt := 0, 0
-	for _, c := range cnt {
-		if c > maxExec {
-			maxExec, maxExecCnt = c, 1
-		} else if c == maxExec {
-			maxExecCnt++
+	bucket := make([]int, 26)
+	for i := range tasks {
+		bucket[tasks[i] - 'A']++
+	}
+	sort.Ints(bucket)
+	max := bucket[len(bucket) - 1]
+	j := 1
+	res := (max - 1) * n + max
+	for i := len(bucket) - 2; i >= 0 && bucket[i] > 0; i-- {
+		temp := (bucket[i] - 1) * n + bucket[i] + j
+		if temp > res {
+			res = temp
+		}else {
+			break
 		}
+		j++
 	}
-
-	if time := (maxExec-1)*(n+1) + maxExecCnt; time > len(tasks) {
-		return time
+	if res < len(tasks) {
+		return len(tasks)
 	}
-	return len(tasks)
+	return res
 }
