@@ -13,6 +13,14 @@ func Test_leastInterval(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				tasks: strToByteArray("[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]"),
+				n:     2,
+			},
+			want: 8,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
