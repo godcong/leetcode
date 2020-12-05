@@ -16,92 +16,23 @@ func Test_recoverTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val:  3,
-						Left: nil,
-						Right: &TreeNode{
-							Val:   2,
-							Left:  nil,
-							Right: nil,
-						},
-					},
-					Right: nil,
-				},
+				root: strToTreeNode("[1,3,null,null,2]"),
 			},
-			want: &TreeNode{
-				Val: 3,
-				Left: &TreeNode{
-					Val:  1,
-					Left: nil,
-					Right: &TreeNode{
-						Val:   2,
-						Left:  nil,
-						Right: nil,
-					},
-				},
-				Right: nil,
-			},
+			want: strToTreeNode("[3,1,null,null,2]"),
 		},
 		{
 			name: "",
 			args: args{
-				root: &TreeNode{
-					Val: 3,
-					Left: &TreeNode{
-						Val:   1,
-						Left:  nil,
-						Right: nil,
-					},
-					Right: &TreeNode{
-						Val: 4,
-						Left: &TreeNode{
-							Val:   2,
-							Left:  nil,
-							Right: nil,
-						},
-						Right: nil,
-					},
-				},
+				root: strToTreeNode("[3,1,4,null,null,2]"),
 			},
-			want: &TreeNode{
-				Val: 2,
-				Left: &TreeNode{
-					Val:   1,
-					Left:  nil,
-					Right: nil,
-				},
-				Right: &TreeNode{
-					Val: 4,
-					Left: &TreeNode{
-						Val:   3,
-						Left:  nil,
-						Right: nil,
-					},
-					Right: nil,
-				},
-			},
+			want: strToTreeNode("[2,1,4,null,null,3]"),
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if recoverTree(tt.args.root); !deepEqual(t, tt.args.root, tt.want) {
+			if recoverTree(tt.args.root); !treeNodeDeepEqual(t, tt.args.root, tt.want) {
 				t.Errorf("recoverTree() = %v, want %v", tt.args.root, tt.want)
 			}
 		})
 	}
-}
-
-func deepEqual(t *testing.T, root *TreeNode, want *TreeNode) bool {
-	if root.Left != nil {
-		deepEqual(t, root.Left, want.Left)
-	}
-	if root.Right != nil {
-		deepEqual(t, root.Right, want.Right)
-	}
-	if root.Val != want.Val {
-		t.Errorf("recoverTree() = %v, want %v", root.Val, want.Val)
-	}
-	return true
 }

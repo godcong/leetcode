@@ -37,7 +37,7 @@ func main() {
 	panicErr(err)
 
 	files := getAllFiles(filterList, true)
-	fmt.Println(files)
+	printLineArray(files...)
 
 	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
 	defer rd.Close()
@@ -50,8 +50,8 @@ func main() {
 	}
 
 	_, _ = bw.WriteString("### 总完成:" + strconv.Itoa(len(files)) + " ###" + "  \n")
-	_, _ = bw.WriteString("| 目录     |  标题                                                       |  函数名                                                       |  实现代码 |  测试代码 |  \n")
-	_, _ = bw.WriteString("|:--------:|:------------------------------------------------------------|:------------------------------------------------------------|:--------:|:--------:|  \n")
+	_, _ = bw.WriteString("| 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  \n")
+	_, _ = bw.WriteString("|:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  \n")
 	for _, file := range files {
 		templeWrite(bw, file)
 	}
@@ -59,6 +59,12 @@ func main() {
 
 	err = bw.Flush()
 	panicErr(err)
+}
+
+func printLineArray(arr ...string) {
+	for i := range arr {
+		fmt.Println(arr[i])
+	}
 }
 
 func panicErr(err error) {
@@ -72,6 +78,7 @@ var filterList = []string{
 	"LICENSE",
 	"def.go",
 	"common.go",
+	"common_func.go",
 	"go.mod",
 	"go.sum",
 	".gitignore",

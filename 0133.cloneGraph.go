@@ -62,12 +62,19 @@ class Node {
 由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。
 图是连通图，你可以从给定节点访问到所有节点。
 */
-func cloneGraph(node *Node) *Node {
-	visited := make(map[int]*Node, 0)
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Neighbors []*Node
+ * }
+ */
+func cloneGraph(node *Node133) *Node133 {
+	visited := make(map[int]*Node133, 0)
 	return deepClone(visited, node)
 }
 
-func deepClone(visited map[int]*Node, node *Node) *Node {
+func deepClone(visited map[int]*Node133, node *Node133) *Node133 {
 	if node == nil {
 		return nil
 	}
@@ -76,12 +83,17 @@ func deepClone(visited map[int]*Node, node *Node) *Node {
 		return v
 	}
 	size := len(node.Neighbors)
-	newNode := new(Node)
+	newNode := new(Node133)
 	newNode.Val = node.Val
-	newNode.Neighbors = make([]*Node, size)
+	newNode.Neighbors = make([]*Node133, size)
 	(visited)[node.Val] = newNode
 	for i := 0; i < size; i++ {
 		newNode.Neighbors[i] = deepClone(visited, node.Neighbors[i])
 	}
 	return newNode
+}
+
+type Node133 struct {
+	Val       int
+	Neighbors []*Node133
 }

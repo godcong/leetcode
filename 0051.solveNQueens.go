@@ -78,7 +78,7 @@ func solveNQueens(n int) [][]string {
 }
 
 func generateBoard(queens []int, n int) []string {
-	board := []string{}
+	var board []string
 	for i := 0; i < n; i++ {
 		row := make([]byte, n)
 		for j := 0; j < n; j++ {
