@@ -2,6 +2,7 @@ package leetcode
 
 import (
 	"errors"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -57,7 +58,7 @@ func strToByteArray(str string) []byte {
 		if b == "" {
 			throughErrorPanic(errors.New("found null characters"))
 		}
-		ret[i] = b[0]
+		ret[i] = b[1]
 	}
 	return ret
 }
