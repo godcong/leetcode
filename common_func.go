@@ -1,9 +1,28 @@
 package leetcode
 
 import (
+	"errors"
 	"strconv"
 	"strings"
 )
+
+func fixBrackets(nums string) string {
+	if nums == "" {
+		return ""
+	}
+
+	sta := 0
+	end := len(nums)
+	if strings.Index(nums, "[") == 0 {
+		sta += 1
+	}
+
+	if strings.LastIndex(nums, "]") == end-1 {
+		end -= 1
+	}
+
+	return nums[sta:end]
+}
 
 func strToIntArray(nums string) []int {
 	nums = fixBrackets(nums)
@@ -25,22 +44,23 @@ func strToIntArray(nums string) []int {
 	return nodes
 }
 
-func fixBrackets(nums string) string {
-	if nums == "" {
-		return ""
+func strToByteArray(str string) []byte {
+	str = fixBrackets(str)
+	if str == "" {
+		return nil
 	}
 
-	sta := 0
-	end := len(nums)
-	if strings.Index(nums, "[") == 0 {
-		sta += 1
+	var ret []byte
+	sb := strings.Split(str, ",")
+	size := len(sb)
+	nodes := make([]byte, size)
+	for i, b := range sb {
+		if b == "" {
+			throughErrorPanic(errors.New("found null characters"))
+		}
+		nodes[i] = b[0]
 	}
-
-	if strings.LastIndex(nums, "]") == end-1 {
-		end -= 1
-	}
-
-	return nums[sta:end]
+	return ret
 }
 
 func strToIntArrArray(nums string) [][]int {
