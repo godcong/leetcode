@@ -26,5 +26,7 @@ package leetcode
 1 <= A.length <= 20
 1 <= A[0].length <= 20
 A[i][j] 是 0 或 1
- */
-
+*/
+func matrixScore(A [][]int) int {
+	return 0
+}
