@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:170 ###  
+### 总完成:171 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -145,6 +145,7 @@ All append into def.go
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
+| 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0861.matrixScore_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII_test.go) |  
 | 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName_test.go) |  
