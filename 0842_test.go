@@ -36,6 +36,13 @@ func Test_splitIntoFibonacci(t *testing.T) {
 			},
 			want: strToIntArray("[]"),
 		},
+		{
+			name: "",
+			args: args{
+				s: "0123",
+			},
+			want: strToIntArray("[]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
