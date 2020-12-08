@@ -85,5 +85,5 @@ func splitIntoFibonacci(s string) []int {
 		return false
 	}
 	backtrack(0, 0, 0)
-	return
+	return ret
 }
