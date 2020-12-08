@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:169 ###  
+### 总完成:170 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -142,6 +142,7 @@ All append into def.go
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree_test.go) |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
+| 0842 | 将数组拆分成斐波那契序列 | splitIntoFibonacci | [GO](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
