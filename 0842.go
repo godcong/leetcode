@@ -44,4 +44,7 @@ F.length >= 3；
 
 1 <= S.length <= 200
 字符串 S 中只含有数字。
- */
+*/
+func splitIntoFibonacci(S string) []int {
+	return nil
+}
