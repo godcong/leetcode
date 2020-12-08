@@ -1,5 +1,7 @@
 package leetcode
 
+import "math"
+
 /*
 842. 将数组拆分成斐波那契序列
 给定一个数字字符串 S，比如 S = "123456579"，我们可以将它分成斐波那契式的序列 [123, 456, 579]。
@@ -45,6 +47,43 @@ F.length >= 3；
 1 <= S.length <= 200
 字符串 S 中只含有数字。
 */
-func splitIntoFibonacci(S string) []int {
-	return nil
+func splitIntoFibonacci(s string) []int {
+	var ret []int
+	n := len(s)
+	var backtrack func(index, sum, prev int) bool
+	backtrack = func(index, sum, prev int) bool {
+		if index == n {
+			return len(ret) >= 3
+		}
+
+		cur := 0
+		for i := index; i < n; i++ {
+			if i > index && s[index] == '0' {
+				break
+			}
+
+			cur = cur*10 + int(s[i]-'0')
+			if cur > math.MaxInt32 {
+				break
+			}
+
+			if len(ret) >= 2 {
+				if cur < sum {
+					continue
+				}
+				if cur > sum {
+					break
+				}
+			}
+
+			ret = append(ret, cur)
+			if backtrack(i+1, prev+cur, cur) {
+				return true
+			}
+			ret = ret[:len(ret)-1]
+		}
+		return false
+	}
+	backtrack(0, 0, 0)
+	return
 }
