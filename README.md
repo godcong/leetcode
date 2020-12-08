@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:170 ###  
+### 总完成:171 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -61,6 +61,7 @@ All append into def.go
 | 0113 | 路径总和 II | pathSum | [GO](https://github.com/godcong/leetcode/blob/master/0113.pathSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0113.pathSum_test.go) |  
 | 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0114.connect_test.go) |  
 | 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0117.connect_test.go) |  
+| 0118 | 杨辉三角 | generate | [GO](https://github.com/godcong/leetcode/blob/master/0118.generate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0118.generate_test.go) |  
 | 0122 | 买卖股票的最佳时机 II | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0122.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0122.maxProfit_test.go) |  
 | 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0127.ladderLength_test.go) |  
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS_test.go) |  
@@ -142,9 +143,9 @@ All append into def.go
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree_test.go) |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
-| 0842 | 将数组拆分成斐波那契序列 | splitIntoFibonacci | [GO](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
+| 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0861.matrixScore_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII_test.go) |  
 | 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName_test.go) |  
