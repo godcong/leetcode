@@ -33,5 +33,7 @@ package leetcode
 
 1 <= m, n <= 100
 题目数据保证答案小于等于 2 * 10 ^ 9
- */
-
+*/
+func uniquePaths(m int, n int) int {
+	return 0
+}
