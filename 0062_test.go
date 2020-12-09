@@ -21,6 +21,14 @@ func Test_uniquePaths(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				m: 7,
+				n: 3,
+			},
+			want: 28,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
