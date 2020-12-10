@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:173 ###  
+### 总完成:174 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -147,6 +147,7 @@ All append into def.go
 | 0842 | 将数组拆分成斐波那契序列 | splitIntoFibonacci | [GO](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
+| 0860 | 柠檬水找零 | lemonadeChange | [GO](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange_test.go) |  
 | 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0861.matrixScore_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII_test.go) |  
