@@ -45,4 +45,6 @@ package leetcode
 0 <= bills.length <= 10000
 bills[i] 不是 5 就是 10 或是 20
 */
-
+func lemonadeChange(bills []int) bool {
+	return false
+}
