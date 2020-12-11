@@ -45,5 +45,25 @@ Dota2 参议院由来自两派的参议员组成。现在参议院希望对一�
 给定字符串的长度在 [1, 10,000] 之间.
 */
 func predictPartyVictory(senate string) string {
-	return ""
+	var radiant, dire []int
+	for i, s := range senate {
+		if s == 'R' {
+			radiant = append(radiant, i)
+		} else {
+			dire = append(dire, i)
+		}
+	}
+	for len(radiant) > 0 && len(dire) > 0 {
+		if radiant[0] < dire[0] {
+			radiant = append(radiant, radiant[0]+len(senate))
+		} else {
+			dire = append(dire, dire[0]+len(senate))
+		}
+		radiant = radiant[1:]
+		dire = dire[1:]
+	}
+	if len(radiant) > 0 {
+		return "Radiant"
+	}
+	return "Dire"
 }
