@@ -19,6 +19,13 @@ func Test_predictPartyVictory(t *testing.T) {
 			},
 			want: "Radiant",
 		},
+		{
+			name: "",
+			args: args{
+				senate: "RDD",
+			},
+			want: "Dire",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
