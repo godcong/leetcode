@@ -25,3 +25,6 @@ package leetcode
 进阶:
 你能否用 O(n) 时间复杂度完成此题?
 */
+func wiggleMaxLength(nums []int) int {
+	return 0
+}
