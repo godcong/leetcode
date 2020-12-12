@@ -26,5 +26,32 @@ package leetcode
 你能否用 O(n) 时间复杂度完成此题?
 */
 func wiggleMaxLength(nums []int) int {
-	return 0
+	n := len(nums)
+	if n < 2 {
+		return n
+	}
+	up := make([]int, n)
+	down := make([]int, n)
+	up[0] = 1
+	down[0] = 1
+	for i := 1; i < n; i++ {
+		if nums[i] > nums[i-1] {
+			up[i] = wiggleMaxLengthMax(up[i-1], down[i-1]+1)
+			down[i] = down[i-1]
+		} else if nums[i] < nums[i-1] {
+			up[i] = up[i-1]
+			down[i] = wiggleMaxLengthMax(up[i-1]+1, down[i-1])
+		} else {
+			up[i] = up[i-1]
+			down[i] = down[i-1]
+		}
+	}
+	return wiggleMaxLengthMax(up[n-1], down[n-1])
+}
+
+func wiggleMaxLengthMax(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
