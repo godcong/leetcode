@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:175 ###  
+### 总完成:176 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -99,6 +99,7 @@ All append into def.go
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
+| 0376 | 摆动序列 | wiggleMaxLength | [GO](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
