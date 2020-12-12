@@ -22,5 +22,12 @@ package leetcode
 输出: true
 */
 func containsDuplicate(nums []int) bool {
+	mark := make([]bool, len(nums))
+	for _, num := range nums {
+		if mark[num] {
+			return true
+		}
+		mark[num] = true
+	}
 	return false
 }
