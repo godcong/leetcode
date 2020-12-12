@@ -26,6 +26,13 @@ func Test_wiggleMaxLength(t *testing.T) {
 			},
 			want: 7,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[1,2,3,4,5,6,7,8,9]"),
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
