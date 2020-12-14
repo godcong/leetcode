@@ -62,6 +62,15 @@ func strToByteArray(str string) []byte {
 	return ret
 }
 
+func strToStringArray(str string) []string {
+	str = fixBrackets(str)
+	if str == "" {
+		return nil
+	}
+
+	return strings.Split(str, ",")
+}
+
 func strToIntArrArray(nums string) [][]int {
 	nums = fixBrackets(nums)
 	if nums == "" {
