@@ -71,6 +71,15 @@ func strToStringArray(str string) []string {
 	return strings.Split(str, ",")
 }
 
+func strToStringArrayArray(str string) [][]string {
+	arr := strToStringArray(str)
+	var ret [][]string
+	for _, s := range arr {
+		ret = append(ret, strToStringArray(s))
+	}
+	return ret
+}
+
 func strToIntArrArray(nums string) [][]int {
 	nums = fixBrackets(nums)
 	if nums == "" {
