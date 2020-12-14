@@ -67,15 +67,25 @@ func strToStringArray(str string) []string {
 	if str == "" {
 		return nil
 	}
-
-	return strings.Split(str, ",")
+	str = strings.ReplaceAll(str, "\"", "")
+	str = strings.Trim(str, "\n")
+	ret := strings.Split(str, ",")
+	for i, s := range ret {
+		ret[i] = strings.TrimSpace(s)
+	}
+	return ret
 }
 
 func strToStringArrayArray(str string) [][]string {
-	arr := strToStringArray(str)
+	str = fixBrackets(str)
+	sta := strings.Index(str, "[")
+	end := strings.Index(str, "]")
 	var ret [][]string
-	for _, s := range arr {
-		ret = append(ret, strToStringArray(s))
+	for sta != -1 && end != -1 {
+		ret = append(ret, strToStringArray(str[sta:end+1]))
+		str = str[end+1:]
+		sta = strings.Index(str, "[")
+		end = strings.Index(str, "]")
 	}
 	return ret
 }
