@@ -19,4 +19,7 @@ package leetcode
 输入: N = 332
 输出: 299
 说明: N 是在 [0, 10^9] 范围内的一个整数。
- */
+*/
+func monotoneIncreasingDigits(N int) int {
+	return 0
+}
