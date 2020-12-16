@@ -29,6 +29,14 @@ func Test_wordPattern(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			name: "",
+			args: args{
+				pattern: "aaaa",
+				s:       "dog cat cat dog",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
