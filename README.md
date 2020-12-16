@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:172 ###  
+### 总完成:179 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -38,11 +38,13 @@ All append into def.go
 | 0040 | 组合总和 II | combinationSum2 | [GO](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0040.combinationSum2_test.go) |  
 | 0043 | 字符串相乘 | multiply | [GO](https://github.com/godcong/leetcode/blob/master/0043.multiply.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0043.multiply_test.go) |  
 | 0047 | 全排列 II | permuteUnique | [GO](https://github.com/godcong/leetcode/blob/master/0047.permuteUnique.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0047.permuteUnique_test.go) |  
+| 0049 | 字母异位词分组 | groupAnagrams | [GO](https://github.com/godcong/leetcode/blob/master/0049.groupAnagrams.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0049.groupAnagrams_test.go) |  
 | 0051 | N 皇后 | solveNQueens | [GO](https://github.com/godcong/leetcode/blob/master/0051.solveNQueens.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0051.solveNQueens_test.go) |  
 | 0052 | N皇后 II | totalNQueens | [GO](https://github.com/godcong/leetcode/blob/master/0052.totalNQueens.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0052.totalNQueens_test.go) |  
 | 0057 | 插入区间 | insert | [GO](https://github.com/godcong/leetcode/blob/master/0057.insert.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0057.insert_test.go) |  
 | 0058 | 最后一个单词的长度 | lengthOfLastWord | [GO](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0058.lengthOfLastWord_test.go) |  
 | 0060 | 第k个排列 | getPermutation | [GO](https://github.com/godcong/leetcode/blob/master/0060.getPermutation.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0060.getPermutation_test.go) |  
+| 0062 | 不同路径 | uniquePaths | [GO](https://github.com/godcong/leetcode/blob/master/0062.uniquePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0062.uniquePaths_test.go) |  
 | 0067 | 二进制求和 | addBinary | [GO](https://github.com/godcong/leetcode/blob/master/0067.addBinary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0067.addBinary_test.go) |  
 | 0070 | 爬楼梯 | climbStairs | [GO](https://github.com/godcong/leetcode/blob/master/0070.climbStairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0070.climbStairs_test.go) |  
 | 0075 | 颜色分类 | sortColors | [GO](https://github.com/godcong/leetcode/blob/master/0075.sortColors.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0075.sortColors_test.go) |  
@@ -84,6 +86,7 @@ All append into def.go
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3_test.go) |  
+| 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate_test.go) |  
 | 0222 | 完全二叉树的节点个数 | countNodes | [GO](https://github.com/godcong/leetcode/blob/master/0222.countNodes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0222.countNodes_test.go) |  
 | 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0226.invertTree_test.go) |  
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome_test.go) |  
@@ -91,7 +94,6 @@ All append into def.go
 | 0242 | 有效的字母异位词 | isAnagram | [GO](https://github.com/godcong/leetcode/blob/master/0242.isAnagram.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0242.isAnagram_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
 | 0283 | 移动零 | moveZeroes | [GO](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes_test.go) |  
-| 0290 | 单词规律 | wordPattern | [GO](https://github.com/godcong/leetcode/blob/master/0290.wordPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0290.wordPattern_test.go) |  
 | 0321 | 拼接最大数 | maxNumber | [GO](https://github.com/godcong/leetcode/blob/master/0321.maxNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0321.maxNumber_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
@@ -99,6 +101,7 @@ All append into def.go
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
+| 0376 | 摆动序列 | wiggleMaxLength | [GO](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
@@ -128,6 +131,7 @@ All append into def.go
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum_test.go) |  
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels_test.go) |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings_test.go) |  
+| 0649 | Dota2 参议院 | predictPartyVictory | [GO](https://github.com/godcong/leetcode/blob/master/0649.predictPartyVictory.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0649.predictPartyVictory_test.go) |  
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle_test.go) |  
 | 0659 | 分割数组为连续子序列 | isPossible | [GO](https://github.com/godcong/leetcode/blob/master/0659.isPossible.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0659.isPossible_test.go) |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility_test.go) |  
@@ -137,6 +141,7 @@ All append into def.go
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings_test.go) |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
+|  | 单调递增的数字 | 0738 | [GO](https://github.com/godcong/leetcode/blob/master/0738.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0738_test.go) |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels_test.go) |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString_test.go) |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
@@ -144,8 +149,10 @@ All append into def.go
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree_test.go) |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside_test.go) |  
 | 0841 | 钥匙和房间 | canVisitAllRooms | [GO](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0841.canVisitAllRooms_test.go) |  
+| 0842 | 将数组拆分成斐波那契序列 | splitIntoFibonacci | [GO](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0842.splitIntoFibonacci_test.go) |  
 | 0844 | 比较含退格的字符串 | backspaceCompare | [GO](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0844.backspaceCompare_test.go) |  
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0845.longestMountain_test.go) |  
+| 0860 | 柠檬水找零 | lemonadeChange | [GO](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange_test.go) |  
 | 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0861.matrixScore_test.go) |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0874.robotSim_test.go) |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII_test.go) |  

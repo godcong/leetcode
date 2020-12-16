@@ -62,6 +62,34 @@ func strToByteArray(str string) []byte {
 	return ret
 }
 
+func strToStringArray(str string) []string {
+	str = fixBrackets(str)
+	if str == "" {
+		return nil
+	}
+	str = strings.ReplaceAll(str, "\"", "")
+	str = strings.Trim(str, "\n")
+	ret := strings.Split(str, ",")
+	for i, s := range ret {
+		ret[i] = strings.TrimSpace(s)
+	}
+	return ret
+}
+
+func strToStringArrayArray(str string) [][]string {
+	str = fixBrackets(str)
+	sta := strings.Index(str, "[")
+	end := strings.Index(str, "]")
+	var ret [][]string
+	for sta != -1 && end != -1 {
+		ret = append(ret, strToStringArray(str[sta:end+1]))
+		str = str[end+1:]
+		sta = strings.Index(str, "[")
+		end = strings.Index(str, "]")
+	}
+	return ret
+}
+
 func strToIntArrArray(nums string) [][]int {
 	nums = fixBrackets(nums)
 	if nums == "" {
