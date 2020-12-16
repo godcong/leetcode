@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:179 ###  
+### 总完成:180 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -94,6 +94,7 @@ All append into def.go
 | 0242 | 有效的字母异位词 | isAnagram | [GO](https://github.com/godcong/leetcode/blob/master/0242.isAnagram.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0242.isAnagram_test.go) |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths_test.go) |  
 | 0283 | 移动零 | moveZeroes | [GO](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes_test.go) |  
+| 0290 | 单词规律 | wordPattern | [GO](https://github.com/godcong/leetcode/blob/master/0290.wordPattern.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0290.wordPattern_test.go) |  
 | 0321 | 拼接最大数 | maxNumber | [GO](https://github.com/godcong/leetcode/blob/master/0321.maxNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0321.maxNumber_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
