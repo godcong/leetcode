@@ -1,5 +1,7 @@
 package leetcode
 
+import "strings"
+
 /*
 290. 单词规律
 给定一种规律 pattern 和一个字符串 str ，判断 str 是否遵循相同的规律。
@@ -26,5 +28,19 @@ package leetcode
 你可以假设 pattern 只包含小写字母， str 包含了由单个空格分隔的小写字母。
 */
 func wordPattern(pattern string, s string) bool {
-	return false
+	word2ch := map[string]byte{}
+	ch2word := map[byte]string{}
+	words := strings.Split(s, " ")
+	if len(pattern) != len(words) {
+		return false
+	}
+	for i, word := range words {
+		ch := pattern[i]
+		if word2ch[word] > 0 && word2ch[word] != ch || ch2word[ch] != "" && ch2word[ch] != word {
+			return false
+		}
+		word2ch[word] = ch
+		ch2word[ch] = word
+	}
+	return true
 }
