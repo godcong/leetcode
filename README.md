@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:180 ###  
+### 总完成:181 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -141,6 +141,7 @@ All append into def.go
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch_test.go) |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings_test.go) |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST_test.go) |  
+| 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0714.maxProfit_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
 |  | 单调递增的数字 | 0738 | [GO](https://github.com/godcong/leetcode/blob/master/0738.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0738_test.go) |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels_test.go) |  
