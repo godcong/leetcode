@@ -21,6 +21,14 @@ func Test_findTheDifference(t *testing.T) {
 			},
 			want: 'e',
 		},
+		{
+			name: "",
+			args: args{
+				s: "",
+				t: "y",
+			},
+			want: 'y',
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
