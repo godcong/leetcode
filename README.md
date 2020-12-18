@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:181 ###  
+### 总完成:182 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -104,6 +104,7 @@ All append into def.go
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
 | 0376 | 摆动序列 | wiggleMaxLength | [GO](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
+| 0389 | 找不同 | findTheDifference | [GO](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference_test.go) |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
 | 0406 | 根据身高重建队列 | reconstructQueue | [GO](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue_test.go) |  
@@ -143,7 +144,7 @@ All append into def.go
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST_test.go) |  
 | 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0714.maxProfit_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
-|  | 单调递增的数字 | 0738 | [GO](https://github.com/godcong/leetcode/blob/master/0738.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0738_test.go) |  
+| 0738 | 单调递增的数字 | monotoneIncreasingDigits | [GO](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits_test.go) |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels_test.go) |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString_test.go) |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
