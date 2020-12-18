@@ -34,7 +34,7 @@ package leetcode
 0 <= s.length <= 1000
 t.length == s.length + 1
 s 和 t 只包含小写字母
- */
+*/
 func findTheDifference(s string, t string) byte {
-
+	return 0
 }
