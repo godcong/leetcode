@@ -43,6 +43,16 @@ package leetcode
   [16, 7,10,11]
 ]
 */
-func rotate(matrix [][]int)  {
-
+func rotate(matrix [][]int) {
+	n := len(matrix)
+	tmp := make([][]int, n)
+	for i := range tmp {
+		tmp[i] = make([]int, n)
+	}
+	for i, row := range matrix {
+		for j, v := range row {
+			tmp[j][n-1-i] = v
+		}
+	}
+	copy(matrix, tmp)
 }
