@@ -19,6 +19,13 @@ func Test_removeDuplicateLetters(t *testing.T) {
 			},
 			want: "abc",
 		},
+		{
+			name: "",
+			args: args{
+				s: "cbacdcbc",
+			},
+			want: "abcd",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
