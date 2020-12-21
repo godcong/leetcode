@@ -22,5 +22,7 @@ package leetcode
 
 cost 的长度将会在 [2, 1000]。
 每一个 cost[i] 将会是一个Integer类型，范围为 [0, 999]。
- */
+*/
+func minCostClimbingStairs(cost []int) int {
 
+}
