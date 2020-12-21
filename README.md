@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:184 ###  
+### 总完成:185 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -147,6 +147,7 @@ All append into def.go
 | 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0714.maxProfit_test.go) |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0733.floodFill_test.go) |  
 | 0738 | 单调递增的数字 | monotoneIncreasingDigits | [GO](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits_test.go) |  
+| 0746 | 使用最小花费爬楼梯 | minCostClimbingStairs | [GO](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs_test.go) |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels_test.go) |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString_test.go) |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones_test.go) |  
