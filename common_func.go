@@ -10,7 +10,7 @@ func fixBrackets(nums string) string {
 	if nums == "" {
 		return ""
 	}
-
+	nums = strings.TrimSpace(nums)
 	sta := 0
 	end := len(nums)
 	if strings.Index(nums, "[") == 0 {
