@@ -24,5 +24,17 @@ cost 的长度将会在 [2, 1000]。
 每一个 cost[i] 将会是一个Integer类型，范围为 [0, 999]。
 */
 func minCostClimbingStairs(cost []int) int {
+	n := len(cost)
+	dp := make([]int, n+1)
+	for i := 2; i <= n; i++ {
+		dp[i] = minCostClimbingStairsMin(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
+	}
+	return dp[n]
+}
 
+func minCostClimbingStairsMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
