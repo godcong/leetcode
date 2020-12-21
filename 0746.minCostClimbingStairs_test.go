@@ -22,7 +22,7 @@ func Test_minCostClimbingStairs(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				cost: strToIntArray(" [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]"),
+				cost: strToIntArray("[1, 100, 1, 1, 1, 100, 1, 1, 100, 1]"),
 			},
 			want: 6,
 		},
