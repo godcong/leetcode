@@ -18,5 +18,14 @@ s = "loveleetcode"
 提示：你可以假定该字符串只包含小写字母。
 */
 func firstUniqChar(s string) int {
-	return 0
+	cnt := [26]int{}
+	for _, ch := range s {
+		cnt[ch-'a']++
+	}
+	for i, ch := range s {
+		if cnt[ch-'a'] == 1 {
+			return i
+		}
+	}
+	return -1
 }
