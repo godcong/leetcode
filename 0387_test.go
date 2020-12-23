@@ -15,7 +15,7 @@ func Test_firstUniqChar(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				s: "",
+				s: "leetcode",
 			},
 			want: 0,
 		},
