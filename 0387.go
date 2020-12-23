@@ -17,3 +17,6 @@ s = "loveleetcode"
 
 提示：你可以假定该字符串只包含小写字母。
 */
+func firstUniqChar(s string) int {
+
+}
