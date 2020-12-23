@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:186 ###  
+### 总完成:187 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -57,7 +57,7 @@ All append into def.go
 | 0099 | 恢复二叉搜索树 | recoverTree | [GO](https://github.com/godcong/leetcode/blob/master/0099.recoverTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0099.recoverTree_test.go) |  
 | 0100 | 平衡二叉树 | isBalanced | [GO](https://github.com/godcong/leetcode/blob/master/0100.isBalanced.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isBalanced_test.go) |  
 | 0100 | 相同的树 | isSameTree | [GO](https://github.com/godcong/leetcode/blob/master/0100.isSameTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0100.isSameTree_test.go) |  
-|  | 二叉树的锯齿形层序遍历 | 0103 | [GO](https://github.com/godcong/leetcode/blob/master/0103.go) | TEST |  
+| 0103 | 二叉树的锯齿形层序遍历 | zigzagLevelOrder | [GO](https://github.com/godcong/leetcode/blob/master/0103.zigzagLevelOrder.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0103.zigzagLevelOrder_test.go) |  
 | 0106 | 从中序与后序遍历序列构造二叉树 | buildTree | [GO](https://github.com/godcong/leetcode/blob/master/0106.buildTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0106.buildTree_test.go) |  
 | 0107 | 二叉树的层次遍历 II | levelOrderBottom | [GO](https://github.com/godcong/leetcode/blob/master/0107.levelOrderBottom.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0107.levelOrderBottom_test.go) |  
 | 0109 | 有序链表转换二叉搜索树 | sortedListToBST | [GO](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0109.sortedListToBST_test.go) |  
@@ -107,6 +107,7 @@ All append into def.go
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0349.intersection_test.go) |  
 | 0376 | 摆动序列 | wiggleMaxLength | [GO](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength_test.go) |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection_test.go) |  
+| 0387 | 字符串中的第一个唯一字符 | firstUniqChar | [GO](https://github.com/godcong/leetcode/blob/master/0387.firstUniqChar.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0387.firstUniqChar_test.go) |  
 | 0389 | 找不同 | findTheDifference | [GO](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference_test.go) |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits_test.go) |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves_test.go) |  
