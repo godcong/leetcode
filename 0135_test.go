@@ -19,6 +19,13 @@ func Test_candy(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "",
+			args: args{
+				ratings: strToIntArray("[1,2,2]"),
+			},
+			want: 4,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
