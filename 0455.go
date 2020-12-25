@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 455. 分发饼干
 假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。
@@ -32,5 +34,18 @@ package leetcode
 1 <= g[i], s[j] <= 231 - 1dd
 */
 func findContentChildren(g []int, s []int) int {
-	return 0
+	var ans int
+	sort.Ints(g)
+	sort.Ints(s)
+	n, m := len(g), len(s)
+	for i, j := 0, 0; i < n && j < m; i++ {
+		for j < m && g[i] > s[j] {
+			j++
+		}
+		if j < m {
+			ans++
+			j++
+		}
+	}
+	return ans
 }
