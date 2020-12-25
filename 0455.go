@@ -29,5 +29,8 @@ package leetcode
 
 1 <= g.length <= 3 * 104
 0 <= s.length <= 3 * 104
-1 <= g[i], s[j] <= 231 - 1
+1 <= g[i], s[j] <= 231 - 1dd
 */
+func findContentChildren(g []int, s []int) int {
+	return 0
+}
