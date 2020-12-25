@@ -21,6 +21,14 @@ func Test_findContentChildren(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				g: strToIntArray("[1,2]"),
+				s: strToIntArray("[1,2,3]"),
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
