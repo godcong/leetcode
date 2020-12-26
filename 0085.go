@@ -36,7 +36,7 @@ rows == matrix.length
 cols == matrix[0].length
 0 <= row, cols <= 200
 matrix[i][j] 为 '0' 或 '1'
- */
+*/
 func maximalRectangle(matrix [][]byte) int {
-
+	return 0
 }
