@@ -44,6 +44,25 @@ func strToIntArray(nums string) []int {
 	return nodes
 }
 
+func strToByteArrayArray(str string) [][]byte {
+	str = fixBrackets(str)
+	if str == "" {
+		return nil
+	}
+
+	var ret [][]byte
+	sta := strings.Index(str, "[")
+	end := strings.Index(str, "]")
+	for end != -1 && sta != -1 {
+		ret = append(ret, strToByteArray(str[sta:end]))
+		str = str[end+1:]
+		sta = strings.Index(str, "[")
+		end = strings.Index(str, "]")
+	}
+
+	return ret
+}
+
 func strToByteArray(str string) []byte {
 	str = fixBrackets(str)
 	if str == "" {
