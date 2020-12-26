@@ -40,6 +40,13 @@ func Test_maximalRectangle(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				matrix: strToByteArrayArray("[[\"0\",\"0\"]]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
