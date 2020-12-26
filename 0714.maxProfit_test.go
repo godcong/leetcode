@@ -21,7 +21,7 @@ func Test_maxProfit0714(t *testing.T) {
 			},
 			want: 8,
 		},
-	}
+	} 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := maxProfit0714(tt.args.prices, tt.args.fee); got != tt.want {
