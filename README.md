@@ -88,7 +88,7 @@ All append into def.go
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
-|  | 同构字符串 | 0205 | [GO](https://github.com/godcong/leetcode/blob/master/0205.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0205_test.go) |  
+| 0205 | 同构字符串 | isIsomorphic | [GO](https://github.com/godcong/leetcode/blob/master/0205.isIsomorphic.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0205.isIsomorphic_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3_test.go) |  
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate_test.go) |  
