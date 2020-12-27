@@ -21,6 +21,14 @@ func Test_isIsomorphic(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			name: "",
+			args: args{
+				s: "foo",
+				t: "bar",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
