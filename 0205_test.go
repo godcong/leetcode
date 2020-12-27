@@ -19,7 +19,7 @@ func Test_isIsomorphic(t *testing.T) {
 				s: "egg",
 				t: "add",
 			},
-			want: false,
+			want: true,
 		},
 		{
 			name: "",
@@ -35,7 +35,7 @@ func Test_isIsomorphic(t *testing.T) {
 				s: "paper",
 				t: "title",
 			},
-			want: false,
+			want: true,
 		},
 	}
 	for _, tt := range tests {
