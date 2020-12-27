@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:190 ###  
+### 总完成:191 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -88,6 +88,7 @@ All append into def.go
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
+|  | 同构字符串 | 0205 | [GO](https://github.com/godcong/leetcode/blob/master/0205.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0205_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3_test.go) |  
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate_test.go) |  
