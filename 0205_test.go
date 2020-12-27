@@ -13,6 +13,14 @@ func Test_isIsomorphic(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				s: "egg",
+				t: "add",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
