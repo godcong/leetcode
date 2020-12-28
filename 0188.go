@@ -29,3 +29,6 @@ package leetcode
 0 <= prices.length <= 1000
 0 <= prices[i] <= 1000
 */
+func maxProfit0188(k int, prices []int) int {
+
+}
