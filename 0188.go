@@ -30,5 +30,5 @@ package leetcode
 0 <= prices[i] <= 1000
 */
 func maxProfit0188(k int, prices []int) int {
-
+	return 0
 }
