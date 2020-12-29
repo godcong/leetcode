@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:192 ###  
+### 总完成:193 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -105,6 +105,7 @@ All append into def.go
 | 0321 | 拼接最大数 | maxNumber | [GO](https://github.com/godcong/leetcode/blob/master/0321.maxNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0321.maxNumber_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
+| 0330 | 按要求补齐数组 | minPatches | [GO](https://github.com/godcong/leetcode/blob/master/0330.minPatches.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0330.minPatches_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
