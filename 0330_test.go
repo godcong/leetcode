@@ -16,10 +16,10 @@ func Test_minPatches(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: nil,
-				n:    0,
+				nums: strToIntArray("[1,3]"),
+				n:    6,
 			},
-			want: 0,
+			want: 1,
 		},
 	}
 	for _, tt := range tests {
