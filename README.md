@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:190 ###  
+### 总完成:192 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0001.twoSum_test.go) |  
@@ -52,6 +52,7 @@ All append into def.go
 | 0077 | 组合 | combine | [GO](https://github.com/godcong/leetcode/blob/master/0077.combine.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0077.combine_test.go) |  
 | 0078 | 子集 | subsets | [GO](https://github.com/godcong/leetcode/blob/master/0078.subsets.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0078.subsets_test.go) |  
 | 0079 | 单词搜索 | exist | [GO](https://github.com/godcong/leetcode/blob/master/0079.exist.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0079.exist_test.go) |  
+| 0085 | 最大矩形 | maximalRectangle | [GO](https://github.com/godcong/leetcode/blob/master/0085.maximalRectangle.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0085.maximalRectangle_test.go) |  
 | 0093 | 复原IP地址 | restoreIpAddresses | [GO](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses_test.go) |  
 | 0094 | 二叉树的中序遍历 | inorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal_test.go) |  
 | 0099 | 恢复二叉搜索树 | recoverTree | [GO](https://github.com/godcong/leetcode/blob/master/0099.recoverTree.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0099.recoverTree_test.go) |  
@@ -83,10 +84,12 @@ All append into def.go
 | 0147 | 对链表进行插入排序 | insertionSortList | [GO](https://github.com/godcong/leetcode/blob/master/0147.insertionSortList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0147.insertionSortList_test.go) |  
 | 0148 | 排序链表 | sortList | [GO](https://github.com/godcong/leetcode/blob/master/0148.sortList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0148.sortList_test.go) |  
 | 0164 | 最大间距 | maximumGap | [GO](https://github.com/godcong/leetcode/blob/master/0164.maximumGap.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0164.maximumGap_test.go) |  
+| 0188 | 买卖股票的最佳时机 IV | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0188.maxProfit.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0188.maxProfit_test.go) |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight_test.go) |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd_test.go) |  
 | 0204 | 计数质数 | countPrimes | [GO](https://github.com/godcong/leetcode/blob/master/0204.countPrimes.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0204.countPrimes_test.go) |  
+| 0205 | 同构字符串 | isIsomorphic | [GO](https://github.com/godcong/leetcode/blob/master/0205.isIsomorphic.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0205.isIsomorphic_test.go) |  
 | 0214 | 最短回文串 | shortestPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0214.shortestPalindrome_test.go) |  
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3_test.go) |  
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate_test.go) |  
@@ -102,7 +105,6 @@ All append into def.go
 | 0321 | 拼接最大数 | maxNumber | [GO](https://github.com/godcong/leetcode/blob/master/0321.maxNumber.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0321.maxNumber_test.go) |  
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum_test.go) |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList_test.go) |  
-| 0330 | 按要求补齐数组 | minPatches | [GO](https://github.com/godcong/leetcode/blob/master/0330.minPatches.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0330.minPatches_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0332.findItinerary_test.go) |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0344.reverseString_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | [TEST](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent_test.go) |  
