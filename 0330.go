@@ -23,3 +23,6 @@ package leetcode
 输入: nums = [1,2,2], n = 5
 输出: 0
 */
+func minPatches(nums []int, n int) int {
+	return 0
+}
