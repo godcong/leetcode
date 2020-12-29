@@ -24,5 +24,15 @@ package leetcode
 输出: 0
 */
 func minPatches(nums []int, n int) int {
-	return 0
+	var patches int
+	for i, x := 0, 1; x <= n; {
+		if i < len(nums) && nums[i] <= x {
+			x += nums[i]
+			i++
+		} else {
+			x *= 2
+			patches++
+		}
+	}
+	return patches
 }
