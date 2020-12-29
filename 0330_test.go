@@ -21,6 +21,14 @@ func Test_minPatches(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				nums:strToIntArray("[1,5,10]"),
+				n:    20,
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
