@@ -12,6 +12,13 @@ func Test_lastStoneWeight(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				stones: strToIntArray("[2,7,4,1,8,1]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
