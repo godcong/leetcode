@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 435. 无重叠区间
 给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。
@@ -31,5 +33,31 @@ package leetcode
 解释: 你不需要移除任何区间，因为它们已经是无重叠的了。
 */
 func eraseOverlapIntervals(intervals [][]int) int {
-	return 0
+	n := len(intervals)
+	if n == 0 {
+		return 0
+	}
+	sort.Slice(intervals, func(i, j int) bool { return intervals[i][0] < intervals[j][0] })
+	dp := make([]int, n)
+	for i := range dp {
+		dp[i] = 1
+	}
+	for i := 1; i < n; i++ {
+		for j := 0; j < i; j++ {
+			if intervals[j][1] <= intervals[i][0] {
+				dp[i] = max(dp[i], dp[j]+1)
+			}
+		}
+	}
+	return n - eraseOverlapIntervalsMax(dp...)
+}
+
+func eraseOverlapIntervalsMax(a ...int) int {
+	res := a[0]
+	for _, v := range a[1:] {
+		if v > res {
+			res = v
+		}
+	}
+	return res
 }
