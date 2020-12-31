@@ -19,6 +19,13 @@ func Test_eraseOverlapIntervals(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				intervals: strToIntArrArray("[ [1,2], [1,2], [1,2] ]"),
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
