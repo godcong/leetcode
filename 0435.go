@@ -45,7 +45,7 @@ func eraseOverlapIntervals(intervals [][]int) int {
 	for i := 1; i < n; i++ {
 		for j := 0; j < i; j++ {
 			if intervals[j][1] <= intervals[i][0] {
-				dp[i] = max(dp[i], dp[j]+1)
+				dp[i] = eraseOverlapIntervalsMax(dp[i], dp[j]+1)
 			}
 		}
 	}
