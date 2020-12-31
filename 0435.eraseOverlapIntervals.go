@@ -33,31 +33,22 @@ import "sort"
 解释: 你不需要移除任何区间，因为它们已经是无重叠的了。
 */
 func eraseOverlapIntervals(intervals [][]int) int {
-	n := len(intervals)
-	if n == 0 {
-		return 0
-	}
-	sort.Slice(intervals, func(i, j int) bool { return intervals[i][0] < intervals[j][0] })
-	dp := make([]int, n)
-	for i := range dp {
-		dp[i] = 1
-	}
-	for i := 1; i < n; i++ {
-		for j := 0; j < i; j++ {
-			if intervals[j][1] <= intervals[i][0] {
-				dp[i] = eraseOverlapIntervalsMax(dp[i], dp[j]+1)
+	var ans int
+	sort.Slice(intervals, func(i, j int) bool {
+		a, b := intervals[i], intervals[j]
+		return a[0] < b[0] || a[0] == b[0] && a[1] < b[1]
+	})
+	miR := int(-1e18)
+	for _, p := range intervals {
+		l, r := p[0], p[1]
+		if l >= miR {
+			miR = r
+		} else {
+			ans++
+			if r < miR {
+				miR = r
 			}
 		}
 	}
-	return n - eraseOverlapIntervalsMax(dp...)
-}
-
-func eraseOverlapIntervalsMax(a ...int) int {
-	res := a[0]
-	for _, v := range a[1:] {
-		if v > res {
-			res = v
-		}
-	}
-	return res
+	return ans
 }
