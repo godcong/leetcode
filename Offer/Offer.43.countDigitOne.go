@@ -1,4 +1,4 @@
-package leetcode
+package offer
 
 /*
 剑指 Offer 43. 1～n整数中1出现的次数
