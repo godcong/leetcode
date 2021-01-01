@@ -11,6 +11,11 @@ import (
 )
 
 var headLine [][]byte
+var codePath = filepath.Join(getCurrentPath(), "code")
+
+func init() {
+
+}
 
 func getCurrentPath() string {
 	getwd, err := os.Getwd()
@@ -36,7 +41,7 @@ func main() {
 	err = rd.Close()
 	panicErr(err)
 
-	files := getAllFiles(filterList, true)
+	files := getAllFiles(filepath.Join(getCurrentPath(), "code"), filterList, true)
 	printLineArray(files...)
 
 	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
@@ -84,8 +89,8 @@ var filterList = []string{
 	".gitignore",
 }
 
-func getAllFiles(filters []string, filterTest bool) []string {
-	dir, err := ioutil.ReadDir(getCurrentPath())
+func getAllFiles(path string, filters []string, filterTest bool) []string {
+	dir, err := ioutil.ReadDir(path)
 	panicErr(err)
 	need := false
 	var ret []string
