@@ -41,7 +41,7 @@ func main() {
 	err = rd.Close()
 	panicErr(err)
 
-	files := getAllFiles(filepath.Join(getCurrentPath(), "code"), filterList, true)
+	files := getAllFiles(codePath, filterList, true)
 	printLineArray(files...)
 
 	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
