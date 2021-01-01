@@ -21,17 +21,23 @@ package leetcode
 n 是非负整数，且不会超过输入数组的大小。
 */
 func canPlaceFlowers(flowerbed []int, n int) bool {
-	size := len(flowerbed)
-	if n > size {
-		return false
-	}
-	for i := 0; i < size; i++ {
-		if n == 0 {
-			return true
+	count := 0
+	m := len(flowerbed)
+	prev := -1
+	for i := 0; i < m; i++ {
+		if flowerbed[i] == 1 {
+			if prev < 0 {
+				count += i / 2
+			} else {
+				count += (i - prev - 2) / 2
+			}
+			prev = i
 		}
-		if flowerbed[i] == 0 && (i == 0 || flowerbed[i-1] == 0) && (i == size-1 || flowerbed[i+1] == 0) {
-			flowerbed[i], n = 1, n-1
-		}
 	}
-	return n == 0
+	if prev < 0 {
+		count += (m + 1) / 2
+	} else {
+		count += (m - prev - 1) / 2
+	}
+	return count >= n
 }
