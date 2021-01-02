@@ -20,9 +20,9 @@ func Test_maxSlidingWindow(t *testing.T) {
 			name: "",
 			args: args{
 				nums: strToIntArray("[1,3,-1,-3,5,3,6,7]"),
-				k:    0,
+				k:    3,
 			},
-			want: nil,
+			want: strToIntArray("[3,3,5,5,6,7]"),
 		},
 	}
 	for _, tt := range tests {
