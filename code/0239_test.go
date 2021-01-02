@@ -3,8 +3,6 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_maxSlidingWindow(t *testing.T) {
@@ -21,7 +19,7 @@ func Test_maxSlidingWindow(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: ,
+				nums: strToIntArray("[1,3,-1,-3,5,3,6,7]"),
 				k:    0,
 			},
 			want: nil,
