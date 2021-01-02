@@ -32,6 +32,14 @@ func Test_maxSlidingWindow(t *testing.T) {
 			},
 			want: strToIntArray("[1]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[1,-1]"),
+				k:    1,
+			},
+			want: strToIntArray("[1,-1]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
