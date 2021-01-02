@@ -46,27 +46,23 @@ package code
 1 <= k <= nums.length
 */
 func maxSlidingWindow(nums []int, k int) []int {
-	q := []int{}
-	push := func(i int) {
-		for len(q) > 0 && nums[i] >= nums[q[len(q)-1]] {
-			q = q[:len(q)-1]
-		}
-		q = append(q, i)
+	if nums == nil{
+		return []int{}
 	}
 
-	for i := 0; i < k; i++ {
-		push(i)
-	}
+	window, res := []int{},[]int{}
+	for i,x := range(nums){
 
-	n := len(nums)
-	ans := make([]int, 1, n-k+1)
-	ans[0] = nums[q[0]]
-	for i := k; i < n; i++ {
-		push(i)
-		for q[0] <= i-k {
-			q = q[1:]
+		if i >= k && window[0] <= i - k{
+			window = window[1:]
 		}
-		ans = append(ans, nums[q[0]])
+		for len(window) > 0 && nums[window[len(window) - 1]] <= x{
+			window = window[:len(window) - 1]
+		}
+		window = append(window,i)
+		if i >= k - 1{
+			res = append(res,nums[window[0]])
+		}
 	}
-	return ans
+	return res
 }
