@@ -46,5 +46,5 @@ package code
 1 <= k <= nums.length
 */
 func maxSlidingWindow(nums []int, k int) []int {
-
+	return nil
 }
