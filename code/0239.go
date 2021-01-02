@@ -45,3 +45,6 @@ package code
 -104 <= nums[i] <= 104
 1 <= k <= nums.length
 */
+func maxSlidingWindow(nums []int, k int) []int {
+
+}
