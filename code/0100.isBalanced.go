@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 110. 平衡二叉树
 给定一个二叉树，判断它是否是高度平衡的二叉树。
@@ -34,7 +32,7 @@ import "github.com/godcong/leetcode"
  4   4
 返回 false 。
 */
-func isBalanced(root *leetcode.TreeNode) bool {
+func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
@@ -45,7 +43,7 @@ func isBalanced(root *leetcode.TreeNode) bool {
 	return left <= 1 && isBalanced(root.Left) && isBalanced(root.Right)
 }
 
-func isBalancedDepth(root *leetcode.TreeNode) (ret int) {
+func isBalancedDepth(root *TreeNode) (ret int) {
 	if root == nil {
 		return 0
 	}

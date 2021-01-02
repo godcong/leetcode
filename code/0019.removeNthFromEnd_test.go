@@ -2,33 +2,31 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_removeNthFromEnd(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 		n    int
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 	}{
 		// TODO: Add test cases.
 		{
 			name: "",
 			args: args{
-				head: &leetcode.ListNode{
+				head: &ListNode{
 					Val: 1,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val: 2,
-						Next: &leetcode.ListNode{
+						Next: &ListNode{
 							Val: 3,
-							Next: &leetcode.ListNode{
+							Next: &ListNode{
 								Val: 4,
-								Next: &leetcode.ListNode{
+								Next: &ListNode{
 									Val:  5,
 									Next: nil,
 								},
@@ -38,13 +36,13 @@ func Test_removeNthFromEnd(t *testing.T) {
 				},
 				n: 2,
 			},
-			want: &leetcode.ListNode{
+			want: &ListNode{
 				Val: 1,
-				Next: &leetcode.ListNode{
+				Next: &ListNode{
 					Val: 2,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val: 3,
-						Next: &leetcode.ListNode{
+						Next: &ListNode{
 							Val:  5,
 							Next: nil,
 						},
@@ -55,7 +53,7 @@ func Test_removeNthFromEnd(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: &leetcode.ListNode{
+				head: &ListNode{
 					Val:  1,
 					Next: nil,
 				},
@@ -73,7 +71,7 @@ func Test_removeNthFromEnd(t *testing.T) {
 	}
 }
 
-func deepEqualRemoveNthFromEnd(t *testing.T, got, want *leetcode.ListNode) bool {
+func deepEqualRemoveNthFromEnd(t *testing.T, got, want *ListNode) bool {
 	if got == nil || want == nil {
 		return got == want
 	}

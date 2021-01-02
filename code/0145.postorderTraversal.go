@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 145. 二叉树的后序遍历
 给定一个二叉树，返回它的 后序 遍历。
@@ -26,10 +24,10 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func postorderTraversal(root *leetcode.TreeNode) []int {
+func postorderTraversal(root *TreeNode) []int {
 	var ret []int
-	var postorderTraversalDFS func(*leetcode.TreeNode)
-	postorderTraversalDFS = func(node *leetcode.TreeNode) {
+	var postorderTraversalDFS func(*TreeNode)
+	postorderTraversalDFS = func(node *TreeNode) {
 		if node == nil {
 			return
 		}

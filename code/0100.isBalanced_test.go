@@ -2,13 +2,11 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_isBalanced(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
@@ -18,7 +16,7 @@ func Test_isBalanced(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val:   0,
 					Left:  nil,
 					Right: nil,

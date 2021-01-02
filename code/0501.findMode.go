@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 501. 二叉搜索树中的众数
 给定一个有相同值的二叉搜索树（BST），找出 BST 中的所有众数（出现频率最高的元素）。
@@ -33,14 +31,14 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func findMode(root *leetcode.TreeNode) []int {
+func findMode(root *TreeNode) []int {
 	var base, count, maxCount int
 	var ans []int
 	if root == nil {
 		return nil
 	}
 
-	findModeDFS := func(node *leetcode.TreeNode) {
+	findModeDFS := func(node *TreeNode) {
 		if node.Val == base {
 			count++
 		} else {

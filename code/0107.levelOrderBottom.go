@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 107. 二叉树的层次遍历 II
 给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
@@ -30,13 +28,13 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func levelOrderBottom(root *leetcode.TreeNode) [][]int {
+func levelOrderBottom(root *TreeNode) [][]int {
 	var ret [][]int
 	if root == nil {
 		return ret
 	}
-	var levelOrderBottomAppendSub func(node *leetcode.TreeNode, index int)
-	levelOrderBottomAppendSub = func(node *leetcode.TreeNode, index int) {
+	var levelOrderBottomAppendSub func(node *TreeNode, index int)
+	levelOrderBottomAppendSub = func(node *TreeNode, index int) {
 		if len(ret) <= index {
 			ret = append(ret, make([]int, 0))
 		}

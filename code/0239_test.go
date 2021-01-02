@@ -7,29 +7,30 @@ import (
 	"github.com/godcong/leetcode"
 )
 
-func Test_findMode(t *testing.T) {
+func Test_maxSlidingWindow(t *testing.T) {
 	type args struct {
-		root *TreeNode
+		nums []int
+		k    int
 	}
 	tests := []struct {
 		name string
 		args args
 		want []int
 	}{
+		// TODO: Add test cases.
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,null,2,2]"),
+				nums: ,
+				k:    0,
 			},
-			want: []int{
-				2,
-			},
+			want: nil,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findMode(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("findMode() = %v, want %v", got, tt.want)
+			if got := maxSlidingWindow(tt.args.nums, tt.args.k); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("maxSlidingWindow() = %v, want %v", got, tt.want)
 			}
 		})
 	}

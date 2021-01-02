@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 701. 二叉搜索树中的插入操作
 给定二叉搜索树（BST）的根节点和要插入树中的值，将值插入二叉搜索树。 返回插入后二叉搜索树的根节点。 输入数据保证，新值和原始二叉搜索树中的任意节点值都不同。
@@ -54,20 +52,20 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func insertIntoBST(root *leetcode.TreeNode, val int) *leetcode.TreeNode {
+func insertIntoBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {
-		return &leetcode.TreeNode{Val: val}
+		return &TreeNode{Val: val}
 	}
 	if root.Val >= val {
 		if root.Left == nil {
-			root.Left = &leetcode.TreeNode{Val: val}
+			root.Left = &TreeNode{Val: val}
 		} else {
 			root.Left = insertIntoBST(root.Left, val)
 		}
 	}
 	if root.Val < val {
 		if root.Right == nil {
-			root.Right = &leetcode.TreeNode{Val: val}
+			root.Right = &TreeNode{Val: val}
 		} else {
 			root.Right = insertIntoBST(root.Right, val)
 		}

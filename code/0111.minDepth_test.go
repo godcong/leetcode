@@ -2,13 +2,11 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_minDepth(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
@@ -18,21 +16,21 @@ func Test_minDepth(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 3,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val:   9,
 						Left:  nil,
 						Right: nil,
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val: 20,
-						Left: &leetcode.TreeNode{
+						Left: &TreeNode{
 							Val:   15,
 							Left:  nil,
 							Right: nil,
 						},
-						Right: &leetcode.TreeNode{
+						Right: &TreeNode{
 							Val:   7,
 							Left:  nil,
 							Right: nil,
@@ -45,9 +43,9 @@ func Test_minDepth(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 1,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val:   2,
 						Left:  nil,
 						Right: nil,
@@ -60,18 +58,18 @@ func Test_minDepth(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 1,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val:  2,
 						Left: nil,
-						Right: &leetcode.TreeNode{
+						Right: &TreeNode{
 							Val:  3,
 							Left: nil,
-							Right: &leetcode.TreeNode{
+							Right: &TreeNode{
 								Val:  4,
 								Left: nil,
-								Right: &leetcode.TreeNode{
+								Right: &TreeNode{
 									Val:   5,
 									Left:  nil,
 									Right: nil,

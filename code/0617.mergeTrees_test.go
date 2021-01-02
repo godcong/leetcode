@@ -3,19 +3,17 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_mergeTrees(t *testing.T) {
 	type args struct {
-		t1 *leetcode.TreeNode
-		t2 *leetcode.TreeNode
+		t1 *TreeNode
+		t2 *TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		// TODO: Add test cases.
 	}

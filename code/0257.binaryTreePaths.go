@@ -2,8 +2,6 @@ package code
 
 import (
 	"strconv"
-
-	"github.com/godcong/leetcode"
 )
 
 /*
@@ -34,11 +32,11 @@ import (
  *     Right *TreeNode
  * }
  */
-func binaryTreePaths(root *leetcode.TreeNode) []string {
+func binaryTreePaths(root *TreeNode) []string {
 	var res []string
 
-	var binaryTreePathsDeep func(root *leetcode.TreeNode, path string)
-	binaryTreePathsDeep = func(root *leetcode.TreeNode, path string) {
+	var binaryTreePathsDeep func(root *TreeNode, path string)
+	binaryTreePathsDeep = func(root *TreeNode, path string) {
 		if root != nil {
 			pathSB := path + strconv.Itoa(root.Val)
 			if root.Left == nil && root.Right == nil {

@@ -1,4 +1,4 @@
-package leetcode
+package code
 
 /**
  * Definition for a binary tree node.

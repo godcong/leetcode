@@ -2,8 +2,6 @@ package code
 
 import (
 	"math"
-
-	"github.com/godcong/leetcode"
 )
 
 /*
@@ -36,10 +34,10 @@ import (
  *     Right *TreeNode
  * }
  */
-func getMinimumDifference(root *leetcode.TreeNode) int {
+func getMinimumDifference(root *TreeNode) int {
 	ans, pre := math.MaxInt32, -1
-	var dfs func(*leetcode.TreeNode)
-	dfs = func(node *leetcode.TreeNode) {
+	var dfs func(*TreeNode)
+	dfs = func(node *TreeNode) {
 		if node == nil {
 			return
 		}

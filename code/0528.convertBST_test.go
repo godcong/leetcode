@@ -8,59 +8,59 @@ import (
 
 func Test_convertBST(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val:   5,
-					Left:  &leetcode.TreeNode{Val: 2},
-					Right: &leetcode.TreeNode{Val: 13},
+					Left:  &TreeNode{Val: 2},
+					Right: &TreeNode{Val: 13},
 				},
 			},
-			want: &leetcode.TreeNode{
+			want: &TreeNode{
 				Val:   18,
-				Left:  &leetcode.TreeNode{Val: 20},
-				Right: &leetcode.TreeNode{Val: 13},
+				Left:  &TreeNode{Val: 20},
+				Right: &TreeNode{Val: 13},
 			},
 		},
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 2,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val: 0,
-						Left: &leetcode.TreeNode{
+						Left: &TreeNode{
 							Val: -4,
 						},
-						Right: &leetcode.TreeNode{
+						Right: &TreeNode{
 							Val: 1,
 						},
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val: 3,
 					},
 				},
 			},
-			want: &leetcode.TreeNode{
+			want: &TreeNode{
 				Val: 5,
-				Left: &leetcode.TreeNode{
+				Left: &TreeNode{
 					Val: 6,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val: 2,
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val: 6,
 					},
 				},
-				Right: &leetcode.TreeNode{
+				Right: &TreeNode{
 					Val: 3,
 				},
 			},

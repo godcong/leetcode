@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 141. 环形链表
 给定一个链表，判断链表中是否有环。
@@ -54,8 +52,8 @@ pos 为 -1 或者链表中的一个 有效索引 。
  *     Next *ListNode
  * }
  */
-func hasCycle(head *leetcode.ListNode) bool {
-	seen := map[*leetcode.ListNode]bool{}
+func hasCycle(head *ListNode) bool {
+	seen := map[*ListNode]bool{}
 	for head != nil {
 		if seen[head] {
 			return true

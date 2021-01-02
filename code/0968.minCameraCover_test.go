@@ -8,7 +8,7 @@ import (
 
 func Test_minCameraCover(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string

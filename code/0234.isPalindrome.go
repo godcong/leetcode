@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 234. 回文链表
 请判断一个链表是否为回文链表。
@@ -24,7 +22,7 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func isPalindrome(head *leetcode.ListNode) bool {
+func isPalindrome(head *ListNode) bool {
 	vals := []int{}
 	for ; head != nil; head = head.Next {
 		vals = append(vals, head.Val)

@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 404. 左叶子之和
 计算给定二叉树的所有左叶子之和。
@@ -16,7 +14,7 @@ import "github.com/godcong/leetcode"
 
 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24
 */
-func sumOfLeftLeaves(root *leetcode.TreeNode) int {
+func sumOfLeftLeaves(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

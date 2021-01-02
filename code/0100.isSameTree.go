@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /**
 100. 相同的树
 给定两个二叉树，编写一个函数来检验它们是否相同。
@@ -36,7 +34,7 @@ import "github.com/godcong/leetcode"
 
 输出: false
 */
-func isSameTree(p *leetcode.TreeNode, q *leetcode.TreeNode) bool {
+func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if (p == nil) || (q == nil) {
 		return p == q
 	}

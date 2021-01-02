@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 143. 重排链表
 给定一个单链表 L：L0→L1→…→Ln-1→Ln ，
@@ -23,8 +21,8 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func reorderList(head *leetcode.ListNode) {
-	var nodes []*leetcode.ListNode
+func reorderList(head *ListNode) {
+	var nodes []*ListNode
 	for node := head; node != nil; node = node.Next {
 		nodes = append(nodes, node)
 	}

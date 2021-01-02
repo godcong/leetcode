@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 226. 翻转二叉树
 翻转一棵二叉树。
@@ -35,7 +33,7 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func invertTree(root *leetcode.TreeNode) *leetcode.TreeNode {
+func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return root
 	}

@@ -2,8 +2,6 @@ package code
 
 import (
 	"math"
-
-	"github.com/godcong/leetcode"
 )
 
 /*
@@ -36,9 +34,9 @@ import (
 给定树的节点数的范围是 [1, 1000]。
 每个节点的值都是 0。
 */
-func minCameraCover(root *leetcode.TreeNode) int {
-	var minCameraCoverDFS func(*leetcode.TreeNode) (a, b, c int)
-	minCameraCoverDFS = func(node *leetcode.TreeNode) (a, b, c int) {
+func minCameraCover(root *TreeNode) int {
+	var minCameraCoverDFS func(*TreeNode) (a, b, c int)
+	minCameraCoverDFS = func(node *TreeNode) (a, b, c int) {
 		if node == nil {
 			return math.MaxInt32, 0, 0
 		}

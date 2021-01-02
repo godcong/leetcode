@@ -2,8 +2,6 @@ package code
 
 import (
 	"sort"
-
-	"github.com/godcong/leetcode"
 )
 
 /*
@@ -52,7 +50,7 @@ import (
 你能想出一个只使用常数空间的解决方案吗？
 */
 
-func recoverTree(root *leetcode.TreeNode) {
+func recoverTree(root *TreeNode) {
 	nums := new([]int)
 	nodes := recoverTreeGetAll(root, nums)
 	sort.Ints(*nums)
@@ -61,12 +59,12 @@ func recoverTree(root *leetcode.TreeNode) {
 	}
 }
 
-func recoverTreeGetAll(root *leetcode.TreeNode, nums *[]int) []*leetcode.TreeNode {
+func recoverTreeGetAll(root *TreeNode, nums *[]int) []*TreeNode {
 	if root == nil {
 		return nil
 	}
 	*nums = append(*nums, root.Val)
-	nodes := []*leetcode.TreeNode{root}
+	nodes := []*TreeNode{root}
 	nodes = append(recoverTreeGetAll(root.Left, nums), nodes...)
 	nodes = append(nodes, recoverTreeGetAll(root.Right, nums)...)
 	return nodes

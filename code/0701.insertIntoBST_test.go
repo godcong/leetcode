@@ -9,34 +9,34 @@ import (
 
 func Test_insertIntoBST(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 		val  int
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		// TODO: Add test cases.
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 4,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val: 2,
-						Left: &leetcode.TreeNode{
+						Left: &TreeNode{
 							Val:   1,
 							Left:  nil,
 							Right: nil,
 						},
-						Right: &leetcode.TreeNode{
+						Right: &TreeNode{
 							Val:   3,
 							Left:  nil,
 							Right: nil,
 						},
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val:   7,
 						Left:  nil,
 						Right: nil,
@@ -44,24 +44,24 @@ func Test_insertIntoBST(t *testing.T) {
 				},
 				val: 5,
 			},
-			want: &leetcode.TreeNode{
+			want: &TreeNode{
 				Val: 4,
-				Left: &leetcode.TreeNode{
+				Left: &TreeNode{
 					Val: 2,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val:   1,
 						Left:  nil,
 						Right: nil,
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val:   3,
 						Left:  nil,
 						Right: nil,
 					},
 				},
-				Right: &leetcode.TreeNode{
+				Right: &TreeNode{
 					Val: 7,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val:   5,
 						Left:  nil,
 						Right: nil,
@@ -76,7 +76,7 @@ func Test_insertIntoBST(t *testing.T) {
 				root: leetcode.strToTreeNode(""),
 				val:  5,
 			},
-			want: &leetcode.TreeNode{
+			want: &TreeNode{
 				Val:   5,
 				Left:  nil,
 				Right: nil,

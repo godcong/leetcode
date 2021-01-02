@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 19. 删除链表的倒数第N个节点
 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
@@ -26,8 +24,8 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func removeNthFromEnd(head *leetcode.ListNode, n int) *leetcode.ListNode {
-	dummy := &leetcode.ListNode{Next: head}
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	dummy := &ListNode{Next: head}
 	pre := dummy
 	i := 1
 	for head != nil {

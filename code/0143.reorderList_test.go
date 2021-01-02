@@ -8,12 +8,12 @@ import (
 
 func Test_reorderList(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 	}{
 		// TODO: Add test cases.
 		{
@@ -41,7 +41,7 @@ func Test_reorderList(t *testing.T) {
 	}
 }
 
-func deepEqualReorderList(t *testing.T, got, want *leetcode.ListNode) bool {
+func deepEqualReorderList(t *testing.T, got, want *ListNode) bool {
 	if got == nil || want == nil {
 		return got == want
 	}

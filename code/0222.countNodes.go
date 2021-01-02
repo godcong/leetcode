@@ -2,8 +2,6 @@ package code
 
 import (
 	"sort"
-
-	"github.com/godcong/leetcode"
 )
 
 /*
@@ -33,7 +31,7 @@ import (
  *     Right *TreeNode
  * }
  */
-func countNodes(root *leetcode.TreeNode) int {
+func countNodes(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

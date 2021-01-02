@@ -8,12 +8,12 @@ import (
 
 func Test_detectCycle(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 	}{
 		// TODO: Add test cases.
 		{
@@ -21,9 +21,9 @@ func Test_detectCycle(t *testing.T) {
 			args: args{
 				head: leetcode.strToListNode("[3,2,0,-4]", 1),
 			},
-			want: &leetcode.ListNode{
+			want: &ListNode{
 				Val: 2,
-				Next: &leetcode.ListNode{
+				Next: &ListNode{
 					Val:  0,
 					Next: nil,
 				},

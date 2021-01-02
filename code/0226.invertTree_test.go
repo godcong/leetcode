@@ -9,29 +9,29 @@ import (
 
 func Test_invertTree(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		{
 			name: "",
 			args: args{
 				root: leetcode.strToTreeNode("[4,2,7,1,3,6,9]"),
 			},
-			want: &leetcode.TreeNode{
+			want: &TreeNode{
 				Val: 4,
-				Left: &leetcode.TreeNode{
+				Left: &TreeNode{
 					Val:   7,
-					Left:  &leetcode.TreeNode{Val: 9},
-					Right: &leetcode.TreeNode{Val: 6},
+					Left:  &TreeNode{Val: 9},
+					Right: &TreeNode{Val: 6},
 				},
-				Right: &leetcode.TreeNode{
+				Right: &TreeNode{
 					Val:   2,
-					Left:  &leetcode.TreeNode{Val: 3},
-					Right: &leetcode.TreeNode{Val: 1},
+					Left:  &TreeNode{Val: 3},
+					Right: &TreeNode{Val: 1},
 				},
 			},
 		},

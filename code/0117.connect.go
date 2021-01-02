@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 117. 填充每个节点的下一个右侧节点指针 II
 给定一个二叉树
@@ -47,11 +45,11 @@ struct Node {
  *     Next *Node
  * }
  */
-func connect117(root *leetcode.Node) *leetcode.Node {
+func connect117(root *Node) *Node {
 	start := root
 	for start != nil {
-		var nextStart, last *leetcode.Node
-		handleDFS := func(cur *leetcode.Node) {
+		var nextStart, last *Node
+		handleDFS := func(cur *Node) {
 			if cur == nil {
 				return
 			}

@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 103. 二叉树的锯齿形层序遍历
 给定一个二叉树，返回其节点值的锯齿形层序遍历。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
@@ -30,12 +28,12 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func zigzagLevelOrder(root *leetcode.TreeNode) [][]int {
+func zigzagLevelOrder(root *TreeNode) [][]int {
 	var ans [][]int
 	if root == nil {
 		return ans
 	}
-	queue := []*leetcode.TreeNode{root}
+	queue := []*TreeNode{root}
 	for level := 0; len(queue) > 0; level++ {
 		vals := []int{}
 		q := queue

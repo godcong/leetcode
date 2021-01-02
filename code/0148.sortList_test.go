@@ -9,12 +9,12 @@ import (
 
 func Test_sortList(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 	}{
 		// TODO: Add test cases.
 		{

@@ -8,12 +8,12 @@ import (
 
 func Test_recoverTree(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		{
 			name: "",

@@ -3,18 +3,16 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_sortedListToBST(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		{},
 	}

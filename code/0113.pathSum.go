@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 113. 路径总和 II
 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
@@ -33,10 +31,10 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func pathSum(root *leetcode.TreeNode, sum int) [][]int {
+func pathSum(root *TreeNode, sum int) [][]int {
 	var ret [][]int
-	var pathSumDFS func(node *leetcode.TreeNode, t int, v []int)
-	pathSumDFS = func(node *leetcode.TreeNode, t int, v []int) {
+	var pathSumDFS func(node *TreeNode, t int, v []int)
+	pathSumDFS = func(node *TreeNode, t int, v []int) {
 		if node == nil {
 			return
 		}

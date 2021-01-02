@@ -8,7 +8,7 @@ import (
 
 func Test_hasCycle(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string

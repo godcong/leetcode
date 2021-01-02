@@ -2,14 +2,12 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_isSameTree(t *testing.T) {
 	type args struct {
-		p *leetcode.TreeNode
-		q *leetcode.TreeNode
+		p *TreeNode
+		q *TreeNode
 	}
 	tests := []struct {
 		name string
@@ -19,15 +17,15 @@ func Test_isSameTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				p: &leetcode.TreeNode{
+				p: &TreeNode{
 					Val:   1,
-					Left:  &leetcode.TreeNode{Val: 2},
-					Right: &leetcode.TreeNode{Val: 3},
+					Left:  &TreeNode{Val: 2},
+					Right: &TreeNode{Val: 3},
 				},
-				q: &leetcode.TreeNode{
+				q: &TreeNode{
 					Val:   1,
-					Left:  &leetcode.TreeNode{Val: 2},
-					Right: &leetcode.TreeNode{Val: 3},
+					Left:  &TreeNode{Val: 2},
+					Right: &TreeNode{Val: 3},
 				},
 			},
 			want: true,
@@ -35,13 +33,13 @@ func Test_isSameTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				p: &leetcode.TreeNode{
+				p: &TreeNode{
 					Val:  1,
-					Left: &leetcode.TreeNode{Val: 2},
+					Left: &TreeNode{Val: 2},
 				},
-				q: &leetcode.TreeNode{
+				q: &TreeNode{
 					Val:   1,
-					Right: &leetcode.TreeNode{Val: 2},
+					Right: &TreeNode{Val: 2},
 				},
 			},
 			want: false,
@@ -49,15 +47,15 @@ func Test_isSameTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				p: &leetcode.TreeNode{
+				p: &TreeNode{
 					Val:   1,
-					Left:  &leetcode.TreeNode{Val: 2},
-					Right: &leetcode.TreeNode{Val: 1},
+					Left:  &TreeNode{Val: 2},
+					Right: &TreeNode{Val: 1},
 				},
-				q: &leetcode.TreeNode{
+				q: &TreeNode{
 					Val:   1,
-					Left:  &leetcode.TreeNode{Val: 1},
-					Right: &leetcode.TreeNode{Val: 2},
+					Left:  &TreeNode{Val: 1},
+					Right: &TreeNode{Val: 2},
 				},
 			},
 			want: false,

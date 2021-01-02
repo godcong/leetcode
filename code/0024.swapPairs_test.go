@@ -8,12 +8,12 @@ import (
 
 func Test_swapPairs(t *testing.T) {
 	type args struct {
-		head *leetcode.ListNode
+		head *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 		deep int
 	}{
 		// TODO: Add test cases.

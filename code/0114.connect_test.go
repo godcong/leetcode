@@ -3,18 +3,16 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_connect114(t *testing.T) {
 	type args struct {
-		root *leetcode.Node
+		root *Node
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.Node
+		want *Node
 	}{
 		// TODO: Add test cases.
 		{

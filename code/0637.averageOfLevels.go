@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 637. 二叉树的层平均值
 给定一个非空二叉树, 返回一个由每层节点平均值组成的数组。
@@ -27,10 +25,10 @@ import "github.com/godcong/leetcode"
 */
 type data struct{ sum, count int }
 
-func averageOfLevels(root *leetcode.TreeNode) []float64 {
+func averageOfLevels(root *TreeNode) []float64 {
 	var levelData []data
-	var dfs func(node *leetcode.TreeNode, level int)
-	dfs = func(node *leetcode.TreeNode, level int) {
+	var dfs func(node *TreeNode, level int)
+	dfs = func(node *TreeNode, level int) {
 		if node == nil {
 			return
 		}

@@ -9,7 +9,7 @@ import (
 
 func Test_pathSum(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 		sum  int
 	}
 	tests := []struct {

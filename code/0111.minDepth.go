@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 111. 二叉树的最小深度
 给定一个二叉树，找出其最小深度。
@@ -21,7 +19,7 @@ import "github.com/godcong/leetcode"
    15   7
 返回它的最小深度  2.
 */
-func minDepth(root *leetcode.TreeNode) int {
+func minDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

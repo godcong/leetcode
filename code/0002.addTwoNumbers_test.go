@@ -3,49 +3,47 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_addTwoNumbers(t *testing.T) {
 	type args struct {
-		l1 *leetcode.ListNode
-		l2 *leetcode.ListNode
+		l1 *ListNode
+		l2 *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.ListNode
+		want *ListNode
 	}{
 		{
 			name: "",
 			args: args{
-				l1: &leetcode.ListNode{
+				l1: &ListNode{
 					Val: 2,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val: 4,
-						Next: &leetcode.ListNode{
+						Next: &ListNode{
 							Val:  3,
 							Next: nil,
 						},
 					},
 				},
-				l2: &leetcode.ListNode{
+				l2: &ListNode{
 					Val: 5,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val: 6,
-						Next: &leetcode.ListNode{
+						Next: &ListNode{
 							Val:  4,
 							Next: nil,
 						},
 					},
 				},
 			},
-			want: &leetcode.ListNode{
+			want: &ListNode{
 				Val: 7,
-				Next: &leetcode.ListNode{
+				Next: &ListNode{
 					Val: 0,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val:  8,
 						Next: nil,
 					},
@@ -56,21 +54,21 @@ func Test_addTwoNumbers(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				l1: &leetcode.ListNode{
+				l1: &ListNode{
 					Val:  5,
 					Next: nil,
 				},
-				l2: &leetcode.ListNode{
+				l2: &ListNode{
 					Val: 5,
-					Next: &leetcode.ListNode{
+					Next: &ListNode{
 						Val:  1,
 						Next: nil,
 					},
 				},
 			},
-			want: &leetcode.ListNode{
+			want: &ListNode{
 				Val: 0,
-				Next: &leetcode.ListNode{
+				Next: &ListNode{
 					Val:  2,
 					Next: nil,
 				},

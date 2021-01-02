@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 144. 二叉树的前序遍历
 给定一个二叉树，返回它的 前序 遍历。
@@ -26,10 +24,10 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func preorderTraversal(root *leetcode.TreeNode) []int {
+func preorderTraversal(root *TreeNode) []int {
 	var vals []int
-	var preorderTraversalDFS func(*leetcode.TreeNode)
-	preorderTraversalDFS = func(node *leetcode.TreeNode) {
+	var preorderTraversalDFS func(*TreeNode)
+	preorderTraversalDFS = func(node *TreeNode) {
 		if node == nil {
 			return
 		}

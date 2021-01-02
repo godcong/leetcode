@@ -2,13 +2,11 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_sumOfLeftLeaves(t *testing.T) {
 	type args struct {
-		root *leetcode.TreeNode
+		root *TreeNode
 	}
 	tests := []struct {
 		name string
@@ -18,15 +16,15 @@ func Test_sumOfLeftLeaves(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 3,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val: 9,
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val:   20,
-						Left:  &leetcode.TreeNode{Val: 15},
-						Right: &leetcode.TreeNode{Val: 7},
+						Left:  &TreeNode{Val: 15},
+						Right: &TreeNode{Val: 7},
 					},
 				},
 			},
@@ -35,18 +33,18 @@ func Test_sumOfLeftLeaves(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: &leetcode.TreeNode{
+				root: &TreeNode{
 					Val: 1,
-					Left: &leetcode.TreeNode{
+					Left: &TreeNode{
 						Val: 2,
-						Left: &leetcode.TreeNode{
+						Left: &TreeNode{
 							Val: 4,
 						},
-						Right: &leetcode.TreeNode{
+						Right: &TreeNode{
 							Val: 5,
 						},
 					},
-					Right: &leetcode.TreeNode{
+					Right: &TreeNode{
 						Val: 3,
 					},
 				},

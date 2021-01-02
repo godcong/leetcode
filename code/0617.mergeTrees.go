@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 617. 合并二叉树
 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
@@ -26,7 +24,7 @@ import "github.com/godcong/leetcode"
 	 5   4   7
 注意: 合并必须从两个树的根节点开始。
 */
-func mergeTrees(t1 *leetcode.TreeNode, t2 *leetcode.TreeNode) *leetcode.TreeNode {
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	if t1 == nil {
 		return t2
 	}

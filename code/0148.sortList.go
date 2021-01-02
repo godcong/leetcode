@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 148. 排序链表
 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
@@ -39,7 +37,7 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func sortList(head *leetcode.ListNode) *leetcode.ListNode {
+func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
@@ -56,7 +54,7 @@ func sortList(head *leetcode.ListNode) *leetcode.ListNode {
 	return merge2SortedListNode(left, right)
 }
 
-func merge2SortedListNode(list1, list2 *leetcode.ListNode) *leetcode.ListNode {
+func merge2SortedListNode(list1, list2 *ListNode) *ListNode {
 	if list1 == nil {
 		return list2
 	} else if list2 == nil {

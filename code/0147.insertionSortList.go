@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 147. 对链表进行插入排序
 对链表进行插入排序。
@@ -35,11 +33,11 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func insertionSortList(head *leetcode.ListNode) *leetcode.ListNode {
+func insertionSortList(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
-	dummyHead := &leetcode.ListNode{Next: head}
+	dummyHead := &ListNode{Next: head}
 	lastSorted, curr := head, head.Next
 	for curr != nil {
 		if lastSorted.Val <= curr.Val {

@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 109. 有序链表转换二叉搜索树
 给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
@@ -20,7 +18,7 @@ import "github.com/godcong/leetcode"
    /   /
  -10  5
 */
-func sortedListToBST(head *leetcode.ListNode) *leetcode.TreeNode {
+func sortedListToBST(head *ListNode) *TreeNode {
 	if head == nil {
 		return nil
 	}
@@ -29,22 +27,22 @@ func sortedListToBST(head *leetcode.ListNode) *leetcode.TreeNode {
 		head = head.Next
 		val = append(val, head.Val)
 	}
-	root := &leetcode.TreeNode{}
+	root := &TreeNode{}
 	sortedListToBSTTreeNode(root, val)
 	return root
 }
 
-func sortedListToBSTTreeNode(root *leetcode.TreeNode, val []int) {
+func sortedListToBSTTreeNode(root *TreeNode, val []int) {
 	size := len(val)
 	if size/2 < size {
 		root.Val = val[size/2]
 	}
 	if len(val[:size/2]) > 0 {
-		root.Left = &leetcode.TreeNode{}
+		root.Left = &TreeNode{}
 		sortedListToBSTTreeNode(root.Left, val[:size/2])
 	}
 	if len(val[size/2+1:]) > 0 {
-		root.Right = &leetcode.TreeNode{}
+		root.Right = &TreeNode{}
 		sortedListToBSTTreeNode(root.Right, val[size/2+1:])
 	}
 }

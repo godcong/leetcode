@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 142. 环形链表 II
 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
@@ -45,8 +43,8 @@ import "github.com/godcong/leetcode"
  *     Next *ListNode
  * }
  */
-func detectCycle(head *leetcode.ListNode) *leetcode.ListNode {
-	seen := map[*leetcode.ListNode]bool{}
+func detectCycle(head *ListNode) *ListNode {
+	seen := map[*ListNode]bool{}
 	for head != nil {
 		if seen[head] {
 			return head

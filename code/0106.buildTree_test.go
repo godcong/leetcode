@@ -15,7 +15,7 @@ func Test_buildTree(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want *leetcode.TreeNode
+		want *TreeNode
 	}{
 		// TODO: Add test cases.
 		{

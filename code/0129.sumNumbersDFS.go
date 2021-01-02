@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 129. 求根到叶子节点数字之和
 给定一个二叉树，它的每个结点都存放一个 0-9 的数字，每条从根到叶子节点的路径都代表一个数字。
@@ -46,10 +44,10 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func sumNumbers(root *leetcode.TreeNode) int {
+func sumNumbers(root *TreeNode) int {
 	var ret int
-	var sumNumbersDFS func(node *leetcode.TreeNode, val int)
-	sumNumbersDFS = func(node *leetcode.TreeNode, val int) {
+	var sumNumbersDFS func(node *TreeNode, val int)
+	sumNumbersDFS = func(node *TreeNode, val int) {
 		if node == nil {
 			return
 		}

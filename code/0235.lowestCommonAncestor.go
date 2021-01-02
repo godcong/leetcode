@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 235. 二叉搜索树的最近公共祖先
 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
@@ -39,7 +37,7 @@ p、q 为不同节点且均存在于给定的二叉搜索树中。
  *     Right *TreeNode
  * }
  */
-func lowestCommonAncestor(root, p, q *leetcode.TreeNode) *leetcode.TreeNode {
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root.Val < p.Val && root.Val < q.Val {
 		return lowestCommonAncestor(root.Right, p, q)
 	}

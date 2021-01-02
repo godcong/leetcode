@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 106. 从中序与后序遍历序列构造二叉树
 根据一棵树的中序遍历与后序遍历构造二叉树。
@@ -29,19 +27,19 @@ import "github.com/godcong/leetcode"
  *     Right *TreeNode
  * }
  */
-func buildTree(inorder []int, postorder []int) *leetcode.TreeNode {
+func buildTree(inorder []int, postorder []int) *TreeNode {
 	if len(postorder) == 0 {
 		return nil
 	}
-	root := &leetcode.TreeNode{Val: postorder[len(postorder)-1]}
-	stack := []*leetcode.TreeNode{root}
+	root := &TreeNode{Val: postorder[len(postorder)-1]}
+	stack := []*TreeNode{root}
 	inorderIndex := len(inorder) - 1
-	var node *leetcode.TreeNode
+	var node *TreeNode
 	for i := len(postorder) - 2; i >= 0; i-- {
 		postorderVal := postorder[i]
 		node = stack[len(stack)-1]
 		if node.Val != inorder[inorderIndex] {
-			node.Right = &leetcode.TreeNode{Val: postorderVal}
+			node.Right = &TreeNode{Val: postorderVal}
 			stack = append(stack, node.Right)
 		} else {
 			for len(stack) > 0 && stack[len(stack)-1].Val == inorder[inorderIndex] {
@@ -49,7 +47,7 @@ func buildTree(inorder []int, postorder []int) *leetcode.TreeNode {
 				stack = stack[:len(stack)-1]
 				inorderIndex--
 			}
-			node.Left = &leetcode.TreeNode{Val: postorderVal}
+			node.Left = &TreeNode{Val: postorderVal}
 			stack = append(stack, node.Left)
 		}
 	}

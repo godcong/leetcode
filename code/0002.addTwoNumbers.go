@@ -1,7 +1,5 @@
 package code
 
-import "github.com/godcong/leetcode"
-
 /*
 2. 两数相加
 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
@@ -16,7 +14,7 @@ import "github.com/godcong/leetcode"
 输出：7 -> 0 -> 8
 原因：342 + 465 = 807
 */
-func addTwoNumbers(l1 *leetcode.ListNode, l2 *leetcode.ListNode) *leetcode.ListNode {
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {
 		l1, l2 = l2, l1
 	}
@@ -24,7 +22,7 @@ func addTwoNumbers(l1 *leetcode.ListNode, l2 *leetcode.ListNode) *leetcode.ListN
 	return l1
 }
 
-func addTwoNumbersAdd(l1 *leetcode.ListNode, l2 *leetcode.ListNode, carry int) {
+func addTwoNumbersAdd(l1 *ListNode, l2 *ListNode, carry int) {
 	if l1 == nil {
 		return
 	}
@@ -44,7 +42,7 @@ func addTwoNumbersAdd(l1 *leetcode.ListNode, l2 *leetcode.ListNode, carry int) {
 				l1.Next, l2 = l2, l1.Next
 			}
 			if l1.Next == nil && carry > 0 {
-				l1.Next = new(leetcode.ListNode)
+				l1.Next = new(ListNode)
 			}
 		}
 		addTwoNumbersAdd(l1.Next, l2, carry)
