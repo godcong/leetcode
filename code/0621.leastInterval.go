@@ -50,17 +50,17 @@ func leastInterval(tasks []byte, n int) int {
 	}
 	bucket := make([]int, 26)
 	for i := range tasks {
-		bucket[tasks[i] - 'A']++
+		bucket[tasks[i]-'A']++
 	}
 	sort.Ints(bucket)
-	max := bucket[len(bucket) - 1]
+	max := bucket[len(bucket)-1]
 	j := 1
-	res := (max - 1) * n + max
+	res := (max-1)*n + max
 	for i := len(bucket) - 2; i >= 0 && bucket[i] > 0; i-- {
-		temp := (bucket[i] - 1) * n + bucket[i] + j
+		temp := (bucket[i]-1)*n + bucket[i] + j
 		if temp > res {
 			res = temp
-		}else {
+		} else {
 			break
 		}
 		j++

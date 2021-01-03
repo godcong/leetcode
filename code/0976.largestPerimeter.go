@@ -32,7 +32,7 @@ package code
 1 <= A[i] <= 10^6
 */
 func largestPerimeter(A []int) int {
-	if len(A) < 3{
+	if len(A) < 3 {
 		return 0
 	}
 	for i := 0; i < len(A)-1; i++ {

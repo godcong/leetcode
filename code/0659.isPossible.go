@@ -40,19 +40,19 @@ func isPossible(nums []int) bool {
 		start := i
 		x := nums[i]
 		for i < len(nums) && nums[i] == x {
-			i ++
+			i++
 		}
 		cnt := i - start
 
 		if start > 0 && x != nums[start-1]+1 {
-			if dp1 + dp2 > 0 {
+			if dp1+dp2 > 0 {
 				return false
 			} else {
 				dp1 = cnt
 				dp2, dp3 = 0, 0
 			}
 		} else {
-			if dp1 + dp2 > cnt {
+			if dp1+dp2 > cnt {
 				return false
 			}
 

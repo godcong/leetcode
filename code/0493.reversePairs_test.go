@@ -2,8 +2,6 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_reversePairs(t *testing.T) {

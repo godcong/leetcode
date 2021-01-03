@@ -2,8 +2,6 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_minCameraCover(t *testing.T) {

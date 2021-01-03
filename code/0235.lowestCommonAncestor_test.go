@@ -2,8 +2,6 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_lowestCommonAncestor(t *testing.T) {

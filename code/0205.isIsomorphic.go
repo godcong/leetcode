@@ -22,7 +22,7 @@ package code
 输出: true
 说明:
 你可以假设 s 和 t 具有相同的长度。
- */
+*/
 func isIsomorphic(s string, t string) bool {
 	s2t := map[byte]byte{}
 	t2s := map[byte]byte{}
