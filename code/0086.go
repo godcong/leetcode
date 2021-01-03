@@ -12,4 +12,14 @@ package code
 
 输入：head = 1->4->3->2->5->2, x = 3
 输出：1->2->2->4->3->5
+*/
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
  */
+func partition(head *ListNode, x int) *ListNode {
+	return nil
+}
