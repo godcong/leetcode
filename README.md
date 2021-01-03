@@ -53,7 +53,7 @@ All append into def.go
 | 0078 | 子集 | subsets | [GO](https://github.com/godcong/leetcode/blob/master/0078.subsets.go) | TEST |  
 | 0079 | 单词搜索 | exist | [GO](https://github.com/godcong/leetcode/blob/master/0079.exist.go) | TEST |  
 | 0085 | 最大矩形 | maximalRectangle | [GO](https://github.com/godcong/leetcode/blob/master/0085.maximalRectangle.go) | TEST |  
-|  | 分隔链表 | 0086 | [GO](https://github.com/godcong/leetcode/blob/master/0086.go) | TEST |  
+| 0086 | 分隔链表 | partition | [GO](https://github.com/godcong/leetcode/blob/master/0086.partition.go) | TEST |  
 | 0093 | 复原IP地址 | restoreIpAddresses | [GO](https://github.com/godcong/leetcode/blob/master/0093.restoreIpAddresses.go) | TEST |  
 | 0094 | 二叉树的中序遍历 | inorderTraversal | [GO](https://github.com/godcong/leetcode/blob/master/0094.inorderTraversal.go) | TEST |  
 | 0099 | 恢复二叉搜索树 | recoverTree | [GO](https://github.com/godcong/leetcode/blob/master/0099.recoverTree.go) | TEST |  
