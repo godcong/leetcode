@@ -3,8 +3,6 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_nextPermutation(t *testing.T) {
@@ -20,22 +18,22 @@ func Test_nextPermutation(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums:  leetcode.strToIntArray("1,2,3"),
-				after: leetcode.strToIntArray("1,3,2"),
+				nums:  strToIntArray("1,2,3"),
+				after: strToIntArray("1,3,2"),
 			},
 		},
 		{
 			name: "",
 			args: args{
-				nums:  leetcode.strToIntArray("3,2,1"),
-				after: leetcode.strToIntArray("1,2,3"),
+				nums:  strToIntArray("3,2,1"),
+				after: strToIntArray("1,2,3"),
 			},
 		},
 		{
 			name: "",
 			args: args{
-				nums:  leetcode.strToIntArray("1,1,5"),
-				after: leetcode.strToIntArray("1,5,1"),
+				nums:  strToIntArray("1,1,5"),
+				after: strToIntArray("1,5,1"),
 			},
 		},
 	}

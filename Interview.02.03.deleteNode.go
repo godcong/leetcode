@@ -1,7 +1,5 @@
 package leetcode
 
-import "github.com/godcong/leetcode/code"
-
 /*
 面试题 02.03. 删除中间节点
 实现一种算法，删除单向链表中间的某个节点（即不是第一个或最后一个节点），假定你只能访问该节点。
@@ -14,6 +12,6 @@ import "github.com/godcong/leetcode/code"
 结果：不返回任何数据，但该链表变为a->b->d->e->f
 */
 
-func deleteNode(node *code.ListNode) {
+func deleteNode(node *ListNode) {
 	*node = *node.Next
 }

@@ -3,8 +3,6 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_searchRange(t *testing.T) {
@@ -21,26 +19,26 @@ func Test_searchRange(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums:   leetcode.strToIntArray("[5,7,7,8,8,10]"),
+				nums:   strToIntArray("[5,7,7,8,8,10]"),
 				target: 8,
 			},
-			want: leetcode.strToIntArray("[3,4]"),
+			want: strToIntArray("[3,4]"),
 		},
 		{
 			name: "",
 			args: args{
-				nums:   leetcode.strToIntArray("[5,7,7,8,8,10]"),
+				nums:   strToIntArray("[5,7,7,8,8,10]"),
 				target: 6,
 			},
-			want: leetcode.strToIntArray("[-1,-1]"),
+			want: strToIntArray("[-1,-1]"),
 		},
 		{
 			name: "",
 			args: args{
-				nums:   leetcode.strToIntArray("[]"),
+				nums:   strToIntArray("[]"),
 				target: 0,
 			},
-			want: leetcode.strToIntArray("[-1,-1]"),
+			want: strToIntArray("[-1,-1]"),
 		},
 	}
 	for _, tt := range tests {
