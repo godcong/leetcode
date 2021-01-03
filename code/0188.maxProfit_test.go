@@ -21,7 +21,7 @@ func Test_maxProfit0188(t *testing.T) {
 			name: "",
 			args: args{
 				k:      2,
-				prices: leetcode.strToIntArray("[2,4,1]"),
+				prices: strToIntArray("[2,4,1]"),
 			},
 			want: 2,
 		},
@@ -29,7 +29,7 @@ func Test_maxProfit0188(t *testing.T) {
 			name: "",
 			args: args{
 				k:      2,
-				prices: leetcode.strToIntArray("[3,2,6,5,0,3]"),
+				prices: strToIntArray("[3,2,6,5,0,3]"),
 			},
 			want: 7,
 		},

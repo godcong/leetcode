@@ -20,9 +20,9 @@ func Test_moveZeroes(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[0,1,0,3,12]"),
+				nums: strToIntArray("[0,1,0,3,12]"),
 			},
-			want: leetcode.strToIntArray("[1,3,12,0,0]"),
+			want: strToIntArray("[1,3,12,0,0]"),
 		},
 	}
 	for _, tt := range tests {

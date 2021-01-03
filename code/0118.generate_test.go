@@ -22,7 +22,7 @@ func Test_generate(t *testing.T) {
 			args: args{
 				numRows: 5,
 			},
-			want: leetcode.strToIntArrArray("[\n     [1],\n    [1,1],\n   [1,2,1],\n  [1,3,3,1],\n [1,4,6,4,1]\n]"),
+			want: strToIntArrArray("[\n     [1],\n    [1,1],\n   [1,2,1],\n  [1,3,3,1],\n [1,4,6,4,1]\n]"),
 		},
 	}
 	for _, tt := range tests {

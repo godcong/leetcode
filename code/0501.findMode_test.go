@@ -19,7 +19,7 @@ func Test_findMode(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,null,2,2]"),
+				root: strToTreeNode("[1,null,2,2]"),
 			},
 			want: []int{
 				2,

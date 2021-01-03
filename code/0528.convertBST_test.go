@@ -68,7 +68,7 @@ func Test_convertBST(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := convertBST(tt.args.root); !leetcode.treeNodeDeepEqual(t, got, tt.want) {
+			if got := convertBST(tt.args.root); !treeNodeDeepEqual(t, got, tt.want) {
 				t.Errorf("convertBST() = %v, want %v", got, tt.want)
 			}
 		})

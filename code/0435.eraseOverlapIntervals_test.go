@@ -19,21 +19,21 @@ func Test_eraseOverlapIntervals(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				intervals: leetcode.strToIntArrArray("[ [1,2], [2,3], [3,4], [1,3] ]"),
+				intervals: strToIntArrArray("[ [1,2], [2,3], [3,4], [1,3] ]"),
 			},
 			want: 1,
 		},
 		{
 			name: "",
 			args: args{
-				intervals: leetcode.strToIntArrArray("[ [1,2], [1,2], [1,2] ]"),
+				intervals: strToIntArrArray("[ [1,2], [1,2], [1,2] ]"),
 			},
 			want: 2,
 		},
 		{
 			name: "",
 			args: args{
-				intervals: leetcode.strToIntArrArray("[ [1,2], [2,3] ]"),
+				intervals: strToIntArrArray("[ [1,2], [2,3] ]"),
 			},
 			want: 0,
 		},

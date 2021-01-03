@@ -19,21 +19,21 @@ func Test_hasCycle(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[3,2,0,-4]", 1),
+				head: strToListNode("[3,2,0,-4]", 1),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[1,2]", 0),
+				head: strToListNode("[1,2]", 0),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[1]", -1),
+				head: strToListNode("[1]", -1),
 			},
 			want: false,
 		},

@@ -28,7 +28,7 @@ func Test_allCellsDistOrder(t *testing.T) {
 				r0: 0,
 				c0: 0,
 			},
-			want: leetcode.strToIntArrArray("[[0,0],[0,1]]"),
+			want: strToIntArrArray("[[0,0],[0,1]]"),
 		},
 		{
 			name: "",
@@ -38,7 +38,7 @@ func Test_allCellsDistOrder(t *testing.T) {
 				r0: 0,
 				c0: 1,
 			},
-			want: leetcode.strToIntArrArray("[[0,1],[0,0],[1,1],[1,0]]"),
+			want: strToIntArrArray("[[0,1],[0,0],[1,1],[1,0]]"),
 		},
 		{
 			name: "",
@@ -48,7 +48,7 @@ func Test_allCellsDistOrder(t *testing.T) {
 				r0: 1,
 				c0: 2,
 			},
-			want: leetcode.strToIntArrArray("[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]"),
+			want: strToIntArrArray("[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]"),
 		},
 	}
 	for _, tt := range tests {

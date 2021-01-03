@@ -22,29 +22,29 @@ func Test_maxNumber(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums1: leetcode.strToIntArray("[3, 4, 6, 5]"),
-				nums2: leetcode.strToIntArray("[9, 1, 2, 5, 8, 3]"),
+				nums1: strToIntArray("[3, 4, 6, 5]"),
+				nums2: strToIntArray("[9, 1, 2, 5, 8, 3]"),
 				k:     5,
 			},
-			wantRes: leetcode.strToIntArray("[9, 8, 6, 5, 3]"),
+			wantRes: strToIntArray("[9, 8, 6, 5, 3]"),
 		},
 		{
 			name: "",
 			args: args{
-				nums1: leetcode.strToIntArray("[6, 7]"),
-				nums2: leetcode.strToIntArray("[6, 0, 4]"),
+				nums1: strToIntArray("[6, 7]"),
+				nums2: strToIntArray("[6, 0, 4]"),
 				k:     5,
 			},
-			wantRes: leetcode.strToIntArray("[6, 7, 6, 0, 4]"),
+			wantRes: strToIntArray("[6, 7, 6, 0, 4]"),
 		},
 		{
 			name: "",
 			args: args{
-				nums1: leetcode.strToIntArray("[3, 9]"),
-				nums2: leetcode.strToIntArray("[8, 9]"),
+				nums1: strToIntArray("[3, 9]"),
+				nums2: strToIntArray("[8, 9]"),
 				k:     3,
 			},
-			wantRes: leetcode.strToIntArray("[9, 8, 9]"),
+			wantRes: strToIntArray("[9, 8, 9]"),
 		},
 	}
 	for _, tt := range tests {

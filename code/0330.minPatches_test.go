@@ -20,7 +20,7 @@ func Test_minPatches(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,3]"),
+				nums: strToIntArray("[1,3]"),
 				n:    6,
 			},
 			want: 1,
@@ -28,7 +28,7 @@ func Test_minPatches(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,5,10]"),
+				nums: strToIntArray("[1,5,10]"),
 				n:    20,
 			},
 			want: 2,

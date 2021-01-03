@@ -21,10 +21,10 @@ func Test_relativeSortArray(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				arr1: leetcode.strToIntArray("[2,3,1,3,2,4,6,7,9,2,19]"),
-				arr2: leetcode.strToIntArray("[2,1,4,3,9,6]"),
+				arr1: strToIntArray("[2,3,1,3,2,4,6,7,9,2,19]"),
+				arr2: strToIntArray("[2,1,4,3,9,6]"),
 			},
-			want: leetcode.strToIntArray("[2,2,2,1,4,3,3,9,6,7,19]"),
+			want: strToIntArray("[2,2,2,1,4,3,3,9,6,7,19]"),
 		},
 	}
 	for _, tt := range tests {

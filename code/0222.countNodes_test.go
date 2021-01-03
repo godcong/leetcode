@@ -19,7 +19,7 @@ func Test_countNodes(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,2,3,4,5,6]"),
+				root: strToTreeNode("[1,2,3,4,5,6]"),
 			},
 			want: 6,
 		},

@@ -22,10 +22,10 @@ func Test_fourSumCount(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[ 1, 2]"),
-				B: leetcode.strToIntArray("[-2,-1]"),
-				C: leetcode.strToIntArray("[-1, 2]"),
-				D: leetcode.strToIntArray("[ 0, 2]"),
+				A: strToIntArray("[ 1, 2]"),
+				B: strToIntArray("[-2,-1]"),
+				C: strToIntArray("[-1, 2]"),
+				D: strToIntArray("[ 0, 2]"),
 			},
 			want: 2,
 		},

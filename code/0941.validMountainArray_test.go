@@ -19,21 +19,21 @@ func Test_validMountainArray(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[2,1]"),
+				A: strToIntArray("[2,1]"),
 			},
 			want: false,
 		},
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[3,5,5]"),
+				A: strToIntArray("[3,5,5]"),
 			},
 			want: false,
 		},
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[0,3,2,1]"),
+				A: strToIntArray("[0,3,2,1]"),
 			},
 			want: true,
 		},

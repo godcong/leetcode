@@ -19,7 +19,7 @@ func Test_getMinimumDifference(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,null,3,2]"),
+				root: strToTreeNode("[1,null,3,2]"),
 			},
 			want: 1,
 		},

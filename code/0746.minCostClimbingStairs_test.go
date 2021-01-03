@@ -19,14 +19,14 @@ func Test_minCostClimbingStairs(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				cost: leetcode.strToIntArray("[10, 15, 20]"),
+				cost: strToIntArray("[10, 15, 20]"),
 			},
 			want: 15,
 		},
 		{
 			name: "",
 			args: args{
-				cost: leetcode.strToIntArray("[1, 100, 1, 1, 1, 100, 1, 1, 100, 1]"),
+				cost: strToIntArray("[1, 100, 1, 1, 1, 100, 1, 1, 100, 1]"),
 			},
 			want: 6,
 		},

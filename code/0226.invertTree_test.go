@@ -19,7 +19,7 @@ func Test_invertTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[4,2,7,1,3,6,9]"),
+				root: strToTreeNode("[4,2,7,1,3,6,9]"),
 			},
 			want: &TreeNode{
 				Val: 4,

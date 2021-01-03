@@ -19,7 +19,7 @@ func Test_matrixScore(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArrArray("[[0,0,1,1],[1,0,1,0],[1,1,0,0]]"),
+				A: strToIntArrArray("[[0,0,1,1],[1,0,1,0],[1,1,0,0]]"),
 			},
 			want: 39,
 		},

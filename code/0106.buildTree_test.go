@@ -28,7 +28,7 @@ func Test_buildTree(t *testing.T) {
 					9, 15, 7, 20, 3,
 				},
 			},
-			want: leetcode.strToTreeNode("[3,9,20,null,null,15,7]"),
+			want: strToTreeNode("[3,9,20,null,null,15,7]"),
 		},
 	}
 	for _, tt := range tests {

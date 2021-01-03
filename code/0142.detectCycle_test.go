@@ -19,7 +19,7 @@ func Test_detectCycle(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[3,2,0,-4]", 1),
+				head: strToListNode("[3,2,0,-4]", 1),
 			},
 			want: &ListNode{
 				Val: 2,
@@ -32,7 +32,7 @@ func Test_detectCycle(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := detectCycle(tt.args.head); !leetcode.listNodeDeepEqual(t, got, tt.want, 1) {
+			if got := detectCycle(tt.args.head); !listNodeDeepEqual(t, got, tt.want, 1) {
 				t.Errorf("detectCycle() = %v, want %v", got, tt.want)
 			}
 		})

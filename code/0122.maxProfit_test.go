@@ -19,21 +19,21 @@ func Test_maxProfit(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				prices: leetcode.strToIntArray("[7,1,5,3,6,4]"),
+				prices: strToIntArray("[7,1,5,3,6,4]"),
 			},
 			want: 7,
 		},
 		{
 			name: "",
 			args: args{
-				prices: leetcode.strToIntArray("[1,2,3,4,5]"),
+				prices: strToIntArray("[1,2,3,4,5]"),
 			},
 			want: 4,
 		},
 		{
 			name: "",
 			args: args{
-				prices: leetcode.strToIntArray("[7,6,4,3,1]"),
+				prices: strToIntArray("[7,6,4,3,1]"),
 			},
 			want: 0,
 		},

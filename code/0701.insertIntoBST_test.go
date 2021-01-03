@@ -73,7 +73,7 @@ func Test_insertIntoBST(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode(""),
+				root: strToTreeNode(""),
 				val:  5,
 			},
 			want: &TreeNode{

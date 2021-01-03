@@ -19,14 +19,14 @@ func Test_maximumGap(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[3,6,9,1]"),
+				nums: strToIntArray("[3,6,9,1]"),
 			},
 			want: 3,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[10]"),
+				nums: strToIntArray("[10]"),
 			},
 			want: 0,
 		},

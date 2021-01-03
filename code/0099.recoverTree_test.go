@@ -18,21 +18,21 @@ func Test_recoverTree(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,3,null,null,2]"),
+				root: strToTreeNode("[1,3,null,null,2]"),
 			},
-			want: leetcode.strToTreeNode("[3,1,null,null,2]"),
+			want: strToTreeNode("[3,1,null,null,2]"),
 		},
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[3,1,4,null,null,2]"),
+				root: strToTreeNode("[3,1,4,null,null,2]"),
 			},
-			want: leetcode.strToTreeNode("[2,1,4,null,null,3]"),
+			want: strToTreeNode("[2,1,4,null,null,3]"),
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if recoverTree(tt.args.root); !leetcode.treeNodeDeepEqual(t, tt.args.root, tt.want) {
+			if recoverTree(tt.args.root); !treeNodeDeepEqual(t, tt.args.root, tt.want) {
 				t.Errorf("recoverTree() = %v, want %v", tt.args.root, tt.want)
 			}
 		})

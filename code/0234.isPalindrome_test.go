@@ -19,14 +19,14 @@ func Test_isPalindrome(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("1->2", -1),
+				head: strToListNode("1->2", -1),
 			},
 			want: false,
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("1->2->2->1", -1),
+				head: strToListNode("1->2->2->1", -1),
 			},
 			want: true,
 		},

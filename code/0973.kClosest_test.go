@@ -21,18 +21,18 @@ func Test_kClosest(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[1,3],[-2,2]]"),
+				points: strToIntArrArray("[[1,3],[-2,2]]"),
 				K:      1,
 			},
-			want: leetcode.strToIntArrArray("[[-2,2]]"),
+			want: strToIntArrArray("[[-2,2]]"),
 		},
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[3,3],[5,-1],[-2,4]]"),
+				points: strToIntArrArray("[[3,3],[5,-1],[-2,4]]"),
 				K:      2,
 			},
-			want: leetcode.strToIntArrArray("[[3,3],[-2,4]]"),
+			want: strToIntArrArray("[[3,3],[-2,4]]"),
 		},
 	}
 	for _, tt := range tests {

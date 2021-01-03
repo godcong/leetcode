@@ -20,16 +20,16 @@ func Test_canCompleteCircuit(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				gas:  leetcode.strToIntArray("[1,2,3,4,5]"),
-				cost: leetcode.strToIntArray("[3,4,5,1,2]"),
+				gas:  strToIntArray("[1,2,3,4,5]"),
+				cost: strToIntArray("[3,4,5,1,2]"),
 			},
 			want: 3,
 		},
 		{
 			name: "",
 			args: args{
-				gas:  leetcode.strToIntArray("[2,3,4]"),
-				cost: leetcode.strToIntArray("[3,4,3]"),
+				gas:  strToIntArray("[2,3,4]"),
+				cost: strToIntArray("[3,4,3]"),
 			},
 			want: -1,
 		},

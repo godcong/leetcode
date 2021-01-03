@@ -20,23 +20,23 @@ func Test_sortList(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[4,2,1,3]", -1),
+				head: strToListNode("[4,2,1,3]", -1),
 			},
-			want: leetcode.strToListNode("[1,2,3,4]", -1),
+			want: strToListNode("[1,2,3,4]", -1),
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[-1,5,3,4,0]", -1),
+				head: strToListNode("[-1,5,3,4,0]", -1),
 			},
-			want: leetcode.strToListNode("[-1,0,3,4,5]", -1),
+			want: strToListNode("[-1,0,3,4,5]", -1),
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[]", -1),
+				head: strToListNode("[]", -1),
 			},
-			want: leetcode.strToListNode("[]", -1),
+			want: strToListNode("[]", -1),
 		},
 	}
 	for _, tt := range tests {

@@ -20,37 +20,37 @@ func Test_sortByBits(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				arr: leetcode.strToIntArray("[0,1,2,3,4,5,6,7,8]"),
+				arr: strToIntArray("[0,1,2,3,4,5,6,7,8]"),
 			},
-			want: leetcode.strToIntArray("[0,1,2,4,8,3,5,6,7]"),
+			want: strToIntArray("[0,1,2,4,8,3,5,6,7]"),
 		},
 		{
 			name: "",
 			args: args{
-				arr: leetcode.strToIntArray("[1024,512,256,128,64,32,16,8,4,2,1]"),
+				arr: strToIntArray("[1024,512,256,128,64,32,16,8,4,2,1]"),
 			},
-			want: leetcode.strToIntArray("[1,2,4,8,16,32,64,128,256,512,1024]"),
+			want: strToIntArray("[1,2,4,8,16,32,64,128,256,512,1024]"),
 		},
 		{
 			name: "",
 			args: args{
-				arr: leetcode.strToIntArray("[10000,10000]"),
+				arr: strToIntArray("[10000,10000]"),
 			},
-			want: leetcode.strToIntArray("[10000,10000]"),
+			want: strToIntArray("[10000,10000]"),
 		},
 		{
 			name: "",
 			args: args{
-				arr: leetcode.strToIntArray("[2,3,5,7,11,13,17,19]"),
+				arr: strToIntArray("[2,3,5,7,11,13,17,19]"),
 			},
-			want: leetcode.strToIntArray("[2,3,5,17,7,11,13,19]"),
+			want: strToIntArray("[2,3,5,17,7,11,13,19]"),
 		},
 		{
 			name: "",
 			args: args{
-				arr: leetcode.strToIntArray("[10,100,1000,10000]"),
+				arr: strToIntArray("[10,100,1000,10000]"),
 			},
-			want: leetcode.strToIntArray("[10,100,10000,1000]"),
+			want: strToIntArray("[10,100,10000,1000]"),
 		},
 	}
 	for _, tt := range tests {

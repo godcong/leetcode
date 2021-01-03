@@ -18,14 +18,14 @@ func Test_minCameraCover(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[0,0,null,0,0]"),
+				root: strToTreeNode("[0,0,null,0,0]"),
 			},
 			want: 1,
 		},
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[0,0,null,0,null,0,null,null,0]"),
+				root: strToTreeNode("[0,0,null,0,null,0,null,null,0]"),
 			},
 			want: 2,
 		},

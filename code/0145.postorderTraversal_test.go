@@ -20,7 +20,7 @@ func Test_postorderTraversal(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,null,2,3]"),
+				root: strToTreeNode("[1,null,2,3]"),
 			},
 			want: []int{
 				3, 2, 1,

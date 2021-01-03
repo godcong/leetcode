@@ -19,21 +19,21 @@ func Test_containsDuplicate(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,1]"),
+				nums: strToIntArray("[1,2,3,1]"),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,4]"),
+				nums: strToIntArray("[1,2,3,4]"),
 			},
 			want: false,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,1,1,3,3,4,3,2,4,2]"),
+				nums: strToIntArray("[1,1,1,3,3,4,3,2,4,2]"),
 			},
 			want: true,
 		},

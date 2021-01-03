@@ -19,35 +19,35 @@ func Test_maximalRectangle(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				matrix: leetcode.strToByteArrayArray("[[\"1\",\"0\",\"1\",\"0\",\"0\"],[\"1\",\"0\",\"1\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\",\"1\"],[\"1\",\"0\",\"0\",\"1\",\"0\"]]"),
+				matrix: strToByteArrayArray("[[\"1\",\"0\",\"1\",\"0\",\"0\"],[\"1\",\"0\",\"1\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\",\"1\"],[\"1\",\"0\",\"0\",\"1\",\"0\"]]"),
 			},
 			want: 6,
 		},
 		{
 			name: "",
 			args: args{
-				matrix: leetcode.strToByteArrayArray("[]"),
+				matrix: strToByteArrayArray("[]"),
 			},
 			want: 0,
 		},
 		{
 			name: "",
 			args: args{
-				matrix: leetcode.strToByteArrayArray("[[\"0\"]]"),
+				matrix: strToByteArrayArray("[[\"0\"]]"),
 			},
 			want: 0,
 		},
 		{
 			name: "",
 			args: args{
-				matrix: leetcode.strToByteArrayArray("[[\"1\"]]"),
+				matrix: strToByteArrayArray("[[\"1\"]]"),
 			},
 			want: 1,
 		},
 		{
 			name: "",
 			args: args{
-				matrix: leetcode.strToByteArrayArray("[[\"0\",\"0\"]]"),
+				matrix: strToByteArrayArray("[[\"0\",\"0\"]]"),
 			},
 			want: 0,
 		},

@@ -20,9 +20,9 @@ func Test_zigzagLevelOrder(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[3,9,20,null,null,15,7]"),
+				root: strToTreeNode("[3,9,20,null,null,15,7]"),
 			},
-			want: leetcode.strToIntArrArray("[\n  [3],\n  [20,9],\n  [15,7]\n]"),
+			want: strToIntArrArray("[\n  [3],\n  [20,9],\n  [15,7]\n]"),
 		},
 	}
 	for _, tt := range tests {

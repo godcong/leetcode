@@ -21,7 +21,7 @@ func Test_countRangeSum(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums:  leetcode.strToIntArray("[-2,5,-1]"),
+				nums:  strToIntArray("[-2,5,-1]"),
 				lower: -2,
 				upper: 2,
 			},

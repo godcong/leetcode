@@ -19,28 +19,28 @@ func Test_largestPerimeter(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[2,1,2]"),
+				A: strToIntArray("[2,1,2]"),
 			},
 			want: 5,
 		},
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[1,2,1]"),
+				A: strToIntArray("[1,2,1]"),
 			},
 			want: 0,
 		},
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[3,2,3,4]"),
+				A: strToIntArray("[3,2,3,4]"),
 			},
 			want: 10,
 		},
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[3,6,2,3]"),
+				A: strToIntArray("[3,6,2,3]"),
 			},
 			want: 8,
 		},

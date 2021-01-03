@@ -19,14 +19,14 @@ func Test_sumNumbers(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[1,2,3]"),
+				root: strToTreeNode("[1,2,3]"),
 			},
 			want: 25,
 		},
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[4,9,0,5,1]"),
+				root: strToTreeNode("[4,9,0,5,1]"),
 			},
 			want: 1026,
 		},

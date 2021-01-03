@@ -19,14 +19,14 @@ func Test_reversePairs(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,3,2,3,1]"),
+				nums: strToIntArray("[1,3,2,3,1]"),
 			},
 			want: 2,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[2,4,3,5,1]"),
+				nums: strToIntArray("[2,4,3,5,1]"),
 			},
 			want: 3,
 		},

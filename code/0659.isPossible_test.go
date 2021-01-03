@@ -19,21 +19,21 @@ func Test_isPossible(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,3,4,5]"),
+				nums: strToIntArray("[1,2,3,3,4,5]"),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,3,4,4,5,5]"),
+				nums: strToIntArray("[1,2,3,3,4,4,5,5]"),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,4,4,5]"),
+				nums: strToIntArray("[1,2,3,4,4,5]"),
 			},
 			want: false,
 		},

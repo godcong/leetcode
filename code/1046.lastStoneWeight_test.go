@@ -19,7 +19,7 @@ func Test_lastStoneWeight(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				stones: leetcode.strToIntArray("[2,7,4,1,8,1]"),
+				stones: strToIntArray("[2,7,4,1,8,1]"),
 			},
 			want: 1,
 		},

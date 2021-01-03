@@ -21,7 +21,7 @@ func Test_lowestCommonAncestor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[6,2,8,0,4,7,9,null,null,3,5]"),
+				root: strToTreeNode("[6,2,8,0,4,7,9,null,null,3,5]"),
 				p:    &TreeNode{Val: 2},
 				q:    &TreeNode{Val: 8},
 			},
@@ -30,7 +30,7 @@ func Test_lowestCommonAncestor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				root: leetcode.strToTreeNode("[6,2,8,0,4,7,9,null,null,3,5]"),
+				root: strToTreeNode("[6,2,8,0,4,7,9,null,null,3,5]"),
 				p:    &TreeNode{Val: 2},
 				q:    &TreeNode{Val: 4},
 			},

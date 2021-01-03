@@ -19,16 +19,16 @@ func Test_reorderList(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("[1,2,3,4]", -1),
+				head: strToListNode("[1,2,3,4]", -1),
 			},
-			want: leetcode.strToListNode("[1,4,2,3]", -1),
+			want: strToListNode("[1,4,2,3]", -1),
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("1->2->3->4->5", -1),
+				head: strToListNode("1->2->3->4->5", -1),
 			},
-			want: leetcode.strToListNode("1->5->2->4->3", -1),
+			want: strToListNode("1->5->2->4->3", -1),
 		},
 	}
 	for _, tt := range tests {
@@ -46,7 +46,7 @@ func deepEqualReorderList(t *testing.T, got, want *ListNode) bool {
 		return got == want
 	}
 	if got.Val == want.Val {
-		return leetcode.deepEqualDeleteNode(t, got.Next, want.Next)
+		return deepEqualDeleteNode(t, got.Next, want.Next)
 	}
 	t.Errorf("reorderList() = %v, want %v", got.Val, want.Val)
 	return false

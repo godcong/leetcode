@@ -20,9 +20,9 @@ func Test_sortArrayByParityII(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				A: leetcode.strToIntArray("[4,2,5,7]"),
+				A: strToIntArray("[4,2,5,7]"),
 			},
-			want: leetcode.strToIntArray("[4,5,2,7]"),
+			want: strToIntArray("[4,5,2,7]"),
 		},
 	}
 	for _, tt := range tests {

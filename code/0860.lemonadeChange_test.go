@@ -19,21 +19,21 @@ func Test_lemonadeChange(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				bills: leetcode.strToIntArray("[5,5,5,10,20]"),
+				bills: strToIntArray("[5,5,5,10,20]"),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				bills: leetcode.strToIntArray("[5,5,10]"),
+				bills: strToIntArray("[5,5,10]"),
 			},
 			want: true,
 		},
 		{
 			name: "",
 			args: args{
-				bills: leetcode.strToIntArray("[5,5,10,10,20]"),
+				bills: strToIntArray("[5,5,10,10,20]"),
 			},
 			want: false,
 		},

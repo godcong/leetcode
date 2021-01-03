@@ -20,16 +20,16 @@ func Test_oddEvenList(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("1->2->3->4->5->NULL", -1),
+				head: strToListNode("1->2->3->4->5->NULL", -1),
 			},
-			want: leetcode.strToListNode("1->3->5->2->4->NULL", -1),
+			want: strToListNode("1->3->5->2->4->NULL", -1),
 		},
 		{
 			name: "",
 			args: args{
-				head: leetcode.strToListNode("2->1->3->5->6->4->7->NULL", -1),
+				head: strToListNode("2->1->3->5->6->4->7->NULL", -1),
 			},
-			want: leetcode.strToListNode("2->3->6->7->1->5->4->NULL", -1),
+			want: strToListNode("2->3->6->7->1->5->4->NULL", -1),
 		},
 	}
 	for _, tt := range tests {

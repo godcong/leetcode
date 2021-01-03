@@ -20,9 +20,9 @@ func Test_reconstructQueue(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				people: leetcode.strToIntArrArray("[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]"),
+				people: strToIntArrArray("[[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]"),
 			},
-			want: leetcode.strToIntArrArray("[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]"),
+			want: strToIntArrArray("[[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]"),
 		},
 	}
 	for _, tt := range tests {

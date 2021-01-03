@@ -19,21 +19,21 @@ func Test_wiggleMaxLength(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,7,4,9,2,5]"),
+				nums: strToIntArray("[1,7,4,9,2,5]"),
 			},
 			want: 6,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,17,5,10,13,15,10,5,16,8]"),
+				nums: strToIntArray("[1,17,5,10,13,15,10,5,16,8]"),
 			},
 			want: 7,
 		},
 		{
 			name: "",
 			args: args{
-				nums: leetcode.strToIntArray("[1,2,3,4,5,6,7,8,9]"),
+				nums: strToIntArray("[1,2,3,4,5,6,7,8,9]"),
 			},
 			want: 2,
 		},

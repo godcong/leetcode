@@ -20,7 +20,7 @@ func Test_maxProfit0714(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				prices: leetcode.strToIntArray("[1, 3, 2, 8, 4, 9]"),
+				prices: strToIntArray("[1, 3, 2, 8, 4, 9]"),
 				fee:    2,
 			},
 			want: 8,

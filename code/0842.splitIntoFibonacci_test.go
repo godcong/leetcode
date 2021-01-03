@@ -22,28 +22,28 @@ func Test_splitIntoFibonacci(t *testing.T) {
 			args: args{
 				s: "123456579",
 			},
-			want: leetcode.strToIntArray("[123,456,579]"),
+			want: strToIntArray("[123,456,579]"),
 		},
 		{
 			name: "",
 			args: args{
 				s: "11235813",
 			},
-			want: leetcode.strToIntArray("[1,1,2,3,5,8,13]"),
+			want: strToIntArray("[1,1,2,3,5,8,13]"),
 		},
 		{
 			name: "",
 			args: args{
 				s: "112358130",
 			},
-			want: leetcode.strToIntArray("[]"),
+			want: strToIntArray("[]"),
 		},
 		{
 			name: "",
 			args: args{
 				s: "0123",
 			},
-			want: leetcode.strToIntArray("[]"),
+			want: strToIntArray("[]"),
 		},
 	}
 	for _, tt := range tests {

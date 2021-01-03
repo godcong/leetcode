@@ -19,35 +19,35 @@ func Test_findMinArrowShots(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[10,16],[2,8],[1,6],[7,12]]"),
+				points: strToIntArrArray("[[10,16],[2,8],[1,6],[7,12]]"),
 			},
 			want: 2,
 		},
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[1,2],[3,4],[5,6],[7,8]]"),
+				points: strToIntArrArray("[[1,2],[3,4],[5,6],[7,8]]"),
 			},
 			want: 4,
 		},
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[1,2],[2,3],[3,4],[4,5]]"),
+				points: strToIntArrArray("[[1,2],[2,3],[3,4],[4,5]]"),
 			},
 			want: 2,
 		},
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[1,2]]"),
+				points: strToIntArrArray("[[1,2]]"),
 			},
 			want: 1,
 		},
 		{
 			name: "",
 			args: args{
-				points: leetcode.strToIntArrArray("[[2,3],[2,3]]"),
+				points: strToIntArrArray("[[2,3],[2,3]]"),
 			},
 			want: 1,
 		},

@@ -20,7 +20,7 @@ func Test_leastInterval(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				tasks: leetcode.strToByteArray("[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]"),
+				tasks: strToByteArray("[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]"),
 				n:     2,
 			},
 			want: 8,
@@ -28,7 +28,7 @@ func Test_leastInterval(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				tasks: leetcode.strToByteArray("[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]"),
+				tasks: strToByteArray("[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"]"),
 				n:     0,
 			},
 			want: 6,
@@ -36,7 +36,7 @@ func Test_leastInterval(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				tasks: leetcode.strToByteArray("[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"]"),
+				tasks: strToByteArray("[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"]"),
 				n:     2,
 			},
 			want: 16,

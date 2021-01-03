@@ -21,9 +21,9 @@ func Test_groupAnagrams(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				strs: leetcode.strToStringArray("[\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]"),
+				strs: strToStringArray("[\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]"),
 			},
-			want: leetcode.strToStringArrayArray("[\n  [\"ate\",\"eat\",\"tea\"],\n  [\"nat\",\"tan\"],\n  [\"bat\"]\n]"),
+			want: strToStringArrayArray("[\n  [\"ate\",\"eat\",\"tea\"],\n  [\"nat\",\"tan\"],\n  [\"bat\"]\n]"),
 		},
 	}
 	for _, tt := range tests {

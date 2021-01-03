@@ -19,14 +19,14 @@ func Test_candy(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				ratings: leetcode.strToIntArray("[1,0,2]"),
+				ratings: strToIntArray("[1,0,2]"),
 			},
 			want: 5,
 		},
 		{
 			name: "",
 			args: args{
-				ratings: leetcode.strToIntArray("[1,2,2]"),
+				ratings: strToIntArray("[1,2,2]"),
 			},
 			want: 4,
 		},
