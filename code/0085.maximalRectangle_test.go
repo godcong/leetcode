@@ -2,8 +2,6 @@ package code
 
 import (
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_maximalRectangle(t *testing.T) {

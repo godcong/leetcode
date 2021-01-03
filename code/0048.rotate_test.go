@@ -3,8 +3,6 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_rotate(t *testing.T) {
