@@ -3,8 +3,6 @@ package code
 import (
 	"reflect"
 	"testing"
-
-	"github.com/godcong/leetcode"
 )
 
 func Test_intersection(t *testing.T) {
