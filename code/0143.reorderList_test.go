@@ -49,3 +49,14 @@ func deepEqualReorderList(t *testing.T, got, want *ListNode) bool {
 	t.Errorf("reorderList() = %v, want %v", got.Val, want.Val)
 	return false
 }
+
+func deepEqualDeleteNode(t *testing.T, got, want *ListNode) bool {
+	if got == nil || want == nil {
+		return got == want
+	}
+	if got.Val == want.Val {
+		return deepEqualDeleteNode(t, got.Next, want.Next)
+	}
+	t.Errorf("deleteNode() = %v, want %v", got.Val, want.Val)
+	return false
+}
