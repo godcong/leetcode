@@ -19,6 +19,13 @@ func Test_fib(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				n: 3,
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
