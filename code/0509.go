@@ -32,5 +32,14 @@ F(n) = F(n - 1) + F(n - 2)，其中 n > 1
 0 <= n <= 30
 */
 func fib(n int) int {
-	return 0
+	if n < 2 {
+		return n
+	}
+	p, q, r := 0, 0, 1
+	for i := 2; i <= n; i++ {
+		p = q
+		q = r
+		r = p + q
+	}
+	return r
 }
