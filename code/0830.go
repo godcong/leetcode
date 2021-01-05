@@ -39,3 +39,6 @@ package code
 1 <= s.length <= 1000
 s 仅含小写英文字母
 */
+func largeGroupPositions(s string) [][]int {
+	return nil
+}
