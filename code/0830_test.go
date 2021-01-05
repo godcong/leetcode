@@ -29,6 +29,13 @@ func Test_largeGroupPositions(t *testing.T) {
 			},
 			want: strToIntArrArray("[]"),
 		},
+		{
+			name: "",
+			args: args{
+				s: "abcdddeeeeaabbbcd",
+			},
+			want: strToIntArrArray("[[3,5],[6,9],[12,14]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
