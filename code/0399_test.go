@@ -43,6 +43,15 @@ func Test_calcEquation(t *testing.T) {
 				3.75000, 0.40000, 5.00000, 0.20000,
 			},
 		},
+		{
+			name: "",
+			args: args{
+				equations: strToStringArrayArray("[[\"a\",\"b\"]]"),
+				values:    nil,
+				queries:   nil,
+			},
+			want: nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
