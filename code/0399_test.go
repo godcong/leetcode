@@ -47,10 +47,14 @@ func Test_calcEquation(t *testing.T) {
 			name: "",
 			args: args{
 				equations: strToStringArrayArray("[[\"a\",\"b\"]]"),
-				values:    nil,
-				queries:   nil,
+				values: []float64{
+					0.5,
+				},
+				queries: strToStringArrayArray("[[\"a\",\"b\"],[\"b\",\"a\"],[\"a\",\"c\"],[\"x\",\"y\"]]"),
 			},
-			want: nil,
+			want: []float64{
+				0.50000, 2.00000, -1.00000, -1.00000,
+			},
 		},
 	}
 	for _, tt := range tests {
