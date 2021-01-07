@@ -34,4 +34,6 @@ package code
     isConnected[i][i] == 1
     isConnected[i][j] == isConnected[j][i]
 */
-
+func findCircleNum(isConnected [][]int) int {
+	return 0
+}
