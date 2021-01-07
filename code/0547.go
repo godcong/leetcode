@@ -35,23 +35,23 @@ package code
     isConnected[i][j] == isConnected[j][i]
 */
 func findCircleNum(isConnected [][]int) int {
-	var ans int
-	vis := make([]bool, len(isConnected))
-	for i, v := range vis {
-		if !v {
-			ans++
-			queue := []int{i}
-			for len(queue) > 0 {
-				from := queue[0]
-				queue = queue[1:]
-				vis[from] = true
-				for to, conn := range isConnected[from] {
-					if conn == 1 && !vis[to] {
-						queue = append(queue, to)
-					}
-				}
+	count := 0
+	visited := make([]int, len(isConnected))
+	var findCircleNumDFS func(isConnected [][]int, i int, visited []int)
+	findCircleNumDFS = func(isConnected [][]int, i int, visited []int) {
+		visited[i] = 1
+		for j, _ := range isConnected[i] {
+			if isConnected[i][j] == 1 && visited[j] == 0 {
+				findCircleNumDFS(isConnected, j, visited)
 			}
 		}
 	}
-	return ans
+	for i := 0; i < len(isConnected); i++ {
+		if visited[i] == 0 {
+			findCircleNumDFS(isConnected, i, visited)
+			count++
+		}
+	}
+
+	return count
 }
