@@ -35,5 +35,23 @@ package code
     isConnected[i][j] == isConnected[j][i]
 */
 func findCircleNum(isConnected [][]int) int {
-	return 0
+	var ans int
+	vis := make([]bool, len(isConnected))
+	for i, v := range vis {
+		if !v {
+			ans++
+			queue := []int{i}
+			for len(queue) > 0 {
+				from := queue[0]
+				queue = queue[1:]
+				vis[from] = true
+				for to, conn := range isConnected[from] {
+					if conn == 1 && !vis[to] {
+						queue = append(queue, to)
+					}
+				}
+			}
+		}
+	}
+	return ans
 }
