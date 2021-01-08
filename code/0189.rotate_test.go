@@ -1,6 +1,9 @@
 package code
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func Test_rotate0189(t *testing.T) {
 	type args struct {
@@ -24,6 +27,10 @@ func Test_rotate0189(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			rotate0189(tt.args.nums, tt.args.k)
+			if !reflect.DeepEqual(tt.args.nums, tt.want) {
+				t.Errorf("maxProfit0189() = %v, want %v", tt.args.nums, tt.want)
+			}
 		})
 	}
 }
