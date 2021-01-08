@@ -24,3 +24,10 @@ package code
 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
 要求使用空间复杂度为 O(1) 的 原地 算法。
  */
+func rotate0189(nums []int, k int)  {
+	newNums := make([]int, len(nums))
+	for i, v := range nums {
+		newNums[(i+k)%len(nums)] = v
+	}
+	copy(nums, newNums)
+}
