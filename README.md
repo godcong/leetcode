@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:193 ###  
+### 总完成:194 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -140,6 +140,7 @@ All append into def.go
 | 0530 | 二叉搜索树的最小绝对差 | getMinimumDifference | [GO](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference.go) | TEST |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | TEST |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | TEST |  
+|  | 省份数量 | 0547 | [GO](https://github.com/godcong/leetcode/blob/master/0547.go) | TEST |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | TEST |  
 | 0581 | 最短无序连续子数组 | findUnsortedSubarray | [GO](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray.go) | TEST |  
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | TEST |  
