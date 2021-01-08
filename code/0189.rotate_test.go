@@ -24,6 +24,14 @@ func Test_rotate0189(t *testing.T) {
 			},
 			want: strToIntArray("[5,6,7,1,2,3,4]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[-1,-100,3,99]"),
+				k:    2,
+			},
+			want: strToIntArray("[3,99,-1,-100]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
