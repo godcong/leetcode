@@ -45,5 +45,20 @@ package code
     0 <= prices[i] <= 105
 */
 func maxProfit0123(prices []int) int {
+	buy1, sell1 := -prices[0], 0
+	buy2, sell2 := -prices[0], 0
+	for i := 1; i < len(prices); i++ {
+		buy1 = maxProfit0123Max(buy1, -prices[i])
+		sell1 = maxProfit0123Max(sell1, buy1+prices[i])
+		buy2 = maxProfit0123Max(buy2, sell1-prices[i])
+		sell2 = maxProfit0123Max(sell2, buy2+prices[i])
+	}
+	return sell2
+}
 
+func maxProfit0123Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
