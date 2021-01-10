@@ -86,6 +86,7 @@ All append into def.go
 | 0148 | 排序链表 | sortList | [GO](https://github.com/godcong/leetcode/blob/master/0148.sortList.go) | TEST |  
 | 0164 | 最大间距 | maximumGap | [GO](https://github.com/godcong/leetcode/blob/master/0164.maximumGap.go) | TEST |  
 | 0188 | 买卖股票的最佳时机 IV | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0188.maxProfit.go) | TEST |  
+| 0189 | 旋转数组 | rotate | [GO](https://github.com/godcong/leetcode/blob/master/0189.rotate.go) | TEST |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | TEST |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | TEST |  
