@@ -18,10 +18,11 @@ func Test_summaryRanges(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: nil,
+				nums: strToIntArray("[0,1,2,4,5,7]"),
 			},
-			want: nil,
+			want: strToStringArray("[\"0->2\",\"4->5\",\"7\"]"),
 		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
