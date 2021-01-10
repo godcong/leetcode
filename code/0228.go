@@ -50,3 +50,6 @@ package code
 nums 中的所有值都 互不相同
 nums 按升序排列
 */
+func summaryRanges(nums []int) []string {
+	return nil
+}
