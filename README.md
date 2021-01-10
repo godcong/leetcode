@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:194 ###  
+### 总完成:196 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -97,6 +97,7 @@ All append into def.go
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | TEST |  
 | 0222 | 完全二叉树的节点个数 | countNodes | [GO](https://github.com/godcong/leetcode/blob/master/0222.countNodes.go) | TEST |  
 | 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | TEST |  
+|  | 汇总区间 | 0228 | [GO](https://github.com/godcong/leetcode/blob/master/0228.go) | TEST |  
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | TEST |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | TEST |  
 |  | 滑动窗口最大值 | 0239 | [GO](https://github.com/godcong/leetcode/blob/master/0239.go) | TEST |  
