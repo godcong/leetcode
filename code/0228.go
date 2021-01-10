@@ -1,5 +1,7 @@
 package code
 
+import "strconv"
+
 /*
 228. 汇总区间
 给定一个无重复元素的有序整数数组 nums 。
@@ -51,5 +53,16 @@ nums 中的所有值都 互不相同
 nums 按升序排列
 */
 func summaryRanges(nums []int) []string {
-	return nil
+	var ans []string
+	for i, n := 0, len(nums); i < n; {
+		left := i
+		for i++; i < n && nums[i-1]+1 == nums[i]; i++ {
+		}
+		s := strconv.Itoa(nums[left])
+		if left < i-1 {
+			s += "->" + strconv.Itoa(nums[i-1])
+		}
+		ans = append(ans, s)
+	}
+	return ans
 }
