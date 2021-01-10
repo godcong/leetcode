@@ -29,6 +29,13 @@ func Test_summaryRanges(t *testing.T) {
 			},
 			want: strToStringArray("[\"0\",\"2->4\",\"6\",\"8->9\"]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[]"),
+			},
+			want: strToStringArray("[]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
