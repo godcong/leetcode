@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:195 ###  
+### 总完成:198 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -87,6 +87,7 @@ All append into def.go
 | 0148 | 排序链表 | sortList | [GO](https://github.com/godcong/leetcode/blob/master/0148.sortList.go) | TEST |  
 | 0164 | 最大间距 | maximumGap | [GO](https://github.com/godcong/leetcode/blob/master/0164.maximumGap.go) | TEST |  
 | 0188 | 买卖股票的最佳时机 IV | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0188.maxProfit.go) | TEST |  
+| 0189 | 旋转数组 | rotate | [GO](https://github.com/godcong/leetcode/blob/master/0189.rotate.go) | TEST |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | TEST |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | TEST |  
@@ -97,6 +98,7 @@ All append into def.go
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | TEST |  
 | 0222 | 完全二叉树的节点个数 | countNodes | [GO](https://github.com/godcong/leetcode/blob/master/0222.countNodes.go) | TEST |  
 | 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | TEST |  
+| 0228 | 汇总区间 | summaryRanges | [GO](https://github.com/godcong/leetcode/blob/master/0228.summaryRanges.go) | TEST |  
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | TEST |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | TEST |  
 |  | 滑动窗口最大值 | 0239 | [GO](https://github.com/godcong/leetcode/blob/master/0239.go) | TEST |  
@@ -193,6 +195,7 @@ All append into def.go
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | TEST |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
+| 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
