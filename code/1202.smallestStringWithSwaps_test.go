@@ -29,6 +29,14 @@ func Test_smallestStringWithSwaps(t *testing.T) {
 			},
 			want: "abcd",
 		},
+		{
+			name: "",
+			args: args{
+				s:     "cba",
+				pairs: strToIntArrArray("[[0,1],[1,2]]"),
+			},
+			want: "abc",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
