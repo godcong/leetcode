@@ -38,71 +38,59 @@ i != beforeItems[i][j]
 beforeItems[i] 不含重复元素
 */
 func sortItems(n int, m int, group []int, beforeItems [][]int) []int {
-	var ans []int
-	groupItems := make([][]int, m+n) // groupItems[i] 表示第 i 个组负责的项目列表
-	for i := range group {
-		if group[i] == -1 {
-			group[i] = m + i // 给不属于任何组的项目分配一个组
+	virtualG := make([][]int, n+m) //let group be a node
+	virtualInD := make([]int, n+m) //count indegrees of each node
+
+	for i, g := range group{ //append items to their belonging groups
+		if g > -1{ //if belongs to a group
+			g += n //group node idx in virtualG
+			virtualG[g] = append(virtualG[g], i)
+			virtualInD[i]++ //make the item which belongs to any group lower priority
 		}
-		groupItems[group[i]] = append(groupItems[group[i]], i)
 	}
 
-	groupGraph := make([][]int, m+n) // 组间依赖关系
-	groupDegree := make([]int, m+n)
-	itemGraph := make([][]int, n) // 组内依赖关系
-	itemDegree := make([]int, n)
-	for cur, items := range beforeItems {
-		curGroupID := group[cur]
-		for _, pre := range items {
-			preGroupID := group[pre]
-			if preGroupID != curGroupID { // 不同组项目，确定组间依赖关系
-				groupGraph[preGroupID] = append(groupGraph[preGroupID], curGroupID)
-				groupDegree[curGroupID]++
-			} else { // 同组项目，确定组内依赖关系
-				itemGraph[pre] = append(itemGraph[pre], cur)
-				itemDegree[cur]++
+	for i, ancestors := range beforeItems{
+		gi := group[i]
+		if gi == -1{
+			gi = i //if i belongs to no group, its group is itself.
+		}else{
+			gi += n
+		}
+		for _, ancestor := range ancestors{
+			ga := group[ancestor]
+			if ga == -1{
+				ga = ancestor
+			}else{
+				ga += n
+			}
+			if gi == ga{ //if both of them in the same group, i is one of childs of ancestor
+				virtualG[ancestor] = append(virtualG[ancestor], i)
+				virtualInD[i]++
+			}else{ //group gi is one of childs of ga
+				virtualG[ga] = append(virtualG[ga], gi)
+				virtualInD[gi]++
 			}
 		}
 	}
 
-	// 组间拓扑序
-	items := make([]int, m+n)
-	for i := range items {
-		items[i] = i
-	}
-	groupOrders := sortItemsTopSort(groupGraph, groupDegree, items)
-	if len(groupOrders) < len(items) {
-		return nil
+	ans := []int{}
+
+	var dfs func(i int)
+	dfs = func(i int){
+		if i < n{ans = append(ans, i)} //if a valid node not a group idx
+
+		virtualInD[i] = -1 //i is sorted. Set it to -1 since it would be no longer visited.
+		for _, ch := range virtualG[i]{
+			//decrease indegree with each visit. if it's indegree == 0 we add it into ans and dfs it!
+			if virtualInD[ch]--; virtualInD[ch] == 0{dfs(ch)}
+		}
 	}
 
-	// 按照组间的拓扑序，依次求得各个组的组内拓扑序，构成答案
-	for _, groupID := range groupOrders {
-		items := groupItems[groupID]
-		orders := sortItemsTopSort(itemGraph, itemDegree, items)
-		if len(orders) < len(items) {
-			return nil
-		}
-		ans = append(ans, orders...)
+	for i, d := range virtualInD{
+		if d == 0{dfs(i)}
 	}
+
+	if len(ans) != n {return nil}
+
 	return ans
-}
-func sortItemsTopSort(graph [][]int, deg, items []int) (orders []int) {
-	q := []int{}
-	for _, i := range items {
-		if deg[i] == 0 {
-			q = append(q, i)
-		}
-	}
-	for len(q) > 0 {
-		from := q[0]
-		q = q[1:]
-		orders = append(orders, from)
-		for _, to := range graph[from] {
-			deg[to]--
-			if deg[to] == 0 {
-				q = append(q, to)
-			}
-		}
-	}
-	return
 }
