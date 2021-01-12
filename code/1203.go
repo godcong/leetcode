@@ -37,3 +37,6 @@ group.length == beforeItems.length == n
 i != beforeItems[i][j]
 beforeItems[i] 不含重复元素
 */
+func sortItems(n int, m int, group []int, beforeItems [][]int) []int {
+	return nil
+}
