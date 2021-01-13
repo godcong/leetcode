@@ -34,5 +34,29 @@ package code
 我们已经重新检查了问题描述及测试用例，明确图是无向 图。对于有向图详见冗余连接II。对于造成任何不便，我们深感歉意。
 */
 func findRedundantConnection(edges [][]int) []int {
+	parent := make([]int, len(edges)+1)
+	for i := range parent {
+		parent[i] = i
+	}
+	var find func(int) int
+	find = func(x int) int {
+		if parent[x] != x {
+			parent[x] = find(parent[x])
+		}
+		return parent[x]
+	}
+	union := func(from, to int) bool {
+		x, y := find(from), find(to)
+		if x == y {
+			return false
+		}
+		parent[x] = y
+		return true
+	}
+	for _, e := range edges {
+		if !union(e[0], e[1]) {
+			return e
+		}
+	}
 	return nil
 }
