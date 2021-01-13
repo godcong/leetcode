@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:198 ###  
+### 总完成:200 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -157,6 +157,7 @@ All append into def.go
 | 0659 | 分割数组为连续子序列 | isPossible | [GO](https://github.com/godcong/leetcode/blob/master/0659.isPossible.go) | TEST |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | TEST |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | TEST |  
+| 0684 | 冗余连接 | findRedundantConnection | [GO](https://github.com/godcong/leetcode/blob/master/0684.findRedundantConnection.go) | TEST |  
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | TEST |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | TEST |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | TEST |  
@@ -196,6 +197,7 @@ All append into def.go
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
+| 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
