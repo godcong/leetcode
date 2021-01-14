@@ -35,13 +35,10 @@ A[i] 为 0 或 1
 */
 func prefixesDivBy5(A []int) []bool {
 	ans := make([]bool, len(A))
-	if len(A) == 0 {
-		return ans
-	}
-	num := A[0]
-	for i := 1; i < len(A); i++ {
-		ans[i-1] = num%5 == 0
-		num = num >> 1 & A[i]
+	num := 0
+	for i := range A {
+		num = (num<<1 | A[i]) % 5
+		ans[i] = num == 0
 	}
 	return ans
 }
