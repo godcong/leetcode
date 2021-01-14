@@ -25,7 +25,7 @@ package code
 要求使用空间复杂度为 O(1) 的 原地 算法。
  */
 func rotate0189(nums []int, k int)  {
-	newNums := make([]int, len(nums))
+	newNums := make([]int,k)
 	for i, v := range nums {
 		newNums[(i+k)%len(nums)] = v
 	}

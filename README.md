@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:197 ###  
+### 总完成:200 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -98,6 +98,7 @@ All append into def.go
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | TEST |  
 | 0222 | 完全二叉树的节点个数 | countNodes | [GO](https://github.com/godcong/leetcode/blob/master/0222.countNodes.go) | TEST |  
 | 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | TEST |  
+| 0228 | 汇总区间 | summaryRanges | [GO](https://github.com/godcong/leetcode/blob/master/0228.summaryRanges.go) | TEST |  
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | TEST |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | TEST |  
 |  | 滑动窗口最大值 | 0239 | [GO](https://github.com/godcong/leetcode/blob/master/0239.go) | TEST |  
@@ -156,6 +157,7 @@ All append into def.go
 | 0659 | 分割数组为连续子序列 | isPossible | [GO](https://github.com/godcong/leetcode/blob/master/0659.isPossible.go) | TEST |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | TEST |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | TEST |  
+| 0684 | 冗余连接 | findRedundantConnection | [GO](https://github.com/godcong/leetcode/blob/master/0684.findRedundantConnection.go) | TEST |  
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | TEST |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | TEST |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | TEST |  
@@ -187,7 +189,6 @@ All append into def.go
 | 0976 | 三角形的最大周长 | largestPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter.go) | TEST |  
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | TEST |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | TEST |  
-| 1018 | 可被 5 整除的二进制前缀 | prefixesDivBy5 | [GO](https://github.com/godcong/leetcode/blob/master/1018.prefixesDivBy5.go) | TEST |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | TEST |  
 | 1024 | 视频拼接 | videoStitching | [GO](https://github.com/godcong/leetcode/blob/master/1024.videoStitching.go) | TEST |  
 | 1030 | 距离顺序排列矩阵单元格 | allCellsDistOrder | [GO](https://github.com/godcong/leetcode/blob/master/1030.allCellsDistOrder.go) | TEST |  
@@ -195,6 +196,8 @@ All append into def.go
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | TEST |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
+| 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
+| 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
