@@ -33,6 +33,15 @@ func Test_prefixesDivBy5(t *testing.T) {
 				false, false, false,
 			},
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[0,1,1,1,1,1]"),
+			},
+			want: []bool{
+				true, false, false, false, true, false,
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
