@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:195 ###  
+### 总完成:197 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -87,6 +87,7 @@ All append into def.go
 | 0148 | 排序链表 | sortList | [GO](https://github.com/godcong/leetcode/blob/master/0148.sortList.go) | TEST |  
 | 0164 | 最大间距 | maximumGap | [GO](https://github.com/godcong/leetcode/blob/master/0164.maximumGap.go) | TEST |  
 | 0188 | 买卖股票的最佳时机 IV | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0188.maxProfit.go) | TEST |  
+| 0189 | 旋转数组 | rotate | [GO](https://github.com/godcong/leetcode/blob/master/0189.rotate.go) | TEST |  
 | 0191 | 位1的个数 | hammingWeight | [GO](https://github.com/godcong/leetcode/blob/master/0191.hammingWeight.go) | TEST |  
 | 0193 | 有效电话号码 | Bash | [GO](https://github.com/godcong/leetcode/blob/master/0193.Bash.go) | TEST |  
 | 0201 | 数字范围按位与 | rangeBitwiseAnd | [GO](https://github.com/godcong/leetcode/blob/master/0201.rangeBitwiseAnd.go) | TEST |  
@@ -186,6 +187,7 @@ All append into def.go
 | 0976 | 三角形的最大周长 | largestPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter.go) | TEST |  
 | 0977 | 有序数组的平方 | sortedSquares | [GO](https://github.com/godcong/leetcode/blob/master/0977.sortedSquares.go) | TEST |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | TEST |  
+| 1018 | 可被 5 整除的二进制前缀 | prefixesDivBy5 | [GO](https://github.com/godcong/leetcode/blob/master/1018.prefixesDivBy5.go) | TEST |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | TEST |  
 | 1024 | 视频拼接 | videoStitching | [GO](https://github.com/godcong/leetcode/blob/master/1024.videoStitching.go) | TEST |  
 | 1030 | 距离顺序排列矩阵单元格 | allCellsDistOrder | [GO](https://github.com/godcong/leetcode/blob/master/1030.allCellsDistOrder.go) | TEST |  
