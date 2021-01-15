@@ -44,5 +44,48 @@ n 块石头放置在二维平面中的一些整数坐标点上。每个坐标点
 不会有两块石头放在同一个坐标点上
 */
 func removeStones(stones [][]int) int {
+
+	arr := make([]int, len(stones))
+	for i, _ := range arr {
+		arr[i] = i
+	}
+	rowMp := make(map[int]int)
+	colMp := make(map[int]int)
+	for k, v := range stones {
+		_, ok1 := rowMp[v[0]]
+		_, ok2 := colMp[v[1]]
+		if ok1 {
+			removeStonesUnion(arr, rowMp[v[0]], k)
+		} else {
+			rowMp[v[0]] = k
+		}
+		if ok2 {
+			removeStonesUnion(arr, colMp[v[1]], k)
+		} else {
+			colMp[v[1]] = k
+		}
+	}
+	res := 0
+	for k, v := range arr {
+		if k != v {
+			res++
+		}
+	}
+	return res
+}
+
+func removeStonesUnion(arr []int, i, j int) int {
+	a, b := removeStonesFind(arr, i), removeStonesFind(arr, j)
+	if a != b {
+		arr[b] = a
+		return 1
+	}
 	return 0
+}
+
+func removeStonesFind(arr []int, i int) int {
+	for arr[i] != i {
+		i = arr[i]
+	}
+	return i
 }
