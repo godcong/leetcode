@@ -43,3 +43,6 @@ n 块石头放置在二维平面中的一些整数坐标点上。每个坐标点
 0 <= xi, yi <= 104
 不会有两块石头放在同一个坐标点上
 */
+func removeStones(stones [][]int) int {
+	return 0
+}
