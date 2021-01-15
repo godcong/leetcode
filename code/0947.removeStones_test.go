@@ -19,6 +19,13 @@ func Test_removeStones(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "",
+			args: args{
+				stones: strToIntArrArray("[[0,0],[0,2],[1,1],[2,0],[2,2]]"),
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
