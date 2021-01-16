@@ -63,81 +63,56 @@ hits[i].length == 2
 所有 (xi, yi) 互不相同
 */
 func hitBricks(grid [][]int, hits [][]int) []int {
-	h, w := len(grid), len(grid[0])
-	fa := make([]int, h*w+1)
-	size := make([]int, h*w+1)
-	for i := range fa {
-		fa[i] = i
-		size[i] = 1
-	}
-	var find func(int) int
-	find = func(x int) int {
-		if fa[x] != x {
-			fa[x] = find(fa[x])
-		}
-		return fa[x]
-	}
-	union := func(from, to int) {
-		from, to = find(from), find(to)
-		if from != to {
-			size[to] += size[from]
-			fa[from] = to
-		}
+	for _, hit := range hits {
+		grid[hit[0]][hit[1]]--
 	}
 
-	status := make([][]int, h)
-	for i, row := range grid {
-		status[i] = append([]int(nil), row...)
-	}
-	// 遍历 hits 得到最终状态
-	for _, p := range hits {
-		status[p[0]][p[1]] = 0
-	}
-
-	// 根据最终状态建立并查集
-	root := h * w
-	for i, row := range status {
-		for j, v := range row {
-			if v == 0 {
-				continue
-			}
-			if i == 0 {
-				union(i*w+j, root)
-			}
-			if i > 0 && status[i-1][j] == 1 {
-				union(i*w+j, (i-1)*w+j)
-			}
-			if j > 0 && status[i][j-1] == 1 {
-				union(i*w+j, i*w+j-1)
-			}
+	remain := make(map[int]bool)
+	for i := 0; i < len(grid[0]); i++ {
+		if 1 == grid[0][i] {
+			hitBricksFindRemain(grid, 0, i, remain)
 		}
 	}
-
-	type pair struct{ x, y int }
-	directions := []pair{{-1, 0}, {1, 0}, {0, -1}, {0, 1}} // 上下左右
 
 	ans := make([]int, len(hits))
 	for i := len(hits) - 1; i >= 0; i-- {
-		p := hits[i]
-		r, c := p[0], p[1]
-		if grid[r][c] == 0 {
+		grid[hits[i][0]][hits[i][1]]++
+		if 1 != grid[hits[i][0]][hits[i][1]] {
 			continue
 		}
-
-		preSize := size[find(root)]
-		if r == 0 {
-			union(c, root)
+		c := len(remain)
+		if hits[i][0] == 0 ||
+			(hits[i][0] > 0 && hitBricksContains(remain, (hits[i][0]-1)*len(grid[0])+hits[i][1])) ||
+			(hits[i][0] < len(grid)-1 && hitBricksContains(remain, (hits[i][0]+1)*len(grid[0])+hits[i][1])) ||
+			(hits[i][1] > 0 && hitBricksContains(remain, hits[i][0]*len(grid[0])+hits[i][1]-1)) ||
+			(hits[i][1] < len(grid[0])-1 && hitBricksContains(remain, hits[i][0]*len(grid[0])+hits[i][1]+1)) {
+			hitBricksFindRemain(grid, hits[i][0], hits[i][1], remain)
+			ans[i] = len(remain) - c - 1
 		}
-		for _, d := range directions {
-			if newR, newC := r+d.x, c+d.y; 0 <= newR && newR < h && 0 <= newC && newC < w && status[newR][newC] == 1 {
-				union(r*w+c, newR*w+newC)
-			}
-		}
-		curSize := size[find(root)]
-		if cnt := curSize - preSize - 1; cnt > 0 {
-			ans[i] = cnt
-		}
-		status[r][c] = 1
 	}
 	return ans
+}
+
+func hitBricksContains(table map[int]bool, k int) bool {
+	_, ok := table[k]
+	return ok
+}
+
+func hitBricksFindRemain(grid [][]int, row, col int, remain map[int]bool) {
+	if 1 != grid[row][col] || hitBricksContains(remain, row*len(grid[0])+col) {
+		return
+	}
+	remain[row*len(grid[0])+col] = true
+	if row > 0 {
+		hitBricksFindRemain(grid, row-1, col, remain)
+	}
+	if row < len(grid)-1 {
+		hitBricksFindRemain(grid, row+1, col, remain)
+	}
+	if col > 0 {
+		hitBricksFindRemain(grid, row, col-1, remain)
+	}
+	if col < len(grid[0])-1 {
+		hitBricksFindRemain(grid, row, col+1, remain)
+	}
 }
