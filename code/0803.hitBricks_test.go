@@ -24,6 +24,14 @@ func Test_hitBricks(t *testing.T) {
 			},
 			want: strToIntArray("[2]"),
 		},
+		{
+			name: "",
+			args: args{
+				grid: strToIntArrArray("[[1,0,0,0],[1,1,0,0]]"),
+				hits: strToIntArrArray("[[1,1],[1,0]]"),
+			},
+			want: strToIntArray("[0,0]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
