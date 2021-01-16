@@ -61,7 +61,6 @@ hits[i].length == 2
 0 <= xi <= m - 1
 0 <= yi <= n - 1
 所有 (xi, yi) 互不相同
-通过次数7,966提交次数16,861
 */
 func hitBricks(grid [][]int, hits [][]int) []int {
 	h, w := len(grid), len(grid[0])
