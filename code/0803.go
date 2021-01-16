@@ -63,3 +63,6 @@ hits[i].length == 2
 所有 (xi, yi) 互不相同
 通过次数7,966提交次数16,861
 */
+func hitBricks(grid [][]int, hits [][]int) []int {
+	return nil
+}
