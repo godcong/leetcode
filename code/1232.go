@@ -29,3 +29,6 @@ coordinates[i].length == 2
 -10^4 <= coordinates[i][0], coordinates[i][1] <= 10^4
 coordinates 中不含重复的点
 */
+func checkStraightLine(coordinates [][]int) bool {
+	return false
+}
