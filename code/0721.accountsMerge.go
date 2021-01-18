@@ -32,51 +32,58 @@ accounts[i]的长度将在[1，10]的范围内。
 accounts[i][j]的长度将在[1，30]的范围内。
 */
 func accountsMerge(accounts [][]string) [][]string {
-	var ans [][]string
-	emailToIndex := map[string]int{}
-	emailToName := map[string]string{}
-	for _, account := range accounts {
-		name := account[0]
-		for _, email := range account[1:] {
-			if _, has := emailToIndex[email]; !has {
-				emailToIndex[email] = len(emailToIndex)
-				emailToName[email] = name
+	email2AccountID := make(map[string]int)
+	parent := make([]int, 1001)
+	ans := make(map[int][]string)
+	for i := 0; i < len(parent); i++ {
+		parent[i] = -1
+	}
+
+	for i := 0; i < len(accounts); i++ {
+
+		for j := 1; j < len(accounts[i]); j++ {
+
+			if countID, ok := email2AccountID[accounts[i][j]]; ok {
+
+				xPos := countID
+
+				yPos := i
+
+				accountsMergeUnion(parent, yPos, xPos)
+			} else {
+
+				email2AccountID[accounts[i][j]] = i
 			}
 		}
 	}
 
-	parent := make([]int, len(emailToIndex))
-	for i := range parent {
-		parent[i] = i
-	}
-	var find func(int) int
-	find = func(x int) int {
-		if parent[x] != x {
-			parent[x] = find(parent[x])
-		}
-		return parent[x]
-	}
-	union := func(from, to int) {
-		parent[find(from)] = find(to)
+	for email, countID := range email2AccountID {
+		root := accountsMergeFind(parent, countID)
+		ans[root] = append(ans[root], email)
 	}
 
-	for _, account := range accounts {
-		firstIndex := emailToIndex[account[1]]
-		for _, email := range account[2:] {
-			union(emailToIndex[email], firstIndex)
-		}
-	}
+	var res [][]string
+	for countID, emails := range ans {
 
-	indexToEmails := map[int][]string{}
-	for email, index := range emailToIndex {
-		index = find(index)
-		indexToEmails[index] = append(indexToEmails[index], email)
+		sort.Slice(emails, func(i, j int) bool {
+			return emails[i] < emails[j]
+		})
+		res = append(res, append([]string{accounts[countID][0]}, emails...))
 	}
+	return res
+}
 
-	for _, emails := range indexToEmails {
-		sort.Strings(emails)
-		account := append([]string{emailToName[emails[0]]}, emails...)
-		ans = append(ans, account)
+func accountsMergeFind(parent []int, value int) int {
+	for parent[value] != -1 {
+		value = parent[value]
 	}
-	return ans
+	return value
+}
+
+func accountsMergeUnion(parent []int, x, y int) {
+	xRoot := accountsMergeFind(parent, x)
+	yRoot := accountsMergeFind(parent, y)
+	if xRoot != yRoot {
+		parent[xRoot] = yRoot
+	}
 }
