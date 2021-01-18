@@ -29,3 +29,6 @@ accounts的长度将在[1，1000]的范围内。
 accounts[i]的长度将在[1，10]的范围内。
 accounts[i][j]的长度将在[1，30]的范围内。
 */
+func accountsMerge(accounts [][]string) [][]string {
+	return nil
+}
