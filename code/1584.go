@@ -44,3 +44,6 @@ package code
 -106 <= xi, yi <= 106
 所有点 (xi, yi) 两两不同。
 */
+func minCostConnectPoints(points [][]int) int {
+	return 0
+}
