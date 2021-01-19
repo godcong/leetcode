@@ -1,5 +1,9 @@
 package code
 
+import (
+	"math"
+)
+
 /*
 1584. 连接所有点的最小费用
 给你一个points 数组，表示 2D 平面上的一些点，其中 points[i] = [xi, yi] 。
@@ -45,5 +49,52 @@ package code
 所有点 (xi, yi) 两两不同。
 */
 func minCostConnectPoints(points [][]int) int {
-	return 0
+	visited := make([]bool, len(points))
+	minDist := make([]int, len(points))
+	for i := 1; i < len(minDist); i++ {
+		minDist[i] = math.MaxInt32
+	}
+
+	res := 0
+
+	for _ = range visited {
+		nextPoint := -1
+		d := math.MaxInt32
+		for j := range visited {
+			if !visited[j] && minDist[j] < d {
+				d = minDist[j]
+				nextPoint = j
+			}
+		}
+
+		res += d
+
+		visited[nextPoint] = true
+
+		for j := range visited {
+			if !visited[j] {
+				minDist[j] = minCostConnectPointsMin(minDist[j], minCostConnectPointsDistance(points[j], points[nextPoint]))
+			}
+		}
+	}
+
+	return res
+}
+
+func minCostConnectPointsDistance(p1, p2 []int) int {
+	return minCostConnectPointsAbs(p1[0]-p2[0]) + minCostConnectPointsAbs(p1[1]-p2[1])
+}
+
+func minCostConnectPointsAbs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+func minCostConnectPointsMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
