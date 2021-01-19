@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:205 ###  
+### 总完成:206 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -221,4 +221,5 @@ All append into def.go
 | 1550 | 存在连续三个奇数的数组 | threeConsecutiveOdds | [GO](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds.go) | TEST |  
 | 1563 | 石子游戏 V | stoneGameV | [GO](https://github.com/godcong/leetcode/blob/master/1563.stoneGameV.go) | TEST |  
 | 1573 | 分割字符串的方案数 | numWays | [GO](https://github.com/godcong/leetcode/blob/master/1573.numWays.go) | TEST |  
+| 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
 <!--END-->
