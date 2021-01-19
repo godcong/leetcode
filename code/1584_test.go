@@ -26,6 +26,13 @@ func Test_minCostConnectPoints(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "",
+			args: args{
+				points: strToIntArrArray("[[-1000000,-1000000],[1000000,1000000]]"),
+			},
+			want: 4000000,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
