@@ -19,6 +19,13 @@ func Test_maximumProduct(t *testing.T) {
 			},
 			want: 6,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[1,2,3,4]"),
+			},
+			want: 24,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
