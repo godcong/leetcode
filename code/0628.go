@@ -1,6 +1,8 @@
 package code
 
-import "fmt"
+import (
+	"math"
+)
 
 /*
 628. 三个数的最大乘积
@@ -20,9 +22,8 @@ import "fmt"
 输入的数组中任意三个数的乘积不会超出32位有符号整数的范围。
 */
 func maximumProduct(nums []int) int {
-	min1, min2 := 1>>31, 1>>31
-	max1, max2, max3 := -1<<31, -1<<31, -1<<31
-	fmt.Println(min1, min2, max1, max2, max3)
+	min1, min2 := math.MaxInt32, math.MaxInt32
+	max1, max2, max3 := math.MinInt32, math.MinInt32, math.MinInt32
 	for _, v := range nums {
 		if v < min1 {
 			min2 = min1
