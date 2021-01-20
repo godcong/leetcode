@@ -45,7 +45,7 @@ func maximumProduct(nums []int) int {
 	}
 	if min1*min2*max1 >= max1*max2*max3 {
 		return min1 * min2 * max1
-	} else {
-		return max1 * max2 * max3
 	}
+	return max1 * max2 * max3
+
 }
