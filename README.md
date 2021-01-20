@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:206 ###  
+### 总完成:207 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -149,6 +149,7 @@ All append into def.go
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | TEST |  
 | 0617 | 合并二叉树 | mergeTrees | [GO](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees.go) | TEST |  
 | 0621 | 任务调度器 | leastInterval | [GO](https://github.com/godcong/leetcode/blob/master/0621.leastInterval.go) | TEST |  
+| 0628 | 三个数的最大乘积 | maximumProduct | [GO](https://github.com/godcong/leetcode/blob/master/0628.maximumProduct.go) | TEST |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | TEST |  
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | TEST |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | TEST |  
