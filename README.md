@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:201 ###  
+### 总完成:203 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -209,6 +209,7 @@ All append into def.go
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | TEST |  
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | TEST |  
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | TEST |  
+| 1489 | 找到最小生成树里的关键边和伪关键边 | findCriticalAndPseudoCriticalEdges | [GO](https://github.com/godcong/leetcode/blob/master/1489.findCriticalAndPseudoCriticalEdges.go) | TEST |  
 | 1496 | 判断路径是否相交 | isPathCrossing | [GO](https://github.com/godcong/leetcode/blob/master/1496.isPathCrossing.go) | TEST |  
 | 1502 | 判断能否形成等差数列 | canMakeArithmeticProgression | [GO](https://github.com/godcong/leetcode/blob/master/1502.canMakeArithmeticProgression.go) | TEST |  
 | 1507 | 转变日期格式 | reformatDate | [GO](https://github.com/godcong/leetcode/blob/master/1507.reformatDate.go) | TEST |  
