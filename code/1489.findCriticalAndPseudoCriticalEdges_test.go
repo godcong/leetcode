@@ -24,6 +24,14 @@ func Test_findCriticalAndPseudoCriticalEdges(t *testing.T) {
 			},
 			want: strToIntArrArray("[[0,1],[2,3,4,5]]"),
 		},
+		{
+			name: "",
+			args: args{
+				n:     4,
+				edges: strToIntArrArray("[[0,1,1],[1,2,1],[2,3,1],[0,3,1]]"),
+			},
+			want: strToIntArrArray("[[],[0,1,2,3]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
