@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:203 ###  
+### 总完成:207 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -149,6 +149,7 @@ All append into def.go
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | TEST |  
 | 0617 | 合并二叉树 | mergeTrees | [GO](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees.go) | TEST |  
 | 0621 | 任务调度器 | leastInterval | [GO](https://github.com/godcong/leetcode/blob/master/0621.leastInterval.go) | TEST |  
+| 0628 | 三个数的最大乘积 | maximumProduct | [GO](https://github.com/godcong/leetcode/blob/master/0628.maximumProduct.go) | TEST |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | TEST |  
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | TEST |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | TEST |  
@@ -163,12 +164,14 @@ All append into def.go
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | TEST |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | TEST |  
 | 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | TEST |  
+| 0721 | 账户合并 | accountsMerge | [GO](https://github.com/godcong/leetcode/blob/master/0721.accountsMerge.go) | TEST |  
 | 0733 | 图像渲染 | floodFill | [GO](https://github.com/godcong/leetcode/blob/master/0733.floodFill.go) | TEST |  
 | 0738 | 单调递增的数字 | monotoneIncreasingDigits | [GO](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits.go) | TEST |  
 | 0746 | 使用最小花费爬楼梯 | minCostClimbingStairs | [GO](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs.go) | TEST |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | TEST |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | TEST |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | TEST |  
+| 0803 | 打砖块 | hitBricks | [GO](https://github.com/godcong/leetcode/blob/master/0803.hitBricks.go) | TEST |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | TEST |  
 |  | 较大分组的位置 | 0830 | [GO](https://github.com/godcong/leetcode/blob/master/0830.go) | TEST |  
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | TEST |  
@@ -201,6 +204,7 @@ All append into def.go
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
+| 1232 | 缀点成线 | checkStraightLine | [GO](https://github.com/godcong/leetcode/blob/master/1232.checkStraightLine.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
 | 1356 | 根据数字二进制下 1 的数目排序 | sortByBits | [GO](https://github.com/godcong/leetcode/blob/master/1356.sortByBits.go) | TEST |  
@@ -209,7 +213,6 @@ All append into def.go
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | TEST |  
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | TEST |  
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | TEST |  
-| 1489 | 找到最小生成树里的关键边和伪关键边 | findCriticalAndPseudoCriticalEdges | [GO](https://github.com/godcong/leetcode/blob/master/1489.findCriticalAndPseudoCriticalEdges.go) | TEST |  
 | 1496 | 判断路径是否相交 | isPathCrossing | [GO](https://github.com/godcong/leetcode/blob/master/1496.isPathCrossing.go) | TEST |  
 | 1502 | 判断能否形成等差数列 | canMakeArithmeticProgression | [GO](https://github.com/godcong/leetcode/blob/master/1502.canMakeArithmeticProgression.go) | TEST |  
 | 1507 | 转变日期格式 | reformatDate | [GO](https://github.com/godcong/leetcode/blob/master/1507.reformatDate.go) | TEST |  
@@ -219,4 +222,5 @@ All append into def.go
 | 1550 | 存在连续三个奇数的数组 | threeConsecutiveOdds | [GO](https://github.com/godcong/leetcode/blob/master/1550.threeConsecutiveOdds.go) | TEST |  
 | 1563 | 石子游戏 V | stoneGameV | [GO](https://github.com/godcong/leetcode/blob/master/1563.stoneGameV.go) | TEST |  
 | 1573 | 分割字符串的方案数 | numWays | [GO](https://github.com/godcong/leetcode/blob/master/1573.numWays.go) | TEST |  
+| 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
 <!--END-->
