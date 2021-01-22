@@ -39,16 +39,13 @@ package code
 */
 func addToArrayForm(A []int, K int) []int {
 	for i := len(A) - 1; i >= 0; i-- {
-		A[i] += K % 10
-		K /= 10
+		A[i], K = A[i]+K%10, K/10
 		if A[i] > 9 {
-			K++
-			A[i] -= 10
+			A[i], K = A[i]-10, K+1
 		}
 	}
-	for K > 0 {
+	for ; K > 0; K /= 10 {
 		A = append([]int{K % 10}, A...)
-		K /= 10
 	}
 	return A
 }
