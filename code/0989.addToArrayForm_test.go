@@ -24,6 +24,14 @@ func Test_addToArrayForm(t *testing.T) {
 			},
 			wantAns: strToIntArray("[1,2,3,4]"),
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[2,7,4]"),
+				K: 181,
+			},
+			wantAns: strToIntArray("[4,5,5]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
