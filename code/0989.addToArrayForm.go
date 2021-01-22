@@ -37,25 +37,18 @@ package code
 0 <= K <= 10000
 如果 A.length > 1，那么 A[0] != 0
 */
-func addToArrayForm(A []int, K int) (ans []int) {
+func addToArrayForm(A []int, K int) []int {
 	for i := len(A) - 1; i >= 0; i-- {
-		sum := A[i] + K%10
+		A[i] += K % 10
 		K /= 10
-		if sum >= 10 {
+		if A[i] > 9 {
 			K++
-			sum -= 10
+			A[i] -= 10
 		}
-		ans = append(ans, sum)
 	}
-	for ; K > 0; K /= 10 {
-		ans = append(ans, K%10)
+	for K > 0 {
+		A = append([]int{K % 10}, A...)
+		K /= 10
 	}
-	addToArrayFormReverse(ans)
-	return
-}
-
-func addToArrayFormReverse(A []int) {
-	for i, n := 0, len(A); i < n/2; i++ {
-		A[i], A[n-1-i] = A[n-1-i], A[i]
-	}
+	return A
 }
