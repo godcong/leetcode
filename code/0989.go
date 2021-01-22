@@ -37,3 +37,6 @@ package code
 0 <= K <= 10000
 如果 A.length > 1，那么 A[0] != 0
 */
+func addToArrayForm(A []int, K int) []int {
+
+}
