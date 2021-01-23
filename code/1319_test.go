@@ -29,6 +29,14 @@ func Test_makeConnected(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				n:           6,
+				connections: strToIntArrArray("[[0,1],[0,2],[0,3],[1,2]]"),
+			},
+			want: -1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
