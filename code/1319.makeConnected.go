@@ -45,28 +45,30 @@ connections[i][0] != connections[i][1]
 两台计算机不会通过多条线缆连接。
 */
 func makeConnected(n int, connections [][]int) int {
-	a := len(connections)
-	if n-1 > a {
-		return -1
-	}
-	parent := make([]int, a+1)
-	for i := range parent {
-		parent[i] = i
-	}
-	var find func(int) int
-	find = func(x int) int {
+	var find func(x int, parent []int) int
+	find = func(x int, parent []int) int {
 		if parent[x] != x {
-			parent[x] = find(parent[x])
+			parent[x] = find(parent[x], parent)
 		}
 		return parent[x]
 	}
-	for _, e := range connections {
-		x, y := find(e[0]), find(e[1])
-		if x != y {
-			parent[x] = y
-			n--
+	if n-1 > len(connections) {
+		return -1
+	}
+	parent := make([]int, n)
+	for i := 0; i < len(parent); i++ {
+		parent[i] = i
+	}
+	result := n - 1
+
+	for _, cs := range connections {
+		root1 := find(cs[0], parent)
+		root2 := find(cs[1], parent)
+
+		if root1 != root2 {
+			parent[root2] = root1
+			result--
 		}
 	}
-
-	return n - 1
+	return result
 }
