@@ -44,3 +44,29 @@ connections[i][0] != connections[i][1]
 没有重复的连接。
 两台计算机不会通过多条线缆连接。
 */
+func makeConnected(n int, connections [][]int) int {
+	a := len(connections)
+	if n-1 > a {
+		return -1
+	}
+	parent := make([]int, a+1)
+	for i := range parent {
+		parent[i] = i
+	}
+	var find func(int) int
+	find = func(x int) int {
+		if parent[x] != x {
+			parent[x] = find(parent[x])
+		}
+		return parent[x]
+	}
+	for _, e := range connections {
+		x, y := find(e[0]), find(e[1])
+		if x != y {
+			parent[x] = y
+			n--
+		}
+	}
+
+	return n - 1
+}
