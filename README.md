@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:209 ###  
+### 总完成:210 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -207,6 +207,7 @@ All append into def.go
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
 | 1232 | 缀点成线 | checkStraightLine | [GO](https://github.com/godcong/leetcode/blob/master/1232.checkStraightLine.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
+| 1319 | 连通网络的操作次数 | makeConnected | [GO](https://github.com/godcong/leetcode/blob/master/1319.makeConnected.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
 | 1356 | 根据数字二进制下 1 的数目排序 | sortByBits | [GO](https://github.com/godcong/leetcode/blob/master/1356.sortByBits.go) | TEST |  
 | 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | TEST |  
