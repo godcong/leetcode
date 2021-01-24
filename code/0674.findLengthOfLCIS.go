@@ -27,5 +27,16 @@ package code
 -109 <= nums[i] <= 109
 */
 func findLengthOfLCIS(nums []int) int {
-	return 0
+	var ans int
+	start := 0
+	for i, v := range nums {
+		if i > 0 && v <= nums[i-1] {
+			start = i
+		}
+
+		if ans < i-start+1 {
+			ans = i - start + 1
+		}
+	}
+	return ans
 }
