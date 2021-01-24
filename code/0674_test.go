@@ -19,6 +19,13 @@ func Test_findLengthOfLCIS(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[2,2,2,2,2]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
