@@ -26,3 +26,6 @@ package code
 0 <= nums.length <= 104
 -109 <= nums[i] <= 109
 */
+func findLengthOfLCIS(nums []int) int {
+	return 0
+}
