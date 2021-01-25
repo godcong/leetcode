@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:209 ###  
+### 总完成:210 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -188,6 +188,7 @@ All append into def.go
 | 0941 | 有效的山脉数组 | validMountainArray | [GO](https://github.com/godcong/leetcode/blob/master/0941.validMountainArray.go) | TEST |  
 | 0947 | 移除最多的同行或同列石头 | removeStones | [GO](https://github.com/godcong/leetcode/blob/master/0947.removeStones.go) | TEST |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | TEST |  
+| 0959 | 由斜杠划分区域 | regionsBySlashes | [GO](https://github.com/godcong/leetcode/blob/master/0959.regionsBySlashes.go) | TEST |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | TEST |  
 | 0973 | 最接近原点的 K 个点 | kClosest | [GO](https://github.com/godcong/leetcode/blob/master/0973.kClosest.go) | TEST |  
 | 0976 | 三角形的最大周长 | largestPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter.go) | TEST |  
