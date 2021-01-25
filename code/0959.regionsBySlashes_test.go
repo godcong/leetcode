@@ -15,7 +15,10 @@ func Test_regionsBySlashes(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				grid: strToStringArray("[\n  \" /\",\n  \"/ \"\n]"),
+				grid: []string{
+					" /",
+					"/ ",
+				},
 			},
 			want: 2,
 		},
