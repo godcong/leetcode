@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:210 ###  
+### 总完成:211 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -157,6 +157,7 @@ All append into def.go
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | TEST |  
 | 0659 | 分割数组为连续子序列 | isPossible | [GO](https://github.com/godcong/leetcode/blob/master/0659.isPossible.go) | TEST |  
 | 0665 | 非递减数列 | checkPossibility | [GO](https://github.com/godcong/leetcode/blob/master/0665.checkPossibility.go) | TEST |  
+| 0674 | 最长连续递增序列 | findLengthOfLCIS | [GO](https://github.com/godcong/leetcode/blob/master/0674.findLengthOfLCIS.go) | TEST |  
 | 0679 | 24 点游戏 | judgePoint24 | [GO](https://github.com/godcong/leetcode/blob/master/0679.judgePoint24.go) | TEST |  
 | 0684 | 冗余连接 | findRedundantConnection | [GO](https://github.com/godcong/leetcode/blob/master/0684.findRedundantConnection.go) | TEST |  
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | TEST |  
@@ -188,7 +189,6 @@ All append into def.go
 | 0941 | 有效的山脉数组 | validMountainArray | [GO](https://github.com/godcong/leetcode/blob/master/0941.validMountainArray.go) | TEST |  
 | 0947 | 移除最多的同行或同列石头 | removeStones | [GO](https://github.com/godcong/leetcode/blob/master/0947.removeStones.go) | TEST |  
 | 0949 | 给定数字能组成的最大时间 | largestTimeFromDigits | [GO](https://github.com/godcong/leetcode/blob/master/0949.largestTimeFromDigits.go) | TEST |  
-| 0959 | 由斜杠划分区域 | regionsBySlashes | [GO](https://github.com/godcong/leetcode/blob/master/0959.regionsBySlashes.go) | TEST |  
 | 0968 | 监控二叉树 | minCameraCover | [GO](https://github.com/godcong/leetcode/blob/master/0968.minCameraCover.go) | TEST |  
 | 0973 | 最接近原点的 K 个点 | kClosest | [GO](https://github.com/godcong/leetcode/blob/master/0973.kClosest.go) | TEST |  
 | 0976 | 三角形的最大周长 | largestPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0976.largestPerimeter.go) | TEST |  
@@ -208,6 +208,7 @@ All append into def.go
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
 | 1232 | 缀点成线 | checkStraightLine | [GO](https://github.com/godcong/leetcode/blob/master/1232.checkStraightLine.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
+| 1319 | 连通网络的操作次数 | makeConnected | [GO](https://github.com/godcong/leetcode/blob/master/1319.makeConnected.go) | TEST |  
 | 1351 | 统计有序矩阵中的负数 | countNegatives | [GO](https://github.com/godcong/leetcode/blob/master/1351.countNegatives.go) | TEST |  
 | 1356 | 根据数字二进制下 1 的数目排序 | sortByBits | [GO](https://github.com/godcong/leetcode/blob/master/1356.sortByBits.go) | TEST |  
 | 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | TEST |  
