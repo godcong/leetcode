@@ -30,7 +30,17 @@ func Test_regionsBySlashes(t *testing.T) {
 					"  ",
 				},
 			},
-			want: 0,
+			want: 1,
+		},
+		{
+			name: "",
+			args: args{
+				grid: []string{
+					"\\/",
+					"/\\",
+				},
+			},
+			want: 4,
 		},
 	}
 	for _, tt := range tests {
