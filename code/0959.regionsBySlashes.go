@@ -71,7 +71,7 @@ grid[i][j] 是 '/'、'\'、或 ' '。
 */
 func regionsBySlashes(grid []string) int {
 	n := len(grid)
-	var parent []int = make([]int, 4*n*n)
+	var parent = make([]int, 4*n*n)
 
 	for i := range parent {
 		parent[i] = i
