@@ -69,4 +69,6 @@ package code
 1 <= grid.length == grid[0].length <= 30
 grid[i][j] 是 '/'、'\'、或 ' '。
 */
-
+func regionsBySlashes(grid []string) int {
+	return 0
+}
