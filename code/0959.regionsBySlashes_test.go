@@ -12,6 +12,13 @@ func Test_regionsBySlashes(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				grid: strToStringArray("[\n  \" /\",\n  \"/ \"\n]"),
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
