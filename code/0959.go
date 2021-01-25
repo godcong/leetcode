@@ -76,45 +76,45 @@ func regionsBySlashes(grid []string) int {
 	for i := range parent {
 		parent[i] = i
 	}
-	var find func(int) int
-	find = func(x int) int {
+	var regionsBySlashesFind func(int) int
+	regionsBySlashesFind = func(x int) int {
 		if parent[x] != x {
-			parent[x] = find(parent[x])
+			parent[x] = regionsBySlashesFind(parent[x])
 		}
 		return parent[x]
 	}
-	var union func(int, int)
-	union = func(x, y int) {
-		parent[find(x)] = find(y)
+	var regionsBySlashesUnion func(int, int)
+	regionsBySlashesUnion = func(x, y int) {
+		parent[regionsBySlashesFind(x)] = regionsBySlashesFind(y)
 	}
 	for i, s := range grid {
 		for j, c := range s {
 			num := i*n + j
 			if c != '\\' {
-				union(4*num+0, 4*num+1)
-				union(4*num+2, 4*num+3)
+				regionsBySlashesUnion(4*num+0, 4*num+1)
+				regionsBySlashesUnion(4*num+2, 4*num+3)
 			}
 			if c != '/' {
-				union(4*num+0, 4*num+3)
-				union(4*num+2, 4*num+1)
+				regionsBySlashesUnion(4*num+0, 4*num+3)
+				regionsBySlashesUnion(4*num+2, 4*num+1)
 			}
 			if i > 0 {
-				union(4*num, 4*num-4*n+2)
+				regionsBySlashesUnion(4*num, 4*num-4*n+2)
 			}
 			if i < n-1 {
-				union(4*num+2, 4*num+4*n+0)
+				regionsBySlashesUnion(4*num+2, 4*num+4*n+0)
 			}
 			if j > 0 {
-				union(4*num+1, 4*num-4+3)
+				regionsBySlashesUnion(4*num+1, 4*num-4+3)
 			}
 			if j < n-1 {
-				union(4*num+3, 4*num+4+1)
+				regionsBySlashesUnion(4*num+3, 4*num+4+1)
 			}
 		}
 	}
 	ans := 0
 	for i := range parent {
-		if find(i) == i {
+		if regionsBySlashesFind(i) == i {
 			ans++
 		}
 	}
