@@ -60,7 +60,7 @@ func Test_regionsBySlashes(t *testing.T) {
 					"/ ",
 				},
 			},
-			want: 0,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
