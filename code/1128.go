@@ -23,3 +23,6 @@ package code
 1 <= dominoes.length <= 40000
 1 <= dominoes[i][j] <= 9
 */
+func numEquivDominoPairs(dominoes [][]int) int {
+	return 0
+}
