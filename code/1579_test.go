@@ -21,6 +21,14 @@ func Test_maxNumEdgesToRemove(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				n:     4,
+				edges: strToIntArrArray("[[3,1,2],[3,2,3],[1,1,4],[2,1,4]]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
