@@ -45,3 +45,6 @@ edges[i].length == 3
 1 <= edges[i][1] < edges[i][2] <= n
 所有元组 (typei, ui, vi) 互不相同
 */
+func maxNumEdgesToRemove(n int, edges [][]int) int {
+	return 0
+}
