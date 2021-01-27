@@ -46,5 +46,77 @@ edges[i].length == 3
 所有元组 (typei, ui, vi) 互不相同
 */
 func maxNumEdgesToRemove(n int, edges [][]int) int {
-	return 0
+	au := (&maxNumEdgesToRemoveUnion{}).Init(n + 1)
+	o, c1 := 0, n
+	for _, e := range edges {
+		if e[0] == 3 {
+			if !au.Merge(e[1], e[2]) {
+				o++
+			} else {
+				c1--
+			}
+		}
+	}
+	au1 := au.Copy()
+	c2 := c1
+	for _, e := range edges {
+		if e[0] == 1 {
+			if !au.Merge(e[1], e[2]) {
+				o++
+			} else {
+				c1--
+			}
+		} else if e[0] == 2 {
+			if !au1.Merge(e[1], e[2]) {
+				o++
+			} else {
+				c2--
+			}
+		}
+	}
+	if c1 != 1 || c2 != 1 {
+		return -1
+	}
+	return o
+}
+
+type maxNumEdgesToRemoveUnion struct {
+	arr []int
+}
+
+func (au *maxNumEdgesToRemoveUnion) Init(l int) *maxNumEdgesToRemoveUnion {
+	au.arr = make([]int, l)
+	for i := 0; i < l; i++ {
+		au.arr[i] = i
+	}
+	return au
+}
+
+func (au *maxNumEdgesToRemoveUnion) Copy() *maxNumEdgesToRemoveUnion {
+	arr := make([]int, len(au.arr))
+	copy(arr, au.arr)
+	return &maxNumEdgesToRemoveUnion{arr}
+}
+
+func (au *maxNumEdgesToRemoveUnion) Set(i, v int) {
+	au.arr[i] = v
+}
+
+func (au *maxNumEdgesToRemoveUnion) GetRoot(i int) int {
+	r := au.arr[i]
+	if r == i {
+		return i
+	}
+	r = au.GetRoot(r)
+	au.arr[i] = r
+	return r
+}
+
+func (au *maxNumEdgesToRemoveUnion) Merge(i, j int) bool {
+	r1, r2 := au.GetRoot(i), au.GetRoot(j)
+	if r1 != r2 {
+		au.Set(r1, r2)
+		return true
+	}
+	return false
 }
