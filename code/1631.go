@@ -41,5 +41,60 @@ columns == heights[i].length
 1 <= heights[i][j] <= 106
 */
 func minimumEffortPath(heights [][]int) int {
-	return 0
+	row := len(heights)
+	col := len(heights[0])
+	left, right := 0, 1000000
+
+	isCheck := make([][]int, row)
+	for i := 0; i < row; i++ {
+		isCheck[i] = make([]int, col)
+	}
+
+	idx := 1
+	for left < right {
+		mid := (right-left)/2 + left
+		if minimumEffortPathDFS(0, 0, heights, mid, isCheck, idx) {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+		idx++
+	}
+	return left
+}
+
+var minimumEffortPathX = []int{0, 1, 0, -1}
+var minimumEffortPathY = []int{1, 0, -1, 0}
+
+func minimumEffortPathDFS(si, sj int, heights [][]int, mid int, checked [][]int, idx int) bool {
+	row := len(heights)
+	col := len(heights[0])
+	if si == row-1 && sj == col-1 {
+		return true
+	}
+
+	checked[si][sj] = idx
+	for i := 0; i < 4; i++ {
+		newX := si + minimumEffortPathX[i]
+		newY := sj + minimumEffortPathY[i]
+		if newX < 0 || newX >= row || newY < 0 || newY >= col || checked[newX][newY] == idx {
+			continue
+		}
+		if minimumEffortPathABS(heights[newX][newY]-heights[si][sj]) > mid {
+			continue
+		}
+
+		if minimumEffortPathDFS(newX, newY, heights, mid, checked, idx) {
+			return true
+		}
+
+	}
+	return false
+}
+
+func minimumEffortPathABS(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
