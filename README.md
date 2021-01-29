@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:215 ###  
+### 总完成:216 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -231,4 +231,5 @@ All append into def.go
 | 1573 | 分割字符串的方案数 | numWays | [GO](https://github.com/godcong/leetcode/blob/master/1573.numWays.go) | TEST |  
 | 1579 | 保证图可完全遍历 | maxNumEdgesToRemove | [GO](https://github.com/godcong/leetcode/blob/master/1579.maxNumEdgesToRemove.go) | TEST |  
 | 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
+|  | 最小体力消耗路径 | 1631 | [GO](https://github.com/godcong/leetcode/blob/master/1631.go) | TEST |  
 <!--END-->
