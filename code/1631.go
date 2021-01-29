@@ -40,3 +40,6 @@ columns == heights[i].length
 1 <= rows, columns <= 100
 1 <= heights[i][j] <= 106
 */
+func minimumEffortPath(heights [][]int) int {
+	return 0
+}
