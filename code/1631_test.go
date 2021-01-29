@@ -19,6 +19,13 @@ func Test_minimumEffortPath(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				heights: strToIntArrArray("[[1,2,3],[3,8,4],[5,3,5]]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
