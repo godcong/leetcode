@@ -39,3 +39,6 @@ package code
 2 <= N <= 50.
 grid[i][j] 是 [0, ..., N*N - 1] 的排列。
 */
+func swimInWater(grid [][]int) int {
+	return 0
+}
