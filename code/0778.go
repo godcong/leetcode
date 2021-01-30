@@ -1,5 +1,7 @@
 package code
 
+import "sort"
+
 /*
 778. 水位上升的泳池中游泳
 在一个 N x N 的坐标方格 grid 中，每一个方格的值 grid[i][j] 表示在位置 (i,j) 的平台高度。
@@ -40,5 +42,41 @@ package code
 grid[i][j] 是 [0, ..., N*N - 1] 的排列。
 */
 func swimInWater(grid [][]int) int {
-	return 0
+	return sort.Search(swimInWaterMax(grid)+1, func(i int) bool {
+		if i < grid[0][0] {
+			return false
+		}
+		return swimInWaterMaxCanReach(i, grid)
+	})
+}
+
+func swimInWaterMax(grid [][]int) int {
+	result := 0
+	for r := 0; r < len(grid); r++ {
+		for c := 0; c < len(grid); c++ {
+			if grid[r][c] > result {
+				result = grid[r][c]
+			}
+		}
+	}
+	return result
+}
+
+func swimInWaterMaxCanReach(t int, grid [][]int) bool {
+	const maxN = 50
+	n := len(grid)
+	visited := [maxN][maxN]bool{}
+	var dfs func(r, c int) bool
+	dfs = func(r, c int) bool {
+		if r < 0 || c < 0 || r >= n || c >= n ||
+			visited[r][c] || grid[r][c] > t {
+			return false
+		}
+		if r == n-1 && c == n-1 {
+			return true
+		}
+		visited[r][c] = true
+		return dfs(r+1, c) || dfs(r-1, c) || dfs(r, c+1) || dfs(r, c-1)
+	}
+	return dfs(0, 0)
 }
