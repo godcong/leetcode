@@ -19,6 +19,13 @@ func Test_numSimilarGroups(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				strs: strToStringArray("[\"omv\",\"ovm\"]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
