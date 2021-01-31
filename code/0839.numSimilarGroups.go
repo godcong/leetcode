@@ -36,75 +36,66 @@ strs 中的所有单词都具有相同的长度，且是彼此的字母异位词
       字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
 */
 func numSimilarGroups(strs []string) int {
-	m := map[string]bool{}
-	for _, s := range strs {
-		m[s] = true
-	}
-	i, ss := 0, make([]string, len(m))
-	for s, _ := range m {
-		ss[i], i = s, i+1
-	}
-
-	l := len(ss)
-	if l <= 1 {
-		return 1
-	}
-	au := (&numSimilarGroupsUnion{}).Init(l)
-	for i := 0; i < l; i++ {
-		for j := i + 1; j < l; j++ {
-			r1, r2 := au.GetRoot(i), au.GetRoot(j)
-			if r1 == r2 {
-				continue
-			}
-			sa, sb, c := ss[i], ss[j], 0
-			for k := 0; k < len(sa); k++ {
-				if sa[k] != sb[k] {
-					c++
-					if c > 2 {
-						break
-					}
-				}
-			}
-			if c <= 2 {
-				au.Set(r1, r2)
+	n := len(strs)
+	uf := numSimilarGroupsInitUnion(n)
+	for i, s := range strs {
+		for j := i + 1; j < n; j++ {
+			if !uf.inSameSet(i, j) && isSimilar(s, strs[j]) {
+				uf.union(i, j)
 			}
 		}
 	}
-	o := 0
-	for i := 0; i < l; i++ {
-		if au.Get(i) == -1 {
-			o++
-		}
-	}
-	return o
+	return uf.setCount
 }
 
 type numSimilarGroupsUnion struct {
-	arr []int
+	parent, size []int
+	setCount     int
 }
 
-func (au *numSimilarGroupsUnion) Init(l int) *numSimilarGroupsUnion {
-	au.arr = make([]int, l)
-	for i := 0; i < l; i++ {
-		au.arr[i] = -1
+func numSimilarGroupsInitUnion(n int) *numSimilarGroupsUnion {
+	parent := make([]int, n)
+	size := make([]int, n)
+	for i := range parent {
+		parent[i] = i
+		size[i] = 1
 	}
-	return au
+	return &numSimilarGroupsUnion{parent, size, n}
 }
 
-func (au *numSimilarGroupsUnion) Get(i int) int {
-	return au.arr[i]
+func (uf *numSimilarGroupsUnion) find(x int) int {
+	if uf.parent[x] != x {
+		uf.parent[x] = uf.find(uf.parent[x])
+	}
+	return uf.parent[x]
 }
 
-func (au *numSimilarGroupsUnion) Set(i, v int) {
-	au.arr[i] = v
+func (uf *numSimilarGroupsUnion) union(x, y int) {
+	fx, fy := uf.find(x), uf.find(y)
+	if fx == fy {
+		return
+	}
+	if uf.size[fx] < uf.size[fy] {
+		fx, fy = fy, fx
+	}
+	uf.size[fx] += uf.size[fy]
+	uf.parent[fy] = fx
+	uf.setCount--
 }
 
-func (au *numSimilarGroupsUnion) GetRoot(i int) int {
-	for {
-		r := au.arr[i]
-		if r == i || r == -1 {
-			return i
+func (uf *numSimilarGroupsUnion) inSameSet(x, y int) bool {
+	return uf.find(x) == uf.find(y)
+}
+
+func isSimilar(s, t string) bool {
+	diff := 0
+	for i := range s {
+		if s[i] != t[i] {
+			diff++
+			if diff > 2 {
+				return false
+			}
 		}
-		i = r
 	}
+	return true
 }
