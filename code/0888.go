@@ -39,3 +39,6 @@ package code
 保证爱丽丝与鲍勃的糖果总量不同。
 答案肯定存在。
 */
+func fairCandySwap(A []int, B []int) []int {
+	return nil
+}
