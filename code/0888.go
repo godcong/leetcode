@@ -42,20 +42,20 @@ package code
 func fairCandySwap(A []int, B []int) []int {
 	var cntA int
 	var cntB int
-	mB := make(map[int]struct{}, len(B))
+	mB := make(map[int]bool, len(B))
 
 	for _, v := range A {
 		cntA += v
 	}
 	for _, v := range B {
 		cntB += v
-		mB[v] = struct{}{}
+		mB[v] = true
 	}
 
 	changeA := (cntB - cntA) / 2
 
 	for _, v := range A {
-		if _, ok := mB[v+changeA]; ok {
+		if mB[v+changeA] {
 			return []int{v, v + changeA}
 		}
 	}
