@@ -40,5 +40,24 @@ package code
 答案肯定存在。
 */
 func fairCandySwap(A []int, B []int) []int {
+	var cntA int
+	var cntB int
+	mB := make(map[int]struct{}, len(B))
+
+	for _, v := range A {
+		cntA += v
+	}
+	for _, v := range B {
+		cntB += v
+		mB[v] = struct{}{}
+	}
+
+	changeA := (cntB - cntA) / 2
+
+	for _, v := range A {
+		if _, ok := mB[v+changeA]; ok {
+			return []int{v, v + changeA}
+		}
+	}
 	return nil
 }
