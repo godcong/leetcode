@@ -24,6 +24,14 @@ func Test_fairCandySwap(t *testing.T) {
 			},
 			want: strToIntArray("[1,2]"),
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[1,2]"),
+				B: strToIntArray("[2,3]"),
+			},
+			want: strToIntArray("[1,2]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
