@@ -22,5 +22,17 @@ package code
 子串 "BBBB" 有最长重复字母, 答案为 4。
 */
 func characterReplacement(s string, k int) int {
-	return 0
+	cnt := [26]int{}
+	maxCnt, left := 0, 0
+	for right, ch := range s {
+		cnt[ch-'A']++
+		if maxCnt < cnt[ch-'A'] {
+			maxCnt = cnt[ch-'A']
+		}
+		if right-left+1-maxCnt > k {
+			cnt[s[left]-'A']--
+			left++
+		}
+	}
+	return len(s) - left
 }
