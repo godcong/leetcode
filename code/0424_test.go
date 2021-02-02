@@ -21,6 +21,14 @@ func Test_characterReplacement(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "",
+			args: args{
+				s: "AABABBA",
+				k: 1,
+			},
+			want: 4,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
