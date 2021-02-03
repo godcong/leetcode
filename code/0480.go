@@ -1,5 +1,7 @@
 package code
 
+import "sort"
+
 /*
 480. 滑动窗口中位数
 中位数是有序序列最中间的那个数。如果序列的长度是偶数，则没有最中间的数；此时中位数是最中间的两个数的平均数。
@@ -34,5 +36,57 @@ package code
 与真实值误差在 10 ^ -5 以内的答案将被视作正确答案。
 */
 func medianSlidingWindow(nums []int, k int) []float64 {
-	return nil
+	kn := make([]int, k)
+	copy(kn, nums)
+	sort.Ints(kn)
+	var res []float64
+	res = append(res, medianSlidingWindowMid(kn))
+
+	for i := k; i < len(nums); i++ {
+		idx := medianSlidingWindowSearch(kn, nums[i-k])
+		kn = append(kn[:idx], kn[idx+1:]...)
+		kn = append(kn, nums[i])
+		medianSlidingWindowSort(kn)
+		res = append(res, medianSlidingWindowMid(kn))
+	}
+	return res
+}
+
+func medianSlidingWindowSearch(kn []int, v int) int {
+	l := 0
+	r := len(kn)-1
+	for l <= r {
+		m := (l+r)/2
+		if kn[m] == v {
+			return m
+		} else if kn[m] < v {
+			l = m+1
+		} else {
+			r = m-1
+		}
+	}
+	return -1
+}
+
+func medianSlidingWindowSort(kn []int) {
+	size := len(kn)
+	v := kn[size-1]
+	for i := size-2; i >= 0; i-- {
+		if kn[i] > v {
+			kn[i+1] = kn[i]
+		} else {
+			kn[i+1] = v
+			return
+		}
+	}
+	kn[0] = v
+}
+
+func medianSlidingWindowMid(kn []int) float64 {
+	size := len(kn)
+	if size & 1 == 1 {
+		return float64(kn[size/2])
+	} else {
+		return float64(kn[size/2-1]+kn[size/2]) * 0.5
+	}
 }
