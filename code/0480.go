@@ -33,3 +33,6 @@ package code
 你可以假设 k 始终有效，即：k 始终小于输入的非空数组的元素个数。
 与真实值误差在 10 ^ -5 以内的答案将被视作正确答案。
 */
+func medianSlidingWindow(nums []int, k int) []float64 {
+	return nil
+}
