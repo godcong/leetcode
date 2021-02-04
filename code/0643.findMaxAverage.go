@@ -19,17 +19,20 @@ package code
 所给数据范围 [-10,000，10,000]。
 */
 func findMaxAverage(nums []int, k int) float64 {
-	sum := 0
-	for _, v := range nums[:k] {
-		sum += v
+	tempSum := 0
+	var MaxAvg float64 = -10000
+	for j := 0; j < k; j++ {
+		tempSum += nums[j]
 	}
-	maxSum := sum
-	for i := k; i < len(nums); i++ {
-		sum = sum - nums[i-k] + nums[i]
-		if maxSum < sum {
-			maxSum = sum
-		}
+	if v := float64(tempSum) / float64(k); v > MaxAvg {
+		MaxAvg = v
+	}
 
+	for i := 1; i <= len(nums)-k; i++ {
+		tempSum = tempSum - nums[i-1] + nums[i+k-1]
+		if v := float64(tempSum) / float64(k); v > MaxAvg {
+			MaxAvg = v
+		}
 	}
-	return float64(maxSum) / float64(k)
+	return MaxAvg
 }
