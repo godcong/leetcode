@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:221 ###  
+### 总完成:222 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -154,6 +154,7 @@ All append into def.go
 | 0628 | 三个数的最大乘积 | maximumProduct | [GO](https://github.com/godcong/leetcode/blob/master/0628.maximumProduct.go) | TEST |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | TEST |  
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | TEST |  
+| 0643 | 子数组最大平均数 I | findMaxAverage | [GO](https://github.com/godcong/leetcode/blob/master/0643.findMaxAverage.go) | TEST |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | TEST |  
 | 0649 | Dota2 参议院 | predictPartyVictory | [GO](https://github.com/godcong/leetcode/blob/master/0649.predictPartyVictory.go) | TEST |  
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | TEST |  
