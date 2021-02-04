@@ -18,3 +18,6 @@ package code
 1 <= k <= n <= 30,000。
 所给数据范围 [-10,000，10,000]。
 */
+func findMaxAverage(nums []int, k int) float64 {
+	return 0
+}
