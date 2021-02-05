@@ -37,3 +37,6 @@ package code
 0 <= maxCost <= 10^6
 s 和 t 都只含小写英文字母。
 */
+func equalSubstring(s string, t string, maxCost int) int {
+	return 0
+}
