@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:222 ###  
+### 总完成:223 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -215,6 +215,7 @@ All append into def.go
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
+| 1208 | 尽可能使字符串相等 | equalSubstring | [GO](https://github.com/godcong/leetcode/blob/master/1208.equalSubstring.go) | TEST |  
 | 1232 | 缀点成线 | checkStraightLine | [GO](https://github.com/godcong/leetcode/blob/master/1232.checkStraightLine.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1319 | 连通网络的操作次数 | makeConnected | [GO](https://github.com/godcong/leetcode/blob/master/1319.makeConnected.go) | TEST |  
