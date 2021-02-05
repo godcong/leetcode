@@ -30,7 +30,16 @@ func Test_equalSubstring(t *testing.T) {
 				t:       "cdef",
 				maxCost: 3,
 			},
-			want: 0,
+			want: 1,
+		},
+		{
+			name: "",
+			args: args{
+				s:       "abcd",
+				t:       "acde",
+				maxCost: 0,
+			},
+			want: 1,
 		},
 	}
 	for _, tt := range tests {
