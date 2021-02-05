@@ -1,5 +1,7 @@
 package code
 
+import "sort"
+
 /*
 1208. 尽可能使字符串相等
 给你两个长度相同的字符串，s 和 t。
@@ -38,5 +40,22 @@ package code
 s 和 t 都只含小写英文字母。
 */
 func equalSubstring(s string, t string, maxCost int) int {
-	return 0
+	n := len(s)
+	accDiff := make([]int, n+1)
+	var max int
+	for i, ch := range s {
+		if v := int(ch) - int(t[i]); v < 0 {
+			accDiff[i+1] = accDiff[i] - v
+		} else {
+			accDiff[i+1] = accDiff[i] + v
+		}
+	}
+	for i := 1; i <= n; i++ {
+		start := sort.SearchInts(accDiff[:i], accDiff[i]-maxCost)
+		if max < i-start {
+			max = i - start
+		}
+	}
+	return max
+
 }
