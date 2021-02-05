@@ -21,7 +21,7 @@ func Test_equalSubstring(t *testing.T) {
 				t:       "bcdf",
 				maxCost: 3,
 			},
-			want: 0,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
