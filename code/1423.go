@@ -45,24 +45,20 @@ package code
 1 <= k <= cardPoints.length
 */
 func maxScore(cardPoints []int, k int) int {
-	n := len(cardPoints)
-
-	windowSize := n - k
-
-	sum := 0
-	for _, pt := range cardPoints[:windowSize] {
-		sum += pt
+	aLen := len(cardPoints)
+	if k > aLen {
+		return 0
 	}
-	minSum := sum
-	for i := windowSize; i < n; i++ {
-		sum += cardPoints[i] - cardPoints[i-windowSize]
-		if minSum > sum {
-			minSum = sum
+	maxi := 0
+	for i := 0; i < k; i++ {
+		maxi += cardPoints[i]
+	}
+	tmp := maxi
+	for i := 0; i < k; i++ {
+		tmp = tmp - cardPoints[k-1-i] + cardPoints[aLen-1-i]
+		if maxi < tmp {
+			maxi = tmp
 		}
 	}
-	total := 0
-	for _, pt := range cardPoints {
-		total += pt
-	}
-	return total - minSum
+	return maxi
 }
