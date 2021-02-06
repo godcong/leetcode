@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:218 ###  
+### 总完成:223 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -125,6 +125,7 @@ All append into def.go
 | 0406 | 根据身高重建队列 | reconstructQueue | [GO](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue.go) | TEST |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | TEST |  
 | 0416 | 分割等和子集 | canPartition | [GO](https://github.com/godcong/leetcode/blob/master/0416.canPartition.go) | TEST |  
+|  | 替换后的最长重复字符 | 0424 | [GO](https://github.com/godcong/leetcode/blob/master/0424.go) | TEST |  
 | 0435 | 无重叠区间 | eraseOverlapIntervals | [GO](https://github.com/godcong/leetcode/blob/master/0435.eraseOverlapIntervals.go) | TEST |  
 | 0452 | 用最少数量的箭引爆气球 | findMinArrowShots | [GO](https://github.com/godcong/leetcode/blob/master/0452.findMinArrowShots.go) | TEST |  
 | 0454 | 四数相加 II | fourSumCount | [GO](https://github.com/godcong/leetcode/blob/master/0454.fourSumCount.go) | TEST |  
@@ -133,6 +134,7 @@ All append into def.go
 | 0461 | 汉明距离 | hammingDistance | [GO](https://github.com/godcong/leetcode/blob/master/0461.hammingDistance.go) | TEST |  
 | 0463 | 岛屿的周长 | islandPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0463.islandPerimeter.go) | TEST |  
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
+| 0480 | 滑动窗口中位数 | medianSlidingWindow | [GO](https://github.com/godcong/leetcode/blob/master/0480.medianSlidingWindow.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | TEST |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | TEST |  
 | 0493 | 翻转对 | reversePairs | [GO](https://github.com/godcong/leetcode/blob/master/0493.reversePairs.go) | TEST |  
@@ -152,6 +154,7 @@ All append into def.go
 | 0628 | 三个数的最大乘积 | maximumProduct | [GO](https://github.com/godcong/leetcode/blob/master/0628.maximumProduct.go) | TEST |  
 | 0633 | 平方数之和 | judgeSquareSum | [GO](https://github.com/godcong/leetcode/blob/master/0633.judgeSquareSum.go) | TEST |  
 | 0637 | 二叉树的层平均值 | averageOfLevels | [GO](https://github.com/godcong/leetcode/blob/master/0637.averageOfLevels.go) | TEST |  
+| 0643 | 子数组最大平均数 I | findMaxAverage | [GO](https://github.com/godcong/leetcode/blob/master/0643.findMaxAverage.go) | TEST |  
 | 0647 | 回文子串 | countSubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0647.countSubstrings.go) | TEST |  
 | 0649 | Dota2 参议院 | predictPartyVictory | [GO](https://github.com/godcong/leetcode/blob/master/0649.predictPartyVictory.go) | TEST |  
 | 0657 | 机器人能否返回原点 | judgeCircle | [GO](https://github.com/godcong/leetcode/blob/master/0657.judgeCircle.go) | TEST |  
@@ -187,6 +190,7 @@ All append into def.go
 | 0860 | 柠檬水找零 | lemonadeChange | [GO](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange.go) | TEST |  
 | 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | TEST |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | TEST |  
+| 0888 | 公平的糖果棒交换 | fairCandySwap | [GO](https://github.com/godcong/leetcode/blob/master/0888.fairCandySwap.go) | TEST |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | TEST |  
 | 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | TEST |  
 | 0941 | 有效的山脉数组 | validMountainArray | [GO](https://github.com/godcong/leetcode/blob/master/0941.validMountainArray.go) | TEST |  
@@ -211,6 +215,7 @@ All append into def.go
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
+| 1208 | 尽可能使字符串相等 | equalSubstring | [GO](https://github.com/godcong/leetcode/blob/master/1208.equalSubstring.go) | TEST |  
 | 1232 | 缀点成线 | checkStraightLine | [GO](https://github.com/godcong/leetcode/blob/master/1232.checkStraightLine.go) | TEST |  
 | 1299 | 将每个元素替换为右侧最大元素 | replaceElements | [GO](https://github.com/godcong/leetcode/blob/master/1299.replaceElements.go) | TEST |  
 | 1319 | 连通网络的操作次数 | makeConnected | [GO](https://github.com/godcong/leetcode/blob/master/1319.makeConnected.go) | TEST |  
