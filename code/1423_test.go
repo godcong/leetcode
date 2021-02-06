@@ -45,6 +45,14 @@ func Test_maxScore(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				cardPoints: strToIntArray("[1,79,80,1,1,1,200,1]"),
+				k:          3,
+			},
+			want: 22,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
