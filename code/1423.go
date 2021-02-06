@@ -44,3 +44,6 @@ package code
 1 <= cardPoints[i] <= 10^4
 1 <= k <= cardPoints.length
 */
+func maxScore(cardPoints []int, k int) int {
+	return 0
+}
