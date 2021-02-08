@@ -32,3 +32,6 @@ package code
 1 <= A.length <= 40000
 0 <= A[i] <= 10^9
 */
+func maxTurbulenceSize(arr []int) int {
+	return 0
+}
