@@ -19,6 +19,14 @@ func Test_maxTurbulenceSize(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "",
+			args: args{
+				arr: strToIntArray("[4,8,12,16]"),
+			},
+			want: 2,
+		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
