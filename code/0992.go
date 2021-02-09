@@ -28,3 +28,6 @@ package code
 1 <= A[i] <= A.length
 1 <= K <= A.length
 */
+func subarraysWithKDistinct(A []int, K int) int {
+	return 0
+}
