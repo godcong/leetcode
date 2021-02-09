@@ -21,6 +21,14 @@ func Test_subarraysWithKDistinct(t *testing.T) {
 			},
 			want: 7,
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[1,2,1,3,4]"),
+				K: 3,
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
