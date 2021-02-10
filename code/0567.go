@@ -24,3 +24,6 @@ package code
 输入的字符串只包含小写字母
 两个字符串的长度都在 [1, 10,000] 之间
 */
+func checkInclusion(s1 string, s2 string) bool {
+	return false
+}
