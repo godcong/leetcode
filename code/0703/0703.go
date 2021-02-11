@@ -1,6 +1,9 @@
 package _703
 
-import "math"
+import (
+	"container/heap"
+	"sort"
+)
 
 /*
 703. 数据流中的第 K 大元素
@@ -38,102 +41,33 @@ kthLargest.add(4);   // return 8
 题目数据保证，在查找第 k 大元素时，数组中至少有 k 个元素
 */
 type KthLargest struct {
-	k    int
-	nums []int // 切片中只放置k个元素
+	sort.IntSlice
+	k int
 }
 
 func Constructor(k int, nums []int) KthLargest {
-	kthLargest := KthLargest{}
-	kthLargest.k = k
-	kthLargest.nums = []int{math.MinInt32}
-	for _, num := range nums {
-		kthLargest.Add(num)
+	kl := KthLargest{k: k}
+	for _, val := range nums {
+		kl.Add(val)
 	}
-	return kthLargest
+	return kl
 }
 
-func (this *KthLargest) Add(val int) int {
-	if len(this.nums) == 0 {
-		this.actualAdd(0, val)
-		return this.nums[0]
-	}
-	if len(this.nums) < this.k {
-		// 长度不够时, 直接add
-		this.actualAdd(len(this.nums), val)
-	} else {
-		// 数据量多于k个, 如果val > 堆顶元素(第k大的元素)
-		// 则取出栈顶元素, 再将val放进去
-		// 否则, 直接丢弃val元素
-		if val > this.nums[0] {
-			// 取最后一个元素往下冒泡
-			this.siftDown(0, this.nums[len(this.nums) - 1])
-			// 砍掉最后一个元素
-			this.nums = this.nums[: len(this.nums) - 1]
-			// 添加新元素
-			this.actualAdd(len(this.nums), val)
-		}
-	}
-	return this.nums[0]
+func (kl *KthLargest) Push(v interface{}) {
+	kl.IntSlice = append(kl.IntSlice, v.(int))
 }
 
-func (this *KthLargest) actualAdd(k, key int) {
-	this.nums = append(this.nums, key)
-	// find parent
-	for k > 0 {
-		pntIdx := (k - 1) >> 1
-		e := this.nums[pntIdx]
-		if key >= e {
-			break
-		}
-		this.nums[k] = e
-		k = pntIdx
-	}
-	this.nums[k] = key
+func (kl *KthLargest) Pop() interface{} {
+	a := kl.IntSlice
+	v := a[len(a)-1]
+	kl.IntSlice = a[:len(a)-1]
+	return v
 }
 
-func (this *KthLargest) siftUp(pntIdx, idx int) {
-	pntNum := this.nums[pntIdx]
-	num := this.nums[idx]
-	if pntNum > num {
-		this.nums[pntIdx] = num
-		this.nums[idx] = pntNum
-		idx = pntIdx
-		pntIdx = (idx - 1) / 2
-		if pntIdx >= 0 && this.nums[pntIdx] > this.nums[idx] {
-			this.siftUp(pntIdx, idx)
-		}
+func (kl *KthLargest) Add(val int) int {
+	heap.Push(kl, val)
+	if kl.Len() > kl.k {
+		heap.Pop(kl)
 	}
+	return kl.IntSlice[0]
 }
-
-func (this *KthLargest) siftDown(k, key int) {
-	size := len(this.nums)
-	half := size >> 1
-	for k < half {
-		// 左子节点索引
-		childIdx := (k << 1) + 1
-		// 左子节点
-		c := this.nums[childIdx]
-		// 右子节点索引
-		rightIdx := childIdx + 1
-		if rightIdx < size && c > this.nums[rightIdx] {
-			// 取出左右子节点中较小的节点索引
-			childIdx = rightIdx
-			// 较小的节点
-			c = this.nums[childIdx]
-		}
-		// 如果key小于 最小子节点, 直接跳出
-		if key <= c {
-			break
-		}
-		// 将key, 左子节点, 右子节点中最小的值, 至于目标k处
-		this.nums[k] = c
-		k = childIdx
-	}
-	this.nums[k] = key
-}
-
-/**
- * Your KthLargest object will be instantiated and called as such:
- * obj := Constructor(length, nums);
- * param_1 := obj.Add(val);
- */
