@@ -16,3 +16,6 @@ package code
 
 你可以优化你的算法到 O(k) 空间复杂度吗？
 */
+func getRow(rowIndex int) []int {
+	return nil
+}
