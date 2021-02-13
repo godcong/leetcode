@@ -15,4 +15,7 @@ package code
 
 输出:
 [5,6]
- */
+*/
+func findDisappearedNumbers(nums []int) []int {
+	return nil
+}
