@@ -22,3 +22,6 @@ N 对情侣坐在连续排列的 2N 个座位上，想要牵到对方的手。 �
 
 len(row) 是偶数且数值在 [4, 60]范围内。
 */
+func minSwapsCouples(row []int) int {
+	return 0
+}
