@@ -15,3 +15,18 @@ package code
 输入数组的长度是正整数，且不超过 10,000。
 通过次数84,594提交次数142,840
 */
+func findMaxConsecutiveOnes(nums []int) int {
+	cnt := 0
+	max := 0
+	for _, num := range nums {
+		if num == 1 {
+			cnt++
+		} else {
+			continue
+		}
+		if cnt > max {
+			max = cnt
+		}
+	}
+	return max
+}
