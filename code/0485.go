@@ -22,6 +22,7 @@ func findMaxConsecutiveOnes(nums []int) int {
 		if num == 1 {
 			cnt++
 		} else {
+			cnt = 0
 			continue
 		}
 		if cnt > max {
