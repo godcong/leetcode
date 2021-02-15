@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:230 ###  
+### 总完成:231 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -137,6 +137,7 @@ All append into def.go
 | 0463 | 岛屿的周长 | islandPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0463.islandPerimeter.go) | TEST |  
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
 | 0480 | 滑动窗口中位数 | medianSlidingWindow | [GO](https://github.com/godcong/leetcode/blob/master/0480.medianSlidingWindow.go) | TEST |  
+| 0485 | 最大连续1的个数 | findMaxConsecutiveOnes | [GO](https://github.com/godcong/leetcode/blob/master/0485.findMaxConsecutiveOnes.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | TEST |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | TEST |  
 | 0493 | 翻转对 | reversePairs | [GO](https://github.com/godcong/leetcode/blob/master/0493.reversePairs.go) | TEST |  
