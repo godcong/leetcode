@@ -1,7 +1,5 @@
 package code
 
-import "sort"
-
 /*
 561. 数组拆分 I
 给定长度为 2n 的整数数组 nums ，你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从 1 到 n 的 min(ai, bi) 总和最大。
@@ -33,10 +31,17 @@ nums.length == 2 * n
 -104 <= nums[i] <= 104
 */
 func arrayPairSum(nums []int) int {
-	ans := 0
-	sort.Ints(nums)
-	for i := 0; i < len(nums); i += 2 {
-		ans += nums[i]
+	cnt := [20001]int{}
+	for _, num := range nums {
+		cnt[num+10000]++
 	}
-	return ans
+	res := 0
+	odd := 1
+	for i := 0; i < 20001; i++ {
+		if cnt[i] > 0 {
+			res += (i - 10000) * ((cnt[i] + odd) / 2)
+			odd = (odd + cnt[i]) % 2
+		}
+	}
+	return res
 }
