@@ -30,3 +30,6 @@ package code
 nums.length == 2 * n
 -104 <= nums[i] <= 104
 */
+func arrayPairSum(nums []int) int {
+	return 0
+}
