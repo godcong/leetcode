@@ -19,6 +19,13 @@ func Test_arrayPairSum(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArray("[6,2,6,5,1,2]"),
+			},
+			want: 9,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
