@@ -145,7 +145,7 @@ All append into def.go
 | 0530 | 二叉搜索树的最小绝对差 | getMinimumDifference | [GO](https://github.com/godcong/leetcode/blob/master/0530.getMinimumDifference.go) | TEST |  
 | 0532 | 数组中的K-diff数对 | findPairs | [GO](https://github.com/godcong/leetcode/blob/master/0532.findPairs.go) | TEST |  
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | TEST |  
-|  | 省份数量 | 0547 | [GO](https://github.com/godcong/leetcode/blob/master/0547.go) | TEST |  
+| 0547 | 省份数量 | findCircleNum | [GO](https://github.com/godcong/leetcode/blob/master/0547.findCircleNum.go) | TEST |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | TEST |  
 | 0566 | 重塑矩阵 | matrixReshape | [GO](https://github.com/godcong/leetcode/blob/master/0566.matrixReshape.go) | TEST |  
 | 0581 | 最短无序连续子数组 | findUnsortedSubarray | [GO](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray.go) | TEST |  
