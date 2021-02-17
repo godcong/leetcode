@@ -40,3 +40,6 @@ allowedSwaps[i].length == 2
 0 <= ai, bi <= n - 1
 ai != bi
 */
+func minimumHammingDistance(source []int, target []int, allowedSwaps [][]int) int {
+	return 0
+}
