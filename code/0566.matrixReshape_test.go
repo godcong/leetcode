@@ -26,6 +26,15 @@ func Test_matrixReshape(t *testing.T) {
 			},
 			want: strToIntArrArray("[[1,2,3,4]]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: strToIntArrArray("[[1,2],\n [3,4]]"),
+				r:    2,
+				c:    4,
+			},
+			want: strToIntArrArray("[[1,2],\n [3,4]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
