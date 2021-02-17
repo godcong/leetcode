@@ -39,16 +39,28 @@ r = 2, c = 4
 给定的 r 和 c 都是正数。
 */
 func matrixReshape(nums [][]int, r int, c int) [][]int {
-	n, m := len(nums), len(nums[0])
-	if n*m != r*c {
+	if len(nums)*len(nums[0]) != r*c {
 		return nums
 	}
-	ans := make([][]int, r)
-	for i := range ans {
-		ans[i] = make([]int, c)
+
+	var ans [][]int
+	ans = make([][]int, r)
+
+	row := 0
+	col := 0
+	for _, array := range nums {
+		for _, ele := range array {
+			if col == 0 {
+				ans[row] = make([]int, c)
+			}
+			ans[row][col] = ele
+			col++
+			if col == c {
+				col = 0
+				row++
+			}
+		}
 	}
-	for i := 0; i < n*m; i++ {
-		ans[i/c][i%c] = nums[i/m][i%m]
-	}
+
 	return ans
 }
