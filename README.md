@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:224 ###  
+### 总完成:226 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -147,6 +147,7 @@ All append into def.go
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | TEST |  
 |  | 省份数量 | 0547 | [GO](https://github.com/godcong/leetcode/blob/master/0547.go) | TEST |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | TEST |  
+| 0566 | 重塑矩阵 | matrixReshape | [GO](https://github.com/godcong/leetcode/blob/master/0566.matrixReshape.go) | TEST |  
 | 0581 | 最短无序连续子数组 | findUnsortedSubarray | [GO](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray.go) | TEST |  
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | TEST |  
 | 0617 | 合并二叉树 | mergeTrees | [GO](https://github.com/godcong/leetcode/blob/master/0617.mergeTrees.go) | TEST |  
@@ -240,4 +241,5 @@ All append into def.go
 | 1579 | 保证图可完全遍历 | maxNumEdgesToRemove | [GO](https://github.com/godcong/leetcode/blob/master/1579.maxNumEdgesToRemove.go) | TEST |  
 | 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
 | 1631 | 最小体力消耗路径 | minimumEffortPath | [GO](https://github.com/godcong/leetcode/blob/master/1631.minimumEffortPath.go) | TEST |  
+|  | 执行交换操作后的最小汉明距离 | 1722 | [GO](https://github.com/godcong/leetcode/blob/master/1722.go) | TEST |  
 <!--END-->
