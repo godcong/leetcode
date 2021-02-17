@@ -26,23 +26,25 @@ package code
 - 10 ^ 5 <= nums[i] <= 10 ^ 5
 */
 func checkPossibility(nums []int) bool {
-	s := len(nums)
-	if s < 3 {
-		return true
-	}
-	fix := false
-	for i := 0; i < s-1; i++ {
+	var modify bool
+
+	for i := 0; i < len(nums)-1; i++ {
 		if nums[i] > nums[i+1] {
-			if fix {
+			switch {
+			case modify:
 				return false
-			}
-			fix = true
-			if i == 0 || nums[i+1] >= nums[i-1] {
+			case i == 0:
 				nums[i] = nums[i+1]
-			} else {
+				modify = true
+			case nums[i-1] > nums[i+1]:
 				nums[i+1] = nums[i]
+				modify = true
+			default:
+				nums[i] = nums[i-1]
+				modify = true
 			}
 		}
 	}
+
 	return true
 }
