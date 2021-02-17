@@ -38,3 +38,6 @@ r = 2, c = 4
 给定矩阵的宽和高范围在 [1, 100]。
 给定的 r 和 c 都是正数。
 */
+func matrixReshape(nums [][]int, r int, c int) [][]int {
+	return nil
+}
