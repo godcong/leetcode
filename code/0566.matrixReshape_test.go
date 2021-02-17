@@ -24,7 +24,7 @@ func Test_matrixReshape(t *testing.T) {
 				r:    1,
 				c:    4,
 			},
-			want: nil,
+			want: strToIntArrArray("[[1,2,3,4]]"),
 		},
 	}
 	for _, tt := range tests {
