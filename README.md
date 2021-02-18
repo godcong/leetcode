@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:234 ###  
+### 总完成:235 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -211,6 +211,7 @@ All append into def.go
 | 0978 | 最长湍流子数组 | maxTurbulenceSize | [GO](https://github.com/godcong/leetcode/blob/master/0978.maxTurbulenceSize.go) | TEST |  
 | 0989 | 数组形式的整数加法 | addToArrayForm | [GO](https://github.com/godcong/leetcode/blob/master/0989.addToArrayForm.go) | TEST |  
 | 0992 | K 个不同整数的子数组 | subarraysWithKDistinct | [GO](https://github.com/godcong/leetcode/blob/master/0992.subarraysWithKDistinct.go) | TEST |  
+| 0995 | K 连续位的最小翻转次数 | minKBitFlips | [GO](https://github.com/godcong/leetcode/blob/master/0995.minKBitFlips.go) | TEST |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | TEST |  
 | 1018 | 可被 5 整除的二进制前缀 | prefixesDivBy5 | [GO](https://github.com/godcong/leetcode/blob/master/1018.prefixesDivBy5.go) | TEST |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | TEST |  
