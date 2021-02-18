@@ -21,6 +21,14 @@ func Test_minKBitFlips(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[1,1,0]"),
+				K: 2,
+			},
+			want: -1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
