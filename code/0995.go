@@ -36,6 +36,22 @@ package code
 
     1 <= A.length <= 30000
     1 <= K <= A.length
-
-
 */
+func minKBitFlips(A []int, K int) int {
+	n := len(A)
+	diff := make([]int, n+1)
+	revCnt := 0
+	var ans int
+	for i, v := range A {
+		revCnt += diff[i]
+		if (v+revCnt)%2 == 0 {
+			if i+K > n {
+				return -1
+			}
+			ans++
+			revCnt++
+			diff[i+K]--
+		}
+	}
+	return ans
+}
