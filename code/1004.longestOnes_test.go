@@ -21,6 +21,14 @@ func Test_longestOnes(t *testing.T) {
 			},
 			want: 6,
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]"),
+				K: 3,
+			},
+			want: 10,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
