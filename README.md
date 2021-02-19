@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:235 ###  
+### 总完成:236 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -213,6 +213,7 @@ All append into def.go
 | 0992 | K 个不同整数的子数组 | subarraysWithKDistinct | [GO](https://github.com/godcong/leetcode/blob/master/0992.subarraysWithKDistinct.go) | TEST |  
 | 0995 | K 连续位的最小翻转次数 | minKBitFlips | [GO](https://github.com/godcong/leetcode/blob/master/0995.minKBitFlips.go) | TEST |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | TEST |  
+| 1004 | 最大连续1的个数 III | longestOnes | [GO](https://github.com/godcong/leetcode/blob/master/1004.longestOnes.go) | TEST |  
 | 1018 | 可被 5 整除的二进制前缀 | prefixesDivBy5 | [GO](https://github.com/godcong/leetcode/blob/master/1018.prefixesDivBy5.go) | TEST |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | TEST |  
 | 1024 | 视频拼接 | videoStitching | [GO](https://github.com/godcong/leetcode/blob/master/1024.videoStitching.go) | TEST |  
@@ -250,5 +251,5 @@ All append into def.go
 | 1579 | 保证图可完全遍历 | maxNumEdgesToRemove | [GO](https://github.com/godcong/leetcode/blob/master/1579.maxNumEdgesToRemove.go) | TEST |  
 | 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
 | 1631 | 最小体力消耗路径 | minimumEffortPath | [GO](https://github.com/godcong/leetcode/blob/master/1631.minimumEffortPath.go) | TEST |  
-|  | 执行交换操作后的最小汉明距离 | 1722 | [GO](https://github.com/godcong/leetcode/blob/master/1722.go) | TEST |  
+| 1722 | 执行交换操作后的最小汉明距离 | minimumHammingDistance | [GO](https://github.com/godcong/leetcode/blob/master/1722.minimumHammingDistance.go) | TEST |  
 <!--END-->
