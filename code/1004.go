@@ -30,3 +30,6 @@ package code
 0 <= K <= A.length
 A[i] 为 0 或 1
 */
+func longestOnes(A []int, K int) int {
+	return 0
+}
