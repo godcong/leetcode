@@ -31,5 +31,17 @@ package code
 A[i] 为 0 或 1
 */
 func longestOnes(A []int, K int) int {
-	return 0
+	left, zeroCnt := 0, 0
+	for _, num := range A {
+		if num == 0 {
+			zeroCnt++
+		}
+		if zeroCnt > K {
+			if A[left] == 0 {
+				zeroCnt--
+			}
+			left++
+		}
+	}
+	return len(A) - left
 }
