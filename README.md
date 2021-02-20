@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:236 ###  
+### 总完成:237 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -172,6 +172,7 @@ All append into def.go
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | TEST |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | TEST |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | TEST |  
+| 0697 | 数组的度 | findShortestSubArray | [GO](https://github.com/godcong/leetcode/blob/master/0697.findShortestSubArray.go) | TEST |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | TEST |  
 | 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | TEST |  
 | 0721 | 账户合并 | accountsMerge | [GO](https://github.com/godcong/leetcode/blob/master/0721.accountsMerge.go) | TEST |  
