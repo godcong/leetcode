@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:228 ###  
+### 总完成:236 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -68,6 +68,7 @@ All append into def.go
 | 0114 | 填充每个节点的下一个右侧节点指针 | connect | [GO](https://github.com/godcong/leetcode/blob/master/0114.connect.go) | TEST |  
 | 0117 | 填充每个节点的下一个右侧节点指针 II | connect | [GO](https://github.com/godcong/leetcode/blob/master/0117.connect.go) | TEST |  
 | 0118 | 杨辉三角 | generate | [GO](https://github.com/godcong/leetcode/blob/master/0118.generate.go) | TEST |  
+| 0119 | 杨辉三角 II | getRow | [GO](https://github.com/godcong/leetcode/blob/master/0119.getRow.go) | TEST |  
 | 0122 | 买卖股票的最佳时机 II | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0122.maxProfit.go) | TEST |  
 | 0123 | 买卖股票的最佳时机 III | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0123.maxProfit.go) | TEST |  
 | 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | TEST |  
@@ -125,8 +126,9 @@ All append into def.go
 | 0406 | 根据身高重建队列 | reconstructQueue | [GO](https://github.com/godcong/leetcode/blob/master/0406.reconstructQueue.go) | TEST |  
 | 0415 | 字符串相加 | addStrings | [GO](https://github.com/godcong/leetcode/blob/master/0415.addStrings.go) | TEST |  
 | 0416 | 分割等和子集 | canPartition | [GO](https://github.com/godcong/leetcode/blob/master/0416.canPartition.go) | TEST |  
-|  | 替换后的最长重复字符 | 0424 | [GO](https://github.com/godcong/leetcode/blob/master/0424.go) | TEST |  
+| 0424 | 替换后的最长重复字符 | characterReplacement | [GO](https://github.com/godcong/leetcode/blob/master/0424.characterReplacement.go) | TEST |  
 | 0435 | 无重叠区间 | eraseOverlapIntervals | [GO](https://github.com/godcong/leetcode/blob/master/0435.eraseOverlapIntervals.go) | TEST |  
+| 0448 | 找到所有数组中消失的数字 | findDisappearedNumbers | [GO](https://github.com/godcong/leetcode/blob/master/0448.findDisappearedNumbers.go) | TEST |  
 | 0452 | 用最少数量的箭引爆气球 | findMinArrowShots | [GO](https://github.com/godcong/leetcode/blob/master/0452.findMinArrowShots.go) | TEST |  
 | 0454 | 四数相加 II | fourSumCount | [GO](https://github.com/godcong/leetcode/blob/master/0454.fourSumCount.go) | TEST |  
 | 0455 | 分发饼干 | findContentChildren | [GO](https://github.com/godcong/leetcode/blob/master/0455.findContentChildren.go) | TEST |  
@@ -135,6 +137,7 @@ All append into def.go
 | 0463 | 岛屿的周长 | islandPerimeter | [GO](https://github.com/godcong/leetcode/blob/master/0463.islandPerimeter.go) | TEST |  
 | 0475 | 供暖器 | findRadius | [GO](https://github.com/godcong/leetcode/blob/master/0475.findRadius.go) | TEST |  
 | 0480 | 滑动窗口中位数 | medianSlidingWindow | [GO](https://github.com/godcong/leetcode/blob/master/0480.medianSlidingWindow.go) | TEST |  
+| 0485 | 最大连续1的个数 | findMaxConsecutiveOnes | [GO](https://github.com/godcong/leetcode/blob/master/0485.findMaxConsecutiveOnes.go) | TEST |  
 | 0486 | 预测赢家 | PredictTheWinner | [GO](https://github.com/godcong/leetcode/blob/master/0486.PredictTheWinner.go) | TEST |  
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | TEST |  
 | 0493 | 翻转对 | reversePairs | [GO](https://github.com/godcong/leetcode/blob/master/0493.reversePairs.go) | TEST |  
@@ -147,6 +150,8 @@ All append into def.go
 | 0546 | 移除盒子 | removeBoxes | [GO](https://github.com/godcong/leetcode/blob/master/0546.removeBoxes.go) | TEST |  
 | 0547 | 省份数量 | findCircleNum | [GO](https://github.com/godcong/leetcode/blob/master/0547.findCircleNum.go) | TEST |  
 | 0557 | 反转字符串中的单词 III | reverseWords | [GO](https://github.com/godcong/leetcode/blob/master/0557.reverseWords.go) | TEST |  
+| 0561 | 数组拆分 I | arrayPairSum | [GO](https://github.com/godcong/leetcode/blob/master/0561.arrayPairSum.go) | TEST |  
+| 0566 | 重塑矩阵 | matrixReshape | [GO](https://github.com/godcong/leetcode/blob/master/0566.matrixReshape.go) | TEST |  
 | 0567 | 字符串的排列 | checkInclusion | [GO](https://github.com/godcong/leetcode/blob/master/0567.checkInclusion.go) | TEST |  
 | 0581 | 最短无序连续子数组 | findUnsortedSubarray | [GO](https://github.com/godcong/leetcode/blob/master/0581.findUnsortedSubarray.go) | TEST |  
 | 0605 | 种花问题 | canPlaceFlowers | [GO](https://github.com/godcong/leetcode/blob/master/0605.canPlaceFlowers.go) | TEST |  
@@ -167,7 +172,6 @@ All append into def.go
 | 0685 | 冗余连接 II | findRedundantDirectedConnection | [GO](https://github.com/godcong/leetcode/blob/master/0685.findRedundantDirectedConnection.go) | TEST |  
 | 0686 | 重复叠加字符串匹配 | repeatedStringMatch | [GO](https://github.com/godcong/leetcode/blob/master/0686.repeatedStringMatch.go) | TEST |  
 | 0696 | 计数二进制子串 | countBinarySubstrings | [GO](https://github.com/godcong/leetcode/blob/master/0696.countBinarySubstrings.go) | TEST |  
-| 0697 | 数组的度 | findShortestSubArray | [GO](https://github.com/godcong/leetcode/blob/master/0697.findShortestSubArray.go) | TEST |  
 | 0701 | 二叉搜索树中的插入操作 | insertIntoBST | [GO](https://github.com/godcong/leetcode/blob/master/0701.insertIntoBST.go) | TEST |  
 | 0714 | 买卖股票的最佳时机含手续费 | maxProfit | [GO](https://github.com/godcong/leetcode/blob/master/0714.maxProfit.go) | TEST |  
 | 0721 | 账户合并 | accountsMerge | [GO](https://github.com/godcong/leetcode/blob/master/0721.accountsMerge.go) | TEST |  
@@ -176,6 +180,7 @@ All append into def.go
 | 0738 | 单调递增的数字 | monotoneIncreasingDigits | [GO](https://github.com/godcong/leetcode/blob/master/0738.monotoneIncreasingDigits.go) | TEST |  
 | 0746 | 使用最小花费爬楼梯 | minCostClimbingStairs | [GO](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs.go) | TEST |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | TEST |  
+| 0765 | 情侣牵手 | minSwapsCouples | [GO](https://github.com/godcong/leetcode/blob/master/0765.minSwapsCouples.go) | TEST |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | TEST |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | TEST |  
 | 0778 | 水位上升的泳池中游泳 | swimInWater | [GO](https://github.com/godcong/leetcode/blob/master/0778.swimInWater.go) | TEST |  
@@ -206,7 +211,9 @@ All append into def.go
 | 0978 | 最长湍流子数组 | maxTurbulenceSize | [GO](https://github.com/godcong/leetcode/blob/master/0978.maxTurbulenceSize.go) | TEST |  
 | 0989 | 数组形式的整数加法 | addToArrayForm | [GO](https://github.com/godcong/leetcode/blob/master/0989.addToArrayForm.go) | TEST |  
 | 0992 | K 个不同整数的子数组 | subarraysWithKDistinct | [GO](https://github.com/godcong/leetcode/blob/master/0992.subarraysWithKDistinct.go) | TEST |  
+| 0995 | K 连续位的最小翻转次数 | minKBitFlips | [GO](https://github.com/godcong/leetcode/blob/master/0995.minKBitFlips.go) | TEST |  
 | 1002 | 查找常用字符 | commonChars | [GO](https://github.com/godcong/leetcode/blob/master/1002.commonChars.go) | TEST |  
+| 1004 | 最大连续1的个数 III | longestOnes | [GO](https://github.com/godcong/leetcode/blob/master/1004.longestOnes.go) | TEST |  
 | 1018 | 可被 5 整除的二进制前缀 | prefixesDivBy5 | [GO](https://github.com/godcong/leetcode/blob/master/1018.prefixesDivBy5.go) | TEST |  
 | 1021 | 删除最外层的括号 | removeOuterParentheses | [GO](https://github.com/godcong/leetcode/blob/master/1021.removeOuterParentheses.go) | TEST |  
 | 1024 | 视频拼接 | videoStitching | [GO](https://github.com/godcong/leetcode/blob/master/1024.videoStitching.go) | TEST |  
@@ -244,4 +251,5 @@ All append into def.go
 | 1579 | 保证图可完全遍历 | maxNumEdgesToRemove | [GO](https://github.com/godcong/leetcode/blob/master/1579.maxNumEdgesToRemove.go) | TEST |  
 | 1584 | 连接所有点的最小费用 | minCostConnectPoints | [GO](https://github.com/godcong/leetcode/blob/master/1584.minCostConnectPoints.go) | TEST |  
 | 1631 | 最小体力消耗路径 | minimumEffortPath | [GO](https://github.com/godcong/leetcode/blob/master/1631.minimumEffortPath.go) | TEST |  
+| 1722 | 执行交换操作后的最小汉明距离 | minimumHammingDistance | [GO](https://github.com/godcong/leetcode/blob/master/1722.minimumHammingDistance.go) | TEST |  
 <!--END-->
