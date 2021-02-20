@@ -28,6 +28,32 @@ package code
 nums.length 在1到 50,000 区间范围内。
 nums[i] 是一个在 0 到 49,999 范围内的整数。
 */
+type findShortestSubArrayInfo struct {
+	index    int
+	distance int
+	re       int
+}
+
 func findShortestSubArray(nums []int) int {
-	return 0
+	var reMap map[int]findShortestSubArrayInfo
+	var dis, rep int
+	reMap = make(map[int]findShortestSubArrayInfo)
+
+	for i, v := range nums {
+		info, ok := reMap[v]
+
+		if ok {
+			info.distance = i - info.index + info.distance
+		} else {
+			info.distance = 1
+		}
+		info.index = i
+		info.re += 1
+		if rep < info.re || (rep == info.re && info.distance < dis) {
+			dis = info.distance
+			rep = info.re
+		}
+		reMap[v] = info
+	}
+	return dis
 }
