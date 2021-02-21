@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:236 ###  
+### 总完成:237 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -235,6 +235,7 @@ All append into def.go
 | 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | TEST |  
 | 1423 | 可获得的最大点数 | maxScore | [GO](https://github.com/godcong/leetcode/blob/master/1423.maxScore.go) | TEST |  
 | 1431 | 拥有最多糖果的孩子 | kidsWithCandies | [GO](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies.go) | TEST |  
+| 1438 | 绝对差不超过限制的最长连续子数组 | longestSubarray | [GO](https://github.com/godcong/leetcode/blob/master/1438.longestSubarray.go) | TEST |  
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | TEST |  
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | TEST |  
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | TEST |  
