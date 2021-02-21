@@ -29,6 +29,14 @@ func Test_longestSubarray(t *testing.T) {
 			},
 			want: 4,
 		},
+		{
+			name: "",
+			args: args{
+				nums:  strToIntArray("[4,2,2,2,4,4,2,2]"),
+				limit: 0,
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
