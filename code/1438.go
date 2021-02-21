@@ -42,5 +42,38 @@ package code
 0 <= limit <= 10^9
 */
 func longestSubarray(nums []int, limit int) int {
-	return 0
+	minQ := make([]int, 0)
+	maxQ := make([]int, 0)
+	res := 0
+	l := 0
+	r := 0
+	minQ = append(minQ, 0)
+	maxQ = append(maxQ, 0)
+	for r < len(nums) {
+		maxId := maxQ[0]
+		minId := minQ[0]
+		if nums[maxId]-nums[minId] <= limit {
+			if r-l+1 > res {
+				res = r - l + 1
+			}
+			r++
+			for r < len(nums) && len(minQ) > 0 && nums[minQ[len(minQ)-1]] > nums[r] {
+				minQ = minQ[:len(minQ)-1]
+			}
+			minQ = append(minQ, r)
+			for r < len(nums) && len(maxQ) > 0 && nums[maxQ[len(maxQ)-1]] < nums[r] {
+				maxQ = maxQ[:len(maxQ)-1]
+			}
+			maxQ = append(maxQ, r)
+		} else {
+			l++
+			for maxQ[0] < l {
+				maxQ = maxQ[1:]
+			}
+			for minQ[0] < l {
+				minQ = minQ[1:]
+			}
+		}
+	}
+	return res
 }
