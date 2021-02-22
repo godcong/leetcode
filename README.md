@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:238 ###  
+### 总完成:239 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -182,6 +182,7 @@ All append into def.go
 | 0746 | 使用最小花费爬楼梯 | minCostClimbingStairs | [GO](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs.go) | TEST |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | TEST |  
 | 0765 | 情侣牵手 | minSwapsCouples | [GO](https://github.com/godcong/leetcode/blob/master/0765.minSwapsCouples.go) | TEST |  
+| 0766 | 托普利茨矩阵 | isToeplitzMatrix | [GO](https://github.com/godcong/leetcode/blob/master/0766.isToeplitzMatrix.go) | TEST |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | TEST |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | TEST |  
 | 0778 | 水位上升的泳池中游泳 | swimInWater | [GO](https://github.com/godcong/leetcode/blob/master/0778.swimInWater.go) | TEST |  
