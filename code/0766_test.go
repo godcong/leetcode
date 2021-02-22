@@ -19,6 +19,13 @@ func Test_isToeplitzMatrix(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				matrix: strToIntArrArray("[[1,2],[2,2]]"),
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
