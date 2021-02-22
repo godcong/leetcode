@@ -42,10 +42,6 @@ n == matrix[i].length
 func isToeplitzMatrix(matrix [][]int) bool {
 	col := len(matrix)
 	coluM := len(matrix[0])
-	if col == 1 || coluM == 1 {
-		return true
-	}
-
 	for i, tmp := 0, 1; tmp < col; i, tmp = i+1, tmp+1 {
 		for index := 0; index < coluM-1; index++ {
 			if matrix[i][:coluM-1][index] != matrix[tmp][1:][index] {
