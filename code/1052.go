@@ -26,3 +26,6 @@ package code
 0 <= customers[i] <= 1000
 0 <= grumpy[i] <= 1
 */
+func maxSatisfied(customers []int, grumpy []int, X int) int {
+	return 0
+}
