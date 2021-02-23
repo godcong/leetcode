@@ -18,10 +18,10 @@ func Test_maxSatisfied(t *testing.T) {
 			name: "",
 			args: args{
 				customers: strToIntArray("[1,0,1,2,1,1,7,5]"),
-				grumpy:    nil,
-				X:         0,
+				grumpy:    strToIntArray("[0,1,0,1,0,1,0,1]"),
+				X:         3,
 			},
-			want: 0,
+			want: 16,
 		},
 	}
 	for _, tt := range tests {
