@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:238 ###  
+### 总完成:240 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -182,13 +182,13 @@ All append into def.go
 | 0746 | 使用最小花费爬楼梯 | minCostClimbingStairs | [GO](https://github.com/godcong/leetcode/blob/master/0746.minCostClimbingStairs.go) | TEST |  
 | 0763 | 划分字母区间 | partitionLabels | [GO](https://github.com/godcong/leetcode/blob/master/0763.partitionLabels.go) | TEST |  
 | 0765 | 情侣牵手 | minSwapsCouples | [GO](https://github.com/godcong/leetcode/blob/master/0765.minSwapsCouples.go) | TEST |  
+| 0766 | 托普利茨矩阵 | isToeplitzMatrix | [GO](https://github.com/godcong/leetcode/blob/master/0766.isToeplitzMatrix.go) | TEST |  
 | 0767 | 重构字符串 | reorganizeString | [GO](https://github.com/godcong/leetcode/blob/master/0767.reorganizeString.go) | TEST |  
 | 0771 | 宝石与石头 | numJewelsInStones | [GO](https://github.com/godcong/leetcode/blob/master/0771.numJewelsInStones.go) | TEST |  
 | 0778 | 水位上升的泳池中游泳 | swimInWater | [GO](https://github.com/godcong/leetcode/blob/master/0778.swimInWater.go) | TEST |  
 | 0803 | 打砖块 | hitBricks | [GO](https://github.com/godcong/leetcode/blob/master/0803.hitBricks.go) | TEST |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | TEST |  
 | 0830 | 较大分组的位置 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0830.numSimilarGroups.go) | TEST |  
-| 0832 | 翻转图像 | flipAndInvertImage | [GO](https://github.com/godcong/leetcode/blob/master/0832.flipAndInvertImage.go) | TEST |  
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | TEST |  
 | 0839 | 相似字符串组 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0839.numSimilarGroups.go) | TEST |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | TEST |  
@@ -222,6 +222,7 @@ All append into def.go
 | 1030 | 距离顺序排列矩阵单元格 | allCellsDistOrder | [GO](https://github.com/godcong/leetcode/blob/master/1030.allCellsDistOrder.go) | TEST |  
 | 1046 | 最后一块石头的重量 | lastStoneWeight | [GO](https://github.com/godcong/leetcode/blob/master/1046.lastStoneWeight.go) | TEST |  
 | 1051 | 高度检查器 | heightChecker | [GO](https://github.com/godcong/leetcode/blob/master/1051.heightChecker.go) | TEST |  
+| 1052 | 爱生气的书店老板 | maxSatisfied | [GO](https://github.com/godcong/leetcode/blob/master/1052.maxSatisfied.go) | TEST |  
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
 | 1128 | 等价多米诺骨牌对的数量 | numEquivDominoPairs | [GO](https://github.com/godcong/leetcode/blob/master/1128.numEquivDominoPairs.go) | TEST |  
@@ -237,6 +238,7 @@ All append into def.go
 | 1365 | 有多少小于当前数字的数字 | smallerNumbersThanCurrent | [GO](https://github.com/godcong/leetcode/blob/master/1365.smallerNumbersThanCurrent.go) | TEST |  
 | 1423 | 可获得的最大点数 | maxScore | [GO](https://github.com/godcong/leetcode/blob/master/1423.maxScore.go) | TEST |  
 | 1431 | 拥有最多糖果的孩子 | kidsWithCandies | [GO](https://github.com/godcong/leetcode/blob/master/1431.kidsWithCandies.go) | TEST |  
+| 1438 | 绝对差不超过限制的最长连续子数组 | longestSubarray | [GO](https://github.com/godcong/leetcode/blob/master/1438.longestSubarray.go) | TEST |  
 | 1470 | 重新排列数组 | shuffle | [GO](https://github.com/godcong/leetcode/blob/master/1470.shuffle.go) | TEST |  
 | 1480 | 一维数组的动态和 | runningSum | [GO](https://github.com/godcong/leetcode/blob/master/1480.runningSum.go) | TEST |  
 | 1486 | 数组异或操作 | xorOperation | [GO](https://github.com/godcong/leetcode/blob/master/1486.xorOperation.go) | TEST |  
