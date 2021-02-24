@@ -29,3 +29,6 @@ package code
 1 <= A.length = A[0].length <= 20
 0 <= A[i][j] <= 1
 */
+func flipAndInvertImage(A [][]int) [][]int {
+	return nil
+}
