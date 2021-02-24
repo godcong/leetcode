@@ -188,7 +188,7 @@ All append into def.go
 | 0803 | 打砖块 | hitBricks | [GO](https://github.com/godcong/leetcode/blob/master/0803.hitBricks.go) | TEST |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | TEST |  
 | 0830 | 较大分组的位置 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0830.numSimilarGroups.go) | TEST |  
-|  | 翻转图像 | 0832 | [GO](https://github.com/godcong/leetcode/blob/master/0832.go) | TEST |  
+| 0832 | 翻转图像 | flipAndInvertImage | [GO](https://github.com/godcong/leetcode/blob/master/0832.flipAndInvertImage.go) | TEST |  
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | TEST |  
 | 0839 | 相似字符串组 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0839.numSimilarGroups.go) | TEST |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | TEST |  
