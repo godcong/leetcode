@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:241 ###  
+### 总完成:242 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -199,6 +199,7 @@ All append into def.go
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | TEST |  
 | 0860 | 柠檬水找零 | lemonadeChange | [GO](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange.go) | TEST |  
 | 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | TEST |  
+| 0867 | 转置矩阵 | transpose | [GO](https://github.com/godcong/leetcode/blob/master/0867.transpose.go) | TEST |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | TEST |  
 | 0888 | 公平的糖果棒交换 | fairCandySwap | [GO](https://github.com/godcong/leetcode/blob/master/0888.fairCandySwap.go) | TEST |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | TEST |  
