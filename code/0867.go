@@ -28,3 +28,6 @@ n == matrix[i].length
 1 <= m * n <= 105
 -109 <= matrix[i][j] <= 109
 */
+func transpose(matrix [][]int) [][]int {
+	return nil
+}
