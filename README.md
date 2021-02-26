@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:242 ###  
+### 总完成:243 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -228,6 +228,7 @@ All append into def.go
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
 | 1128 | 等价多米诺骨牌对的数量 | numEquivDominoPairs | [GO](https://github.com/godcong/leetcode/blob/master/1128.numEquivDominoPairs.go) | TEST |  
+| 1178 | 猜字谜 | findNumOfValidWords | [GO](https://github.com/godcong/leetcode/blob/master/1178.findNumOfValidWords.go) | TEST |  
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
