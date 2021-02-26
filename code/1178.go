@@ -1,5 +1,7 @@
 package code
 
+import "math/bits"
+
 /*
 1178. 猜字谜
 外国友人仿照中国字谜设计了一个英文版猜字谜小游戏，请你来猜猜看吧。
@@ -38,5 +40,34 @@ words[i][j], puzzles[i][j] 都是小写英文字母。
 每个 puzzles[i] 所包含的字符都不重复。
 */
 func findNumOfValidWords(words []string, puzzles []string) []int {
-	return nil
+	const puzzleLength = 7
+	cnt := map[int]int{}
+	for _, s := range words {
+		mask := 0
+		for _, ch := range s {
+			mask |= 1 << (ch - 'a')
+		}
+		if bits.OnesCount(uint(mask)) <= puzzleLength {
+			cnt[mask]++
+		}
+	}
+
+	ans := make([]int, len(puzzles))
+	for i, s := range puzzles {
+		first := 1 << (s[0] - 'a')
+
+		mask := 0
+		for _, ch := range s[1:] {
+			mask |= 1 << (ch - 'a')
+		}
+		subset := mask
+		for {
+			ans[i] += cnt[subset|first]
+			subset = (subset - 1) & mask
+			if subset == mask {
+				break
+			}
+		}
+	}
+	return ans
 }
