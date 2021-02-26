@@ -37,3 +37,6 @@ puzzles[i].length == 7
 words[i][j], puzzles[i][j] 都是小写英文字母。
 每个 puzzles[i] 所包含的字符都不重复。
 */
+func findNumOfValidWords(words []string, puzzles []string) []int {
+	return nil
+}
