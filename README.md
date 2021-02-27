@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:240 ###  
+### 总完成:241 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -120,6 +120,7 @@ All append into def.go
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0387 | 字符串中的第一个唯一字符 | firstUniqChar | [GO](https://github.com/godcong/leetcode/blob/master/0387.firstUniqChar.go) | TEST |  
 | 0389 | 找不同 | findTheDifference | [GO](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference.go) | TEST |  
+| 0395 | 至少有 K 个重复字符的最长子串 | longestSubstring | [GO](https://github.com/godcong/leetcode/blob/master/0395.longestSubstring.go) | TEST |  
 | 0399 | 除法求值 | calcEquation | [GO](https://github.com/godcong/leetcode/blob/master/0399.calcEquation.go) | TEST |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | TEST |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | TEST |  
