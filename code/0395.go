@@ -24,3 +24,6 @@ package code
 s 仅由小写英文字母组成
 1 <= k <= 105
 */
+func longestSubstring(s string, k int) int {
+	return 0
+}
