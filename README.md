@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:241 ###  
+### 总完成:243 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -120,7 +120,6 @@ All append into def.go
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0387 | 字符串中的第一个唯一字符 | firstUniqChar | [GO](https://github.com/godcong/leetcode/blob/master/0387.firstUniqChar.go) | TEST |  
 | 0389 | 找不同 | findTheDifference | [GO](https://github.com/godcong/leetcode/blob/master/0389.findTheDifference.go) | TEST |  
-| 0395 | 至少有 K 个重复字符的最长子串 | longestSubstring | [GO](https://github.com/godcong/leetcode/blob/master/0395.longestSubstring.go) | TEST |  
 | 0399 | 除法求值 | calcEquation | [GO](https://github.com/godcong/leetcode/blob/master/0399.calcEquation.go) | TEST |  
 | 0402 | 移掉K位数字 | removeKdigits | [GO](https://github.com/godcong/leetcode/blob/master/0402.removeKdigits.go) | TEST |  
 | 0404 | 左叶子之和 | sumOfLeftLeaves | [GO](https://github.com/godcong/leetcode/blob/master/0404.sumOfLeftLeaves.go) | TEST |  
@@ -190,6 +189,7 @@ All append into def.go
 | 0803 | 打砖块 | hitBricks | [GO](https://github.com/godcong/leetcode/blob/master/0803.hitBricks.go) | TEST |  
 | 0804 | 唯一摩尔斯密码词 | uniqueMorseRepresentations | [GO](https://github.com/godcong/leetcode/blob/master/0804.uniqueMorseRepresentations.go) | TEST |  
 | 0830 | 较大分组的位置 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0830.numSimilarGroups.go) | TEST |  
+| 0832 | 翻转图像 | flipAndInvertImage | [GO](https://github.com/godcong/leetcode/blob/master/0832.flipAndInvertImage.go) | TEST |  
 | 0834 | 树中距离之和 | sumOfDistancesInTree | [GO](https://github.com/godcong/leetcode/blob/master/0834.sumOfDistancesInTree.go) | TEST |  
 | 0839 | 相似字符串组 | numSimilarGroups | [GO](https://github.com/godcong/leetcode/blob/master/0839.numSimilarGroups.go) | TEST |  
 | 0840 | 矩阵中的幻方 | numMagicSquaresInside | [GO](https://github.com/godcong/leetcode/blob/master/0840.numMagicSquaresInside.go) | TEST |  
@@ -199,6 +199,7 @@ All append into def.go
 | 0845 | 数组中的最长山脉 | longestMountain | [GO](https://github.com/godcong/leetcode/blob/master/0845.longestMountain.go) | TEST |  
 | 0860 | 柠檬水找零 | lemonadeChange | [GO](https://github.com/godcong/leetcode/blob/master/0860.lemonadeChange.go) | TEST |  
 | 0861 | 翻转矩阵后的得分 | matrixScore | [GO](https://github.com/godcong/leetcode/blob/master/0861.matrixScore.go) | TEST |  
+| 0867 | 转置矩阵 | transpose | [GO](https://github.com/godcong/leetcode/blob/master/0867.transpose.go) | TEST |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | TEST |  
 | 0888 | 公平的糖果棒交换 | fairCandySwap | [GO](https://github.com/godcong/leetcode/blob/master/0888.fairCandySwap.go) | TEST |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | TEST |  
@@ -227,6 +228,7 @@ All append into def.go
 | 1108 | IP 地址无效化 | defangIPaddr | [GO](https://github.com/godcong/leetcode/blob/master/1108.defangIPaddr.go) | TEST |  
 | 1122 | 数组的相对排序 | relativeSortArray | [GO](https://github.com/godcong/leetcode/blob/master/1122.relativeSortArray.go) | TEST |  
 | 1128 | 等价多米诺骨牌对的数量 | numEquivDominoPairs | [GO](https://github.com/godcong/leetcode/blob/master/1128.numEquivDominoPairs.go) | TEST |  
+| 1178 | 猜字谜 | findNumOfValidWords | [GO](https://github.com/godcong/leetcode/blob/master/1178.findNumOfValidWords.go) | TEST |  
 | 1202 | 交换字符串中的元素 | smallestStringWithSwaps | [GO](https://github.com/godcong/leetcode/blob/master/1202.smallestStringWithSwaps.go) | TEST |  
 | 1203 | 项目管理 | sortItems | [GO](https://github.com/godcong/leetcode/blob/master/1203.sortItems.go) | TEST |  
 | 1207 | 独一无二的出现次数 | uniqueOccurrences | [GO](https://github.com/godcong/leetcode/blob/master/1207.uniqueOccurrences.go) | TEST |  
