@@ -37,3 +37,6 @@ package code
 1 <= A.length <= 50000
 -100000 <= A[i] <= 100000
 */
+func isMonotonic(A []int) bool {
+	return false
+}
