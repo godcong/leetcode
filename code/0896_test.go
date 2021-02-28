@@ -40,6 +40,13 @@ func Test_isMonotonic(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				A: strToIntArray("[1,1,1]"),
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
