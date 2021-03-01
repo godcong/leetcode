@@ -1,4 +1,4 @@
-package code
+package _303
 
 /*
 303. 区域和检索 - 数组不可变
@@ -34,6 +34,25 @@ numArray.sumRange(0, 5); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
     -105 <= nums[i] <= 105
     0 <= i <= j < nums.length
     最多调用 104 次 sumRange 方法
-
-
 */
+type NumArray struct {
+	sum []int
+}
+
+func Constructor(nums []int) NumArray {
+	s := make([]int, len(nums)+1)
+	for i := 0; i < len(nums); i++ {
+		s[i+1] = s[i] + nums[i]
+	}
+	return NumArray{s}
+}
+
+func (n *NumArray) SumRange(i int, j int) int {
+	return n.sum[j+1] - n.sum[i]
+}
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * obj := Constructor(nums);
+ * param_1 := obj.SumRange(i,j);
+ */
