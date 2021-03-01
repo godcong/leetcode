@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:244 ###  
+### 总完成:245 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -203,6 +203,7 @@ All append into def.go
 | 0867 | 转置矩阵 | transpose | [GO](https://github.com/godcong/leetcode/blob/master/0867.transpose.go) | TEST |  
 | 0874 | 模拟行走机器人 | robotSim | [GO](https://github.com/godcong/leetcode/blob/master/0874.robotSim.go) | TEST |  
 | 0888 | 公平的糖果棒交换 | fairCandySwap | [GO](https://github.com/godcong/leetcode/blob/master/0888.fairCandySwap.go) | TEST |  
+| 0896 | 单调数列 | isMonotonic | [GO](https://github.com/godcong/leetcode/blob/master/0896.isMonotonic.go) | TEST |  
 | 0922 | 按奇偶排序数组 II | sortArrayByParityII | [GO](https://github.com/godcong/leetcode/blob/master/0922.sortArrayByParityII.go) | TEST |  
 | 0925 | 长按键入 | isLongPressedName | [GO](https://github.com/godcong/leetcode/blob/master/0925.isLongPressedName.go) | TEST |  
 | 0941 | 有效的山脉数组 | validMountainArray | [GO](https://github.com/godcong/leetcode/blob/master/0941.validMountainArray.go) | TEST |  
