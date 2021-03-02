@@ -1,4 +1,4 @@
-package code
+package _304
 
 /*
 304. 二维区域和检索 - 矩阵不可变
@@ -30,3 +30,19 @@ sumRegion(1, 2, 2, 4) -> 12
 会多次调用 sumRegion 方法。
 你可以假设 row1 ≤ row2 且 col1 ≤ col2 。
 */
+type NumMatrix struct {
+}
+
+func Constructor(matrix [][]int) NumMatrix {
+	return NumMatrix{}
+}
+
+func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
+	return 0
+}
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * obj := Constructor(matrix);
+ * param_1 := obj.SumRegion(row1,col1,row2,col2);
+ */
