@@ -8,13 +8,38 @@ import (
 func TestConstructor(t *testing.T) {
 	type args struct {
 		matrix [][]int
+		args   []int
 	}
 	tests := []struct {
 		name string
 		args args
-		want NumMatrix
+		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				args:   []int{2, 1, 4, 3},
+			},
+			want: 8,
+		},
+		{
+			name: "",
+			args: args{
+				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				args:   []int{1, 1, 2, 2},
+			},
+			want: 11,
+		},
+		{
+			name: "",
+			args: args{
+				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				args:   []int{1, 2, 2, 4},
+			},
+			want: 12,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
