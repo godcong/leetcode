@@ -43,7 +43,9 @@ func TestConstructor(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := Constructor(tt.args.matrix); !reflect.DeepEqual(got, tt.want) {
+			sr := Constructor(tt.args.matrix)
+			got := sr.SumRegion(tt.args.args[0], tt.args.args[1], tt.args.args[2], tt.args.args[3])
+			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Constructor() = %v, want %v", got, tt.want)
 			}
 		})
