@@ -31,14 +31,26 @@ sumRegion(1, 2, 2, 4) -> 12
 你可以假设 row1 ≤ row2 且 col1 ≤ col2 。
 */
 type NumMatrix struct {
+	sums [][]int
 }
 
 func Constructor(matrix [][]int) NumMatrix {
-	return NumMatrix{}
+	sums := make([][]int, len(matrix))
+	for i, row := range matrix {
+		sums[i] = make([]int, len(row)+1)
+		for j, v := range row {
+			sums[i][j+1] = sums[i][j] + v
+		}
+	}
+	return NumMatrix{sums}
 }
 
 func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
-	return 0
+	var sum int
+	for i := row1; i <= row2; i++ {
+		sum += this.sums[i][col2+1] - this.sums[i][col1]
+	}
+	return sum
 }
 
 /**
