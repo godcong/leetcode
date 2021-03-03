@@ -19,5 +19,9 @@ package code
 你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的 __builtin_popcount）来执行此操作。
 */
 func countBits(num int) []int {
-	return nil
+	result := make([]int, num+1)
+	for i := 1; i < num+1; i++ {
+		result[i] = result[i/2] + (i & 1)
+	}
+	return result
 }
