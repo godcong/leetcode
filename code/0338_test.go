@@ -22,6 +22,13 @@ func Test_countBits(t *testing.T) {
 			},
 			want: strToIntArray("[0,1,1]"),
 		},
+		{
+			name: "",
+			args: args{
+				num: 5,
+			},
+			want: strToIntArray("[0,1,1,2,1,2]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
