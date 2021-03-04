@@ -37,35 +37,38 @@ import "sort"
 */
 func maxEnvelopes(envelopes [][]int) int {
 	n := len(envelopes)
-	if n == 0 {
-		return 0
+	if n < 2 {
+		return n
 	}
-
-	sort.Slice(envelopes, func(i, j int) bool {
-		a, b := envelopes[i], envelopes[j]
-		return a[0] < b[0] || a[0] == b[0] && a[1] > b[1]
-	})
-
-	f := make([]int, n)
-	for i := range f {
-		f[i] = 1
+	sort.Slice(envelopes, func(i, j int)bool{return envelopes[i][0] < envelopes[j][0] || (envelopes[i][0] == envelopes[j][0] && envelopes[i][1] > envelopes[j][1])})
+	dp := make([]int, n + 1)
+	for i := range dp[2:] {
+		dp[i+2] = - 1
 	}
 	for i := 1; i < n; i++ {
-		for j := 0; j < i; j++ {
-			if envelopes[j][1] < envelopes[i][1] {
-				f[i] = maxEnvelopesMax(f[i], f[j]+1)
+		left, right := 1, i
+		for left < right {
+			mid := (left + right + 1) >> 1
+			if dp[mid] == -1 || envelopes[i][1] <= envelopes[dp[mid]][1] ||  envelopes[i][0] <= envelopes[dp[mid]][0] {
+				right = mid - 1
+			} else {
+				left = mid
+			}
+		}
+		if envelopes[i][1] > envelopes[dp[right]][1] && envelopes[i][0] > envelopes[dp[right]][0]{
+			if dp[right+1] == -1 || envelopes[dp[right+1]][1] > envelopes[i][1] {
+				dp[right+1] = i
+			}
+		} else {
+			if envelopes[dp[right]][1] > envelopes[i][1] {
+				dp[right] = i
 			}
 		}
 	}
-	return maxEnvelopesMax(f...)
-}
-
-func maxEnvelopesMax(a ...int) int {
-	res := a[0]
-	for _, v := range a[1:] {
-		if v > res {
-			res = v
+	for i := len(dp) - 1; i >= 0; i-- {
+		if dp[i] > -1 {
+			return i
 		}
 	}
-	return res
+	return 0
 }
