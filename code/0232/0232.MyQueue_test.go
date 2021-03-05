@@ -1,4 +1,4 @@
-package _232
+package _0232
 
 import (
 	"reflect"
@@ -6,13 +6,22 @@ import (
 )
 
 func TestConstructor(t *testing.T) {
+	type args struct {
+		nums [][]int
+		step []string
+	}
 	tests := []struct {
 		name string
+		args args
 		want MyQueue
 	}{
 		// TODO: Add test cases.
 		{
 			name: "",
+			args: args{
+				nums: strto,
+				step: nil,
+			},
 			want: MyQueue{
 				inStack:  nil,
 				outStack: nil,
