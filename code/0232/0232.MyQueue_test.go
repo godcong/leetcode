@@ -1,7 +1,6 @@
 package _0232
 
 import (
-	"reflect"
 	"strconv"
 	"testing"
 )
@@ -53,10 +52,6 @@ func TestConstructor(t *testing.T) {
 						t.Errorf("Empty() = %v, want %v", e, tt.want[i])
 					}
 				}
-			}
-
-			if got := Constructor(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Constructor() = %v, want %v", got, tt.want)
 			}
 		})
 	}
