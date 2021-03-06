@@ -14,5 +14,21 @@ package code
 注意: 输入数组的长度不会超过 10000。
 */
 func nextGreaterElements(nums []int) []int {
-	return nil
+	aux := append(nums, nums...)
+	var stack []int
+	res := make([]int, len(nums))
+	for i := len(aux) - 1; i >= 0; i-- {
+		for len(stack) > 0 && aux[i] >= stack[len(stack)-1] {
+			stack = stack[:len(stack)-1]
+		}
+		if i < len(nums) {
+			if len(stack) != 0 {
+				res[i] = stack[len(stack)-1]
+			} else {
+				res[i] = -1
+			}
+		}
+		stack = append(stack, aux[i])
+	}
+	return res
 }
