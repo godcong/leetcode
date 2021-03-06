@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:246 ###  
+### 总完成:247 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -144,6 +144,7 @@ All append into def.go
 | 0491 | 递增子序列 | findSubsequences | [GO](https://github.com/godcong/leetcode/blob/master/0491.findSubsequences.go) | TEST |  
 | 0493 | 翻转对 | reversePairs | [GO](https://github.com/godcong/leetcode/blob/master/0493.reversePairs.go) | TEST |  
 | 0501 | 二叉搜索树中的众数 | findMode | [GO](https://github.com/godcong/leetcode/blob/master/0501.findMode.go) | TEST |  
+| 0503 | 下一个更大元素 II | nextGreaterElements | [GO](https://github.com/godcong/leetcode/blob/master/0503.nextGreaterElements.go) | TEST |  
 | 0509 | 斐波那契数 | fib | [GO](https://github.com/godcong/leetcode/blob/master/0509.fib.go) | TEST |  
 | 0514 | 自由之路 | findRotateSteps | [GO](https://github.com/godcong/leetcode/blob/master/0514.findRotateSteps.go) | TEST |  
 | 0528 | 把二叉搜索树转换为累加树 | convertBST | [GO](https://github.com/godcong/leetcode/blob/master/0528.convertBST.go) | TEST |  
