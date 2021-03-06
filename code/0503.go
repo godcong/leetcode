@@ -13,3 +13,6 @@ package code
 第二个 1 的下一个最大的数需要循环搜索，结果也是 2。
 注意: 输入数组的长度不会超过 10000。
 */
+func nextGreaterElements(nums []int) []int {
+	return nil
+}
