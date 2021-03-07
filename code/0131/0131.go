@@ -1,4 +1,4 @@
-package code
+package _131
 
 /*
 131. 分割回文串
@@ -23,3 +23,6 @@ package code
 1 <= s.length <= 16
 s 仅由小写英文字母组成
 */
+func partition(s string) [][]string {
+	return nil
+}
