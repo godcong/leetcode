@@ -22,6 +22,13 @@ func Test_partition(t *testing.T) {
 			},
 			want: strToStringArrayArray("[[\"a\",\"a\",\"b\"],[\"aa\",\"b\"]]"),
 		},
+		{
+			name: "",
+			args: args{
+				s: "a",
+			},
+			want: strToStringArrayArray("[[\"a\"]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
