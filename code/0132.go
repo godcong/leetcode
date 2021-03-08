@@ -32,3 +32,6 @@ package code
     1 <= s.length <= 2000
     s 仅由小写英文字母组成
 */
+func minCut(s string) int {
+	return 0
+}
