@@ -26,6 +26,13 @@ func Test_minCut(t *testing.T) {
 			},
 			want: 0,
 		},
+		{
+			name: "",
+			args: args{
+				s: "ab",
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
