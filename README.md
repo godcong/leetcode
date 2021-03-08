@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:247 ###  
+### 总完成:248 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -74,6 +74,7 @@ All append into def.go
 | 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | TEST |  
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | TEST |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | TEST |  
+| 0132 | 分割回文串 II | minCut | [GO](https://github.com/godcong/leetcode/blob/master/0132.minCut.go) | TEST |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | TEST |  
 | 0134 | 加油站 | canCompleteCircuit | [GO](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit.go) | TEST |  
 | 0135 | 分发糖果 | candy | [GO](https://github.com/godcong/leetcode/blob/master/0135.candy.go) | TEST |  
