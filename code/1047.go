@@ -24,7 +24,7 @@ package code
 
     1 <= S.length <= 20000
     S 仅由小写英文字母组成。
-
-
 */
-
+func removeDuplicates(S string) string {
+	return ""
+}
