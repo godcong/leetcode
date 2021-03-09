@@ -12,6 +12,13 @@ func Test_removeDuplicates(t *testing.T) {
 		want string
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				S: "abbaca",
+			},
+			want: "ca",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
