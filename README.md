@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:247 ###  
+### 总完成:248 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -98,11 +98,12 @@ All append into def.go
 | 0216 | 组合总和 III | combinationSum3 | [GO](https://github.com/godcong/leetcode/blob/master/0216.combinationSum3.go) | TEST |  
 | 0217 | 存在重复元素 | containsDuplicate | [GO](https://github.com/godcong/leetcode/blob/master/0217.containsDuplicate.go) | TEST |  
 | 0222 | 完全二叉树的节点个数 | countNodes | [GO](https://github.com/godcong/leetcode/blob/master/0222.countNodes.go) | TEST |  
+| 0224 | 基本计算器 | calculate | [GO](https://github.com/godcong/leetcode/blob/master/0224.calculate.go) | TEST |  
 | 0226 | 翻转二叉树 | invertTree | [GO](https://github.com/godcong/leetcode/blob/master/0226.invertTree.go) | TEST |  
 | 0228 | 汇总区间 | summaryRanges | [GO](https://github.com/godcong/leetcode/blob/master/0228.summaryRanges.go) | TEST |  
 | 0234 | 回文链表 | isPalindrome | [GO](https://github.com/godcong/leetcode/blob/master/0234.isPalindrome.go) | TEST |  
 | 0235 | 二叉搜索树的最近公共祖先 | lowestCommonAncestor | [GO](https://github.com/godcong/leetcode/blob/master/0235.lowestCommonAncestor.go) | TEST |  
-|  | 滑动窗口最大值 | 0239 | [GO](https://github.com/godcong/leetcode/blob/master/0239.go) | TEST |  
+| 0239 | 滑动窗口最大值 | maxSlidingWindow | [GO](https://github.com/godcong/leetcode/blob/master/0239.maxSlidingWindow.go) | TEST |  
 | 0242 | 有效的字母异位词 | isAnagram | [GO](https://github.com/godcong/leetcode/blob/master/0242.isAnagram.go) | TEST |  
 | 0257 | 二叉树的所有路径 | binaryTreePaths | [GO](https://github.com/godcong/leetcode/blob/master/0257.binaryTreePaths.go) | TEST |  
 | 0283 | 移动零 | moveZeroes | [GO](https://github.com/godcong/leetcode/blob/master/0283.moveZeroes.go) | TEST |  
