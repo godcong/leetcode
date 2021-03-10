@@ -26,3 +26,6 @@ package leetcode
 s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
 s 表示一个有效的表达式
 */
+func calculate(s string) int {
+	return 0
+}
