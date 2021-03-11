@@ -74,6 +74,7 @@ All append into def.go
 | 0127 | 单词接龙 | ladderLength | [GO](https://github.com/godcong/leetcode/blob/master/0127.ladderLength.go) | TEST |  
 | 0129 | 求根到叶子节点数字之和 | sumNumbersDFS | [GO](https://github.com/godcong/leetcode/blob/master/0129.sumNumbersDFS.go) | TEST |  
 | 0130 | 被围绕的区域 | solve | [GO](https://github.com/godcong/leetcode/blob/master/0130.solve.go) | TEST |  
+| 0132 | 分割回文串 II | minCut | [GO](https://github.com/godcong/leetcode/blob/master/0132.minCut.go) | TEST |  
 | 0133 | 克隆图 | cloneGraph | [GO](https://github.com/godcong/leetcode/blob/master/0133.cloneGraph.go) | TEST |  
 | 0134 | 加油站 | canCompleteCircuit | [GO](https://github.com/godcong/leetcode/blob/master/0134.canCompleteCircuit.go) | TEST |  
 | 0135 | 分发糖果 | candy | [GO](https://github.com/godcong/leetcode/blob/master/0135.candy.go) | TEST |  
@@ -118,6 +119,7 @@ All append into def.go
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | TEST |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/0347.topKFrequent.go) | TEST |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/0349.intersection.go) | TEST |  
+| 0354 | 俄罗斯套娃信封问题 | maxEnvelopes | [GO](https://github.com/godcong/leetcode/blob/master/0354.maxEnvelopes.go) | TEST |  
 | 0376 | 摆动序列 | wiggleMaxLength | [GO](https://github.com/godcong/leetcode/blob/master/0376.wiggleMaxLength.go) | TEST |  
 | 0381 | O(1) 时间插入、删除和获取随机元素 - 允许重复 | RandomizedCollection | [GO](https://github.com/godcong/leetcode/blob/master/0381.RandomizedCollection.go) | TEST |  
 | 0387 | 字符串中的第一个唯一字符 | firstUniqChar | [GO](https://github.com/godcong/leetcode/blob/master/0387.firstUniqChar.go) | TEST |  
