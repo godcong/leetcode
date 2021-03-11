@@ -1,4 +1,4 @@
-package code
+package _0227
 
 /*
 227. 基本计算器 II
@@ -30,3 +30,33 @@ s 表示一个 有效表达式
 表达式中的所有整数都是非负整数，且在范围 [0, 231 - 1] 内
 题目数据保证答案是一个 32-bit 整数
 */
+func calculate(s string) int {
+	var ans int
+	var stack []int
+	preSign := '+'
+	num := 0
+	for i, ch := range s {
+		isDigit := '0' <= ch && ch <= '9'
+		if isDigit {
+			num = num*10 + int(ch-'0')
+		}
+		if !isDigit && ch != ' ' || i == len(s)-1 {
+			switch preSign {
+			case '+':
+				stack = append(stack, num)
+			case '-':
+				stack = append(stack, -num)
+			case '*':
+				stack[len(stack)-1] *= num
+			default:
+				stack[len(stack)-1] /= num
+			}
+			preSign = ch
+			num = 0
+		}
+	}
+	for _, v := range stack {
+		ans += v
+	}
+	return ans
+}
