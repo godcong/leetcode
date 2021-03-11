@@ -47,9 +47,13 @@ func calculate(s string) int {
 			case '-':
 				stack = append(stack, -num)
 			case '*':
-				stack[len(stack)-1] *= num
+				if stack != nil {
+					stack[len(stack)-1] *= num
+				}
 			default:
-				stack[len(stack)-1] /= num
+				if stack != nil {
+					stack[len(stack)-1] /= num
+				}
 			}
 			preSign = ch
 			num = 0
