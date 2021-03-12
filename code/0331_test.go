@@ -13,7 +13,11 @@ func Test_isValidSerialization(t *testing.T) {
 	}{
 		// TODO: Add test cases.
 		{
-
+			name: "",
+			args: args{
+				preorder: "9,3,4,#,#,1,#,#,2,#,6,#,#",
+			},
+			want: true,
 		},
 	}
 	for _, tt := range tests {
