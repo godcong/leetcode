@@ -48,7 +48,6 @@ func isValidSerialization(preorder string) bool {
 			}
 			i++
 		} else {
-			// 读一个数字
 			for i < n && preorder[i] != ',' {
 				i++
 			}
