@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:249 ###  
+### 总完成:250 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/0001.twoSum.go) | TEST |  
@@ -113,6 +113,7 @@ All append into def.go
 | 0327 | 区间和的个数 | countRangeSum | [GO](https://github.com/godcong/leetcode/blob/master/0327.countRangeSum.go) | TEST |  
 | 0328 | 奇偶链表 | oddEvenList | [GO](https://github.com/godcong/leetcode/blob/master/0328.oddEvenList.go) | TEST |  
 | 0330 | 按要求补齐数组 | minPatches | [GO](https://github.com/godcong/leetcode/blob/master/0330.minPatches.go) | TEST |  
+| 0331 | 验证二叉树的前序序列化 | isValidSerialization | [GO](https://github.com/godcong/leetcode/blob/master/0331.isValidSerialization.go) | TEST |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/0332.findItinerary.go) | TEST |  
 | 0338 | 比特位计数 | countBits | [GO](https://github.com/godcong/leetcode/blob/master/0338.countBits.go) | TEST |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/0344.reverseString.go) | TEST |  
