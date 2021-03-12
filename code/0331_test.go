@@ -19,6 +19,13 @@ func Test_isValidSerialization(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				preorder: "1,#",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
