@@ -32,3 +32,6 @@ package code
 输入: "9,#,#,1"
 输出: false
 */
+func isValidSerialization(preorder string) bool {
+	return false
+}
