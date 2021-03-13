@@ -1,7 +1,5 @@
 package _0705
 
-import "container/list"
-
 /*
 705. 设计哈希集合
 不使用任何内建的哈希表库设计一个哈希集合（HashSet）。
@@ -40,42 +38,43 @@ myHashSet.contains(2); // 返回 False ，（已移除）
 
 进阶：你可以不使用内建的哈希集合库解决此问题吗？
 */
-const base = 769
-
 type MyHashSet struct {
-	data []list.List
+	bitset []uint64
 }
 
+
+/** Initialize your data structure here. */
 func Constructor() MyHashSet {
-	return MyHashSet{make([]list.List, base)}
+	return MyHashSet{bitset: []uint64{}}
 }
 
-func (s *MyHashSet) hash(key int) int {
-	return key % base
-}
 
-func (s *MyHashSet) Add(key int) {
-	if !s.Contains(key) {
-		h := s.hash(key)
-		s.data[h].PushBack(key)
+func (s *MyHashSet) Add(key int)  {
+	bit := key % 64
+	length := key /64
+	for i := len(s.bitset); i <= length; i++ {
+		s.bitset = append(s.bitset, 0)
 	}
+	s.bitset[length] = s.bitset[length] | (1 << bit)
 }
 
-func (s *MyHashSet) Remove(key int) {
-	h := s.hash(key)
-	for e := s.data[h].Front(); e != nil; e = e.Next() {
-		if e.Value.(int) == key {
-			s.data[h].Remove(e)
-		}
+
+func (s *MyHashSet) Remove(key int)  {
+	bit := key % 64
+	length := key /64
+	if length >= len(s.bitset) {
+		return
 	}
+	s.bitset[length] = s.bitset[length] & ^(1 << bit)
 }
 
+
+/** Returns true if this set contains the specified element */
 func (s *MyHashSet) Contains(key int) bool {
-	h := s.hash(key)
-	for e := s.data[h].Front(); e != nil; e = e.Next() {
-		if e.Value.(int) == key {
-			return true
-		}
+	bit := key % 64
+	length := key /64
+	if length >= len(s.bitset) {
+		return false
 	}
-	return false
+	return s.bitset[length] & (1 << bit) != 0
 }
