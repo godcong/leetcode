@@ -1,4 +1,6 @@
-package code
+package _0705
+
+import "container/list"
 
 /*
 705. 设计哈希集合
@@ -38,37 +40,42 @@ myHashSet.contains(2); // 返回 False ，（已移除）
 
 进阶：你可以不使用内建的哈希集合库解决此问题吗？
 */
+const base = 769
+
 type MyHashSet struct {
-
+	data []list.List
 }
 
-
-/** Initialize your data structure here. */
 func Constructor() MyHashSet {
-
+	return MyHashSet{make([]list.List, base)}
 }
 
-
-func (this *MyHashSet) Add(key int)  {
-
+func (s *MyHashSet) hash(key int) int {
+	return key % base
 }
 
-
-func (this *MyHashSet) Remove(key int)  {
-
+func (s *MyHashSet) Add(key int) {
+	if !s.Contains(key) {
+		h := s.hash(key)
+		s.data[h].PushBack(key)
+	}
 }
 
-
-/** Returns true if this set contains the specified element */
-func (this *MyHashSet) Contains(key int) bool {
-
+func (s *MyHashSet) Remove(key int) {
+	h := s.hash(key)
+	for e := s.data[h].Front(); e != nil; e = e.Next() {
+		if e.Value.(int) == key {
+			s.data[h].Remove(e)
+		}
+	}
 }
 
-
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Add(key);
- * obj.Remove(key);
- * param_3 := obj.Contains(key);
- */
+func (s *MyHashSet) Contains(key int) bool {
+	h := s.hash(key)
+	for e := s.data[h].Front(); e != nil; e = e.Next() {
+		if e.Value.(int) == key {
+			return true
+		}
+	}
+	return false
+}
