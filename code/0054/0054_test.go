@@ -16,7 +16,11 @@ func Test_spiralOrder(t *testing.T) {
 	}{
 		// TODO: Add test cases.
 		{
-
+			name: "",
+			args: args{
+				matrix: strToIntArrArray("[[1,2,3],[4,5,6],[7,8,9]]"),
+			},
+			want: strToIntArray("[1,2,3,6,9,8,7,4,5]"),
 		},
 	}
 	for _, tt := range tests {
