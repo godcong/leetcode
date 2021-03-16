@@ -4,6 +4,8 @@ import (
 	"reflect"
 	"strings"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func TestConstructor(t *testing.T) {
@@ -20,11 +22,11 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: strToIntArrArray("[[-2, 0, 3, -5, 2, -1], [0, 2], [2, 5], [0, 5]]"),
-				fns:  strToStringArray("[\"NumArray\", \"sumRange\", \"sumRange\", \"sumRange\"]"),
+				nums: StrToIntArrArray("[[-2, 0, 3, -5, 2, -1], [0, 2], [2, 5], [0, 5]]"),
+				fns:  StrToStringArray("[\"NumArray\", \"sumRange\", \"sumRange\", \"sumRange\"]"),
 			},
 			want: NumArray{
-				sum: strToIntArray("[null, 1, -1, -3]"),
+				sum: StrToIntArray("[null, 1, -1, -3]"),
 			},
 		},
 	}
