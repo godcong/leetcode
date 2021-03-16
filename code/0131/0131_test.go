@@ -3,6 +3,8 @@ package _0131
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_partition(t *testing.T) {
@@ -20,14 +22,14 @@ func Test_partition(t *testing.T) {
 			args: args{
 				s: "aab",
 			},
-			want: strToStringArrayArray("[[\"a\",\"a\",\"b\"],[\"aa\",\"b\"]]"),
+			want: StrToStringArrayArray("[[\"a\",\"a\",\"b\"],[\"aa\",\"b\"]]"),
 		},
 		{
 			name: "",
 			args: args{
 				s: "a",
 			},
-			want: strToStringArrayArray("[[\"a\"]]"),
+			want: StrToStringArrayArray("[[\"a\"]]"),
 		},
 	}
 	for _, tt := range tests {
