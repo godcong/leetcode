@@ -3,6 +3,8 @@ package _0304
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func TestConstructor(t *testing.T) {
@@ -19,7 +21,7 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				matrix: StrToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
 				args:   []int{2, 1, 4, 3},
 			},
 			want: 8,
@@ -27,7 +29,7 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				matrix: StrToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
 				args:   []int{1, 1, 2, 2},
 			},
 			want: 11,
@@ -35,7 +37,7 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				matrix: strToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
+				matrix: StrToIntArrArray("[\n  [3, 0, 1, 4, 2],\n  [5, 6, 3, 2, 1],\n  [1, 2, 0, 1, 5],\n  [4, 1, 0, 1, 7],\n  [1, 0, 3, 0, 5]\n]"),
 				args:   []int{1, 2, 2, 4},
 			},
 			want: 12,
