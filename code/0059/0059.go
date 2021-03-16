@@ -25,7 +25,8 @@ type pair struct{ x, y int }
 
 var dirs = []pair{{0, 1}, {1, 0}, {0, -1}, {-1, 0}} // 右下左上
 
-func generateMatrix(n int) [][]int {
+func generate
+Matrix(n int) [][]int {
 	matrix := make([][]int, n)
 	for i := range matrix {
 		matrix[i] = make([]int, n)
