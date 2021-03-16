@@ -1,4 +1,4 @@
-package _059
+package _0059
 
 /*
 59. 螺旋矩阵 II
@@ -21,3 +21,6 @@ package _059
 
 1 <= n <= 20
 */
+func generateMatrix(n int) [][]int {
+	return nil
+}
