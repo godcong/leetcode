@@ -4,6 +4,8 @@ import (
 	"reflect"
 	"strconv"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func TestConstructor(t *testing.T) {
@@ -20,8 +22,8 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: strToIntArrArray("[[], [1], [2], [], [], []]"),
-				step: strToStringArray("[\"MyQueue\", \"push\", \"push\", \"peek\", \"pop\", \"empty\"]"),
+				nums: StrToIntArrArray("[[], [1], [2], [], [], []]"),
+				step: StrToStringArray("[\"MyQueue\", \"push\", \"push\", \"peek\", \"pop\", \"empty\"]"),
 			},
 			want: []string{
 				"null", "null", "null", "1", "1", "false",
