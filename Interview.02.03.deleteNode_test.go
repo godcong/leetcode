@@ -3,40 +3,40 @@ package leetcode
 import (
 	"testing"
 
-	"github.com/godcong/leetcode/code"
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_deleteNode(t *testing.T) {
 	type args struct {
-		node *code.ListNode
+		node *ListNode
 	}
 	tests := []struct {
 		name string
 		args args
-		want *code.ListNode
+		want *ListNode
 	}{
 		{
 			name: "",
 			args: args{
-				node: &code.ListNode{
+				node: &ListNode{
 					Val: 1,
-					Next: &code.ListNode{
+					Next: &ListNode{
 						Val: 2,
-						Next: &code.ListNode{
+						Next: &ListNode{
 							Val: 3,
-							Next: &code.ListNode{
+							Next: &ListNode{
 								Val:  4,
-								Next: &code.ListNode{},
+								Next: &ListNode{},
 							},
 						},
 					},
 				},
 			},
-			want: &code.ListNode{
+			want: &ListNode{
 				Val: 3,
-				Next: &code.ListNode{
+				Next: &ListNode{
 					Val:  4,
-					Next: &code.ListNode{},
+					Next: &ListNode{},
 				},
 			},
 		},
@@ -50,7 +50,7 @@ func Test_deleteNode(t *testing.T) {
 	}
 }
 
-func deepEqualDeleteNode(t *testing.T, got, want *code.ListNode) bool {
+func deepEqualDeleteNode(t *testing.T, got, want *ListNode) bool {
 	if got == nil || want == nil {
 		return got == want
 	}
