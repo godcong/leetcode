@@ -19,7 +19,7 @@ func Test_numDistinct(t *testing.T) {
 				s: "rabbbit",
 				t: "rabbit",
 			},
-			want: 0,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
