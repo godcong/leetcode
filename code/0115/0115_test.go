@@ -13,6 +13,14 @@ func Test_numDistinct(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				s: "rabbbit",
+				t: "rabbit",
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
