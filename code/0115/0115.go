@@ -47,7 +47,8 @@ babgbag
 0 <= s.length, t.length <= 1000
 s 和 t 由英文字母组成
 */
-func numDistinct(s string, t string) int {
+func numDist
+inct(s string, t string) int {
 	m, n := len(s), len(t)
 	if m < n {
 		return 0
