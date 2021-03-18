@@ -37,6 +37,40 @@ import (
  *     Next *ListNode
  * }
  */
+func reverseLinkedList(head *ListNode) {
+	var pre *ListNode
+	cur := head
+	for cur != nil {
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+}
+
 func reverseBetween(head *ListNode, left int, right int) *ListNode {
-	return nil
+	dummyNode := &ListNode{Val: -1}
+	dummyNode.Next = head
+
+	pre := dummyNode
+	for i := 0; i < left-1; i++ {
+		pre = pre.Next
+	}
+
+	rightNode := pre
+	for i := 0; i < right-left+1; i++ {
+		rightNode = rightNode.Next
+	}
+
+	leftNode := pre.Next
+	curr := rightNode.Next
+
+	pre.Next = nil
+	rightNode.Next = nil
+
+	reverseLinkedList(leftNode)
+
+	pre.Next = rightNode
+	leftNode.Next = curr
+	return dummyNode.Next
 }
