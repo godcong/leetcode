@@ -1,5 +1,9 @@
 package _0092
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 92. 反转链表 II
 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
@@ -26,3 +30,13 @@ package _0092
 
 进阶： 你可以使用一趟扫描完成反转吗？
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseBetween(head *ListNode, left int, right int) *ListNode {
+	return nil
+}
