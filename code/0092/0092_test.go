@@ -28,6 +28,15 @@ func Test_reverseBetween(t *testing.T) {
 			},
 			want: StrToListNode("[1,4,3,2,5]", -1),
 		},
+		{
+			name: "",
+			args: args{
+				head:  StrToListNode("[5]", -1),
+				left:  1,
+				right: 1,
+			},
+			want: StrToListNode("[5]", -1),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
