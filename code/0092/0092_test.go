@@ -3,6 +3,8 @@ package _0092
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_reverseBetween(t *testing.T) {
@@ -17,6 +19,15 @@ func Test_reverseBetween(t *testing.T) {
 		want *ListNode
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				head:  StrToListNode("[1,2,3,4,5]", -1),
+				left:  2,
+				right: 4,
+			},
+			want: StrToListNode("[1,4,3,2,5]", -1),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
