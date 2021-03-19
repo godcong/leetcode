@@ -33,13 +33,18 @@ carType 取值为 1， 2 或 3
 最多会调用 addCar 函数 1000 次
 */
 type ParkingSystem struct {
+	left [4]int
 }
 
 func Constructor(big int, medium int, small int) ParkingSystem {
-	return ParkingSystem{}
+	return ParkingSystem{[4]int{0, big, medium, small}}
 }
 
 func (this *ParkingSystem) AddCar(carType int) bool {
+	if this.left[carType] > 0 {
+		this.left[carType]--
+		return true
+	}
 	return false
 }
 
