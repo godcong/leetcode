@@ -36,11 +36,11 @@ type ParkingSystem struct {
 }
 
 func Constructor(big int, medium int, small int) ParkingSystem {
-
+	return ParkingSystem{}
 }
 
 func (this *ParkingSystem) AddCar(carType int) bool {
-
+	return false
 }
 
 /**
