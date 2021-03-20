@@ -28,7 +28,7 @@ func Test_evalRPN(t *testing.T) {
 			args: args{
 				tokens: StrToStringArray("[\"4\",\"13\",\"5\",\"/\",\"+\"]"),
 			},
-			want: 0,
+			want: 6,
 		},
 		{
 			name: "",
