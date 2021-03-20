@@ -35,7 +35,7 @@ func Test_evalRPN(t *testing.T) {
 			args: args{
 				tokens: StrToStringArray("[\"10\",\"6\",\"9\",\"3\",\"+\",\"-11\",\"*\",\"/\",\"*\",\"17\",\"+\",\"5\",\"+\"]"),
 			},
-			want: 0,
+			want: 22,
 		},
 	}
 	for _, tt := range tests {
