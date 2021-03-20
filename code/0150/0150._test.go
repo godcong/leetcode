@@ -23,6 +23,13 @@ func Test_evalRPN(t *testing.T) {
 			},
 			want: 9,
 		},
+		{
+			name: "",
+			args: args{
+				tokens: StrToStringArray("[\"4\",\"13\",\"5\",\"/\",\"+\"]"),
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
