@@ -1,5 +1,7 @@
 package _0150
 
+import "strconv"
+
 /*
 150. 逆波兰表达式求值
 
@@ -64,5 +66,25 @@ package _0150
     适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。
 */
 func evalRPN(tokens []string) int {
-	return 0
+	stack := []int{}
+	for _, token := range tokens {
+		val, err := strconv.Atoi(token)
+		if err == nil {
+			stack = append(stack, val)
+		} else {
+			num1, num2 := stack[len(stack)-2], stack[len(stack)-1]
+			stack = stack[:len(stack)-2]
+			switch token {
+			case "+":
+				stack = append(stack, num1+num2)
+			case "-":
+				stack = append(stack, num1-num2)
+			case "*":
+				stack = append(stack, num1*num2)
+			default:
+				stack = append(stack, num1/num2)
+			}
+		}
+	}
+	return stack[0]
 }
