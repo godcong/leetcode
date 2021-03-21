@@ -2,6 +2,7 @@ package _0073
 
 import (
 	. "github.com/godcong/leetcode/common"
+	"reflect"
 	"testing"
 )
 
@@ -32,6 +33,11 @@ func Test_setZeroes(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			setZeroes(tt.args.matrix)
+			if !reflect.DeepEqual(tt.args.matrix, tt.want) {
+				t.Errorf("setZeroes() = %v, want %v", tt.args.matrix, tt.want)
+			}
+
 		})
 	}
 }
