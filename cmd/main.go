@@ -159,6 +159,7 @@ func readFile(path string, filters []string, filterTest bool) string {
 }
 
 func onlyName(s string) string {
-	i := strings.LastIndex(filepath.Base(s), ".")
+	s = filepath.Base(s)
+	i := strings.LastIndex(s, ".")
 	return s[:i]
 }
