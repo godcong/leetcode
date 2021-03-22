@@ -11,7 +11,7 @@ import (
 var root = "https://github.com/godcong/leetcode/blob/master/"
 
 func templeWrite(writer *bufio.Writer, s string) {
-	name := strings.Split(s, ".")
+	name := strings.Split(onlyName(s), ".")
 	index := name[:len(name)-1]
 	codeName := name[len(name)-1]
 	title := getTitle(s)

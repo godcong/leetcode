@@ -25,8 +25,8 @@ func getCurrentPath() string {
 
 //create readme
 func main() {
-	fmt.Println("path:", filepath.Join(getCurrentPath(), "README.md"))
-	rd, err := os.Open(filepath.Join(getCurrentPath(), "README.md"))
+	fmt.Println("path:", filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
+	rd, err := os.Open(filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
 	panicErr(err)
 	reader := bufio.NewReader(rd)
 	for {
@@ -72,8 +72,12 @@ func printLineArray(arr ...string) {
 	}
 }
 
-func panicErr(err error) {
+func panicErr(err error, args ...interface{}) {
 	if err != nil {
+		if args != nil {
+			fmt.Print("error:")
+			fmt.Println(args...)
+		}
 		panic(err)
 	}
 }
@@ -118,16 +122,30 @@ func getAllFiles(path string, filters []string, filterTest bool) []string {
 				}
 			}
 		}
-		name := readFile(filepath.Join(path, info.Name()), filters, filterTest)
-		if name != "" {
-			ret = append(ret, name)
+		for _, filter := range filters {
+			if info.Name() == filter {
+				need = false
+				break
+			}
 		}
-
+		if need {
+			name := readFile(filepath.Join(path, info.Name()), filters, filterTest)
+			if name != "" {
+				ret = append(ret, name)
+			}
+		}
 	}
 	return ret
 }
 
 func readFile(path string, filters []string, filterTest bool) string {
+	stat, err := os.Stat(path)
+	if err != nil {
+		return ""
+	}
+	if stat.IsDir() {
+		return ""
+	}
 	if filterTest && strings.Index(path, "_test.go") > 0 {
 		return ""
 	}
@@ -141,6 +159,6 @@ func readFile(path string, filters []string, filterTest bool) string {
 }
 
 func onlyName(s string) string {
-	i := strings.LastIndex(s, ".")
+	i := strings.LastIndex(filepath.Base(s), ".")
 	return s[:i]
 }

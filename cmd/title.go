@@ -8,14 +8,14 @@ import (
 )
 
 func getTitle(name string) string {
-	rd, err := os.Open(filepath.Join(name + ".go"))
+	rd, err := os.Open(filepath.Join(name))
 	panicErr(err)
 	defer rd.Close()
 	reader := bufio.NewReader(rd)
 	title := ""
 	for {
 		line, _, err := reader.ReadLine()
-		panicErr(err)
+		panicErr(err, name)
 		if strings.Index(string(line), "/*") != -1 {
 			line, _, err = reader.ReadLine()
 			panicErr(err)
