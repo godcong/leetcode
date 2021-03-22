@@ -8,7 +8,7 @@ import (
 )
 
 func getTitle(name string) string {
-	rd, err := os.Open(filepath.Join(codePath, name+".go"))
+	rd, err := os.Open(filepath.Join(name + ".go"))
 	panicErr(err)
 	defer rd.Close()
 	reader := bufio.NewReader(rd)

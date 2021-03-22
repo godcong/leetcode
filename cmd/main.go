@@ -82,6 +82,7 @@ var filterList = []string{
 	"README.md",
 	"LICENSE",
 	"def.go",
+	"common",
 	"common.go",
 	"common_func.go",
 	"go.mod",
@@ -92,27 +93,51 @@ var filterList = []string{
 func getAllFiles(path string, filters []string, filterTest bool) []string {
 	dir, err := ioutil.ReadDir(path)
 	panicErr(err)
-	need := false
 	var ret []string
+	var need bool
 	for _, info := range dir {
 		need = true
 		if info.IsDir() {
-			continue
-		}
-		if filterTest && strings.Index(info.Name(), "_test.go") > 0 {
-			continue
-		}
-
-		for _, filter := range filters {
-			if info.Name() == filter {
-				need = false
+			for _, filter := range filters {
+				if info.Name() == filter {
+					need = false
+					break
+				}
+			}
+			sub := filepath.Join(path, info.Name())
+			if need {
+				target, err := ioutil.ReadDir(sub)
+				if err != nil {
+					continue
+				}
+				for _, fileInfo := range target {
+					name := readFile(filepath.Join(sub, fileInfo.Name()), filters, filterTest)
+					if name != "" {
+						ret = append(ret, name)
+					}
+				}
 			}
 		}
-		if need {
-			ret = append(ret, onlyName(info.Name()))
+		name := readFile(filepath.Join(path, info.Name()), filters, filterTest)
+		if name != "" {
+			ret = append(ret, name)
 		}
+
 	}
 	return ret
+}
+
+func readFile(path string, filters []string, filterTest bool) string {
+	if filterTest && strings.Index(path, "_test.go") > 0 {
+		return ""
+	}
+
+	for _, filter := range filters {
+		if path == filter {
+			return ""
+		}
+	}
+	return path
 }
 
 func onlyName(s string) string {
