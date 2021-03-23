@@ -13,7 +13,7 @@ All append into def.go
 ## All completed questions ##
 
 <!--STA-->
-### 总完成:267 ###  
+### 总完成:268 ###  
 | 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0001.twoSum.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0001.twoSum.go_test.go) |  
@@ -128,6 +128,7 @@ All append into def.go
 | 0331 | 验证二叉树的前序序列化 | isValidSerialization | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0331.isValidSerialization.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0331.isValidSerialization.go_test.go) |  
 | 0332 | 重新安排行程 | findItinerary | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0332.findItinerary.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0332.findItinerary.go_test.go) |  
 | 0338 | 比特位计数 | countBits | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0338.countBits.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0338.countBits.go_test.go) |  
+| 0341NestedIterator | 扁平化嵌套列表迭代器 |  | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0341\0341NestedIterator..go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0341\0341NestedIterator..go_test.go) |  
 | 0344 | 反转字符串 | reverseString | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0344.reverseString.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0344.reverseString.go_test.go) |  
 | 0347 | 前 K 个高频元素 | topKFrequent | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0347.topKFrequent.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0347.topKFrequent.go_test.go) |  
 | 0349 | 两个数组的交集 | intersection | [GO](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0349.intersection.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/D:\workspace\golang\project\leetcode\code\0349.intersection.go_test.go) |  
