@@ -213,6 +213,22 @@ func StrToTreeNode(nums string) *TreeNode {
 	return nodes[0]
 }
 
+func StrToNestedIntegerList(str string) []*NestedInteger {
+	str = FixBrackets(str)
+	var sNums []string
+	if str == "" {
+		sNums = make([]string, 1)
+	} else {
+		sNums = strings.Split(str, ",")
+	}
+
+	size := len(sNums)
+	nodes := make([]*NestedInteger, size)
+	//todo
+
+	return nodes
+}
+
 func throughErrorPanic(err error) {
 	if err != nil {
 		panic(err)
