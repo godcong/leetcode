@@ -19,10 +19,19 @@ func TestConstructor(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nestedList: nil,
+				nestedList: StrToNestedIntegerList("[[1,1],2,[1,1]]"),
 			},
 			want: &NestedIterator{
-				vals: nil,
+				vals: StrToIntArray("[1,1,2,1,1]"),
+			},
+		},
+		{
+			name: "",
+			args: args{
+				nestedList: StrToNestedIntegerList("[1,[4,[6]]]"),
+			},
+			want: &NestedIterator{
+				vals: StrToIntArray("[1,4,6]"),
 			},
 		},
 	}
