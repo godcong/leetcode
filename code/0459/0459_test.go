@@ -23,6 +23,13 @@ func Test_find132pattern(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			name: "",
+			args: args{
+				nums: StrToIntArray("[3,1,4,2]"),
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
