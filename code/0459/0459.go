@@ -40,5 +40,30 @@ package _0459
     -109 <= nums[i] <= 109
 */
 func find132pattern(nums []int) bool {
+	n := len(nums)
+	if n < 3 {
+		return false
+	}
+	minNums := make([]int, n)
+	minNums[0] = nums[0]
+	for i := 1; i < n; i++ {
+		if nums[i] < minNums[i-1] {
+			minNums[i] = nums[i]
+		} else {
+			minNums[i] = minNums[i-1]
+		}
+	}
+	stack := make([]int, 0)
+	for j := len(nums) - 1; j >= 0; j-- {
+		if minNums[j] < nums[j] {
+			for len(stack) > 0 && minNums[j] >= stack[len(stack)-1] {
+				stack = stack[:len(stack)-1]
+			}
+			if len(stack) > 0 && stack[len(stack)-1] < nums[j] {
+				return true
+			}
+			stack = append(stack, nums[j])
+		}
+	}
 	return false
 }
