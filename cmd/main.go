@@ -25,8 +25,8 @@ func getCurrentPath() string {
 
 //create readme
 func main() {
-	fmt.Println("path:", filepath.Join(getCurrentPath(), "README.md"))
-	rd, err := os.Open(filepath.Join(getCurrentPath(), "README.md"))
+	fmt.Println("path:", filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
+	rd, err := os.Open(filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
 	panicErr(err)
 	reader := bufio.NewReader(rd)
 	for {
@@ -72,8 +72,12 @@ func printLineArray(arr ...string) {
 	}
 }
 
-func panicErr(err error) {
+func panicErr(err error, args ...interface{}) {
 	if err != nil {
+		if args != nil {
+			fmt.Print("error:")
+			fmt.Println(args...)
+		}
 		panic(err)
 	}
 }
@@ -82,6 +86,7 @@ var filterList = []string{
 	"README.md",
 	"LICENSE",
 	"def.go",
+	"common",
 	"common.go",
 	"common_func.go",
 	"go.mod",
@@ -92,30 +97,69 @@ var filterList = []string{
 func getAllFiles(path string, filters []string, filterTest bool) []string {
 	dir, err := ioutil.ReadDir(path)
 	panicErr(err)
-	need := false
 	var ret []string
+	var need bool
 	for _, info := range dir {
 		need = true
 		if info.IsDir() {
-			continue
+			for _, filter := range filters {
+				if info.Name() == filter {
+					need = false
+					break
+				}
+			}
+			sub := filepath.Join(path, info.Name())
+			if need {
+				target, err := ioutil.ReadDir(sub)
+				if err != nil {
+					continue
+				}
+				for _, fileInfo := range target {
+					name := readFile(filepath.Join(sub, fileInfo.Name()), filters, filterTest)
+					if name != "" {
+						ret = append(ret, name)
+					}
+				}
+			}
 		}
-		if filterTest && strings.Index(info.Name(), "_test.go") > 0 {
-			continue
-		}
-
 		for _, filter := range filters {
 			if info.Name() == filter {
 				need = false
+				break
 			}
 		}
 		if need {
-			ret = append(ret, onlyName(info.Name()))
+			name := readFile(filepath.Join(path, info.Name()), filters, filterTest)
+			if name != "" {
+				ret = append(ret, name)
+			}
 		}
 	}
 	return ret
 }
 
+func readFile(path string, filters []string, filterTest bool) string {
+	stat, err := os.Stat(path)
+	if err != nil {
+		return ""
+	}
+	if stat.IsDir() {
+		return ""
+	}
+	if filterTest && strings.Index(path, "_test.go") > 0 {
+		return ""
+	}
+
+	for _, filter := range filters {
+		if path == filter {
+			return ""
+		}
+	}
+	return path
+}
+
 func onlyName(s string) string {
+	s = filepath.Base(s)
 	i := strings.LastIndex(s, ".")
 	return s[:i]
 }
