@@ -1,5 +1,9 @@
 package _0082
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 82. 删除排序链表中的重复元素 II
 
@@ -29,3 +33,13 @@ package _0082
 
 
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteDuplicates(head *ListNode) *ListNode {
+	return nil
+}
