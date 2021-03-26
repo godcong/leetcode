@@ -1,5 +1,9 @@
 package _0083
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 83. 删除排序链表中的重复元素
 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素 只出现一次 。
@@ -26,3 +30,13 @@ package _0083
 -100 <= Node.val <= 100
 题目数据保证链表已经按升序排列
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteDuplicates(head *ListNode) *ListNode {
+	return nil
+}
