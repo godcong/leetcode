@@ -38,5 +38,12 @@ import (
  * }
  */
 func deleteDuplicates(head *ListNode) *ListNode {
-	return nil
+	for p := head; p != nil && p.Next != nil; {
+		if p.Val == p.Next.Val {
+			p.Next = p.Next.Next
+		} else {
+			p = p.Next
+		}
+	}
+	return head
 }
