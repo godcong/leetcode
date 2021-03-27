@@ -24,3 +24,13 @@ package _0061
 -100 <= Node.val <= 100
 0 <= k <= 2 * 109
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func rotateRight(head *ListNode, k int) *ListNode {
+	return nil
+}
