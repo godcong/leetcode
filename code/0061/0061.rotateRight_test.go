@@ -26,6 +26,14 @@ func Test_rotateRight(t *testing.T) {
 			},
 			want: StrToListNode("[4,5,1,2,3]", -1),
 		},
+		{
+			name: "",
+			args: args{
+				head: StrToListNode(" [0,1,2]", -1),
+				k:    4,
+			},
+			want: StrToListNode("[2,0,1]", -1),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
