@@ -62,7 +62,7 @@ type BSTIterator struct {
 }
 
 func Constructor(root *TreeNode) BSTIterator {
-	data := []int{}
+	var data []int
 	var dfs func(*TreeNode)
 	dfs = func(root *TreeNode) {
 		if root == nil {
