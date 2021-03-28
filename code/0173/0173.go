@@ -58,18 +58,32 @@ bSTIterator.hasNext(); // 返回 False
  * }
  */
 type BSTIterator struct {
+	data []int
 }
 
 func Constructor(root *TreeNode) BSTIterator {
-	return BSTIterator{}
+	data := []int{}
+	var dfs func(*TreeNode)
+	dfs = func(root *TreeNode) {
+		if root == nil {
+			return
+		}
+		dfs(root.Left)
+		data = append(data, root.Val)
+		dfs(root.Right)
+	}
+	dfs(root)
+	return BSTIterator{data: data}
 }
 
 func (this *BSTIterator) Next() int {
-	return 0
+	val := this.data[0]
+	this.data = this.data[1:]
+	return val
 }
 
 func (this *BSTIterator) HasNext() bool {
-	return false
+	return len(this.data) > 0
 }
 
 /**
