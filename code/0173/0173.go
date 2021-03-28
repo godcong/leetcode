@@ -1,5 +1,9 @@
 package _0173
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 173. 二叉搜索树迭代器
 实现一个二叉搜索树迭代器类BSTIterator ，表示一个按中序遍历二叉搜索树（BST）的迭代器：
@@ -45,3 +49,32 @@ bSTIterator.hasNext(); // 返回 False
 
 你可以设计一个满足下述条件的解决方案吗？next() 和 hasNext() 操作均摊时间复杂度为 O(1) ，并使用 O(h) 内存。其中 h 是树的高度。
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+type BSTIterator struct {
+}
+
+func Constructor(root *TreeNode) BSTIterator {
+	return BSTIterator{}
+}
+
+func (this *BSTIterator) Next() int {
+	return 0
+}
+
+func (this *BSTIterator) HasNext() bool {
+	return false
+}
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * obj := Constructor(root);
+ * param_1 := obj.Next();
+ * param_2 := obj.HasNext();
+ */
