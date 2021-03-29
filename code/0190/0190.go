@@ -48,5 +48,10 @@ package _0190
 输入是一个长度为 32 的二进制字符串
 */
 func reverseBits(num uint32) uint32 {
-	return 0
+	ret := uint32(0)
+	for i := 0; i < 32 && num > 0; i++ {
+		ret |= num & 1 << (31 - i)
+		num >>= 1
+	}
+	return ret
 }
