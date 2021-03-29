@@ -47,3 +47,6 @@ package _0190
 
 输入是一个长度为 32 的二进制字符串
 */
+func reverseBits(num uint32) uint32 {
+	return 0
+}
