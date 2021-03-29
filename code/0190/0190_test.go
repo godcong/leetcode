@@ -26,6 +26,13 @@ func Test_reverseBits(t *testing.T) {
 			},
 			want: 0b10111111111111111111111111111111,
 		},
+		{
+			name: "",
+			args: args{
+				num: 0b00000010100101000001111010011100,
+			},
+			want: 0b00111001011110000010100101000000,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
