@@ -25,6 +25,14 @@ func Test_searchMatrix(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				matrix: StrToIntArrArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]"),
+				target: 13,
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
