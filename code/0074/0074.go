@@ -1,5 +1,7 @@
 package _0074
 
+import "sort"
+
 /*
 74. 搜索二维矩阵
 编写一个高效的算法来判断 m x n 矩阵中，是否存在一个目标值。该矩阵具有如下特性：
@@ -28,5 +30,12 @@ n == matrix[i].length
 -104 <= matrix[i][j], target <= 104
 */
 func searchMatrix(matrix [][]int, target int) bool {
-	return false
+	row := sort.Search(len(matrix), func(i int) bool {
+		return matrix[i][0] > target
+	}) - 1
+	if row < 0 {
+		return false
+	}
+	col := sort.SearchInts(matrix[row], target)
+	return col < len(matrix[row]) && matrix[row][col] == target
 }
