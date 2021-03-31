@@ -1,9 +1,10 @@
 package _0090
 
 import (
-	. "github.com/godcong/leetcode/common"
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_subsetsWithDup(t *testing.T) {
