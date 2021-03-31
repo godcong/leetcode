@@ -1,5 +1,7 @@
 package _0090
 
+import "sort"
+
 /*
 90. 子集 II
 给你一个整数数组 nums ，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
@@ -23,3 +25,22 @@ package _0090
 1 <= nums.length <= 10
 -10 <= nums[i] <= 10
 */
+func subsetsWithDup(nums []int) [][]int {
+	sort.Ints(nums)
+	n := len(nums)
+	var ans [][]int
+Outer:
+	for mask := 0; mask < 1<<n; mask++ {
+		var t []int
+		for i, v := range nums {
+			if mask>>i&1 > 0 {
+				if i > 0 && mask>>(i-1)&1 == 0 && v == nums[i-1] {
+					continue Outer
+				}
+				t = append(t, v)
+			}
+		}
+		ans = append(ans, append([]int(nil), t...))
+	}
+	return ans
+}
