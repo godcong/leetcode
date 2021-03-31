@@ -23,6 +23,13 @@ func Test_subsetsWithDup(t *testing.T) {
 			},
 			want: StrToIntArrArray("[[],[1],[1,2],[1,2,2],[2],[2,2]]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: StrToIntArray("[0]"),
+			},
+			want: StrToIntArrArray("[[],[0]]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
