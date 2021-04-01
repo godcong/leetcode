@@ -31,3 +31,6 @@ package _1006
 1 <= N <= 10000
 -2^31 <= answer <= 2^31 - 1  （答案保证符合 32 位整数。）
 */
+func clumsy(N int) int {
+	return 0
+}
