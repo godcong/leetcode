@@ -19,6 +19,13 @@ func Test_clumsy(t *testing.T) {
 			},
 			want: 7,
 		},
+		{
+			name: "",
+			args: args{
+				N: 10,
+			},
+			want: 12,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
