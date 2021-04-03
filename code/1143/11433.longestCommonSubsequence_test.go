@@ -29,6 +29,14 @@ func Test_longestCommonSubsequence(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				text1: "abc",
+				text2: "def",
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
