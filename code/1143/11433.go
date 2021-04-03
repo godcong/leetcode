@@ -33,3 +33,6 @@ package _1143
 1 <= text1.length, text2.length <= 1000
 text1 和 text2 仅由小写英文字符组成。
 */
+func longestCommonSubsequence(text1 string, text2 string) int {
+	return 0
+}
