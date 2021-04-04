@@ -27,5 +27,13 @@ answers 的长度最大为1000。
 answers[i] 是在 [0, 999] 范围内的整数。
 */
 func numRabbits(answers []int) int {
-	return 0
+	var ans int
+	count := map[int]int{}
+	for _, y := range answers {
+		count[y]++
+	}
+	for y, x := range count {
+		ans += (x + y) / (y + 1) * (y + 1)
+	}
+	return ans
 }
