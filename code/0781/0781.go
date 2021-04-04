@@ -26,3 +26,6 @@ package _0781
 answers 的长度最大为1000。
 answers[i] 是在 [0, 999] 范围内的整数。
 */
+func numRabbits(answers []int) int {
+	return 0
+}
