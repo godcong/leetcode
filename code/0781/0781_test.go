@@ -29,6 +29,13 @@ func Test_numRabbits(t *testing.T) {
 			},
 			want: 11,
 		},
+		{
+			name: "",
+			args: args{
+				answers: StrToIntArray("[]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
