@@ -26,3 +26,6 @@ nums2.length == n
 1 <= m + n <= 200
 -109 <= nums1[i], nums2[i] <= 109
 */
+func merge(nums1 []int, m int, nums2 []int, n int) {
+
+}
