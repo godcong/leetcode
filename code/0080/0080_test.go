@@ -23,6 +23,13 @@ func Test_removeDuplicates(t *testing.T) {
 			},
 			want: 5,
 		},
+		{
+			name: "",
+			args: args{
+				nums: StrToIntArray("[0,0,1,1,1,1,2,3,3]"),
+			},
+			want: 7,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
