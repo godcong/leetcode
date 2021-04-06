@@ -45,5 +45,18 @@ for (int i = 0; i < len; i++) {
 nums 已按升序排列
 */
 func removeDuplicates(nums []int) int {
-	return 0
+	n := len(nums)
+	if n <= 2 {
+		return n
+	}
+	slow, fast := 2, 2
+	for fast < n {
+		if nums[slow-2] != nums[fast] {
+			nums[slow] = nums[fast]
+			slow++
+		}
+		fast++
+	}
+	return slow
+
 }
