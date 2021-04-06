@@ -1,6 +1,10 @@
 package _0080
 
-import "testing"
+import (
+	"testing"
+
+	. "github.com/godcong/leetcode/common"
+)
 
 func Test_removeDuplicates(t *testing.T) {
 	type args struct {
@@ -12,6 +16,13 @@ func Test_removeDuplicates(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				nums: StrToIntArray("[1,1,1,2,2,3]"),
+			},
+			want: 5,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
