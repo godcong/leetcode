@@ -44,3 +44,6 @@ for (int i = 0; i < len; i++) {
 -104 <= nums[i] <= 104
 nums 已按升序排列
 */
+func removeDuplicates(nums []int) int {
+	return 0
+}
