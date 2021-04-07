@@ -33,3 +33,6 @@ package _0081
 这是 搜索旋转排序数组 的延伸题目，本题中的 nums  可能包含重复元素。
 这会影响到程序的时间复杂度吗？会有怎样的影响，为什么？
 */
+func search(nums []int, target int) bool {
+	return false
+}
