@@ -24,6 +24,14 @@ func Test_search(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				nums:   StrToIntArray("[2,5,6,0,0,1,2]"),
+				target: 3,
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
