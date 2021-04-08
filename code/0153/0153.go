@@ -37,5 +37,14 @@ nums 中的所有整数 互不相同
 nums 原来是一个升序排序的数组，并进行了 1 至 n 次旋转
 */
 func findMin(nums []int) int {
-	return 0
+	low, high := 0, len(nums)-1
+	for low < high {
+		pivot := low + (high-low)/2
+		if nums[pivot] < nums[high] {
+			high = pivot
+		} else {
+			low = pivot + 1
+		}
+	}
+	return nums[low]
 }
