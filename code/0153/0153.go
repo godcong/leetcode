@@ -36,3 +36,6 @@ n == nums.length
 nums 中的所有整数 互不相同
 nums 原来是一个升序排序的数组，并进行了 1 至 n 次旋转
 */
+func findMin(nums []int) int {
+	return 0
+}
