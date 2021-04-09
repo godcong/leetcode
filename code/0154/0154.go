@@ -35,5 +35,16 @@ nums 原来是一个升序排序的数组，并进行了 1 至 n 次旋转
 允许重复会影响算法的时间复杂度吗？会如何影响，为什么？
 */
 func findMin(nums []int) int {
-	return 0
+	low, high := 0, len(nums)-1
+	for low < high {
+		pivot := low + (high-low)/2
+		if nums[pivot] < nums[high] {
+			high = pivot
+		} else if nums[pivot] > nums[high] {
+			low = pivot + 1
+		} else {
+			high--
+		}
+	}
+	return nums[low]
 }
