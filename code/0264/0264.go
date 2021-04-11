@@ -48,11 +48,10 @@ func nthUglyNumber(n int) int {
 }
 
 func nthUglyNumberMin(mins ...int) int {
-	ret := mins[0]
-	for i := 1; i < len(mins)-1; i++ {
-		if ret > mins[i] {
-			ret = mins[i]
+	for i := 1; i < len(mins); i++ {
+		if mins[0] > mins[i] {
+			mins[0] = mins[i]
 		}
 	}
-	return ret
+	return mins[0]
 }
