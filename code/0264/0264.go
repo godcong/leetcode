@@ -25,5 +25,34 @@ package _0264
 1 <= n <= 1690
 */
 func nthUglyNumber(n int) int {
-	return 0
+	dp := make([]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = 1
+	}
+
+	var a, b, c int
+	for i := 1; i < n; i++ {
+		t1, t2, t3 := dp[a]*2, dp[b]*3, dp[c]*5
+		dp[i] = nthUglyNumberMin(t1, t2, t3)
+		if dp[i] == t1 {
+			a++
+		}
+		if dp[i] == t2 {
+			b++
+		}
+		if dp[i] == t3 {
+			c++
+		}
+	}
+	return dp[n-1]
+}
+
+func nthUglyNumberMin(mins ...int) int {
+	ret := mins[0]
+	for i := 1; i < len(mins)-1; i++ {
+		if ret > mins[i] {
+			ret = mins[i]
+		}
+	}
+	return ret
 }
