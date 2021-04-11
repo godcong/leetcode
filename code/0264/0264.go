@@ -24,3 +24,6 @@ package _0264
 
 1 <= n <= 1690
 */
+func nthUglyNumber(n int) int {
+	return 0
+}
