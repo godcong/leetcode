@@ -1,5 +1,10 @@
 package _0179
 
+import (
+	"sort"
+	"strconv"
+)
+
 /*
 179. 最大数
 给定一组非负整数 nums，重新排列每个数的顺序（每个数不可拆分）使之组成一个最大的整数。
@@ -32,5 +37,23 @@ package _0179
 0 <= nums[i] <= 109
 */
 func largestNumber(nums []int) string {
-	return ""
+	sort.Slice(nums, func(i, j int) bool {
+		x, y := nums[i], nums[j]
+		sx, sy := 10, 10
+		for sx <= x {
+			sx *= 10
+		}
+		for sy <= y {
+			sy *= 10
+		}
+		return sy*x+y > sx*y+x
+	})
+	if nums[0] == 0 {
+		return "0"
+	}
+	var ans []byte
+	for _, x := range nums {
+		ans = append(ans, strconv.Itoa(x)...)
+	}
+	return string(ans)
 }
