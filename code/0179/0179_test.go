@@ -36,6 +36,13 @@ func Test_largestNumber(t *testing.T) {
 			},
 			want: "1",
 		},
+		{
+			name: "",
+			args: args{
+				nums: StrToIntArray("[10]"),
+			},
+			want: "10",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
