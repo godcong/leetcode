@@ -15,6 +15,13 @@ func Test_minDiffInBST(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				root: StrToTreeNode("[4,2,6,1,3]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
