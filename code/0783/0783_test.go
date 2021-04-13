@@ -22,6 +22,13 @@ func Test_minDiffInBST(t *testing.T) {
 			},
 			want: 1,
 		},
+		{
+			name: "",
+			args: args{
+				root: StrToTreeNode("[1,0,48,null,null,12,49]"),
+			},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
