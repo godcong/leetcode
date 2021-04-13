@@ -1,5 +1,9 @@
 package _0783
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 783. 二叉搜索树节点最小距离
 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。
@@ -25,3 +29,14 @@ package _0783
 树中节点数目在范围 [2, 100] 内
 0 <= Node.val <= 105
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func minDiffInBST(root *TreeNode) int {
+	return 0
+}
