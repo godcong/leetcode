@@ -2,6 +2,7 @@ package _0783
 
 import (
 	. "github.com/godcong/leetcode/common"
+	"math"
 )
 
 /*
@@ -38,5 +39,19 @@ import (
  * }
  */
 func minDiffInBST(root *TreeNode) int {
-	return 0
+	ans, pre := math.MaxInt64, -1
+	var dfs func(*TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		dfs(node.Left)
+		if pre != -1 && node.Val-pre < ans {
+			ans = node.Val - pre
+		}
+		pre = node.Val
+		dfs(node.Right)
+	}
+	dfs(root)
+	return ans
 }
