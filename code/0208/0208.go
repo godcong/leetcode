@@ -36,3 +36,33 @@ trie.search("app");     // 返回 True
 word 和 prefix 仅由小写英文字母组成
 insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
 */
+type Trie struct {
+}
+
+/** Initialize your data structure here. */
+func Constructor() Trie {
+
+}
+
+/** Inserts a word into the trie. */
+func (this *Trie) Insert(word string) {
+
+}
+
+/** Returns if the word is in the trie. */
+func (this *Trie) Search(word string) bool {
+
+}
+
+/** Returns if there is any word in the trie that starts with the given prefix. */
+func (this *Trie) StartsWith(prefix string) bool {
+
+}
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Insert(word);
+ * param_2 := obj.Search(word);
+ * param_3 := obj.StartsWith(prefix);
+ */
