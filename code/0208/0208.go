@@ -1,5 +1,7 @@
 package _0208
 
+import "runtime/debug"
+
 /*
 208. 实现 Trie (前缀树)
 Trie（发音类似 "try"）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
@@ -36,27 +38,51 @@ trie.search("app");     // 返回 True
 word 和 prefix 仅由小写英文字母组成
 insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
 */
+func init() {
+	debug.FreeOSMemory()
+	debug.SetGCPercent(-1)
+}
+
 type Trie struct {
+	children [26]*Trie
+	isEnd    bool
 }
 
-/** Initialize your data structure here. */
 func Constructor() Trie {
-
+	return Trie{}
 }
 
-/** Inserts a word into the trie. */
-func (this *Trie) Insert(word string) {
-
+func (t *Trie) Insert(word string) {
+	node := t
+	for _, ch := range word {
+		ch -= 'a'
+		if node.children[ch] == nil {
+			node.children[ch] = &Trie{}
+		}
+		node = node.children[ch]
+	}
+	node.isEnd = true
 }
 
-/** Returns if the word is in the trie. */
-func (this *Trie) Search(word string) bool {
-
+func (t *Trie) SearchPrefix(prefix string) *Trie {
+	node := t
+	for _, ch := range prefix {
+		ch -= 'a'
+		if node.children[ch] == nil {
+			return nil
+		}
+		node = node.children[ch]
+	}
+	return node
 }
 
-/** Returns if there is any word in the trie that starts with the given prefix. */
-func (this *Trie) StartsWith(prefix string) bool {
+func (t *Trie) Search(word string) bool {
+	node := t.SearchPrefix(word)
+	return node != nil && node.isEnd
+}
 
+func (t *Trie) StartsWith(prefix string) bool {
+	return t.SearchPrefix(prefix) != nil
 }
 
 /**
