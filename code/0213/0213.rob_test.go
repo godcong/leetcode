@@ -22,6 +22,13 @@ func Test_rob(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[1,2,3,1]"),
+			},
+			want: 4,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
