@@ -30,3 +30,6 @@ package _0213
 1 <= nums.length <= 100
 0 <= nums[i] <= 1000
 */
+func rob(nums []int) int {
+	return 0
+}
