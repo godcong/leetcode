@@ -41,3 +41,6 @@ s1.length == s2.length
 1 <= s1.length <= 30
 s1 和 s2 由小写英文字母组成
 */
+func isScramble(s1 string, s2 string) bool {
+	return false
+}
