@@ -13,7 +13,30 @@ func Test_isScramble(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
-
+		{
+			name: "",
+			args: args{
+				s1: "great",
+				s2: "rgeat",
+			},
+			want: true,
+		},
+		{
+			name: "",
+			args: args{
+				s1: "abcde",
+				s2: "caebd",
+			},
+			want: false,
+		},
+		{
+			name: "",
+			args: args{
+				s1: "a",
+				s2: "a",
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
