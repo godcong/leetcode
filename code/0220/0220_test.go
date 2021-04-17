@@ -1,6 +1,9 @@
 package _0220
 
-import "testing"
+import (
+	"github.com/godcong/leetcode/common"
+	"testing"
+)
 
 func Test_containsNearbyAlmostDuplicate(t *testing.T) {
 	type args struct {
@@ -14,6 +17,15 @@ func Test_containsNearbyAlmostDuplicate(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[1,2,3,1]"),
+				k:    3,
+				t:    0,
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
