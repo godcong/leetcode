@@ -35,6 +35,15 @@ func Test_containsNearbyAlmostDuplicate(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[1,5,9,1,5,9]"),
+				k:    2,
+				t:    3,
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
