@@ -29,3 +29,6 @@ package _0220
 0 <= k <= 104
 0 <= t <= 231 - 1
 */
+func containsNearbyAlmostDuplicate(nums []int, k int, t int) bool {
+	return false
+}
