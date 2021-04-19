@@ -46,3 +46,6 @@ for (int i = 0; i < len; i++) {
 0 <= nums[i] <= 50
 0 <= val <= 100
 */
+func removeElement(nums []int, val int) int {
+	return 0
+}
