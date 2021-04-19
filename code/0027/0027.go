@@ -47,5 +47,12 @@ for (int i = 0; i < len; i++) {
 0 <= val <= 100
 */
 func removeElement(nums []int, val int) int {
-	return 0
+	left := 0
+	for _, v := range nums {
+		if v != val {
+			nums[left] = v
+			left++
+		}
+	}
+	return left
 }
