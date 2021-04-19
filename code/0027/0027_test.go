@@ -24,6 +24,14 @@ func Test_removeElement(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[0,1,2,2,3,0,4,2]"),
+				val:  2,
+			},
+			want: 5,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
