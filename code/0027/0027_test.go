@@ -1,6 +1,9 @@
 package _0027
 
-import "testing"
+import (
+	"github.com/godcong/leetcode/common"
+	"testing"
+)
 
 func Test_removeElement(t *testing.T) {
 	type args struct {
@@ -13,6 +16,14 @@ func Test_removeElement(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[3,2,2,3]"),
+				val:  3,
+			},
+			want: 2,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
