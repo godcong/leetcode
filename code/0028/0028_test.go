@@ -21,6 +21,14 @@ func Test_strStr(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				haystack: "aaaaa",
+				needle:   "bba",
+			},
+			want: -1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
