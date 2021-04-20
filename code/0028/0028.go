@@ -35,7 +35,7 @@ package _0028
 0 <= haystack.length, needle.length <= 5 * 104
 haystack 和 needle 仅由小写英文字符组成
 */
-func strStr(haystack, needle string) int {
+func strStr(haystack string, needle string) int {
 	n, m := len(haystack), len(needle)
 loops:
 	for i := 0; i+m <= n; i++ {
