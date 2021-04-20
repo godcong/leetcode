@@ -37,11 +37,11 @@ haystack 和 needle 仅由小写英文字符组成
 */
 func strStr(haystack, needle string) int {
 	n, m := len(haystack), len(needle)
-outer:
+loops:
 	for i := 0; i+m <= n; i++ {
 		for j := range needle {
 			if haystack[i+j] != needle[j] {
-				continue outer
+				continue loops
 			}
 		}
 		return i
