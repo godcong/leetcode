@@ -49,3 +49,6 @@ package _0091
 1 <= s.length <= 100
 s 只包含数字，并且可能包含前导零。
 */
+func numDecodings(s string) int {
+	return 0
+}
