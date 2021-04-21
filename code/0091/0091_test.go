@@ -33,6 +33,13 @@ func Test_numDecodings(t *testing.T) {
 			},
 			want: 0,
 		},
+		{
+			name: "",
+			args: args{
+				s: "06",
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
