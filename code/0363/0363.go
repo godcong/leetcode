@@ -1,5 +1,7 @@
 package _0363
 
+import "math"
+
 /*
 363. 矩形区域不超过 K 的最大数值和
 给你一个 m x n 的矩阵 matrix 和一个整数 k ，找出并返回矩阵内部矩形区域的不超过 k 的最大数值和。
@@ -32,5 +34,59 @@ n == matrix[i].length
 进阶：如果行数远大于列数，该如何设计解决方案？
 */
 func maxSumSubmatrix(matrix [][]int, k int) int {
-	return 0
+	n := len(matrix)
+	m := len(matrix[0])
+	max := math.MinInt32
+	var sumArry []int
+	for i := 0; i < m; i++ {
+		sumArry = make([]int, n)
+		for j := i; j < m; j++ {
+			for o := 0; o < n; o++ {
+				sumArry[o] += matrix[o][j]
+			}
+
+			max = maxInt(max, subMax(sumArry, k))
+		}
+	}
+
+	return max
+}
+
+func subMax(sumArry []int, k int) int {
+	size := len(sumArry)
+	max := math.MinInt32
+	sum := 0
+	for _, v := range sumArry {
+		if sum >= 0 {
+			sum += v
+		} else {
+			sum = v
+		}
+		if max < sum {
+			max = sum
+		}
+	}
+
+	if max <= k {
+		return max
+	}
+	max = math.MinInt32
+	for i := range sumArry {
+		sum = 0
+		for j := i; j < size; j++ {
+			sum += sumArry[j]
+			if sum <= k && sum > max {
+				max = sum
+			}
+		}
+	}
+
+	return max
+}
+
+func maxInt(a int, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
