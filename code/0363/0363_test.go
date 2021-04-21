@@ -24,6 +24,14 @@ func Test_maxSumSubmatrix(t *testing.T) {
 			},
 			want: 2,
 		},
+		{
+			name: "",
+			args: args{
+				matrix: common.StrToIntArrArray("[[2,2,-1]]"),
+				k:      3,
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
