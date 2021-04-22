@@ -25,6 +25,14 @@ func Test_twoSum(t *testing.T) {
 			},
 			want: common.StrToIntArray("[0,1]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums:   common.StrToIntArray("[3,2,4]"),
+				target: 6,
+			},
+			want: common.StrToIntArray("[1,2]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
