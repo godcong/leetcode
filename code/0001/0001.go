@@ -32,3 +32,6 @@ package _0001
 -109 <= target <= 109
 只会存在一个有效答案
 */
+func twoSum(nums []int, target int) []int {
+	return nil
+}
