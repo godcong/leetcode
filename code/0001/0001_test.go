@@ -1,6 +1,7 @@
 package _0001
 
 import (
+	"github.com/godcong/leetcode/common"
 	"reflect"
 	"testing"
 )
@@ -16,7 +17,14 @@ func Test_twoSum(t *testing.T) {
 		want []int
 	}{
 		// TODO: Add test cases.
-		{},
+		{
+			name: "",
+			args: args{
+				nums:   common.StrToIntArray("[2,7,11,15]"),
+				target: 9,
+			},
+			want: common.StrToIntArray("[0,1]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
