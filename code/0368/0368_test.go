@@ -23,6 +23,13 @@ func Test_largestDivisibleSubset(t *testing.T) {
 			},
 			want: common.StrToIntArray("[1,2]"),
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[1,2,4,8]"),
+			},
+			want: common.StrToIntArray("[1,2,4,8]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
