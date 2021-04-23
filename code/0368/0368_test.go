@@ -1,6 +1,7 @@
 package _0368
 
 import (
+	"github.com/godcong/leetcode/common"
 	"reflect"
 	"testing"
 )
@@ -15,6 +16,13 @@ func Test_largestDivisibleSubset(t *testing.T) {
 		want []int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[1,2,3]"),
+			},
+			want: common.StrToIntArray("[1,2]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
