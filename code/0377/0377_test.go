@@ -24,6 +24,14 @@ func Test_combinationSum4(t *testing.T) {
 			},
 			want: 7,
 		},
+		{
+			name: "",
+			args: args{
+				nums:   common.StrToIntArray("[9]"),
+				target: 3,
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
