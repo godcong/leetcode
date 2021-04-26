@@ -1,5 +1,7 @@
 package _1011
 
+import "sort"
+
 /*
 1011. 在 D 天内送达包裹的能力
 传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。
@@ -49,5 +51,24 @@ package _1011
 1 <= weights[i] <= 500
 */
 func shipWithinDays(weights []int, D int) int {
-	return 0
+	left, right := 0, 0
+	for _, w := range weights {
+		if w > left {
+			left = w
+		}
+		right += w
+	}
+	return left + sort.Search(right-left, func(x int) bool {
+		x += left
+		day := 1
+		sum := 0
+		for _, w := range weights {
+			if sum+w > x {
+				day++
+				sum = 0
+			}
+			sum += w
+		}
+		return day <= D
+	})
 }
