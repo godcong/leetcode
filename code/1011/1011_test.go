@@ -30,7 +30,15 @@ func Test_shipWithinDays(t *testing.T) {
 				weights: common.StrToIntArray("[3,2,2,4,1,4]"),
 				D:       3,
 			},
-			want: 0,
+			want: 6,
+		},
+		{
+			name: "",
+			args: args{
+				weights: common.StrToIntArray("[1,2,3,1,1]"),
+				D:       4,
+			},
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
