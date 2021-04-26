@@ -48,3 +48,6 @@ package _1011
 1 <= D <= weights.length <= 50000
 1 <= weights[i] <= 500
 */
+func shipWithinDays(weights []int, D int) int {
+	return 0
+}
