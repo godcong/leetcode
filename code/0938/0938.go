@@ -1,5 +1,9 @@
 package _0938
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 938. 二叉搜索树的范围和
 给定二叉搜索树的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
@@ -25,3 +29,14 @@ package _0938
 1 <= low <= high <= 105
 所有 Node.val 互不相同
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func rangeSumBST(root *TreeNode, low int, high int) int {
+	return 0
+}
