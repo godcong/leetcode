@@ -26,6 +26,15 @@ func Test_rangeSumBST(t *testing.T) {
 			},
 			want: 32,
 		},
+		{
+			name: "",
+			args: args{
+				root: StrToTreeNode("[10,5,15,3,7,13,18,1,null,6]"),
+				low:  6,
+				high: 10,
+			},
+			want: 23,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
