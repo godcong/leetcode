@@ -1,5 +1,7 @@
 package _0633
 
+import "math"
+
 /*
 633. 平方数之和
 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
@@ -33,3 +35,12 @@ package _0633
 
 0 <= c <= 231 - 1
 */
+func judgeSquareSum(c int) bool {
+	for a := 0; a*a <= c; a++ {
+		rt := math.Sqrt(float64(c - a*a))
+		if rt == math.Floor(rt) {
+			return true
+		}
+	}
+	return false
+}
