@@ -1,5 +1,7 @@
 package _0403
 
+import "sort"
+
 /*
 403. 青蛙过河
 一只青蛙想要过河。 假定河流被等分为若干个单元格，并且在每一个单元格内都有可能放有一块石子（也有可能没有）。 青蛙可以跳上石子，但是不可以跳入水中。
@@ -31,5 +33,29 @@ package _0403
 stones[0] == 0
 */
 func canCross(stones []int) bool {
-	return false
+	n := len(stones)
+	dp := make([]map[int]bool, n-1)
+	for i := range dp {
+		dp[i] = map[int]bool{}
+	}
+	var dfs func(int, int) bool
+	dfs = func(i, lastDis int) (res bool) {
+		if i == n-1 {
+			return true
+		}
+		if res, has := dp[i][lastDis]; has {
+			return res
+		}
+		defer func() { dp[i][lastDis] = res }()
+		for curDis := lastDis - 1; curDis <= lastDis+1; curDis++ {
+			if curDis > 0 {
+				j := sort.SearchInts(stones, curDis+stones[i])
+				if j != n && stones[j] == curDis+stones[i] && dfs(j, curDis) {
+					return true
+				}
+			}
+		}
+		return false
+	}
+	return dfs(0, 0)
 }
