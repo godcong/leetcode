@@ -30,3 +30,6 @@ package _0403
 0 <= stones[i] <= 231 - 1
 stones[0] == 0
 */
+func canCross(stones []int) bool {
+	return false
+}
