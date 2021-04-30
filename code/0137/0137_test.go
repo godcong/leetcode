@@ -22,6 +22,13 @@ func Test_singleNumber(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[0,1,0,1,0,1,99]"),
+			},
+			want: 99,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
