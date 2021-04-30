@@ -28,11 +28,11 @@ nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 
 func singleNumber(nums []int) int {
 	var (
 		seenOnce  int
-		seenTwice int
+		seenRepeated int
 	)
 	for _, n := range nums {
-		seenOnce = ^seenTwice & (seenOnce ^ n)
-		seenTwice = ^seenOnce & (seenTwice ^ n)
+		seenOnce = ^seenRepeated & (seenOnce ^ n)
+		seenRepeated = ^seenOnce & (seenRepeated ^ n)
 	}
 	return seenOnce
 }
