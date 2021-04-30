@@ -26,14 +26,13 @@ nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 
 进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 */
 func singleNumber(nums []int) int {
-	freq := map[int]int{}
-	for _, v := range nums {
-		freq[v]++
+	var (
+		seenOnce  int
+		seenTwice int
+	)
+	for _, n := range nums {
+		seenOnce = ^seenTwice & (seenOnce ^ n)
+		seenTwice = ^seenOnce & (seenTwice ^ n)
 	}
-	for num, occ := range freq {
-		if occ == 1 {
-			return num
-		}
-	}
-	return 0
+	return seenOnce
 }
