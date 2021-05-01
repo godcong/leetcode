@@ -234,3 +234,8 @@ func throughErrorPanic(err error) {
 		panic(err)
 	}
 }
+
+func StrToEmployees(str string) []*Employee {
+	str = FixBrackets(str)
+	return nil
+}
