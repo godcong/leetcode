@@ -1,5 +1,9 @@
 package _0690
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 690. 员工的重要性
 给定一个保存员工信息的数据结构，它包含了员工 唯一的 id ，重要度 和 直系下属的 id 。
