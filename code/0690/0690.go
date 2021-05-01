@@ -32,5 +32,17 @@ package _0690
  * }
  */
 func getImportance(employees []*Employee, id int) int {
+	for _, emp := range employees {
+		if id == emp.Id {
+			if len(emp.Subordinates) == 0 {
+				return emp.Importance
+			}
+			for _, subordinate := range emp.Subordinates {
+				emp.Importance += getImportance(employees, subordinate)
+			}
+			return emp.Importance
+		}
+	}
+
 	return 0
 }
