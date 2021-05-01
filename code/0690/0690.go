@@ -23,3 +23,15 @@ package _0690
 一个员工最多有一个 直系 领导，但是可以有多个 直系 下属
 员工数量不超过 2000 。
 */
+/**
+ * Definition for Employee.
+ * type Employee struct {
+ *     Id int
+ *     Importance int
+ *     Subordinates []int
+ * }
+ */
+
+func getImportance(employees []*Employee, id int) int {
+
+}
