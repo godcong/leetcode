@@ -31,7 +31,6 @@ package _0690
  *     Subordinates []int
  * }
  */
-
 func getImportance(employees []*Employee, id int) int {
-
+	return 0
 }
