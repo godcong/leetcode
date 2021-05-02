@@ -29,3 +29,6 @@ n == wall.length
 对于每一行 i ，sum(wall[i]) 应当是相同的
 1 <= wall[i][j] <= 231 - 1
 */
+func leastBricks(wall [][]int) int {
+	return 0
+}
