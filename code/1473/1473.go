@@ -49,3 +49,6 @@ n == cost[i].length
 0 <= houses[i] <= n
 1 <= cost[i][j] <= 10^4
 */
+func minCost(houses []int, cost [][]int, m int, n int, target int) int {
+	return 0
+}
