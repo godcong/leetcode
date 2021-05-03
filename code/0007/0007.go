@@ -31,3 +31,6 @@ package _0007
 
 -231 <= x <= 231 - 1
 */
+func reverse(x int) int {
+	return 0
+}
