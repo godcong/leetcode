@@ -16,6 +16,17 @@ func Test_minCost(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				houses: nil,
+				cost:   nil,
+				m:      0,
+				n:      0,
+				target: 0,
+			},
+			want: 0,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
