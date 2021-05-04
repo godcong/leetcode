@@ -1,6 +1,10 @@
 package _0740
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/godcong/leetcode/common"
+)
 
 func Test_deleteAndEarn(t *testing.T) {
 	type args struct {
@@ -15,9 +19,9 @@ func Test_deleteAndEarn(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				nums: nil,
+				nums: common.StrToIntArray("[3,4,2]"),
 			},
-			want: 0,
+			want: 6,
 		},
 	}
 	for _, tt := range tests {
