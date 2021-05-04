@@ -23,6 +23,13 @@ func Test_deleteAndEarn(t *testing.T) {
 			},
 			want: 6,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[2,2,3,3,3,4]"),
+			},
+			want: 9,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
