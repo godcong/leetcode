@@ -32,3 +32,6 @@ package _0740
 1 <= nums.length <= 2 * 104
 1 <= nums[i] <= 104
 */
+func deleteAndEarn(nums []int) int {
+	return 0
+}
