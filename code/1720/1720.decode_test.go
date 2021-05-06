@@ -1,7 +1,7 @@
 package _1720
 
 import (
-	"github.com/godcong/leetcode/common"
+	. "github.com/godcong/leetcode/common"
 	"reflect"
 	"testing"
 )
@@ -20,10 +20,10 @@ func Test_decode(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				encoded: common.StrToIntArray("[1,2,3]"),
+				encoded: StrToIntArray("[1,2,3]"),
 				first:   1,
 			},
-			want: nil,
+			want: StrToIntArray("[1,0,2,1]"),
 		},
 	}
 	for _, tt := range tests {
