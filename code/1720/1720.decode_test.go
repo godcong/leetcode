@@ -25,6 +25,14 @@ func Test_decode(t *testing.T) {
 			},
 			want: StrToIntArray("[1,0,2,1]"),
 		},
+		{
+			name: "",
+			args: args{
+				encoded: StrToIntArray("[6,2,7,3]"),
+				first:   4,
+			},
+			want: StrToIntArray("[4,2,0,7,4]"),
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
