@@ -30,3 +30,6 @@ encoded.length == n - 1
 0 <= encoded[i] <= 105
 0 <= first <= 105
 */
+func decode(encoded []int, first int) []int {
+	return nil
+}
