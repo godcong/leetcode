@@ -31,5 +31,10 @@ encoded.length == n - 1
 0 <= first <= 105
 */
 func decode(encoded []int, first int) []int {
-	return nil
+	ans := make([]int, len(encoded)+1)
+	ans[0] = first
+	for i, e := range encoded {
+		ans[i+1] = ans[i] ^ e
+	}
+	return ans
 }
