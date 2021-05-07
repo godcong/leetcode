@@ -37,3 +37,6 @@ package _1486
 0 <= start <= 1000
 n == nums.length
 */
+func xorOperation(n int, start int) int {
+	return 0
+}
