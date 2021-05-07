@@ -29,6 +29,14 @@ func Test_xorOperation(t *testing.T) {
 			},
 			want: 8,
 		},
+		{
+			name: "",
+			args: args{
+				n:     1,
+				start: 7,
+			},
+			want: 7,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
