@@ -1,6 +1,9 @@
 package _1723
 
-import "testing"
+import (
+	"github.com/godcong/leetcode/common"
+	"testing"
+)
 
 func Test_minimumTimeRequired(t *testing.T) {
 	type args struct {
@@ -13,6 +16,14 @@ func Test_minimumTimeRequired(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				jobs: common.StrToIntArray("[3,2,3]"),
+				k:    3,
+			},
+			want: 3,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
