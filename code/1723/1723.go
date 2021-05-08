@@ -30,3 +30,6 @@ package _1723
 1 <= k <= jobs.length <= 12
 1 <= jobs[i] <= 107
 */
+func minimumTimeRequired(jobs []int, k int) int {
+	return 0
+}
