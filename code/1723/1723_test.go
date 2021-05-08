@@ -24,6 +24,14 @@ func Test_minimumTimeRequired(t *testing.T) {
 			},
 			want: 3,
 		},
+		{
+			name: "",
+			args: args{
+				jobs: common.StrToIntArray("[1,2,4,7,8]"),
+				k:    2,
+			},
+			want: 11,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
