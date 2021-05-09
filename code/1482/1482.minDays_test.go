@@ -53,6 +53,15 @@ func Test_minDays(t *testing.T) {
 			},
 			want: 1000000000,
 		},
+		{
+			name: "",
+			args: args{
+				bloomDay: common.StrToIntArray("[1,10,2,9,3,8,4,7,5,6]"),
+				m:        4,
+				k:        2,
+			},
+			want: 9,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
