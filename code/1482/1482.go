@@ -55,4 +55,6 @@ bloomDay.length == n
 1 <= m <= 10^6
 1 <= k <= n
 */
-
+func minDays(bloomDay []int, m int, k int) int {
+	return 0
+}
