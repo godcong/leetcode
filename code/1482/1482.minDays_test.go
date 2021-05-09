@@ -1,6 +1,9 @@
 package _1482
 
-import "testing"
+import (
+	"github.com/godcong/leetcode/common"
+	"testing"
+)
 
 func Test_minDays(t *testing.T) {
 	type args struct {
@@ -17,11 +20,11 @@ func Test_minDays(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				bloomDay: nil,
-				m:        0,
-				k:        0,
+				bloomDay: common.StrToIntArray("[1,10,3,10,2]"),
+				m:        3,
+				k:        1,
 			},
-			want: 0,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
