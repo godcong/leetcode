@@ -2,6 +2,7 @@ package _1482
 
 import (
 	"math"
+	"runtime/debug"
 	"sort"
 )
 
@@ -60,6 +61,12 @@ bloomDay.length == n
 1 <= m <= 10^6
 1 <= k <= n
 */
+func init() {
+	debug.FreeOSMemory()
+	debug.SetGCPercent(-1)
+}
+
+
 func minDays(bloomDay []int, m int, k int) int {
 	if m > len(bloomDay)/k {
 		return -1
