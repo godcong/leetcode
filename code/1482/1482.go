@@ -1,5 +1,10 @@
 package _1482
 
+import (
+	"math"
+	"sort"
+)
+
 /*
 1482. 制作 m 束花所需的最少天数
 给你一个整数数组 bloomDay，以及两个整数 m 和 k 。
@@ -56,5 +61,34 @@ bloomDay.length == n
 1 <= k <= n
 */
 func minDays(bloomDay []int, m int, k int) int {
-	return 0
+	if m > len(bloomDay)/k {
+		return -1
+	}
+	minDay, maxDay := math.MaxInt32, 0
+	for _, day := range bloomDay {
+		if day < minDay {
+			minDay = day
+		}
+		if day > maxDay {
+			maxDay = day
+		}
+	}
+	return minDay + sort.Search(
+		maxDay-minDay, func(days int) bool {
+			days += minDay
+			flowers, bouquets := 0, 0
+			for _, d := range bloomDay {
+				if d > days {
+					flowers = 0
+				} else {
+					flowers++
+					if flowers == k {
+						bouquets++
+						flowers = 0
+					}
+				}
+			}
+			return bouquets >= m
+		},
+	)
 }
