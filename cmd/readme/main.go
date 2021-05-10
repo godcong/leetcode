@@ -25,8 +25,8 @@ func getCurrentPath() string {
 
 //create readme
 func main() {
-	fmt.Println("path:", filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
-	rd, err := os.Open(filepath.Join(getCurrentPath(), "cmd", "README.md.tmpl"))
+	fmt.Println("path:", filepath.Join(getCurrentPath(), "cmd", "readme", "README.md.tmpl"))
+	rd, err := os.Open(filepath.Join(getCurrentPath(), "cmd", "readme", "README.md.tmpl"))
 	panicErr(err)
 	reader := bufio.NewReader(rd)
 	for {
@@ -44,7 +44,11 @@ func main() {
 	files := getAllFiles(codePath, filterList, true)
 	printLineArray(files...)
 
-	rd, err = os.OpenFile(filepath.Join(getCurrentPath(), "README.md"), os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC, 0755)
+	rd, err = os.OpenFile(
+		filepath.Join(getCurrentPath(), "README.md"),
+		os.O_CREATE|os.O_RDWR|os.O_SYNC|os.O_TRUNC,
+		0755,
+	)
 	defer rd.Close()
 	panicErr(err)
 	bw := bufio.NewWriter(rd)
