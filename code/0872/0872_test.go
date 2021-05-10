@@ -16,6 +16,14 @@ func Test_leafSimilar(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				root1: StrToTreeNode("[3,5,1,6,2,9,8,null,null,7,4]"),
+				root2: StrToTreeNode("[3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]"),
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
