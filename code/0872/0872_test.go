@@ -40,6 +40,14 @@ func Test_leafSimilar(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			name: "",
+			args: args{
+				root1: StrToTreeNode("[1,2]"),
+				root2: StrToTreeNode("[2,2]"),
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(
