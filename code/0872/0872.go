@@ -1,5 +1,9 @@
 package _0872
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 872. 叶子相似的树
 请考虑一棵二叉树上所有的叶子，这些叶子的值按从左到右的顺序排列形成一个 叶值序列 。
@@ -45,3 +49,14 @@ package _0872
 给定的两棵树可能会有 1 到 200 个结点。
 给定的两棵树上的值介于 0 到 200 之间。
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
+	return false
+}
