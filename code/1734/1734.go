@@ -27,3 +27,6 @@ package _1734
 n 是奇数。
 encoded.length == n - 1
 */
+func decode(encoded []int) []int {
+	return encoded
+}
