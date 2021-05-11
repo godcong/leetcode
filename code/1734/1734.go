@@ -37,7 +37,7 @@ func decode(encoded []int) []int {
 			odd ^= encoded[i]
 		}
 	}
-	perm := make([]int, n+1)
+	perm := append(encoded, 0)
 	perm[0] = total ^ odd
 	for i, v := range encoded {
 		perm[i+1] = perm[i] ^ v
