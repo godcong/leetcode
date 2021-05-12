@@ -39,3 +39,6 @@ package _1310
 queries[i].length == 2
 0 <= queries[i][0] <= queries[i][1] < arr.length
 */
+func xorQueries(arr []int, queries [][]int) []int {
+	return nil
+}
