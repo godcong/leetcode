@@ -40,5 +40,5 @@ package _1269
 1 <= arrLen <= 10^6
 */
 func numWays(steps int, arrLen int) int {
-
+	return 0
 }
