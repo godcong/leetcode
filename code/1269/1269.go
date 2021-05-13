@@ -39,3 +39,6 @@ package _1269
 1 <= steps <= 500
 1 <= arrLen <= 10^6
 */
+func numWays(steps int, arrLen int) int {
+
+}
