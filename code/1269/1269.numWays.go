@@ -39,31 +39,33 @@ package _1269
 1 <= steps <= 500
 1 <= arrLen <= 10^6
 */
+
+const (
+	Num = 1_000_000_000 + 7
+)
+
 func numWays(steps int, arrLen int) int {
-	const mod = 1e9 + 7
-	maxColumn := min(arrLen-1, steps)
-	dp := make([][]int, steps+1)
-	for i := range dp {
-		dp[i] = make([]int, maxColumn+1)
+	if arrLen == 0 {
+		return 0
 	}
-	dp[0][0] = 1
-	for i := 1; i <= steps; i++ {
-		for j := 0; j <= maxColumn; j++ {
-			dp[i][j] = dp[i-1][j]
-			if j-1 >= 0 {
-				dp[i][j] = (dp[i][j] + dp[i-1][j-1]) % mod
-			}
-			if j+1 <= maxColumn {
-				dp[i][j] = (dp[i][j] + dp[i-1][j+1]) % mod
+	if arrLen == 1 {
+		return 1
+	}
+
+	dpA := make([]int, arrLen)
+	dpB := make([]int, arrLen)
+
+	dpA[0] = 1
+	for i := 1; i < steps; i++ {
+		dpB[0] = (dpA[0] + dpA[1]) % Num
+		for j := 1; j < arrLen-1; j++ {
+			dpB[j] = (dpA[j-1] + dpA[j] + dpA[j+1]) % Num
+			if dpB[j] == 0 {
+				break
 			}
 		}
+		dpB[arrLen-1] = (dpA[arrLen-2] + dpA[arrLen-1]) % Num
+		dpA, dpB = dpB, dpA
 	}
-	return dp[steps][0]
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+	return (dpA[0] + dpA[1]) % Num
 }
