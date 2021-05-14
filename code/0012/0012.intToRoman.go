@@ -73,12 +73,12 @@ var valueSymbols = []struct {
 func intToRoman(num int) string {
 	var roman []byte
 	for _, vs := range valueSymbols {
+		if num == 0 {
+			break
+		}
 		for num >= vs.value {
 			num -= vs.value
 			roman = append(roman, vs.symbol...)
-		}
-		if num == 0 {
-			break
 		}
 	}
 	return string(roman)
