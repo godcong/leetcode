@@ -38,7 +38,7 @@ package _0421
 */
 func findMaximumXOR(nums []int) int {
 	var ret int
-	const highBit = 30 // 最高位的二进制位编号为 30
+	const highBit = 30
 	for k := highBit; k >= 0; k-- {
 		seen := map[int]bool{}
 		for _, num := range nums {
