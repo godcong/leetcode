@@ -27,6 +27,15 @@ func Test_isCousins(t *testing.T) {
 			},
 			want: false,
 		},
+		{
+			name: "",
+			args: args{
+				root: StrToTreeNode("[1,2,3,null,4,null,5]"),
+				x:    5,
+				y:    4,
+			},
+			want: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
