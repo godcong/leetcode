@@ -64,8 +64,6 @@ func isCousins(root *TreeNode, x int, y int) bool {
 			yParent, yDepth, yFound = parent, depth, true
 		}
 
-		// 如果两个节点都找到了，就可以提前退出遍历
-		// 即使不提前退出，对最坏情况下的时间复杂度也不会有影响
 		if xFound && yFound {
 			return
 		}
