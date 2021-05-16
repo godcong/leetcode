@@ -48,5 +48,5 @@ import (
  * }
  */
 func isCousins(root *TreeNode, x int, y int) bool {
-
+	return false
 }
