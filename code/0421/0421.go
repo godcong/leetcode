@@ -36,3 +36,6 @@ package _0421
 1 <= nums.length <= 2 * 104
 0 <= nums[i] <= 231 - 1
 */
+func findMaximumXOR(nums []int) int {
+	return 0
+}
