@@ -37,6 +37,13 @@ func Test_findMaximumXOR(t *testing.T) {
 			},
 			want: 6,
 		},
+		{
+			name: "",
+			args: args{
+				nums: common.StrToIntArray("[8,10,2]"),
+			},
+			want: 10,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
