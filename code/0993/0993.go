@@ -1,5 +1,9 @@
 package _0993
 
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
 /*
 993. 二叉树的堂兄弟节点
 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k+1 处。
@@ -35,3 +39,14 @@ package _0993
 二叉树的节点数介于 2 到 100 之间。
 每个节点的值都是唯一的、范围为 1 到 100 的整数。
 */
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func isCousins(root *TreeNode, x int, y int) bool {
+
+}
