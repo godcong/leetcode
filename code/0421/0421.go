@@ -37,29 +37,19 @@ package _0421
 0 <= nums[i] <= 231 - 1
 */
 func findMaximumXOR(nums []int) int {
-	var ret int
-	const highBit = 30
-	for k := highBit; k >= 0; k-- {
-		seen := map[int]bool{}
-		for _, num := range nums {
-			seen[num>>k] = true
-		}
-
-		xNext := ret*2 + 1
-		found := false
-
-		for _, num := range nums {
-			if seen[num>>k^xNext] {
-				found = true
+	var ans int
+	mask := 0
+	for i := 30; i >= 0; i-- {
+		mask |= 1 << i
+		try := ans | 1<<i
+		leftPart := map[int]struct{}{nums[0] & mask: {}}
+		for _, v := range nums[1:] {
+			if _, has := leftPart[v&mask^try]; has {
+				ans = try
 				break
 			}
-		}
-
-		if found {
-			ret = xNext
-		} else {
-			ret = xNext - 1
+			leftPart[v&mask] = struct{}{}
 		}
 	}
-	return ret
+	return ans
 }
