@@ -45,20 +45,15 @@ b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k]
 1 <= arr[i] <= 10^8
 */
 func countTriplets(arr []int) int {
-	var ans int
-	n := len(arr)
-	s := make([]int, n+1)
-	for i, val := range arr {
-		s[i+1] = s[i] ^ val
-	}
-	for i := 0; i < n; i++ {
-		for j := i + 1; j < n; j++ {
-			for k := j; k < n; k++ {
-				if s[i] == s[k+1] {
-					ans++
-				}
-			}
+	mp := make(map[int][]int)
+	ans, preXor := 0, 0
+	mp[0] = []int{-1}
+	for i, v := range arr {
+		preXor ^= v
+		for _, j := range mp[preXor] {
+			ans += i - (j + 1)
 		}
+		mp[preXor] = append(mp[preXor], i)
 	}
 	return ans
 }
