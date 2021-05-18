@@ -44,3 +44,6 @@ b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k]
 1 <= arr.length <= 300
 1 <= arr[i] <= 10^8
 */
+func countTriplets(arr []int) int {
+	return 0
+}
