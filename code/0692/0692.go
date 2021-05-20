@@ -1,5 +1,9 @@
 package _0692
 
+import (
+	"sort"
+)
+
 /*
 692. 前K个高频单词
 给一非空的单词列表，返回前 k 个出现次数最多的单词。
@@ -33,5 +37,17 @@ package _0692
 尝试以 O(n log k) 时间复杂度和 O(n) 空间复杂度解决。
 */
 func topKFrequent(words []string, k int) []string {
-	return nil
+	cnt := map[string]int{}
+	for _, w := range words {
+		cnt[w]++
+	}
+	uniqueWords := make([]string, 0, len(cnt))
+	for w := range cnt {
+		uniqueWords = append(uniqueWords, w)
+	}
+	sort.Slice(uniqueWords, func(i, j int) bool {
+		s, t := uniqueWords[i], uniqueWords[j]
+		return cnt[s] > cnt[t] || cnt[s] == cnt[t] && s < t
+	})
+	return uniqueWords[:k]
 }
