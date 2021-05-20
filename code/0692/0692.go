@@ -32,3 +32,6 @@ package _0692
 
 尝试以 O(n log k) 时间复杂度和 O(n) 空间复杂度解决。
 */
+func topKFrequent(words []string, k int) []string {
+	return nil
+}
