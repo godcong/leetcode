@@ -37,3 +37,6 @@ package _1035
 1 <= nums2.length <= 500
 1 <= nums1[i], nums2[i] <= 2000
 */
+func maxUncrossedLines(nums1 []int, nums2 []int) int {
+	return 0
+}
