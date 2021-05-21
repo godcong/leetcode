@@ -38,5 +38,22 @@ package _1035
 1 <= nums1[i], nums2[i] <= 2000
 */
 func maxUncrossedLines(nums1 []int, nums2 []int) int {
-	return 0
+	m, n := len(nums1), len(nums2)
+	dp := make([][]int, m+1)
+	for i := range dp {
+		dp[i] = make([]int, n+1)
+	}
+	for i, v := range nums1 {
+		for j, w := range nums2 {
+			if v == w {
+				dp[i+1][j+1] = dp[i][j] + 1
+			} else {
+				dp[i+1][j+1] = dp[i+1][j]
+				if dp[i][j+1] > dp[i+1][j] {
+					dp[i+1][j+1] = dp[i][j+1]
+				}
+			}
+		}
+	}
+	return dp[m][n]
 }
