@@ -25,3 +25,6 @@ Alice 有两个选择: 擦掉数字 1 或 2。
 1 <= N <= 1000
 0 <= nums[i] <= 2^16
 */
+func xorGame(nums []int) bool {
+	return false
+}
