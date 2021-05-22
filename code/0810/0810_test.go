@@ -14,6 +14,13 @@ func Test_xorGame(t *testing.T) {
 		want bool
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				nums: []int{1, 1, 2},
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
