@@ -26,5 +26,12 @@ Alice 有两个选择: 擦掉数字 1 或 2。
 0 <= nums[i] <= 2^16
 */
 func xorGame(nums []int) bool {
-	return false
+	if len(nums)%2 == 0 {
+		return true
+	}
+	xor := 0
+	for _, num := range nums {
+		xor ^= num
+	}
+	return xor == 0
 }
