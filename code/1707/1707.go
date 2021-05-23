@@ -30,3 +30,6 @@ package _1707
 queries[i].length == 2
 0 <= nums[j], xi, mi <= 109
 */
+func maximizeXor(nums []int, queries [][]int) []int {
+	return nil
+}
