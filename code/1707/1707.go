@@ -1,5 +1,10 @@
 package _1707
 
+import (
+	"math"
+	"runtime/debug"
+)
+
 /*
 1707. 与数组中元素的最大异或值
 给你一个由非负整数组成的数组 nums 。另有一个查询数组 queries ，其中 queries[i] = [xi, mi] 。
@@ -30,6 +35,57 @@ package _1707
 queries[i].length == 2
 0 <= nums[j], xi, mi <= 109
 */
+
+func init() { debug.SetGCPercent(-1) }
+
+type node struct {
+	son [2]*node
+	min int
+}
+type trie struct{ root *node }
+
+func (t *trie) put(v int) *node {
+	o := t.root
+	if v < o.min {
+		o.min = v
+	}
+	for i := 29; i >= 0; i-- {
+		b := v >> i & 1
+		if o.son[b] == nil {
+			o.son[b] = &node{min: math.MaxInt32}
+		}
+		o = o.son[b]
+		if v < o.min {
+			o.min = v
+		}
+	}
+	return o
+}
+
+func (t *trie) maxXorWithLimitVal(v, limit int) (ans int) {
+	o := t.root
+	if o.min > limit {
+		return -1
+	}
+	for i := 29; i >= 0; i-- {
+		b := v >> i & 1
+		if o.son[b^1] != nil && o.son[b^1].min <= limit {
+			ans |= 1 << i
+			b ^= 1
+		}
+		o = o.son[b]
+	}
+	return
+}
+
 func maximizeXor(nums []int, queries [][]int) []int {
-	return nil
+	t := &trie{&node{min: math.MaxInt32}}
+	for _, v := range nums {
+		t.put(v)
+	}
+	ans := make([]int, len(queries))
+	for i, q := range queries {
+		ans[i] = t.maxXorWithLimitVal(q[0], q[1])
+	}
+	return ans
 }
