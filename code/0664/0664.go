@@ -26,3 +26,6 @@ package _0664
 1 <= s.length <= 100
 s 由小写英文字母组成
 */
+func strangePrinter(s string) int {
+	return 0
+}
