@@ -30,3 +30,6 @@ package _1787
 1 <= k <= nums.length <= 2000
 0 <= nums[i] < 210
 */
+func minChanges(nums []int, k int) int {
+	return 0
+}
