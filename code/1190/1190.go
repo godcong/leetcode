@@ -34,3 +34,6 @@ package _1190
 s 中只有小写英文字母和括号
 我们确保所有括号都是成对出现的
 */
+func reverseParentheses(s string) string {
+	return ""
+}
