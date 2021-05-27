@@ -1,5 +1,9 @@
 package _0461
 
+import (
+	"math/bits"
+)
+
 /*
 461. 汉明距离
 两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
@@ -23,6 +27,5 @@ package _0461
 上面的箭头指出了对应二进制位不同的位置。
 */
 func hammingDistance(x int, y int) int {
-
-	return 0
+	return bits.OnesCount(uint(x ^ y))
 }
