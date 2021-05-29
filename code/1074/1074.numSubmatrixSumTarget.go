@@ -36,5 +36,22 @@ package _1074
 -10^8 <= target <= 10^8
 */
 func numSubmatrixSumTarget(matrix [][]int, target int) int {
-	return 0
+	rows, cols, num := len(matrix), len(matrix[0]), 0
+	for r1 := 0; r1 < rows; r1++ {
+		sumC := make([]int, cols)
+		for r2 := r1; r2 < rows; r2++ {
+			for c1 := 0; c1 < cols; c1++ {
+				sumC[c1] += matrix[r2][c1]
+			}
+			for c1 := 0; c1 < cols; c1++ {
+				sum := 0
+				for c2 := c1; c2 < cols; c2++ {
+					if sum += sumC[c2]; sum == target {
+						num++
+					}
+				}
+			}
+		}
+	}
+	return num
 }
