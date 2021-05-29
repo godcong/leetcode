@@ -35,3 +35,6 @@ package _1074
 -1000 <= matrix[i] <= 1000
 -10^8 <= target <= 10^8
 */
+func numSubmatrixSumTarget(matrix [][]int, target int) int {
+	return 0
+}
