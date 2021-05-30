@@ -40,5 +40,5 @@ package _0231
 进阶：你能够不使用循环/递归解决此问题吗？
 */
 func isPowerOfTwo(n int) bool {
-	return true
+	return n > 0 && n&-n == n
 }
