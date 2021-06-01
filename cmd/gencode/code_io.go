@@ -33,8 +33,7 @@ func genCodeDir(name string) {
 	}
 }
 
-func writeCodeJSON(code Code) {
-	name := code.Data.Question.Questionid
+func writeCodeJSON(name string, code Code) {
 	indent, err := json.MarshalIndent(code, "", " ")
 	if err != nil {
 		return

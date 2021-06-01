@@ -165,7 +165,8 @@ func main() {
 	if err != nil {
 		return
 	}
-	genCodeDir(code.Data.Question.Questionid)
-	writeCodeJSON(code)
-}
 
+	name := code.Data.Question.Questionfrontendid
+	genCodeDir(name)
+	writeCodeJSON(name, code)
+}
