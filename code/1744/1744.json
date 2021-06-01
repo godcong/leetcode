@@ -125,7 +125,7 @@
      "__typename": "CodeSnippetNode"
     }
    ],
-   "stats": "{\"totalAccepted\": \"20.8K\", \"totalSubmission\": \"58.7K\", \"totalAcceptedRaw\": 20774, \"totalSubmissionRaw\": 58717, \"acRate\": \"35.4%\"}",
+   "stats": "{\"totalAccepted\": \"20.9K\", \"totalSubmission\": \"59K\", \"totalAcceptedRaw\": 20895, \"totalSubmissionRaw\": 58996, \"acRate\": \"35.4%\"}",
    "hints": [
     "The query is true if and only if your favorite day is in between the earliest and latest possible days to eat your favorite candy.",
     "To get the earliest day, you need to eat dailyCap candies every day. To get the latest day, you need to eat 1 candy every day.",

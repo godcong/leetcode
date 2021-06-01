@@ -167,6 +167,6 @@ func main() {
 	}
 
 	name := code.Data.Question.Questionfrontendid
-	genCodeDir(name)
+	genCodeDir(name, code)
 	writeCodeJSON(name, code)
 }
