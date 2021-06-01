@@ -14,14 +14,7 @@ func getWorkPath(name string) string {
 		panic(err)
 	}
 
-	codePath := filepath.Join(wd, "code", name)
-
-	_, err = os.Stat(codePath)
-	if err == nil {
-		fmt.Println(codePath, " is already exist")
-		os.Exit(0)
-	}
-	return codePath
+	return filepath.Join(wd, "code", name)
 }
 
 func genCodeDir(name string) {
@@ -47,6 +40,7 @@ func writeCodeJSON(code Code) {
 		return
 	}
 	codePath := getWorkPath(name)
+	_ = os.MkdirAll(codePath, 0755)
 	err = ioutil.WriteFile(filepath.Join(codePath, name+".json"), indent, 0755)
 	if err != nil {
 		panic(err)
