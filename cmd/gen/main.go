@@ -34,7 +34,7 @@ func main() {
 	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
 	fmt.Println("gen code", name)
 	genCodeDir(name, code)
-	writeCodeJSON(name, code)
+	//writeCodeJSON(name, code)
 }
 
 func getEveryCode(code *Code, now time.Time) error {
