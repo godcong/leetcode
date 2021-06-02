@@ -44,7 +44,7 @@ func main() {
 	data := Payload{
 		Operationname: "questionData",
 		Variables: Variables{
-			Titleslug: "can-you-eat-your-favorite-candy-on-your-favorite-day",
+			Titleslug: "continuous-subarray-sum",
 		},
 		Query: `query questionData($titleSlug: String) {
   question(titleSlug: $titleSlug) {
@@ -167,7 +167,7 @@ func main() {
 		return
 	}
 
-	name := code.Data.Question.Questionfrontendid
+	name := fmt.Sprintf("%04v", code.Data.Question.Questionfrontendid)
 	fmt.Println("gen code", name)
 	genCodeDir(name, code)
 	writeCodeJSON(name, code)
