@@ -1,20 +1,19 @@
 package _0523
 
 func checkSubarraySum(nums []int, k int) bool {
-	m := len(nums)
-	if m < 2 {
-		return false
-	}
-	mp := map[int]int{0: -1}
-	remainder := 0
-	for i, num := range nums {
-		remainder = (remainder + num) % k
-		if prevIndex, has := mp[remainder]; has {
-			if i-prevIndex >= 2 {
-				return true
-			}
-		} else {
-			mp[remainder] = i
+	sumSet := map[int]int{}
+	sumSet[0] = -1
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum += nums[i]
+		if k != 0 {
+			sum = sum % k
+		}
+		index, extist := sumSet[sum]
+		if extist && i-index > 1 {
+			return true
+		} else if !extist {
+			sumSet[sum] = i
 		}
 	}
 	return false
