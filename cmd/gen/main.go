@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -167,6 +168,7 @@ func main() {
 	}
 
 	name := code.Data.Question.Questionfrontendid
+	fmt.Println("gen code", name)
 	genCodeDir(name, code)
 	writeCodeJSON(name, code)
 }
