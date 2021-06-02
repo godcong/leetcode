@@ -33,9 +33,10 @@ func genCodeDir(name string, code Code) {
 	}
 	file.Write(packageHeader(name))
 	file.WriteString("\n")
-	for i := range code.Data.Question.Codesnippets {
-		if code.Data.Question.Codesnippets[i].Lang == "Go" {
-			file.WriteString(code.Data.Question.Codesnippets[i].Code)
+	file.WriteString("\n")
+	for i := range code.Data.Question.CodeSnippets {
+		if code.Data.Question.CodeSnippets[i].Lang == "Go" {
+			file.WriteString(code.Data.Question.CodeSnippets[i].Code)
 		}
 	}
 
