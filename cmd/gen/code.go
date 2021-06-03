@@ -7,6 +7,21 @@ type Code struct {
 type Data struct {
 	DailyQuestionRecords []DailyQuestionRecord `json:"dailyQuestionRecords,omitempty"`
 	Question             DataQuestion          `json:"question,omitempty"`
+	TodayRecord          []TodayRecord         `json:"todayRecord,omitempty"`
+}
+
+type TodayRecord struct {
+	Question       Question    `json:"question"`
+	LastSubmission interface{} `json:"lastSubmission"`
+	Date           string      `json:"date"`
+	UserStatus     interface{} `json:"userStatus"`
+	Typename       string      `json:"__typename"`
+}
+
+type Question struct {
+	QuestionFrontendID string `json:"questionFrontendId"`
+	QuestionTitleSlug  string `json:"questionTitleSlug"`
+	Typename           string `json:"__typename"`
 }
 
 type DailyQuestionRecord struct {

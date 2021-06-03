@@ -23,10 +23,16 @@ type Variables struct {
 
 func main() {
 	t := time.Now()
+
 	code, err := getEveryDay(t)
 	if err != nil {
 		return
 	}
+	err = getTodayRecord(&code)
+	if err != nil {
+		return
+	}
+
 	err = getEveryCode(&code, t)
 	if err != nil {
 		return
@@ -62,7 +68,7 @@ func getEveryCode(code *Code, now time.Time) error {
 	//   --compressed
 	var currentRecode *DailyQuestionRecord
 	for i, record := range code.Data.DailyQuestionRecords {
-		if record.Date == now.Format("2006-01-02") {
+		if record.Date == code.Data.TodayRecord[0].Date {
 			currentRecode = &code.Data.DailyQuestionRecords[i]
 			break
 		}
@@ -164,24 +170,24 @@ func getEveryCode(code *Code, now time.Time) error {
 		return err
 	}
 	req.Header.Set("Authority", "leetcode-cn.com")
-	req.Header.Set("Sec-Ch-Ua", "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"")
+	req.Header.Set("Sec-Ch-Ua", "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"")
 	req.Header.Set("X-Timezone", "Asia/Shanghai")
 	req.Header.Set("X-Operation-Name", "questionData")
 	req.Header.Set("Accept-Language", "zh-CN")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("User-Agent",
-		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
+		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.20 Safari/537.36")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "*/*")
-	req.Header.Set("X-Csrftoken", "Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg")
+	req.Header.Set("X-Csrftoken", "uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G")
 	req.Header.Set("X-Definition-Name", "question")
 	req.Header.Set("Origin", "https://leetcode-cn.com")
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
-	req.Header.Set("Referer", "https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/")
+	req.Header.Set("Referer", "https://leetcode-cn.com/problems/contiguous-array/")
 	req.Header.Set("Cookie",
-		"_uab_collina=158494287144877725711875; __auc=197e35ef1798ce16c8387fd8db5; gr_user_id=43d5f89f-a476-4f4e-a2cf-324c63dc0b5d; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; _ga=GA1.2.560771403.1621566256; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1621566254,1622117541; csrftoken=Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjQ2MzI3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjFkNTUyMTQ5NmViNTFhYTdiOTdiMTlmMDhhNTNiN2E0ZDU0YzBlZTFhMGUzNTk0YTZhNjFkY2Q4YWMzYzkxYyIsImlkIjoyNDYzMjcsImVtYWlsIjoianVtYnljY0AxNjMuY29tIiwidXNlcm5hbWUiOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJ1c2VyX3NsdWciOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS1jbi5jb20vYWxpeXVuLWxjLXVwbG9hZC91c2Vycy9jb25nLXNoZW4tYnUtc2hpLXNoZW4vYXZhdGFyXzE1OTY3ODg3OTEucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2MjIxMTc1NDYuNTcyMjU1LCJleHBpcmVkX3RpbWVfIjoxNjIyNjYwNDAwfQ.zFmv2ZoXn0-xa2GwlQquFByUvaAcSPsXbfhlJG4Q0MQ; __asc=c03719f4179c7aa1b58e18f261f; a2873925c34ecbd2_gr_session_id=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_session_id_43e5189c-43bc-4706-9de7-d467d9e8fbd3=true; _gid=GA1.2.1864074649.1622552486; _gat_gtag_UA_131851415_1=1; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622552495; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen")
+		"__auc=be3552e4179647261bb747fe3d6; gr_user_id=af2ef593-93e0-4d57-987f-c3793b8a60fd; _ga=GA1.2.2006997331.1620887891; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1620887888,1621005075,1622700730; a2873925c34ecbd2_gr_session_id=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_session_id_9bc707e9-0f16-4412-a6a5-90fe24aec10c=true; __asc=579659c8179d080277becfa346f; _gid=GA1.2.1394740010.1622700731; csrftoken=uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622700769; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen")
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -257,12 +263,11 @@ func getEveryDay(now time.Time) (Code, error) {
 		return code, err
 	}
 	req.Header.Set("Authority", "leetcode-cn.com")
-	req.Header.Set("Sec-Ch-Ua", "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"")
+	req.Header.Set("Sec-Ch-Ua", "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"")
 	req.Header.Set("Accept", "*/*")
-	req.Header.Set("X-Csrftoken", "Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg")
+	req.Header.Set("X-Csrftoken", "iUrthXMO3mJMQJoWTrI5rIAXzKJoSTArhRVaHycua8bqEuf41A98gzQYQJgITQGP")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
-	req.Header.Set("User-Agent",
-		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.20 Safari/537.36")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Origin", "https://leetcode-cn.com")
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
@@ -270,8 +275,7 @@ func getEveryDay(now time.Time) (Code, error) {
 	req.Header.Set("Sec-Fetch-Dest", "empty")
 	req.Header.Set("Referer", "https://leetcode-cn.com/problemset/all/")
 	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
-	req.Header.Set("Cookie",
-		"_uab_collina=158494287144877725711875; __auc=197e35ef1798ce16c8387fd8db5; gr_user_id=43d5f89f-a476-4f4e-a2cf-324c63dc0b5d; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; _ga=GA1.2.560771403.1621566256; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1621566254,1622117541; csrftoken=Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjQ2MzI3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjFkNTUyMTQ5NmViNTFhYTdiOTdiMTlmMDhhNTNiN2E0ZDU0YzBlZTFhMGUzNTk0YTZhNjFkY2Q4YWMzYzkxYyIsImlkIjoyNDYzMjcsImVtYWlsIjoianVtYnljY0AxNjMuY29tIiwidXNlcm5hbWUiOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJ1c2VyX3NsdWciOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS1jbi5jb20vYWxpeXVuLWxjLXVwbG9hZC91c2Vycy9jb25nLXNoZW4tYnUtc2hpLXNoZW4vYXZhdGFyXzE1OTY3ODg3OTEucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2MjIxMTc1NDYuNTcyMjU1LCJleHBpcmVkX3RpbWVfIjoxNjIyNjYwNDAwfQ.zFmv2ZoXn0-xa2GwlQquFByUvaAcSPsXbfhlJG4Q0MQ; _gid=GA1.2.1864074649.1622552486; __asc=2e464209179caaa0c3d8afb1ac1; a2873925c34ecbd2_gr_session_id=c42d1559-0c6f-4dda-a0cf-20e057f020bf; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=c42d1559-0c6f-4dda-a0cf-20e057f020bf; a2873925c34ecbd2_gr_session_id_c42d1559-0c6f-4dda-a0cf-20e057f020bf=true; _gat_gtag_UA_131851415_1=1; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622603596")
+	req.Header.Set("Cookie", "__auc=be3552e4179647261bb747fe3d6; gr_user_id=af2ef593-93e0-4d57-987f-c3793b8a60fd; _ga=GA1.2.2006997331.1620887891; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1620887888,1621005075,1622700730; a2873925c34ecbd2_gr_session_id=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_session_id_9bc707e9-0f16-4412-a6a5-90fe24aec10c=true; __asc=579659c8179d080277becfa346f; _gid=GA1.2.1394740010.1622700731; _gat_gtag_UA_131851415_1=1; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen; csrftoken=iUrthXMO3mJMQJoWTrI5rIAXzKJoSTArhRVaHycua8bqEuf41A98gzQYQJgITQGP; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjQ2MzI3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjFkNTUyMTQ5NmViNTFhYTdiOTdiMTlmMDhhNTNiN2E0ZDU0YzBlZTFhMGUzNTk0YTZhNjFkY2Q4YWMzYzkxYyIsImlkIjoyNDYzMjcsImVtYWlsIjoianVtYnljY0AxNjMuY29tIiwidXNlcm5hbWUiOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJ1c2VyX3NsdWciOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS1jbi5jb20vYWxpeXVuLWxjLXVwbG9hZC91c2Vycy9jb25nLXNoZW4tYnUtc2hpLXNoZW4vYXZhdGFyXzE1OTY3ODg3OTEucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2MjI3MDE2MDIuMzY5NTc4LCJleHBpcmVkX3RpbWVfIjoxNjIzMjY1MjAwfQ.ShUBWL3YfqnTfWYHsFohEBsm6VSfXIJPlOFt2xvjngg; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622701603")
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -286,4 +290,98 @@ func getEveryDay(now time.Time) (Code, error) {
 
 	err = json.Unmarshal(all, &code)
 	return code, err
+}
+
+func getTodayRecord(code *Code) error {
+
+	// Generated by curl-to-Go: https://mholt.github.io/curl-to-go
+
+	// curl 'https://leetcode-cn.com/graphql' \
+	//   -H 'authority: leetcode-cn.com' \
+	//   -H 'sec-ch-ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"' \
+	//   -H 'accept: */*' \
+	//   -H 'x-csrftoken: uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G' \
+	//   -H 'sec-ch-ua-mobile: ?0' \
+	//   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.20 Safari/537.36' \
+	//   -H 'content-type: application/json' \
+	//   -H 'origin: https://leetcode-cn.com' \
+	//   -H 'sec-fetch-site: same-origin' \
+	//   -H 'sec-fetch-mode: cors' \
+	//   -H 'sec-fetch-dest: empty' \
+	//   -H 'referer: https://leetcode-cn.com/problemset/all/' \
+	//   -H 'accept-language: zh-CN,zh;q=0.9' \
+	//   -H 'cookie: __auc=be3552e4179647261bb747fe3d6; gr_user_id=af2ef593-93e0-4d57-987f-c3793b8a60fd; _ga=GA1.2.2006997331.1620887891; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1620887888,1621005075,1622700730; a2873925c34ecbd2_gr_session_id=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_session_id_9bc707e9-0f16-4412-a6a5-90fe24aec10c=true; __asc=579659c8179d080277becfa346f; _gid=GA1.2.1394740010.1622700731; _gat_gtag_UA_131851415_1=1; csrftoken=uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622700769' \
+	//   --data-raw '{"operationName":"questionOfToday","variables":{},"query":"query questionOfToday {\n  todayRecord {\n    question {\n      questionFrontendId\n      questionTitleSlug\n      __typename\n    }\n    lastSubmission {\n      id\n      __typename\n    }\n    date\n    userStatus\n    __typename\n  }\n}\n"}' \
+	//   --compressed
+
+	//type Payload struct {
+	//	Operationname string    `json:"operationName"`
+	//	Variables     Variables `json:"variables"`
+	//	Query         string    `json:"query"`
+	//}
+
+	data := Payload{
+		OperationName: "questionOfToday",
+		Variables:     Variables{},
+		Query: `query questionOfToday {
+  todayRecord {
+    question {
+      questionFrontendId
+      questionTitleSlug
+      __typename
+    }
+    lastSubmission {
+      id
+      __typename
+    }
+    date
+    userStatus
+    __typename
+  }
+}`,
+	}
+	payloadBytes, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+	body := bytes.NewReader(payloadBytes)
+
+	req, err := http.NewRequest("POST", "https://leetcode-cn.com/graphql", body)
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Authority", "leetcode-cn.com")
+	req.Header.Set("Sec-Ch-Ua", "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"")
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("X-Csrftoken", "uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G")
+	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
+	req.Header.Set("User-Agent",
+		"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.20 Safari/537.36")
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Origin", "https://leetcode-cn.com")
+	req.Header.Set("Sec-Fetch-Site", "same-origin")
+	req.Header.Set("Sec-Fetch-Mode", "cors")
+	req.Header.Set("Sec-Fetch-Dest", "empty")
+	req.Header.Set("Referer", "https://leetcode-cn.com/problemset/all/")
+	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
+	req.Header.Set("Cookie",
+		"__auc=be3552e4179647261bb747fe3d6; gr_user_id=af2ef593-93e0-4d57-987f-c3793b8a60fd; _ga=GA1.2.2006997331.1620887891; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1620887888,1621005075,1622700730; a2873925c34ecbd2_gr_session_id=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=9bc707e9-0f16-4412-a6a5-90fe24aec10c; a2873925c34ecbd2_gr_session_id_9bc707e9-0f16-4412-a6a5-90fe24aec10c=true; __asc=579659c8179d080277becfa346f; _gid=GA1.2.1394740010.1622700731; _gat_gtag_UA_131851415_1=1; csrftoken=uEJ9oYMMLB83jahDtJ3FxQIWSA15VkBja5UOMccjH6NLCbwvAekvyFbnqqoTtY6G; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622700769")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	all, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	fmt.Println("today records", string(all))
+	err = json.Unmarshal(all, code)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
