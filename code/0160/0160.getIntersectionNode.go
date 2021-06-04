@@ -12,14 +12,23 @@ import (
  * }
  */
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
-	vis := map[*ListNode]bool{}
-	for tmp := headA; tmp != nil; tmp = tmp.Next {
-		vis[tmp] = true
+	if headA == nil || headB == nil {
+		return nil
 	}
-	for tmp := headB; tmp != nil; tmp = tmp.Next {
-		if vis[tmp] {
-			return tmp
+
+	pA, pB := headA, headB
+	for pA != pB {
+		if pA != nil {
+			pA = pA.Next
+		} else {
+			pA = headB
+		}
+
+		if pB != nil {
+			pB = pB.Next
+		} else {
+			pB = headA
 		}
 	}
-	return nil
+	return pA
 }
