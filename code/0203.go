@@ -26,3 +26,13 @@ package code
 1 <= Node.val <= 50
 0 <= k <= 50
 */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func removeElements(head *ListNode, val int) *ListNode {
+	return nil
+}
