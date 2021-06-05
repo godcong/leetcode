@@ -34,5 +34,12 @@ package code
  * }
  */
 func removeElements(head *ListNode, val int) *ListNode {
-	return nil
+	if head == nil {
+		return head
+	}
+	head.Next = removeElements(head.Next, val)
+	if head.Val == val {
+		return head.Next
+	}
+	return head
 }
