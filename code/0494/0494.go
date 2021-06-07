@@ -35,5 +35,18 @@ package _0494
 -1000 <= target <= 100
 */
 func findTargetSumWays(nums []int, target int) int {
-	return 0
+	count := 0
+	var backtrack func(int, int)
+	backtrack = func(index, sum int) {
+		if index == len(nums) {
+			if sum == target {
+				count++
+			}
+			return
+		}
+		backtrack(index+1, sum+nums[index])
+		backtrack(index+1, sum-nums[index])
+	}
+	backtrack(0, 0)
+	return count
 }
