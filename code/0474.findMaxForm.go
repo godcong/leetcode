@@ -1,9 +1,5 @@
 package code
 
-import (
-	"strings"
-)
-
 /*
 474. 一和零
 给你一个二进制字符串数组 strs 和两个整数 m 和 n 。
@@ -35,32 +31,40 @@ strs[i] 仅由 '0' 和 '1' 组成
 1 <= m, n <= 100
 */
 func findMaxForm(strs []string, m int, n int) int {
-	length := len(strs)
-	dp := make([][][]int, length+1)
-	for i := range dp {
-		dp[i] = make([][]int, m+1)
-		for j := range dp[i] {
-			dp[i][j] = make([]int, n+1)
+	matrix := make([][]int, m+1)
+	for i, _ := range matrix {
+		matrix[i] = make([]int, n+1)
+		for j, _ := range matrix[i] {
+			matrix[i][j] = -1
 		}
 	}
-	for i, s := range strs {
-		zeros := strings.Count(s, "0")
-		ones := len(s) - zeros
-		for j := 0; j <= m; j++ {
-			for k := 0; k <= n; k++ {
-				dp[i+1][j][k] = dp[i][j][k]
-				if j >= zeros && k >= ones {
-					dp[i+1][j][k] = max(dp[i+1][j][k], dp[i][j-zeros][k-ones]+1)
+	matrix[0][0] = 0
+
+	for _, str := range strs {
+		costOne := 0
+		costZero := 0
+		for _, c := range str {
+			if c == '1' {
+				costOne++
+			} else {
+				costZero++
+			}
+		}
+		for i := m - costZero; i >= 0; i-- {
+			for j := n - costOne; j >= 0; j-- {
+				if matrix[i][j] != -1 && matrix[i][j]+1 > matrix[i+costZero][j+costOne] {
+					matrix[i+costZero][j+costOne] = matrix[i][j] + 1
 				}
 			}
 		}
 	}
-	return dp[length][m][n]
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
+	max := 0
+	for _, a := range matrix {
+		for _, v := range a {
+			if max < v {
+				max = v
+			}
+		}
 	}
-	return b
+	return max
 }
