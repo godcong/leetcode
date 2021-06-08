@@ -1,20 +1,23 @@
 package main
 
 import (
-	"fmt"
+	"path/filepath"
 
 	"github.com/godcong/leetcode/query"
 )
 
 func main() {
-	if code, err := query.GetCode(); err != nil {
-		return
-	}
+	code, err := query.GetCode()
 	if err != nil {
 		return
 	}
-	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
-	fmt.Println("gen code", name)
-	genCodeDir(name, code)
-	writeCodeJSON(name, code)
+
+	if err := query.GenCodeWorkspace(code); err != nil {
+		return
+	}
+	path := query.GetWorkPath(code.Data.Question.QuestionFrontendID)
+
+	if err := query.WriteMarkdownTo(filepath.Join(path, "README.md"), code); err != nil {
+		return
+	}
 }

@@ -1,14 +1,15 @@
-package main
+package query
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 )
 
-func getWorkPath(name string) string {
+func GetWorkPath(name string) string {
 	wd, err := os.Getwd()
 	if err != nil {
 		panic(err)
@@ -17,20 +18,28 @@ func getWorkPath(name string) string {
 	return filepath.Join(wd, "code", name)
 }
 
-func genCodeDir(name string, code Code) {
+func GenCodeWorkspace(code *Code) error {
+	name := code.Data.Question.QuestionFrontendID
 
 	if name == "" {
-		return
+		return errors.New("empty name")
 	}
 
-	codePath := getWorkPath(name)
+	codePath := GetWorkPath(name)
 
 	_ = os.MkdirAll(codePath, 0755)
 
-	file, err := os.OpenFile(filepath.Join(codePath, name+".go"), os.O_CREATE|os.O_RDWR|os.O_APPEND|os.O_SYNC, 0755)
-	if err != nil {
-		panic(err)
+	codeGo := filepath.Join(codePath, name+".go")
+	_, err := os.Stat(codeGo)
+	if err == nil {
+		return nil
 	}
+
+	file, err := os.OpenFile(codeGo, os.O_CREATE|os.O_RDWR|os.O_TRUNC|os.O_SYNC, 0755)
+	if err != nil {
+		return fmt.Errorf("open file:%v", err)
+	}
+	defer file.Close()
 	file.Write(packageHeader(name))
 	file.WriteString("\n")
 	file.WriteString("\n")
@@ -39,15 +48,15 @@ func genCodeDir(name string, code Code) {
 			file.WriteString(code.Data.Question.CodeSnippets[i].Code)
 		}
 	}
-
+	return nil
 }
 
-func writeCodeJSON(name string, code Code) {
+func WriteCodeJSON(name string, code Code) {
 	indent, err := json.MarshalIndent(code, "", " ")
 	if err != nil {
 		return
 	}
-	codePath := getWorkPath(name)
+	codePath := GetWorkPath(name)
 	_ = os.MkdirAll(codePath, 0755)
 	err = ioutil.WriteFile(filepath.Join(codePath, name+".json"), indent, 0755)
 	if err != nil {

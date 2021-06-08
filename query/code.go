@@ -1,4 +1,4 @@
-package main
+package query
 
 type Code struct {
 	Data Data `json:"data"`
@@ -102,3 +102,14 @@ type Typename string
 const (
 	CodeSnippetNode Typename = "CodeSnippetNode"
 )
+
+type Payload struct {
+	OperationName string    `json:"operationName,omitempty"`
+	Variables     Variables `json:"variables,omitempty"`
+	Query         string    `json:"query,omitempty"`
+}
+type Variables struct {
+	TitleSlug string `json:"titleSlug,omitempty"`
+	Year      int    `json:"year,omitempty"`
+	Month     int    `json:"month,omitempty"`
+}
