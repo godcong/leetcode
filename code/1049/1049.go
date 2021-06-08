@@ -26,3 +26,8 @@ func lastStoneWeightII(stones []int) int {
 		}
 	}
 }
+package _1049
+
+func lastStoneWeightII(stones []int) int {
+
+}
