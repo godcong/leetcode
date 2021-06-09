@@ -13,10 +13,12 @@ func main() {
 		return
 	}
 
-	if err := query.GenCodeWorkspace(code); err != nil {
+	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
+
+	if err := query.GenCodeWorkspace(name, code); err != nil {
 		return
 	}
-	path := query.GetWorkPath(code.Data.Question.QuestionFrontendID)
+	path := query.GetWorkPath(name)
 
 	if err := query.WriteMarkdownTo(filepath.Join(path, "README.md"), code); err != nil {
 		return

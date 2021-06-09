@@ -18,9 +18,7 @@ func GetWorkPath(name string) string {
 	return filepath.Join(wd, "code", name)
 }
 
-func GenCodeWorkspace(code *Code) error {
-	name := code.Data.Question.QuestionFrontendID
-
+func GenCodeWorkspace(name string, code *Code) error {
 	if name == "" {
 		return errors.New("empty name")
 	}
