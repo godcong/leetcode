@@ -15,11 +15,14 @@ func main() {
 	}
 	file, err := os.ReadFile(filepath.Join(wd, "cookie"))
 	if err != nil {
+		fmt.Println("error", err)
 		return
 	}
+	fmt.Println("cookie:", string(file))
 
 	code, err := query.GetCode(string(file))
 	if err != nil {
+		fmt.Println("error", err)
 		return
 	}
 

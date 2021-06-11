@@ -3,7 +3,6 @@ package query
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -45,22 +44,22 @@ func (q Query) questionData(code *Code, now time.Time) error {
 	//   -H 'cookie: _uab_collina=158494287144877725711875; __auc=197e35ef1798ce16c8387fd8db5; gr_user_id=43d5f89f-a476-4f4e-a2cf-324c63dc0b5d; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; _ga=GA1.2.560771403.1621566256; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1621566254,1622117541; csrftoken=Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjQ2MzI3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjFkNTUyMTQ5NmViNTFhYTdiOTdiMTlmMDhhNTNiN2E0ZDU0YzBlZTFhMGUzNTk0YTZhNjFkY2Q4YWMzYzkxYyIsImlkIjoyNDYzMjcsImVtYWlsIjoianVtYnljY0AxNjMuY29tIiwidXNlcm5hbWUiOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJ1c2VyX3NsdWciOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS1jbi5jb20vYWxpeXVuLWxjLXVwbG9hZC91c2Vycy9jb25nLXNoZW4tYnUtc2hpLXNoZW4vYXZhdGFyXzE1OTY3ODg3OTEucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2MjIxMTc1NDYuNTcyMjU1LCJleHBpcmVkX3RpbWVfIjoxNjIyNjYwNDAwfQ.zFmv2ZoXn0-xa2GwlQquFByUvaAcSPsXbfhlJG4Q0MQ; __asc=c03719f4179c7aa1b58e18f261f; a2873925c34ecbd2_gr_session_id=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_session_id_43e5189c-43bc-4706-9de7-d467d9e8fbd3=true; _gid=GA1.2.1864074649.1622552486; _gat_gtag_UA_131851415_1=1; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622552495; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen' \
 	//   --data-raw $'{"operationName":"questionData","variables":{"titleSlug":"can-you-eat-your-favorite-candy-on-your-favorite-day"},"query":"query questionData($titleSlug: String\u0021) {\\n  question(titleSlug: $titleSlug) {\\n    questionId\\n    questionFrontendId\\n    categoryTitle\\n    boundTopicId\\n    title\\n    titleSlug\\n    content\\n    translatedTitle\\n    translatedContent\\n    isPaidOnly\\n    difficulty\\n    likes\\n    dislikes\\n    isLiked\\n    similarQuestions\\n    contributors {\\n      username\\n      profileUrl\\n      avatarUrl\\n      __typename\\n    }\\n    langToValidPlayground\\n    topicTags {\\n      name\\n      slug\\n      translatedName\\n      __typename\\n    }\\n    companyTagStats\\n    codeSnippets {\\n      lang\\n      langSlug\\n      code\\n      __typename\\n    }\\n    stats\\n    hints\\n    solution {\\n      id\\n      canSeeDetail\\n      __typename\\n    }\\n    status\\n    sampleTestCase\\n    metaData\\n    judgerAvailable\\n    judgeType\\n    mysqlSchemas\\n    enableRunCode\\n    envInfo\\n    book {\\n      id\\n      bookName\\n      pressName\\n      source\\n      shortDescription\\n      fullDescription\\n      bookImgUrl\\n      pressImgUrl\\n      productUrl\\n      __typename\\n    }\\n    isSubscribed\\n    isDailyQuestion\\n    dailyRecordStatus\\n    editorType\\n    ugcQuestionId\\n    style\\n    exampleTestcases\\n    __typename\\n  }\\n}\\n"}' \
 	//   --compressed
-	var currentRecode *DailyQuestionRecord
+	current := ""
 	for i, record := range code.Data.DailyQuestionRecords {
 		if record.Date == code.Data.TodayRecord[0].Date {
-			currentRecode = &code.Data.DailyQuestionRecords[i]
+			current = code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug
 			break
 		}
 	}
 
-	if currentRecode == nil {
-		return errors.New("no data")
+	if current == "" {
+		current = code.Data.TodayRecord[0].Question.QuestionTitleSlug
 	}
 
 	data := Payload{
 		OperationName: "questionData",
 		Variables: Variables{
-			TitleSlug: currentRecode.Question.QuestionTitleSlug,
+			TitleSlug: current,
 		},
 		Query: `query questionData($titleSlug: String) {
   question(titleSlug: $titleSlug) {
