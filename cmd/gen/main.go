@@ -2,13 +2,20 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"path/filepath"
 
 	"github.com/godcong/leetcode/query"
 )
 
 func main() {
-	code, err := query.GetCode()
+
+	file, err := os.ReadFile("cookie")
+	if err != nil {
+		return
+	}
+
+	code, err := query.GetCode(string(file))
 	if err != nil {
 		return
 	}
