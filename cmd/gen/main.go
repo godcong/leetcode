@@ -9,8 +9,11 @@ import (
 )
 
 func main() {
-
-	file, err := os.ReadFile("cookie")
+	wd, err := os.Getwd()
+	if err != nil {
+		return
+	}
+	file, err := os.ReadFile(filepath.Join(wd, "cookie"))
 	if err != nil {
 		return
 	}
