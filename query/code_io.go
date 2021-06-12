@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -64,4 +65,12 @@ func WriteCodeJSON(name string, code Code) {
 
 func packageHeader(name string) []byte {
 	return []byte(fmt.Sprintf("package _%v", name))
+}
+
+func decodeCode(closer io.ReadCloser, code *Code) error {
+	all, err := ioutil.ReadAll(closer)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(all, code)
 }
