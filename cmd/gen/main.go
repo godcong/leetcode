@@ -20,12 +20,12 @@ func main() {
 	}
 	fmt.Println("cookie:", string(file))
 
-	num := ""
+	codeName := ""
 	if len(os.Args) > 1 {
-		num = os.Args[1]
+		codeName = os.Args[1]
 	}
 
-	code, err := query.GetCode(string(file), num)
+	code, err := query.GetCode(string(file), codeName)
 	if err != nil {
 		fmt.Println("error", err)
 		return
