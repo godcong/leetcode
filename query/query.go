@@ -430,20 +430,28 @@ func (q Query) getQuestionTranslation(code *Code) error {
 		return err
 	}
 	defer resp.Body.Close()
-	return nil
+
+	return decodeCode(resp.Body, code)
 }
 
 func GetCode(cookie string, num string) (*Code, error) {
+	fmt.Println("Get Code", num)
 	q := NewQuery(cookie)
 	t := time.Now()
+
 	records, err := q.dailyQuestionRecords(t)
 	if err != nil {
 		return nil, fmt.Errorf("dailyQuestionRecords:%v", err)
 	}
-	if err := q.questionOfToday(&records); err != nil {
+
+	if err = q.getQuestionTranslation(&records); err != nil {
+		return nil, fmt.Errorf("getQuestionTranslation:%v", err)
+	}
+
+	if err = q.questionOfToday(&records); err != nil {
 		return nil, fmt.Errorf("questionOfToday:%v", err)
 	}
-	if err := q.questionData(&records, t); err != nil {
+	if err = q.questionData(&records, t); err != nil {
 		return nil, fmt.Errorf("questionData:%v", err)
 	}
 	return &records, nil

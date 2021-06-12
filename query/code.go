@@ -8,6 +8,7 @@ type Data struct {
 	DailyQuestionRecords []DailyQuestionRecord `json:"dailyQuestionRecords,omitempty"`
 	Question             DataQuestion          `json:"question,omitempty"`
 	TodayRecord          []TodayRecord         `json:"todayRecord,omitempty"`
+	Translations         []Translation         `json:"translations,omitempty"`
 }
 
 type TodayRecord struct {
@@ -87,7 +88,7 @@ type CodeSnippet struct {
 	Lang     string   `json:"lang"`
 	LangSlug string   `json:"langSlug"`
 	Code     string   `json:"code"`
-	Typename Typename `json:"__typename"`
+	Typename TypeName `json:"__typename"`
 }
 
 type TopicTag struct {
@@ -97,11 +98,18 @@ type TopicTag struct {
 	Typename       string `json:"__typename"`
 }
 
-type Typename string
+type TypeName string
 
 const (
-	CodeSnippetNode Typename = "CodeSnippetNode"
+	CodeSnippetNode        TypeName = "CodeSnippetNode"
+	AppliedTranslationNode TypeName = "AppliedTranslationNode"
 )
+
+type Translation struct {
+	QuestionID string   `json:"questionId"`
+	Title      string   `json:"title"`
+	TypeName   TypeName `json:"__typename"`
+}
 
 type Payload struct {
 	OperationName string    `json:"operationName,omitempty"`

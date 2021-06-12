@@ -72,5 +72,8 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 	if err != nil {
 		return err
 	}
+	fmt.Println("decode", string(all))
+
+	ioutil.WriteFile("tmp.txt", all, 0755)
 	return json.Unmarshal(all, code)
 }
