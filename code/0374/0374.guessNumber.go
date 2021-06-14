@@ -1,5 +1,9 @@
 package _0374
 
+import (
+	"sort"
+)
+
 /** 
  * Forward declaration of guess API.
  * @param  num   your guess
@@ -10,5 +14,5 @@ package _0374
  */
 
 func guessNumber(n int) int {
-    
+	return sort.Search(n, func(x int) bool { return guess(x) <= 0 })
 }
