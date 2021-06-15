@@ -1,5 +1,9 @@
 package _0852
 
 func peakIndexInMountainArray(arr []int) int {
-	return 0
+	for i := 1; ; i++ {
+		if arr[i] > arr[i+1] {
+			return i
+		}
+	}
 }
