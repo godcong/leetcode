@@ -23,6 +23,44 @@ const (
 	CharMax
 )
 
+var transfer = [StateMax][CharMax]int{
+	StateInitial: {
+		CharNumber: StateInteger,
+		CharPoint:  StatePointWithoutInt,
+		CharSign:   StateIntSign,
+	},
+	StateIntSign: {
+		CharNumber: StateInteger,
+		CharPoint:  StatePointWithoutInt,
+	},
+	StateInteger: {
+		CharNumber: StateInteger,
+		CharExp:    StateExp,
+		CharPoint:  StatePoint,
+	},
+	StatePoint: {
+		CharNumber: StateFraction,
+		CharExp:    StateExp,
+	},
+	StatePointWithoutInt: {
+		CharNumber: StateFraction,
+	},
+	StateFraction: {
+		CharNumber: StateFraction,
+		CharExp:    StateExp,
+	},
+	StateExp: {
+		CharNumber: StateExpNumber,
+		CharSign:   StateExpSign,
+	},
+	StateExpSign: {
+		CharNumber: StateExpNumber,
+	},
+	StateExpNumber: {
+		CharNumber: StateExpNumber,
+	},
+}
+
 func toCharType(ch byte) int {
 	switch ch {
 	case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
@@ -39,43 +77,6 @@ func toCharType(ch byte) int {
 }
 
 func isNumber(s string) bool {
-	transfer := [StateMax][CharMax]int{
-		StateInitial: {
-			CharNumber: StateInteger,
-			CharPoint:  StatePointWithoutInt,
-			CharSign:   StateIntSign,
-		},
-		StateIntSign: {
-			CharNumber: StateInteger,
-			CharPoint:  StatePointWithoutInt,
-		},
-		StateInteger: {
-			CharNumber: StateInteger,
-			CharExp:    StateExp,
-			CharPoint:  StatePoint,
-		},
-		StatePoint: {
-			CharNumber: StateFraction,
-			CharExp:    StateExp,
-		},
-		StatePointWithoutInt: {
-			CharNumber: StateFraction,
-		},
-		StateFraction: {
-			CharNumber: StateFraction,
-			CharExp:    StateExp,
-		},
-		StateExp: {
-			CharNumber: StateExpNumber,
-			CharSign:   StateExpSign,
-		},
-		StateExpSign: {
-			CharNumber: StateExpNumber,
-		},
-		StateExpNumber: {
-			CharNumber: StateExpNumber,
-		},
-	}
 	state := StateInitial
 	for i := 0; i < len(s); i++ {
 		typ := toCharType(s[i])
