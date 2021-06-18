@@ -9,6 +9,11 @@ import (
 )
 
 func WriteMarkdownTo(path string, code *Code) error {
+	_, err := os.Stat(path)
+	if err == nil {
+		return nil
+	}
+
 	file, err := os.OpenFile(path, os.O_CREATE|os.O_SYNC|os.O_TRUNC|os.O_RDWR, 0755)
 	if err != nil {
 		return err
