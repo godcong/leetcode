@@ -28,7 +28,7 @@ func GenCodeWorkspace(name string, code *Code) error {
 
 	_ = os.MkdirAll(codePath, 0755)
 
-	codeGo := filepath.Join(codePath, name+".go")
+	codeGo := filepath.Join(codePath, fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
 		return nil
