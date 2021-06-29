@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 type SubS struct {
 	b string
 }
@@ -10,5 +14,6 @@ type S struct {
 }
 
 func main() {
-	markdownHTML()
+	//markdownHTML()
+	fmt.Println("system", GetPhysicalID())
 }
