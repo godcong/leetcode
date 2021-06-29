@@ -23,18 +23,23 @@ func init() {
 func GetPhysicalID() string {
 	var ids []string
 	if guid, err := getMachineGuid(); err != nil {
+
 		panic(err.Error())
 	} else {
+		fmt.Println("guid:", guid)
 		ids = append(ids, guid)
 	}
 	if cpuinfo, err := getCPUInfo(); err != nil && len(cpuinfo) > 0 {
 		panic(err.Error())
 	} else {
+		fmt.Println("cpuinfo:", cpuinfo)
 		ids = append(ids, cpuinfo[0].VendorID+cpuinfo[0].PhysicalID)
 	}
+
 	if mac, err := getMACAddress(); err != nil {
 		panic(err.Error())
 	} else {
+		fmt.Println("mac:", mac)
 		ids = append(ids, mac)
 	}
 	sort.Strings(ids)
