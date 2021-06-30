@@ -29,11 +29,11 @@ func GetPhysicalID() string {
 		fmt.Println("guid:", guid)
 		ids = append(ids, guid)
 	}
-	if cpuinfo, err := getCPUInfo(); err != nil && len(cpuinfo) > 0 {
+	if cpuinfo, err := getCPUInfo(); err != nil {
 		panic(err.Error())
 	} else {
 		fmt.Println("cpuinfo:", cpuinfo)
-		ids = append(ids, cpuinfo[0].VendorID+cpuinfo[0].PhysicalID)
+		ids = append(ids, cpuinfo.VendorID+cpuinfo.PhysicalID)
 	}
 
 	if mac, err := getMACAddress(); err != nil {
@@ -82,8 +82,8 @@ type win32_Processor struct {
 	ProcessorID  *string
 }
 
-func getCPUInfo() ([]cpuInfo, error) {
-	var ret []cpuInfo
+func getCPUInfo() (cpuInfo, error) {
+	var ret cpuInfo
 	var dst []win32_Processor
 	q := wmi.CreateQuery(&dst, "")
 	fmt.Println(q)
@@ -96,17 +96,16 @@ func getCPUInfo() ([]cpuInfo, error) {
 		procID = ""
 		if l.ProcessorID != nil {
 			procID = *l.ProcessorID
+			cpu := cpuInfo{
+				CPU:        int32(i),
+				VendorID:   l.Manufacturer,
+				PhysicalID: procID,
+			}
+			return cpu, nil
 		}
-
-		cpu := cpuInfo{
-			CPU:        int32(i),
-			VendorID:   l.Manufacturer,
-			PhysicalID: procID,
-		}
-		ret = append(ret, cpu)
 	}
 
-	return ret, nil
+	return ret, errors.New("err")
 }
 
 // WMIQueryWithContext - wraps wmi.Query with a timed-out context to avoid hanging
