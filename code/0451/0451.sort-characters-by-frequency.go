@@ -5,16 +5,17 @@ import (
 	"sort"
 )
 
+type pair struct {
+	ch  byte
+	cnt int
+}
+
 func frequencySort(s string) string {
 	cnt := map[byte]int{}
 	for i := range s {
 		cnt[s[i]]++
 	}
 
-	type pair struct {
-		ch  byte
-		cnt int
-	}
 	pairs := make([]pair, 0, len(cnt))
 	for k, v := range cnt {
 		pairs = append(pairs, pair{k, v})
