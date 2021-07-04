@@ -1,24 +1,29 @@
 package _0645
 
-import (
-	"sort"
-)
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
 
 func findErrorNums(nums []int) []int {
-	ans := make([]int, 2)
-	sort.Ints(nums)
-	pre := 0
+	var ret [2]int
 	for _, v := range nums {
-		if v == pre {
-			ans[0] = v
-		} else if v-pre > 1 {
-			ans[1] = pre + 1
+		var idx = abs(v)
+		if nums[idx-1] < 0 {
+			ret[0] = idx
+		} else {
+			nums[idx-1] *= -1
 		}
-		pre = v
 	}
-	n := len(nums)
-	if nums[n-1] != n {
-		ans[1] = n
+
+	for i, v := range nums {
+		if v > 0 {
+			ret[1] = i + 1
+			break
+		}
 	}
-	return ans
+
+	return ret[:]
 }
