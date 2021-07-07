@@ -1,20 +1,28 @@
 package _1711
 
+import (
+	"math/bits"
+	"sort"
+)
+
 func countPairs(deliciousness []int) int {
-	ans := 0
-	maxVal := deliciousness[0]
-	for _, val := range deliciousness[1:] {
-		if val > maxVal {
-			maxVal = val
+	num := len(deliciousness)
+	sort.Ints(deliciousness)
+
+	numMap := map[int]int{}
+	prevCnt := 0
+
+	numMap[deliciousness[0]] = 1
+	for i := 1; i < num; i++ {
+		n := deliciousness[i]
+		n0 := 1<<(32-bits.LeadingZeros32(uint32(n))) - n
+		cnt := numMap[n0]
+
+		if deliciousness[0] == 0 && (n > 0 && (n&(n-1)) == 0) {
+			cnt += numMap[0]
 		}
+		prevCnt = (prevCnt + cnt) % (1e9 + 7)
+		numMap[n] += 1
 	}
-	maxSum := maxVal * 2
-	cnt := map[int]int{}
-	for _, val := range deliciousness {
-		for sum := 1; sum <= maxSum; sum <<= 1 {
-			ans += cnt[sum-val]
-		}
-		cnt[val]++
-	}
-	return ans % (1e9 + 7)
+	return prevCnt
 }
