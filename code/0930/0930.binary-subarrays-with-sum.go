@@ -1,13 +1,15 @@
 package _0930
 
 func numSubarraysWithSum(nums []int, goal int) int {
-	cnt := map[int]int{}
-	ans := 0
-	sum := 0
-	for _, num := range nums {
-		cnt[sum]++
-		sum += num
-		ans += cnt[sum-goal]
+	freq, sum, res := make([]int, len(nums)+1), 0, 0
+	freq[0] = 1
+	for _, v := range nums {
+		t := sum + v - goal
+		if t >= 0 {
+			res += freq[t]
+		}
+		sum += v
+		freq[sum]++
 	}
-	return ans
+	return res
 }
