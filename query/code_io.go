@@ -23,6 +23,7 @@ func GetWorkPath(name string) string {
 var replaceList = map[string]string{
 	"面试题": "InterviewQuestion",
 	"剑指":  "SwordRefers",
+	".":   "_",
 }
 
 func GenCodeWorkspace(name string, code *Code) error {
