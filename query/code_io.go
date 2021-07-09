@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func GetWorkPath(name string) string {
@@ -19,11 +20,19 @@ func GetWorkPath(name string) string {
 	return filepath.Join(wd, "code", name)
 }
 
+var replaceList = map[string]string{
+	"面试题": "InterviewQuestion",
+	"剑指":  "SwordRefers",
+}
+
 func GenCodeWorkspace(name string, code *Code) error {
 	if name == "" {
 		return errors.New("empty name")
 	}
 
+	for k, v := range replaceList {
+		name = strings.ReplaceAll(name, k, v)
+	}
 	codePath := GetWorkPath(name)
 
 	_ = os.MkdirAll(codePath, 0755)
