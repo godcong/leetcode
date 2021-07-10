@@ -1,25 +1,37 @@
 package _0981
 
+import (
+	"runtime/debug"
+	"sort"
+)
+
+type pair struct {
+	timestamp int
+	value     string
+}
+
 type TimeMap struct {
-
+	m map[string][]pair
 }
 
-
-/** Initialize your data structure here. */
 func Constructor() TimeMap {
-
+	return TimeMap{map[string][]pair{}}
 }
 
-
-func (this *TimeMap) Set(key string, value string, timestamp int)  {
-
+func (m *TimeMap) Set(key string, value string, timestamp int) {
+	m.m[key] = append(m.m[key], pair{timestamp, value})
 }
 
-
-func (this *TimeMap) Get(key string, timestamp int) string {
-
+func (m *TimeMap) Get(key string, timestamp int) string {
+	pairs := m.m[key]
+	i := sort.Search(len(pairs), func(i int) bool { return pairs[i].timestamp > timestamp })
+	if i > 0 {
+		return pairs[i-1].value
+	}
+	return ""
 }
 
+func init() { debug.SetGCPercent(-1) }
 
 /**
  * Your TimeMap object will be instantiated and called as such:
