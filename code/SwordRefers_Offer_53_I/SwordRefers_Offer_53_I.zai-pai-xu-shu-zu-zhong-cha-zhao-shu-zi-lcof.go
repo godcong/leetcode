@@ -1,5 +1,14 @@
 package _SwordRefers_Offer_53_I
 
+import (
+	"sort"
+)
+
 func search(nums []int, target int) int {
-	return 0
+	leftmost := sort.SearchInts(nums, target)
+	if leftmost == len(nums) || nums[leftmost] != target {
+		return 0
+	}
+	rightmost := sort.SearchInts(nums, target + 1) - 1
+	return rightmost - leftmost + 1
 }
