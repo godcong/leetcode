@@ -24,6 +24,7 @@ var replaceList = map[string]string{
 	"面试题": "InterviewQuestion",
 	"剑指":  "SwordRefers",
 	".":   "_",
+	"-":   "_",
 }
 
 func GenCodeWorkspace(name string, code *Code) error {
@@ -31,9 +32,15 @@ func GenCodeWorkspace(name string, code *Code) error {
 		return errors.New("empty name")
 	}
 
+	name = strings.ReplaceAll(name, " ", "_")
 	for k, v := range replaceList {
 		name = strings.ReplaceAll(name, k, v)
 	}
+	name = strings.ReplaceAll(name, "_-_", "_")
+	name = strings.ReplaceAll(name, "___", "_")
+
+	fmt.Println("Generate name:", name)
+
 	codePath := GetWorkPath(name)
 
 	_ = os.MkdirAll(codePath, 0755)
@@ -82,7 +89,7 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("decode", string(all))
+	//fmt.Println("decode", string(all))
 
 	//ioutil.WriteFile("tmp.txt", all, 0755)
 	return json.Unmarshal(all, code)

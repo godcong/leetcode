@@ -185,7 +185,7 @@ func (q Query) questionData(code *Code, name string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("every day code", string(all))
+	//fmt.Println("every day code", string(all))
 	return err
 }
 
@@ -269,7 +269,7 @@ func (q Query) dailyQuestionRecords(now time.Time) (Code, error) {
 	if err != nil {
 		return code, err
 	}
-	fmt.Println("every day", string(all))
+	//fmt.Println("every day", string(all))
 
 	err = json.Unmarshal(all, &code)
 	return code, err
@@ -359,7 +359,7 @@ func (q Query) questionOfToday(code *Code) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("today records", string(all))
+	//fmt.Println("today records", string(all))
 	err = json.Unmarshal(all, code)
 	if err != nil {
 		return err
@@ -448,15 +448,31 @@ func GetCode(cookie string, codeName string) (*Code, error) {
 		return nil, fmt.Errorf("dailyQuestionRecords:%v", err)
 	}
 
-	if err = q.getQuestionTranslation(&records); err != nil {
-		return nil, fmt.Errorf("getQuestionTranslation:%v", err)
+	for i := range records.Data.DailyQuestionRecords {
+		fmt.Println("Records:", records.Data.DailyQuestionRecords[i].Question)
 	}
+
+	//if err = q.getQuestionTranslation(&records); err != nil {
+	//	return nil, fmt.Errorf("getQuestionTranslation:%v", err)
+	//}
+
+	//for i := range records.Data.Translations {
+	//	fmt.Println("Translation:", records.Data.Translations[i].Title)
+	//}
 
 	if err = q.questionOfToday(&records); err != nil {
 		return nil, fmt.Errorf("questionOfToday:%v", err)
 	}
+
+	for i := range records.Data.TodayRecord {
+		fmt.Println("Today:", records.Data.TodayRecord[i].Question)
+	}
+
 	if err = q.questionData(&records, codeName); err != nil {
 		return nil, fmt.Errorf("questionData:%v", err)
 	}
+
+	fmt.Println("Data:", records.Data.Question.Title)
+
 	return &records, nil
 }

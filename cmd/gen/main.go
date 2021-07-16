@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/godcong/leetcode/query"
 )
@@ -33,7 +32,6 @@ func main() {
 	}
 
 	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
-	name = strings.ReplaceAll(name, " ", "_")
 	if err := query.GenCodeWorkspace(name, code); err != nil {
 		return
 	}
