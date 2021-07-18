@@ -18,7 +18,7 @@ func main() {
 		fmt.Println("error", err)
 		return
 	}
-	fmt.Println("cookie:", string(file))
+	fmt.Println("Cookie Loaded")
 
 	codeName := ""
 	if len(os.Args) > 1 {
