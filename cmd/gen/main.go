@@ -34,14 +34,14 @@ func main() {
 	name := query.WorkspaceName(code)
 	fmt.Println("Workspace:", name)
 	if err := query.GenCodeWorkspace(name, code); err != nil {
-		fmt.Println("error", err)
+		fmt.Println("gen workspace error", err)
 		return
 	}
 	path := query.GetWorkPath(name)
 	//fmt.Println("content:", code.Data.Question.TranslatedContent)
 
 	if err := query.WriteMarkdownTo(filepath.Join(path, "README.md"), code); err != nil {
-		fmt.Println("error", err)
+		fmt.Println("write markdown error", err)
 		return
 	}
 	fmt.Println("Code Generated:", code.Data.Question.QuestionFrontendID)

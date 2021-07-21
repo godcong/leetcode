@@ -1,4 +1,4 @@
-package _SwordRefers_Offer_52
+package SwordRefers_Offer_52
 
 import (
 	"reflect"

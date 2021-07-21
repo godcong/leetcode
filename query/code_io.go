@@ -10,13 +10,25 @@ import (
 	"strings"
 )
 
+var pathPaths = map[string]string{
+	//"default": "code",
+	"SwordRefers":       "offer",
+	"InterviewQuestion": "qustion",
+}
+
 func GetWorkPath(name string) string {
 	wd, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
+	path := "code"
+	for s, s2 := range pathPaths {
+		if strings.Contains(name, s) {
+			path = s2
+		}
+	}
 
-	return filepath.Join(wd, "code", name)
+	return filepath.Join(wd, path, name)
 }
 
 var replaceList = map[string]string{
@@ -28,9 +40,11 @@ var replaceList = map[string]string{
 
 func GenCodeWorkspace(name string, code *Code) error {
 
-	_ = os.MkdirAll(name, 0755)
+	path := GetWorkPath(name)
 
-	codeGo := filepath.Join(GetWorkPath(name), fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
+	_ = os.MkdirAll(path, 0755)
+
+	codeGo := filepath.Join(path, fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
 		return nil
