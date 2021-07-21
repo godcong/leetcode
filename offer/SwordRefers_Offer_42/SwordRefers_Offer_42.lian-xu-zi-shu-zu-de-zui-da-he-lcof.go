@@ -1,4 +1,4 @@
-package _SwordRefers_Offer_42
+package SwordRefers_Offer_42
 
 func maxSubArray(nums []int) int {
 	max := nums[0]

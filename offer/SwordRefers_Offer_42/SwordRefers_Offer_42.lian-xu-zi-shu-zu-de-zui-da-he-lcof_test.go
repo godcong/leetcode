@@ -1,4 +1,4 @@
-package _SwordRefers_Offer_42
+package SwordRefers_Offer_42
 
 import (
 	"testing"
