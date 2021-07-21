@@ -31,13 +31,16 @@ func main() {
 		return
 	}
 
-	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
+	name := query.WorkspaceName(code)
+
 	if err := query.GenCodeWorkspace(name, code); err != nil {
 		return
 	}
 	path := query.GetWorkPath(name)
+	//fmt.Println("content:", code.Data.Question.TranslatedContent)
 
 	if err := query.WriteMarkdownTo(filepath.Join(path, "README.md"), code); err != nil {
+		fmt.Println("error", err)
 		return
 	}
 	fmt.Println("Code Generated:", code.Data.Question.QuestionFrontendID)

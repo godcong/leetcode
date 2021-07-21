@@ -2,7 +2,6 @@ package query
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -28,24 +27,10 @@ var replaceList = map[string]string{
 }
 
 func GenCodeWorkspace(name string, code *Code) error {
-	if name == "" {
-		return errors.New("empty name")
-	}
 
-	name = strings.ReplaceAll(name, " ", "_")
-	for k, v := range replaceList {
-		name = strings.ReplaceAll(name, k, v)
-	}
-	name = strings.ReplaceAll(name, "_-_", "_")
-	name = strings.ReplaceAll(name, "___", "_")
+	_ = os.MkdirAll(name, 0755)
 
-	fmt.Println("Generate name:", name)
-
-	codePath := GetWorkPath(name)
-
-	_ = os.MkdirAll(codePath, 0755)
-
-	codeGo := filepath.Join(codePath, fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
+	codeGo := filepath.Join(name, fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
 		return nil
@@ -93,4 +78,24 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 
 	//ioutil.WriteFile("tmp.txt", all, 0755)
 	return json.Unmarshal(all, code)
+}
+
+func WorkspaceName(code *Code) string {
+	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
+
+	if name == "" {
+		fmt.Println("empty name error")
+		return ""
+	}
+
+	name = strings.ReplaceAll(name, " ", "_")
+	for k, v := range replaceList {
+		name = strings.ReplaceAll(name, k, v)
+	}
+	name = strings.ReplaceAll(name, "_-_", "_")
+	name = strings.ReplaceAll(name, "___", "_")
+
+	fmt.Println("Generate name:", name)
+
+	return GetWorkPath(name)
 }
