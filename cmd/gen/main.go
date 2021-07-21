@@ -32,8 +32,9 @@ func main() {
 	}
 
 	name := query.WorkspaceName(code)
-
+	fmt.Println("Workspace:", name)
 	if err := query.GenCodeWorkspace(name, code); err != nil {
+		fmt.Println("error", err)
 		return
 	}
 	path := query.GetWorkPath(name)

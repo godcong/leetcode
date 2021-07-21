@@ -30,7 +30,7 @@ func GenCodeWorkspace(name string, code *Code) error {
 
 	_ = os.MkdirAll(name, 0755)
 
-	codeGo := filepath.Join(name, fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
+	codeGo := filepath.Join(GetWorkPath(name), fmt.Sprintf("%v.%v.go", name, code.Data.Question.TitleSlug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
 		return nil
@@ -97,5 +97,5 @@ func WorkspaceName(code *Code) string {
 
 	fmt.Println("Generate name:", name)
 
-	return GetWorkPath(name)
+	return name
 }
