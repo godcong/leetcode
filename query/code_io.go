@@ -81,7 +81,7 @@ func WriteCodeJSON(name string, code Code) {
 }
 
 func packageHeader(name string) []byte {
-	return []byte(fmt.Sprintf("package _%v", name))
+	return []byte(fmt.Sprintf("package _%v\n", name))
 }
 
 func importCommon() []byte {
