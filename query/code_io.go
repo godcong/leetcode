@@ -57,6 +57,7 @@ func GenCodeWorkspace(name string, code *Code) error {
 	defer file.Close()
 	file.Write(packageHeader(name))
 	file.WriteString("\n")
+	file.Write(importCommon())
 	file.WriteString("\n")
 	for i := range code.Data.Question.CodeSnippets {
 		if code.Data.Question.CodeSnippets[i].Lang == "Go" {
@@ -81,6 +82,10 @@ func WriteCodeJSON(name string, code Code) {
 
 func packageHeader(name string) []byte {
 	return []byte(fmt.Sprintf("package _%v", name))
+}
+
+func importCommon() []byte {
+	return []byte(fmt.Sprintf("import (\n\t. \"github.com/godcong/leetcode/common\"\n)\n"))
 }
 
 func decodeCode(closer io.ReadCloser, code *Code) error {
