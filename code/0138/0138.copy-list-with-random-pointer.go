@@ -1,4 +1,5 @@
 package _0138
+
 import (
 	. "github.com/godcong/leetcode/common"
 )
@@ -13,5 +14,5 @@ import (
  */
 
 func copyRandomList(head *Node) *Node {
-    
+	return nil
 }
