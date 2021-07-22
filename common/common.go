@@ -33,10 +33,11 @@ type ListNode struct {
 }
 
 type Node struct {
-	Val   int
-	Left  *Node
-	Right *Node
-	Next  *Node
+	Val    int
+	Left   *Node
+	Right  *Node
+	Next   *Node
+	Random *Node
 }
 
 // NestedInteger This is the interface that allows for creating nested lists.
@@ -68,7 +69,6 @@ func (n *NestedInteger) Add(elem NestedInteger) {}
 func (n NestedInteger) GetList() []*NestedInteger {
 	return nil
 }
-
 
 //Employee Definition for Employee.
 type Employee struct {
