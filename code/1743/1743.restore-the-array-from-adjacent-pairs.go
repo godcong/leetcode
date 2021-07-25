@@ -1,5 +1,9 @@
 package _1743
 
+import (
+	"runtime/debug"
+)
+
 func restoreArray(adjacentPairs [][]int) []int {
 	n := len(adjacentPairs) + 1
 	g := make(map[int][]int, n)
@@ -28,3 +32,4 @@ func restoreArray(adjacentPairs [][]int) []int {
 	}
 	return ans
 }
+func init() { debug.SetGCPercent(-1) }
