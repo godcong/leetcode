@@ -10,7 +10,7 @@ func minOperations(target []int, arr []int) int {
 	for i, val := range target {
 		pos[val] = i
 	}
-	d := []int{}
+	var d []int
 	for _, val := range arr {
 		if idx, has := pos[val]; has {
 			if p := sort.SearchInts(d, idx); p < len(d) {
