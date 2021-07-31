@@ -3,6 +3,8 @@ package _0987
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_verticalTraversal(t *testing.T) {
