@@ -1,21 +1,31 @@
 package _0581
 
 import (
-	"sort"
+	"math"
 )
 
 func findUnsortedSubarray(nums []int) int {
-	if sort.IntsAreSorted(nums) {
+	curMin := math.MaxInt32
+	curMax := math.MinInt32
+	m := len(nums)
+	for i := 1; i < m; i++ {
+		if nums[i] < nums[i-1] {
+			if nums[i] < curMin {
+				curMin = nums[i]
+			}
+			if nums[i-1] > curMax {
+				curMax = nums[i-1]
+			}
+		}
+	}
+	if curMax == math.MinInt32 && curMin == math.MaxInt32 {
 		return 0
 	}
-	numsSorted := append([]int(nil), nums...)
-	sort.Ints(numsSorted)
-	left, right := 0, len(nums)-1
-	for nums[left] == numsSorted[left] {
-		left++
+	l, r := 0, m-1
+	for ; l < m && nums[l] <= curMin; l++ {
 	}
-	for nums[right] == numsSorted[right] {
-		right--
+	for ; r >= 0 && nums[r] >= curMax; r-- {
 	}
-	return right - left + 1
+
+	return r - l + 1
 }
