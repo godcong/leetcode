@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 
 	"github.com/godcong/leetcode/query"
 )
@@ -24,11 +25,23 @@ func main() {
 	if len(os.Args) > 1 {
 		codeName = os.Args[1]
 	}
-
-	code, err := query.GetCode(string(file), codeName)
+	var code *query.Code
+	parseInt, err := strconv.ParseInt(codeName, 10, 32)
 	if err != nil {
-		fmt.Println("error", err)
-		return
+		code, err = query.GetCode(string(file), codeName)
+		if err != nil {
+			fmt.Println("GetCode error", err)
+			return
+		}
+	} else {
+		code, err = query.GetNumberCode(string(file), int(parseInt))
+		if err != nil {
+			fmt.Println("GetNumberCode error", err)
+			return
+		}
+		for _, question := range code.Data.ProblemSetQuestionList.Questions {
+			fmt.Printf("question list:%v,slug:%v\n", question.FrontendQuestionID, question.QuestionTitleSlug)
+		}
 	}
 
 	name := query.WorkspaceName(code)
