@@ -3,7 +3,7 @@ package _0847
 func shortestPathLength(graph [][]int) int {
 	n := len(graph)
 	type tuple struct{ u, mask, dist int }
-	q := []tuple{}
+	var q []tuple
 	seen := make([][]bool, n)
 	for i := range seen {
 		seen[i] = make([]bool, 1<<n)
