@@ -1,7 +1,15 @@
 package query
 
+var DEBUG = false
+
 type Code struct {
-	Data Data `json:"data"`
+	Data   Data   `json:"data"`
+	Result Result `json:"-"`
+}
+
+type Result struct {
+	Number string `json:"-"`
+	Slug   string `json:"-"`
 }
 
 type Data struct {
@@ -23,29 +31,29 @@ type Untitled1 struct {
 }
 
 type ProblemSetQuestionList struct {
-	Typename  string     `json:"__typename"`
-	Questions []Question `json:"questions"`
-	HasMore   bool       `json:"hasMore"`
-	Total     int64      `json:"total"`
+	Typename  string     `json:"__typename,omitempty"`
+	Questions []Question `json:"questions,omitempty"`
+	HasMore   bool       `json:"hasMore,omitempty"`
+	Total     int64      `json:"total,omitempty"`
 }
 
 type Question struct {
-	QuestionFrontendID string     `json:"questionFrontendId"`
-	QuestionTitleSlug  string     `json:"questionTitleSlug"`
-	TypeName           string     `json:"__typename"`
-	ACRate             float64    `json:"acRate"`
-	Difficulty         Difficulty `json:"difficulty"`
-	FreqBar            int64      `json:"freqBar"`
-	PaidOnly           bool       `json:"paidOnly"`
-	Status             Status     `json:"status"`
-	FrontendQuestionID string     `json:"frontendQuestionId"`
-	IsFavor            bool       `json:"isFavor"`
-	SolutionNum        int64      `json:"solutionNum"`
-	Title              string     `json:"title"`
-	TitleCN            string     `json:"titleCn"`
-	TitleSlug          string     `json:"titleSlug"`
-	TopicTags          []TopicTag `json:"topicTags"`
-	Extra              Extra      `json:"extra"`
+	QuestionFrontendID string     `json:"questionFrontendId,omitempty"`
+	QuestionTitleSlug  string     `json:"questionTitleSlug,omitempty"`
+	TypeName           string     `json:"__typename,omitempty"`
+	ACRate             float64    `json:"acRate,omitempty"`
+	Difficulty         Difficulty `json:"difficulty,omitempty"`
+	FreqBar            int64      `json:"freqBar,omitempty"`
+	PaidOnly           bool       `json:"paidOnly,omitempty"`
+	Status             Status     `json:"status,omitempty"`
+	FrontendQuestionID string     `json:"frontendQuestionId,omitempty"`
+	IsFavor            bool       `json:"isFavor,omitempty"`
+	SolutionNum        int64      `json:"solutionNum,omitempty"`
+	Title              string     `json:"title,omitempty"`
+	TitleCN            string     `json:"titleCn,omitempty"`
+	TitleSlug          string     `json:"titleSlug,omitempty"`
+	TopicTags          []TopicTag `json:"topicTags,omitempty"`
+	Extra              Extra      `json:"extra,omitempty"`
 }
 
 type Extra struct {
@@ -56,18 +64,18 @@ type Extra struct {
 }
 
 type TopCompanyTag struct {
-	ImgURL   string `json:"imgUrl"`
-	Slug     Slug   `json:"slug"`
-	Typename string `json:"__typename"`
+	ImgURL   string `json:"imgUrl,omitempty"`
+	Slug     Slug   `json:"slug,omitempty"`
+	Typename string `json:"__typename,omitempty"`
 }
 
 type TopicTag struct {
-	ID             string `json:"id"`
-	Name           string `json:"name"`
-	Slug           string `json:"slug"`
-	NameTranslated string `json:"nameTranslated"`
-	TranslatedName string `json:"translatedName"`
-	Typename       string `json:"__typename"`
+	ID             string `json:"id,omitempty"`
+	Name           string `json:"name,omitempty"`
+	Slug           string `json:"slug,omitempty"`
+	NameTranslated string `json:"nameTranslated,omitempty"`
+	TranslatedName string `json:"translatedName,omitempty"`
+	Typename       string `json:"__typename,omitempty"`
 }
 
 type Difficulty string

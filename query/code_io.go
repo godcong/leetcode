@@ -99,9 +99,7 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 	return json.Unmarshal(all, code)
 }
 
-func WorkspaceName(code *Code) string {
-	name := fmt.Sprintf("%04v", code.Data.Question.QuestionFrontendID)
-
+func WorkspaceName(name string) string {
 	if name == "" {
 		fmt.Println("empty name error")
 		return ""

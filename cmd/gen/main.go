@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strconv"
 
 	"github.com/godcong/leetcode/query"
 )
@@ -14,7 +13,7 @@ func main() {
 	if err != nil {
 		return
 	}
-	file, err := os.ReadFile(filepath.Join(wd, "cookie"))
+	cookie, err := os.ReadFile(filepath.Join(wd, "cookie"))
 	if err != nil {
 		fmt.Println("error", err)
 		return
@@ -26,25 +25,15 @@ func main() {
 		codeName = os.Args[1]
 	}
 	var code *query.Code
-	parseInt, err := strconv.ParseInt(codeName, 10, 32)
+	code, err = query.GetCode(string(cookie), codeName)
 	if err != nil {
-		code, err = query.GetCode(string(file), codeName)
-		if err != nil {
-			fmt.Println("GetCode error", err)
-			return
-		}
-	} else {
-		code, err = query.GetNumberCode(string(file), int(parseInt))
-		if err != nil {
-			fmt.Println("GetNumberCode error", err)
-			return
-		}
-		for _, question := range code.Data.ProblemSetQuestionList.Questions {
-			fmt.Printf("question list:%v,slug:%v\n", question.FrontendQuestionID, question.QuestionTitleSlug)
-		}
+		fmt.Println("GetCode error", err)
+		return
 	}
 
-	name := query.WorkspaceName(code)
+	name := fmt.Sprintf("%04v", code.Result.Number)
+
+	name = query.WorkspaceName(name)
 	fmt.Println("Workspace:", name)
 	if err := query.GenCodeWorkspace(name, code); err != nil {
 		fmt.Println("gen workspace error", err)
@@ -57,6 +46,6 @@ func main() {
 		fmt.Println("write markdown error", err)
 		return
 	}
-	fmt.Println("Code Generated:", code.Data.Question.QuestionFrontendID)
+	fmt.Println("Code Generated:", code.Result.Number)
 
 }

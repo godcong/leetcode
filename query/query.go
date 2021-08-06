@@ -3,9 +3,11 @@ package query
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -44,20 +46,18 @@ func (q Query) questionData(code *Code, name string) error {
 	//   -H 'cookie: _uab_collina=158494287144877725711875; __auc=197e35ef1798ce16c8387fd8db5; gr_user_id=43d5f89f-a476-4f4e-a2cf-324c63dc0b5d; a2873925c34ecbd2_gr_last_sent_cs1=cong-shen-bu-shi-shen; _ga=GA1.2.560771403.1621566256; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1621566254,1622117541; csrftoken=Jknx9LMqHv5VCPwDVDUXnBpH0q77RSR3ItVyzffyBmkJHIK8pDsiZ7OFbPZo9Edg; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMjQ2MzI3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYjFkNTUyMTQ5NmViNTFhYTdiOTdiMTlmMDhhNTNiN2E0ZDU0YzBlZTFhMGUzNTk0YTZhNjFkY2Q4YWMzYzkxYyIsImlkIjoyNDYzMjcsImVtYWlsIjoianVtYnljY0AxNjMuY29tIiwidXNlcm5hbWUiOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJ1c2VyX3NsdWciOiJjb25nLXNoZW4tYnUtc2hpLXNoZW4iLCJhdmF0YXIiOiJodHRwczovL2Fzc2V0cy5sZWV0Y29kZS1jbi5jb20vYWxpeXVuLWxjLXVwbG9hZC91c2Vycy9jb25nLXNoZW4tYnUtc2hpLXNoZW4vYXZhdGFyXzE1OTY3ODg3OTEucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsIl90aW1lc3RhbXAiOjE2MjIxMTc1NDYuNTcyMjU1LCJleHBpcmVkX3RpbWVfIjoxNjIyNjYwNDAwfQ.zFmv2ZoXn0-xa2GwlQquFByUvaAcSPsXbfhlJG4Q0MQ; __asc=c03719f4179c7aa1b58e18f261f; a2873925c34ecbd2_gr_session_id=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=43e5189c-43bc-4706-9de7-d467d9e8fbd3; a2873925c34ecbd2_gr_session_id_43e5189c-43bc-4706-9de7-d467d9e8fbd3=true; _gid=GA1.2.1864074649.1622552486; _gat_gtag_UA_131851415_1=1; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1622552495; a2873925c34ecbd2_gr_cs1=cong-shen-bu-shi-shen' \
 	//   --data-raw $'{"operationName":"questionData","variables":{"titleSlug":"can-you-eat-your-favorite-candy-on-your-favorite-day"},"query":"query questionData($titleSlug: String\u0021) {\\n  question(titleSlug: $titleSlug) {\\n    questionId\\n    questionFrontendId\\n    categoryTitle\\n    boundTopicId\\n    title\\n    titleSlug\\n    content\\n    translatedTitle\\n    translatedContent\\n    isPaidOnly\\n    difficulty\\n    likes\\n    dislikes\\n    isLiked\\n    similarQuestions\\n    contributors {\\n      username\\n      profileUrl\\n      avatarUrl\\n      __typename\\n    }\\n    langToValidPlayground\\n    topicTags {\\n      name\\n      slug\\n      translatedName\\n      __typename\\n    }\\n    companyTagStats\\n    codeSnippets {\\n      lang\\n      langSlug\\n      code\\n      __typename\\n    }\\n    stats\\n    hints\\n    solution {\\n      id\\n      canSeeDetail\\n      __typename\\n    }\\n    status\\n    sampleTestCase\\n    metaData\\n    judgerAvailable\\n    judgeType\\n    mysqlSchemas\\n    enableRunCode\\n    envInfo\\n    book {\\n      id\\n      bookName\\n      pressName\\n      source\\n      shortDescription\\n      fullDescription\\n      bookImgUrl\\n      pressImgUrl\\n      productUrl\\n      __typename\\n    }\\n    isSubscribed\\n    isDailyQuestion\\n    dailyRecordStatus\\n    editorType\\n    ugcQuestionId\\n    style\\n    exampleTestcases\\n    __typename\\n  }\\n}\\n"}' \
 	//   --compressed
-	current := ""
-	for i, record := range code.Data.DailyQuestionRecords {
-		if record.Date == code.Data.TodayRecord[0].Date {
-			current = code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug
-			break
-		}
-	}
-
+	current := name
 	if current == "" {
-		current = code.Data.TodayRecord[0].Question.QuestionTitleSlug
-	}
+		for i, record := range code.Data.DailyQuestionRecords {
+			if record.Date == code.Data.TodayRecord[0].Date {
+				current = code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug
+				break
+			}
+		}
 
-	if name != "" {
-		current = name
+		if current == "" {
+			current = code.Data.TodayRecord[0].Question.QuestionTitleSlug
+		}
 	}
 
 	data := Payload{
@@ -154,7 +154,7 @@ func (q Query) questionData(code *Code, name string) error {
 	req.Header.Set("Authority", "leetcode-cn.com")
 	req.Header.Set("Sec-Ch-Ua", "\"Chromium\";v=\"92\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"92\"")
 	req.Header.Set("X-Timezone", "Asia/Shanghai")
-	req.Header.Set("X-Operation-Name", "questionData")
+	req.Header.Set("X-Operation-Number", "questionData")
 	req.Header.Set("Accept-Language", "zh-CN")
 	req.Header.Set("Sec-Ch-Ua-Mobile", "?0")
 	req.Header.Set("User-Agent",
@@ -162,7 +162,7 @@ func (q Query) questionData(code *Code, name string) error {
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "*/*")
 
-	req.Header.Set("X-Definition-Name", "question")
+	req.Header.Set("X-Definition-Number", "question")
 	req.Header.Set("Origin", "https://leetcode-cn.com")
 	req.Header.Set("Sec-Fetch-Site", "same-origin")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
@@ -189,8 +189,8 @@ func (q Query) questionData(code *Code, name string) error {
 	return err
 }
 
-func (q Query) problemSetQuestionList(skip, limit int) (*Code, error) {
-
+func (q Query) problemSetQuestionList(skip, limit int) (Code, error) {
+	var code Code
 	// Generated by curl-to-Go: https://mholt.github.io/curl-to-go
 
 	// curl 'https://leetcode-cn.com/graphql/' \
@@ -265,13 +265,13 @@ func (q Query) problemSetQuestionList(skip, limit int) (*Code, error) {
 	}
 	payloadBytes, err := json.Marshal(data)
 	if err != nil {
-		// handle err
+		return code, err
 	}
 	body := bytes.NewReader(payloadBytes)
 
 	req, err := http.NewRequest("POST", "https://leetcode-cn.com/graphql/", body)
 	if err != nil {
-		// handle err
+		return code, err
 	}
 	req.Header.Set("Authority", "leetcode-cn.com")
 	req.Header.Set("Sec-Ch-Ua", "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\"")
@@ -293,17 +293,17 @@ func (q Query) problemSetQuestionList(skip, limit int) (*Code, error) {
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return nil, err
+		return code, err
 	}
 	defer resp.Body.Close()
 	all, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, err
+		return code, err
 	}
 	//fmt.Println("every day", string(all))
-	var code Code
+
 	err = json.Unmarshal(all, &code)
-	return &code, err
+	return code, err
 }
 
 func (q Query) dailyQuestionRecords(now time.Time) (Code, error) {
@@ -553,23 +553,34 @@ func (q Query) getQuestionTranslation(code *Code) error {
 	return decodeCode(resp.Body, code)
 }
 
-func GetNumberCode(cookie string, codeNum int) (*Code, error) {
+func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
 	fmt.Println("Get Code", codeNum)
-	q := NewQuery(cookie)
-
-	skip := codeNum / 50 * 50
+	skip := int(codeNum / 50 * 50)
 	limit := 50
 
-	list, err := q.problemSetQuestionList(skip, limit)
+	records, err := q.problemSetQuestionList(skip, limit)
 	if err != nil {
 		return nil, err
 	}
-	return list, nil
+
+	for _, question := range records.Data.ProblemSetQuestionList.Questions {
+		fmt.Printf("question list:%+v\n", question)
+		i, err := strconv.ParseInt(question.FrontendQuestionID, 10, 32)
+		if err != nil {
+			continue
+		}
+		if codeNum == i {
+			records.Result.Number = question.FrontendQuestionID
+			records.Result.Slug = question.TitleSlug
+			break
+		}
+	}
+
+	return &records, nil
 }
 
-func GetCode(cookie string, codeName string) (*Code, error) {
+func (q *Query) getNameCode(codeName string) (*Code, error) {
 	fmt.Println("Get Code", codeName)
-	q := NewQuery(cookie)
 	t := time.Now()
 
 	records, err := q.dailyQuestionRecords(t)
@@ -596,12 +607,38 @@ func GetCode(cookie string, codeName string) (*Code, error) {
 	for i := range records.Data.TodayRecord {
 		fmt.Println("Today:", records.Data.TodayRecord[i].Question)
 	}
+	records.Result.Number = fmt.Sprintf("%04v", records.Data.Question.QuestionFrontendID)
+	records.Result.Slug = codeName
+	return &records, nil
+}
 
-	if err = q.questionData(&records, codeName); err != nil {
+func GetCode(cookie string, codeName string) (*Code, error) {
+	var code *Code
+	q := NewQuery(cookie)
+	parseInt, err := strconv.ParseInt(codeName, 10, 32)
+	if err != nil {
+		code, err = q.getNameCode(codeName)
+		if err != nil {
+			fmt.Println("GetCode error", err)
+			return code, err
+		}
+
+		return code, nil
+	} else {
+		code, err = q.getNumberCode(parseInt)
+		if err != nil {
+			fmt.Println("GetNumberCode error", err)
+			return code, err
+		}
+	}
+	if code == nil {
+		return nil, errors.New("empty code")
+	}
+	if err = q.questionData(code, code.Result.Slug); err != nil {
 		return nil, fmt.Errorf("questionData:%v", err)
 	}
 
-	fmt.Println("Data:", records.Data.Question.Title)
+	fmt.Println("Data:", code.Data.Question.Title)
 
-	return &records, nil
+	return code, nil
 }
