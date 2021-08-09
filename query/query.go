@@ -579,6 +579,20 @@ func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
 	return &records, nil
 }
 
+func (q *Query) getTodayCode() (*Code, error) {
+	var code Code
+	if err := q.questionOfToday(&code); err != nil {
+		return nil, fmt.Errorf("questionOfToday:%v", err)
+	}
+
+	for i := range code.Data.TodayRecord {
+		fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
+		code.Result.Number = code.Data.TodayRecord[i].Question.QuestionFrontendID
+		code.Result.Slug = code.Data.TodayRecord[i].Question.QuestionTitleSlug
+	}
+	return &code, nil
+}
+
 func (q *Query) getNameCode(codeName string) (*Code, error) {
 	fmt.Println("Get Code", codeName)
 	t := time.Now()
@@ -588,47 +602,43 @@ func (q *Query) getNameCode(codeName string) (*Code, error) {
 		return nil, fmt.Errorf("dailyQuestionRecords:%v", err)
 	}
 
-	for i := range records.Data.DailyQuestionRecords {
-		fmt.Println("Records:", records.Data.DailyQuestionRecords[i].Question)
+	for _, record := range records.Data.DailyQuestionRecords {
+		fmt.Printf("Records:%+v\n", record.Question)
+		if record.Question.QuestionTitleSlug == codeName {
+			records.Result.Number = record.Question.QuestionFrontendID
+			records.Result.Slug = record.Question.QuestionTitleSlug
+			return &records, nil
+		}
 	}
-
-	//if err = q.getQuestionTranslation(&records); err != nil {
-	//	return nil, fmt.Errorf("getQuestionTranslation:%v", err)
-	//}
-
-	//for i := range records.Data.Translations {
-	//	fmt.Println("Translation:", records.Data.Translations[i].Title)
-	//}
-
-	if err = q.questionOfToday(&records); err != nil {
-		return nil, fmt.Errorf("questionOfToday:%v", err)
-	}
-
-	for i := range records.Data.TodayRecord {
-		fmt.Println("Today:", records.Data.TodayRecord[i].Question)
-	}
-	records.Result.Number = fmt.Sprintf("%04v", records.Data.Question.QuestionFrontendID)
-	records.Result.Slug = codeName
-	return &records, nil
+	return nil, errors.New("failed to get name code")
 }
 
 func GetCode(cookie string, codeName string) (*Code, error) {
 	var code *Code
+	var err error
 	q := NewQuery(cookie)
-	parseInt, err := strconv.ParseInt(codeName, 10, 32)
-	if err != nil {
-		code, err = q.getNameCode(codeName)
+	if codeName == "" {
+		code, err = q.getTodayCode()
 		if err != nil {
-			fmt.Println("GetCode error", err)
-			return code, err
+			return nil, err
 		}
-
-		return code, nil
 	} else {
-		code, err = q.getNumberCode(parseInt)
+
+		parseInt, err := strconv.ParseInt(codeName, 10, 32)
 		if err != nil {
-			fmt.Println("GetNumberCode error", err)
-			return code, err
+			code, err = q.getNameCode(codeName)
+			if err != nil {
+				fmt.Println("GetCode error", err)
+				return code, err
+			}
+
+			return code, nil
+		} else {
+			code, err = q.getNumberCode(parseInt)
+			if err != nil {
+				fmt.Println("GetNumberCode error", err)
+				return code, err
+			}
 		}
 	}
 	if code == nil {
