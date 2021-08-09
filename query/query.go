@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -603,10 +604,14 @@ func (q *Query) getNameCode(codeName string) (*Code, error) {
 	}
 
 	for _, record := range records.Data.DailyQuestionRecords {
+		//if DEBUG {
 		fmt.Printf("Records:%+v\n", record.Question)
-		if record.Question.QuestionTitleSlug == codeName {
+		//}
+		//fmt.Println("compare:", record.Question.QuestionTitleSlug == strings.TrimSpace(codeName))
+		if record.Question.QuestionTitleSlug == strings.TrimSpace(codeName) {
 			records.Result.Number = record.Question.QuestionFrontendID
 			records.Result.Slug = record.Question.QuestionTitleSlug
+			fmt.Printf("result data:%+v\n", records.Result)
 			return &records, nil
 		}
 	}
