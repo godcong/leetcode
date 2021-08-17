@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strconv"
 	"strings"
 )
@@ -82,6 +83,7 @@ func panicErr(err error, args ...interface{}) {
 			fmt.Print("error:")
 			fmt.Println(args...)
 		}
+		debug.PrintStack()
 		panic(err)
 	}
 }
