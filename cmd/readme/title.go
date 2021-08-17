@@ -41,10 +41,16 @@ func getTitle(name string) string {
 	title := ""
 	for {
 		line, _, err := reader.ReadLine()
-		panicErr(err, name)
+		if err != nil {
+			break
+		}
+		//panicErr(err, name)
 		if strings.Index(string(line), "/*") != -1 {
 			line, _, err = reader.ReadLine()
-			panicErr(err)
+			if err != nil {
+				break
+			}
+			//panicErr(err)
 			title = string(line)
 			break
 		}
