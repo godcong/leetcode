@@ -80,11 +80,10 @@ func printLineArray(arr ...string) {
 func panicErr(err error, args ...interface{}) {
 	if err != nil {
 		if args != nil {
-			fmt.Print("error:")
-			fmt.Println(args...)
+			fmt.Printf("error:%v\n", args)
 		}
 		debug.PrintStack()
-		panic(err)
+		os.Exit(0)
 	}
 }
 
