@@ -559,7 +559,7 @@ func (q Query) getQuestionTranslation(code *Code) error {
 }
 
 func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
-	fmt.Println("Get Code", codeNum)
+	fmt.Println("Get Code:", codeNum)
 	skip := int(codeNum / 50 * 50)
 	limit := 50
 
@@ -599,7 +599,7 @@ func (q *Query) getTodayCode() (*Code, error) {
 }
 
 func (q *Query) getNameCode(codeName string) (*Code, error) {
-	fmt.Println("Get Code", codeName)
+	fmt.Println("Get Code:", codeName)
 	t := time.Now()
 
 	records, err := q.dailyQuestionRecords(t)
