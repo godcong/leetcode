@@ -113,8 +113,9 @@ func WorkspaceName(name string) string {
 	}
 	name = strings.ReplaceAll(name, "_-_", "_")
 	name = strings.ReplaceAll(name, "___", "_")
-
-	fmt.Println("Generate name:", name)
+	if DEBUG {
+		fmt.Println("Generate name:", name)
+	}
 
 	return name
 }

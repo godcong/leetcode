@@ -48,6 +48,6 @@ func main() {
 		fmt.Println("write markdown error", err)
 		return
 	}
-	fmt.Println("Code Generated:", code.Result.Number)
+	fmt.Println("Code Generated:", name)
 
 }
