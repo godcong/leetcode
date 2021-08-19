@@ -34,7 +34,9 @@ func main() {
 	name := fmt.Sprintf("%04v", code.Result.Number)
 
 	name = query.WorkspaceName(name)
-	fmt.Println("Workspace:", name)
+	if query.DEBUG {
+		fmt.Println("Workspace:", name)
+	}
 	if err := query.GenCodeWorkspace(name, code); err != nil {
 		fmt.Println("gen workspace error", err)
 		return
