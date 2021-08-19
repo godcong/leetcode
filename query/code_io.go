@@ -60,8 +60,10 @@ func GenCodeWorkspace(name string, code *Code) error {
 	file.Write(importCommon())
 	file.WriteString("\n")
 	for i := range code.Data.Question.CodeSnippets {
+		fmt.Printf("question code:%+v", code.Data.Question.CodeSnippets[i])
 		if code.Data.Question.CodeSnippets[i].Lang == "Go" {
 			file.WriteString(code.Data.Question.CodeSnippets[i].Code)
+
 		}
 	}
 	return nil
