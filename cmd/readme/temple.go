@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/godcong/leetcode/query"
 )
 
 var root = "https://github.com/godcong/leetcode/blob/master/"
@@ -15,6 +17,9 @@ func templeWrite(writer *bufio.Writer, s string) {
 	index := name[:len(name)-1]
 	codeName := name[len(name)-1]
 	title := getTitle(s)
+	if query.DEBUG {
+		fmt.Println("title:", title)
+	}
 	_, _ = writer.WriteString("| " + strings.Join(index, "."))
 	_, _ = writer.WriteString(" | " + title)
 	_, _ = writer.WriteString(" | " + codeName)

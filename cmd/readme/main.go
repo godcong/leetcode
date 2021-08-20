@@ -96,6 +96,7 @@ var filterList = []string{
 	"common_func.go",
 	"go.mod",
 	"go.sum",
+	"_test.go",
 	".gitignore",
 }
 
@@ -151,12 +152,12 @@ func readFile(path string, filters []string, filterTest bool) string {
 	if stat.IsDir() {
 		return ""
 	}
-	if filterTest && strings.Index(path, "_test.go") > 0 {
-		return ""
-	}
+	//if filterTest && strings.Index(path, "_test.go") > 0 {
+	//	return ""
+	//}
 
 	for _, filter := range filters {
-		if path == filter {
+		if strings.Contains(stat.Name(), filter) {
 			return ""
 		}
 	}
