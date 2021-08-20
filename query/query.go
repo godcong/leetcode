@@ -591,7 +591,9 @@ func (q *Query) getTodayCode() (*Code, error) {
 	}
 
 	for i := range code.Data.TodayRecord {
-		fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
+		if DEBUG{
+			fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
+		}
 		code.Result.Number = code.Data.TodayRecord[i].Question.QuestionFrontendID
 		code.Result.Slug = code.Data.TodayRecord[i].Question.QuestionTitleSlug
 	}
