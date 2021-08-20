@@ -17,7 +17,7 @@ This project has compiled and collected relatively efficient problem-solving alg
 
 <!--STA-->
 ### 总完成:417 ###  
-| 目录     |  标题                                                   |  函数名                                                   |  实现代码 |  测试代码 |  
+| 目录     |  标题                                                   |  题目名称                                                   |  函数入口 |  测试代码 |  
 |:--------:|:--------------------------------------------------------|:--------------------------------------------------------|:--------:|:--------:|  
 | 0001 | 两数之和 | two-sum | [GO](https://github.com/godcong/leetcode/blob/master/E:\workspace\project\leetcode\code\0001\0001.two-sum.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/E:\workspace\project\leetcode\code\0001\0001.two-sum.go_test.go) |  
 | 0001 | 两数之和 | twoSum | [GO](https://github.com/godcong/leetcode/blob/master/E:\workspace\project\leetcode\code\0001.twoSum.go.go) | [TEST](https://github.com/godcong/leetcode/blob/master/E:\workspace\project\leetcode\code\0001.twoSum.go_test.go) |  
