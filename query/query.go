@@ -569,7 +569,9 @@ func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
 	}
 
 	for _, question := range records.Data.ProblemSetQuestionList.Questions {
-		fmt.Printf("question list:%+v\n", question)
+		if DEBUG {
+			fmt.Printf("question list:%+v\n", question)
+		}
 		i, err := strconv.ParseInt(question.FrontendQuestionID, 10, 32)
 		if err != nil {
 			continue
@@ -591,7 +593,7 @@ func (q *Query) getTodayCode() (*Code, error) {
 	}
 
 	for i := range code.Data.TodayRecord {
-		if DEBUG{
+		if DEBUG {
 			fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
 		}
 		code.Result.Number = code.Data.TodayRecord[i].Question.QuestionFrontendID
