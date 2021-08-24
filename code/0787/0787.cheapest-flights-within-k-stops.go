@@ -18,10 +18,8 @@ func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
 
 	if cost[dst] >= costBand {
 		return -1
-	} else {
-		return cost[dst]
 	}
-
+	return cost[dst]
 }
 
 func min(a, b int) int {
