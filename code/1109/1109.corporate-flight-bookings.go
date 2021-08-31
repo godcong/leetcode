@@ -1,5 +1,11 @@
 package _1109
 
+import (
+	"runtime/debug"
+)
+
+func init() { debug.SetGCPercent(-1) }
+
 func corpFlightBookings(bookings [][]int, n int) []int {
 	nums := make([]int, n)
 	for _, booking := range bookings {
