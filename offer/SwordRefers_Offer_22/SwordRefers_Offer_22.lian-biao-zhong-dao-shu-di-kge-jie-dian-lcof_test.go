@@ -3,6 +3,8 @@ package _SwordRefers_Offer_22
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_getKthFromEnd(t *testing.T) {
