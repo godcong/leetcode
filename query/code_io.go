@@ -36,6 +36,7 @@ var replaceList = map[string]string{
 	"剑指":  "SwordRefers",
 	".":   "_",
 	"-":   "_",
+	" ":   "_",
 }
 
 func GenCodeWorkspace(name string, code *Code) error {
@@ -60,7 +61,7 @@ func GenCodeWorkspace(name string, code *Code) error {
 	file.Write(importCommon())
 	file.WriteString("\n")
 	for i := range code.Data.Question.CodeSnippets {
-		if DEBUG{
+		if DEBUG {
 			fmt.Printf("question code:%+v", code.Data.Question.CodeSnippets[i])
 		}
 
@@ -110,12 +111,13 @@ func WorkspaceName(name string) string {
 		return ""
 	}
 
-	name = strings.ReplaceAll(name, " ", "_")
 	for k, v := range replaceList {
 		name = strings.ReplaceAll(name, k, v)
 	}
-	name = strings.ReplaceAll(name, "_-_", "_")
-	name = strings.ReplaceAll(name, "___", "_")
+
+	for strings.Contains(name, "__") {
+		name = strings.ReplaceAll(name, "__", "_")
+	}
 	if DEBUG {
 		fmt.Println("Generate name:", name)
 	}
