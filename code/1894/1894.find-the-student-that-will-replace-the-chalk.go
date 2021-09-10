@@ -1,20 +1,17 @@
 package _1894
 
-import (
-	"sort"
-)
-
 func chalkReplacer(chalk []int, k int) int {
-	if chalk[0] > k {
-		return 0
+	total := 0
+	i := 0
+	for i = range chalk {
+		total += chalk[i]
 	}
-	n := len(chalk)
-	for i := 1; i < n; i++ {
-		chalk[i] += chalk[i-1]
-		if chalk[i] > k {
+	k %= total
+	for i = range chalk {
+		if k < chalk[i] {
 			return i
 		}
+		k -= chalk[i]
 	}
-	k %= chalk[n-1]
-	return sort.SearchInts(chalk, k+1)
+	return 0
 }
