@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"strings"
 
 	"github.com/godcong/leetcode/query"
 )
@@ -50,4 +52,36 @@ func main() {
 	}
 	fmt.Println("Code Generated:", name)
 
+	if err := addToGit(path); err != nil {
+		fmt.Println("add to git error", err)
+		return
+	}
+
+}
+
+func addToGit(path string) error {
+	command := exec.Command("git", "version")
+	ret, err := command.CombinedOutput()
+	if err != nil {
+		return err
+	}
+	fmt.Println(string(ret))
+	if !strings.Contains(string(ret), "git version") {
+		//skip if git is not exist
+		return nil
+	}
+
+	command = exec.Command("git", "add", path)
+	_, err = command.CombinedOutput()
+	if err != nil {
+		return err
+	}
+
+	command = exec.Command("git", "commit", path)
+	_, err = command.CombinedOutput()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
