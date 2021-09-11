@@ -71,7 +71,10 @@ func addToGit(path string, name string) error {
 		return nil
 	}
 
-	fmt.Println("add path to git:", path)
+	if query.DEBUG {
+		fmt.Println("add path to git:", path)
+	}
+
 	command = exec.Command("git", "add", path)
 	_, err = command.CombinedOutput()
 	if err != nil {
