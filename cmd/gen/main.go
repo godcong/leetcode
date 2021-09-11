@@ -65,7 +65,10 @@ func addToGit(path string, name string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(ret))
+	if query.DEBUG {
+		fmt.Println("git version:", string(ret))
+	}
+
 	if !strings.Contains(string(ret), "git version") {
 		//skip if git is not exist
 		return nil
