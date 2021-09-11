@@ -24,7 +24,7 @@ func Test_addToGit(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := addToGit(tt.args.path); (err != nil) != tt.wantErr {
+			if err := addToGit(tt.args.path,"add xxx"); (err != nil) != tt.wantErr {
 				t.Errorf("addToGit() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})

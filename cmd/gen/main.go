@@ -52,14 +52,14 @@ func main() {
 	}
 	fmt.Println("Code Generated:", name)
 
-	if err := addToGit(path); err != nil {
+	if err := addToGit(path, code.Result.Slug); err != nil {
 		fmt.Println("add to git error", err)
 		return
 	}
 
 }
 
-func addToGit(path string) error {
+func addToGit(path string, name string) error {
 	command := exec.Command("git", "version")
 	ret, err := command.CombinedOutput()
 	if err != nil {
@@ -71,16 +71,16 @@ func addToGit(path string) error {
 		return nil
 	}
 
-	command = exec.Command("git", "add", path)
-	_, err = command.CombinedOutput()
-	if err != nil {
-		return err
-	}
+	//command = exec.Command("git", "add", path)
+	//_, err = command.CombinedOutput()
+	//if err != nil {
+	//	return fmt.Errorf("add to git error: %v", err)
+	//}
 
-	command = exec.Command("git", "commit", path)
+	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("add %s", name))
 	_, err = command.CombinedOutput()
 	if err != nil {
-		return err
+		return fmt.Errorf("commit to git error: %v", err)
 	}
 
 	return nil
