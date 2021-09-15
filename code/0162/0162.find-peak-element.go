@@ -1,9 +1,11 @@
 package _0162
 
-import (
-	. "github.com/godcong/leetcode/common"
-)
-
 func findPeakElement(nums []int) int {
-
+	idx := 0
+	for i, v := range nums {
+		if v > nums[idx] {
+			idx = i
+		}
+	}
+	return idx
 }
