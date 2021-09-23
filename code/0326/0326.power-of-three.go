@@ -1,9 +1,5 @@
 package _0326
 
-import (
-	. "github.com/godcong/leetcode/common"
-)
-
 func isPowerOfThree(n int) bool {
-
+	return n > 0 && 1162261467%n == 0
 }
