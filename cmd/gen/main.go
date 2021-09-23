@@ -39,7 +39,22 @@ func main() {
 	if query.DEBUG {
 		fmt.Println("Workspace:", name)
 	}
-	if codePath, err := query.GenCodeWorkspace(name, code); err != nil {
+
+	path := query.GetWorkPath(name)
+
+	//fmt.Println("content:", code.Data.Question.TranslatedContent)
+
+	readmePath := filepath.Join(path, "README.md")
+	if err := query.WriteMarkdownTo(readmePath, code); err != nil {
+		fmt.Println("write markdown error", err)
+		return
+	}
+	if err := addToGit(readmePath, fmt.Sprintf("code(%v) readme", code.Result.Number)); err != nil {
+		fmt.Println("add to git error", err)
+		return
+	}
+
+	if codePath, err := query.GenCodeWorkspace(path, name, code); err != nil {
 		fmt.Println("gen workspace error", err)
 		return
 	} else {
@@ -48,19 +63,8 @@ func main() {
 			return
 		}
 	}
-	path := query.GetWorkPath(name)
-	//fmt.Println("content:", code.Data.Question.TranslatedContent)
 
-	if err := query.WriteMarkdownTo(filepath.Join(path, "README.md"), code); err != nil {
-		fmt.Println("write markdown error", err)
-		return
-	}
 	fmt.Println("Code Generated:", name)
-
-	if err := addToGit(path, code.Result.Slug); err != nil {
-		fmt.Println("add to git error", err)
-		return
-	}
 
 }
 

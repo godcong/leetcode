@@ -39,12 +39,7 @@ var replaceList = map[string]string{
 	" ":   "_",
 }
 
-func GenCodeWorkspace(name string, code *Code) (string, error) {
-
-	path := GetWorkPath(name)
-
-	_ = os.MkdirAll(path, 0755)
-
+func GenCodeWorkspace(path string, name string, code *Code) (string, error) {
 	codeGo := filepath.Join(path, fmt.Sprintf("%v.%v.go", name, code.Result.Slug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
