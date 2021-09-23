@@ -39,9 +39,14 @@ func main() {
 	if query.DEBUG {
 		fmt.Println("Workspace:", name)
 	}
-	if err := query.GenCodeWorkspace(name, code); err != nil {
+	if codePath, err := query.GenCodeWorkspace(name, code); err != nil {
 		fmt.Println("gen workspace error", err)
 		return
+	} else {
+		if err := addToGit(codePath, code.Result.Slug); err != nil {
+			fmt.Println("add to git error", err)
+			return
+		}
 	}
 	path := query.GetWorkPath(name)
 	//fmt.Println("content:", code.Data.Question.TranslatedContent)

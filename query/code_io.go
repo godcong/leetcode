@@ -39,7 +39,7 @@ var replaceList = map[string]string{
 	" ":   "_",
 }
 
-func GenCodeWorkspace(name string, code *Code) error {
+func GenCodeWorkspace(name string, code *Code) (string, error) {
 
 	path := GetWorkPath(name)
 
@@ -48,12 +48,12 @@ func GenCodeWorkspace(name string, code *Code) error {
 	codeGo := filepath.Join(path, fmt.Sprintf("%v.%v.go", name, code.Result.Slug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
-		return nil
+		return codeGo, nil
 	}
 
 	file, err := os.OpenFile(codeGo, os.O_CREATE|os.O_RDWR|os.O_TRUNC|os.O_SYNC, 0755)
 	if err != nil {
-		return fmt.Errorf("open file:%v", err)
+		return codeGo, fmt.Errorf("open file:%v", err)
 	}
 	defer file.Close()
 	file.Write(packageHeader(name))
@@ -70,7 +70,7 @@ func GenCodeWorkspace(name string, code *Code) error {
 
 		}
 	}
-	return nil
+	return codeGo, nil
 }
 
 func WriteCodeJSON(name string, code Code) {
