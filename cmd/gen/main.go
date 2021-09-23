@@ -58,7 +58,7 @@ func main() {
 		fmt.Println("gen workspace error", err)
 		return
 	} else {
-		if err := addToGit(codePath, code.Result.Slug); err != nil {
+		if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", code.Result.Number, code.Result.Slug)); err != nil {
 			fmt.Println("add to git error", err)
 			return
 		}
