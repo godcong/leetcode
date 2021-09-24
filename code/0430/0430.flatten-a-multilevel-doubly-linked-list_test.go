@@ -3,6 +3,8 @@ package _0430
 import (
 	"reflect"
 	"testing"
+
+	. "github.com/godcong/leetcode/common"
 )
 
 func Test_flatten(t *testing.T) {
