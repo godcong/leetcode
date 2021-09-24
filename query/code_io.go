@@ -28,7 +28,9 @@ func GetWorkPath(name string) string {
 		}
 	}
 
-	return filepath.Join(wd, path, name)
+	path = filepath.Join(wd, path, name)
+	_ = os.MkdirAll(path, 0755)
+	return path
 }
 
 var replaceList = map[string]string{
