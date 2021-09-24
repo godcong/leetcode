@@ -38,6 +38,8 @@ type Node struct {
 	Right  *Node
 	Next   *Node
 	Random *Node
+	Prev   *Node
+	Child  *Node
 }
 
 // NestedInteger This is the interface that allows for creating nested lists.
