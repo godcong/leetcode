@@ -93,7 +93,7 @@ func addToGit(path string, name string) error {
 		return fmt.Errorf("add to git error: %v", err)
 	}
 
-	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("feat(code): add new file(%s)", name))
+	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("feat(code): add new %s", name))
 	_, err = command.CombinedOutput()
 	if err != nil {
 		return fmt.Errorf("commit to git error: %v", err)
