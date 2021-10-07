@@ -6,6 +6,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/godcong/leetcode/query"
 )
@@ -65,6 +66,7 @@ func main() {
 	}
 
 	fmt.Println("Code Generated:", name)
+	fmt.Println("Generated Time:", time.Now().Format(time.RFC3339))
 
 }
 
