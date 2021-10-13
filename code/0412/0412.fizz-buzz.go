@@ -2,23 +2,20 @@ package _0412
 
 import (
 	"strconv"
-	"strings"
 )
 
 func fizzBuzz(n int) []string {
-	var ans []string
+	result := make([]string, 0)
 	for i := 1; i <= n; i++ {
-		sb := &strings.Builder{}
-		if i%3 == 0 {
-			sb.WriteString("Fizz")
+		if i%3 == 0 && i%5 == 0 {
+			result = append(result, "FizzBuzz")
+		} else if i%3 == 0 {
+			result = append(result, "Fizz")
+		} else if i%5 == 0 {
+			result = append(result, "Buzz")
+		} else {
+			result = append(result, strconv.Itoa(i))
 		}
-		if i%5 == 0 {
-			sb.WriteString("Buzz")
-		}
-		if sb.Len() == 0 {
-			sb.WriteString(strconv.Itoa(i))
-		}
-		ans = append(ans, sb.String())
 	}
-	return ans
+	return result
 }
