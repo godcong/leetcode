@@ -3,13 +3,17 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"runtime/debug"
 	"strconv"
 	"strings"
+	"time"
 )
+
+const footer = "Last Commit Date: %v\n"
 
 var headLine [][]byte
 var codePath = filepath.Join(getCurrentPath(), "code")
@@ -67,9 +71,17 @@ func main() {
 		templeWrite(bw, file)
 	}
 	_, _ = bw.WriteString("<!--END-->\n")
-
+	if err := finishFooter(bw); err != nil {
+		panicErr(err)
+	}
 	err = bw.Flush()
 	panicErr(err)
+}
+
+func finishFooter(w io.Writer) (err error) {
+	f := fmt.Sprintf(footer, time.Now().Format("2006-01-02"))
+	_, err = w.Write([]byte(f))
+	return err
 }
 
 func printLineArray(arr ...string) {
