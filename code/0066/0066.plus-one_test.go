@@ -15,6 +15,13 @@ func Test_plusOne(t *testing.T) {
 		want []int
 	}{
 		// TODO: Add test cases.
+		{
+			name: "",
+			args: args{
+				digits: []int{9, 9, 9},
+			},
+			want: []int{1, 0, 0, 0},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
