@@ -3,7 +3,6 @@ package _0638
 func shoppingOffers(price []int, special [][]int, needs []int) int {
 	n := len(price)
 
-	// 过滤不需要计算的大礼包，只保留需要计算的大礼包
 	var filterSpecial [][]int
 	for _, s := range special {
 		totalCount, totalPrice := 0, 0
@@ -16,7 +15,6 @@ func shoppingOffers(price []int, special [][]int, needs []int) int {
 		}
 	}
 
-	// 记忆化搜索计算满足购物清单所需花费的最低价格
 	dp := map[string]int{}
 	var dfs func([]byte) int
 	dfs = func(curNeeds []byte) (minPrice int) {
@@ -24,13 +22,13 @@ func shoppingOffers(price []int, special [][]int, needs []int) int {
 			return res
 		}
 		for i, p := range price {
-			minPrice += int(curNeeds[i]) * p // 不购买任何大礼包，原价购买购物清单中的所有物品
+			minPrice += int(curNeeds[i]) * p
 		}
 		nextNeeds := make([]byte, n)
 	outer:
 		for _, s := range filterSpecial {
 			for i, need := range curNeeds {
-				if need < byte(s[i]) { // 不能购买超出购物清单指定数量的物品
+				if need < byte(s[i]) {
 					continue outer
 				}
 				nextNeeds[i] = need - byte(s[i])
