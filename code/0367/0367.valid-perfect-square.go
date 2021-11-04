@@ -1,9 +1,10 @@
 package _0367
 
 import (
-	. "github.com/godcong/leetcode/common"
+	"math"
 )
 
 func isPerfectSquare(num int) bool {
-
+	x := int(math.Sqrt(float64(num)))
+	return x*x == num
 }
