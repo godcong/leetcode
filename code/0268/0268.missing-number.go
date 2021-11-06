@@ -1,9 +1,9 @@
 package _0268
 
-import (
-	. "github.com/godcong/leetcode/common"
-)
-
 func missingNumber(nums []int) int {
-
+	var ret int
+	for i, num := range nums {
+		ret ^= i ^ num
+	}
+	return ret ^ len(nums)
 }
