@@ -587,18 +587,41 @@ func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
 }
 
 func (q *Query) getTodayCode() (*Code, error) {
-	var code Code
-	if err := q.questionOfToday(&code); err != nil {
-		return nil, fmt.Errorf("questionOfToday:%v", err)
+	code, err := q.dailyQuestionRecords(time.Now())
+	if err != nil {
+		return nil, fmt.Errorf("dailyQuestionRecords:%v", err)
 	}
 
-	for i := range code.Data.TodayRecord {
+	//if err := q.questionOfToday(&code); err != nil {
+	//	return nil, fmt.Errorf("questionOfToday:%v", err)
+	//}
+	//for i := range code.Data.TodayRecord {
+	//	if DEBUG {
+	//		fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
+	//	}
+	//	code.Result.Number = code.Data.TodayRecord[i].Question.QuestionFrontendID
+	//	code.Result.Slug = code.Data.TodayRecord[i].Question.QuestionTitleSlug
+	//}
+	for i := range code.Data.DailyQuestionRecords {
 		if DEBUG {
-			fmt.Printf("Today:%+v\n", code.Data.TodayRecord[i].Question)
+			fmt.Printf("Range daily:%+v\n", code.Data.DailyQuestionRecords[i])
 		}
-		code.Result.Number = code.Data.TodayRecord[i].Question.QuestionFrontendID
-		code.Result.Slug = code.Data.TodayRecord[i].Question.QuestionTitleSlug
+		if code.Data.DailyQuestionRecords[i].Date != time.Now().Format("2006-01-02") {
+			continue
+		}
+		code.Result.Number = code.Data.DailyQuestionRecords[i].Question.QuestionFrontendID
+		if code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug != "" {
+			code.Result.Slug = code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug
+		}
+		if code.Data.DailyQuestionRecords[i].Question.TitleSlug != "" {
+			code.Result.Slug = code.Data.DailyQuestionRecords[i].Question.TitleSlug
+		}
+
 	}
+	if DEBUG {
+		fmt.Printf("Today code:%+v\n", code.Result)
+	}
+
 	return &code, nil
 }
 

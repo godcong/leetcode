@@ -1,11 +1,18 @@
 package query
 
-var DEBUG = false
+var DEBUG = true
 
 type Code struct {
 	Data   Data   `json:"data"`
 	Result Result `json:"-"`
 }
+
+type UserStatus string
+const (
+	Finish UserStatus = "FINISH"
+	NotStart UserStatus = "NOT_START"
+)
+
 
 type Result struct {
 	Number string `json:"-"`
@@ -38,6 +45,7 @@ type ProblemSetQuestionList struct {
 }
 
 type Question struct {
+	TranslatedTitle    string `json:"translatedTitle"`
 	QuestionFrontendID string     `json:"questionFrontendId,omitempty"`
 	QuestionTitleSlug  string     `json:"questionTitleSlug,omitempty"`
 	TypeName           string     `json:"__typename,omitempty"`
@@ -149,6 +157,8 @@ type DailyQuestionRecordQuestion struct {
 	QuestionTitle      string `json:"questionTitle"`
 	QuestionTitleSlug  string `json:"questionTitleSlug"`
 	TranslatedTitle    string `json:"translatedTitle"`
+	Title              string `json:"title"`
+	TitleSlug          string `json:"titleSlug"`
 	Typename           string `json:"__typename"`
 }
 
