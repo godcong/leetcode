@@ -1,9 +1,9 @@
 package _0319
 
 import (
-	. "github.com/godcong/leetcode/common"
+	"math"
 )
 
 func bulbSwitch(n int) int {
-
+	return int(math.Sqrt(float64(n) + 0.5))
 }
