@@ -60,7 +60,7 @@ func (q Query) questionData(code *Code, name string) error {
 			}
 		}
 
-		if current == "" {
+		if current == "" && len(code.Data.TodayRecord) > 0 {
 			current = code.Data.TodayRecord[0].Question.QuestionTitleSlug
 		}
 	}
