@@ -1,9 +1,9 @@
 package _0709
 
 import (
-	. "github.com/godcong/leetcode/common"
+	"strings"
 )
 
 func toLowerCase(s string) string {
-
+	return strings.ToLower(s)
 }
