@@ -1,9 +1,8 @@
 package _1518
 
-import (
-	. "github.com/godcong/leetcode/common"
-)
-
 func numWaterBottles(numBottles int, numExchange int) int {
-
+	if numBottles >= numExchange {
+		return (numBottles-numExchange)/(numExchange-1) + 1 + numBottles
+	}
+	return numBottles
 }
