@@ -1,9 +1,12 @@
 package _1154
 
 import (
-	. "github.com/godcong/leetcode/common"
+	"time"
 )
 
-func dayOfYear(date string) int {
+const yearDate = "2006-01-02"
 
+func dayOfYear(date string) int {
+	t, _ := time.Parse(yearDate, date)
+	return t.YearDay()
 }
