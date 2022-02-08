@@ -1,4 +1,4 @@
-package _0700
+package _700
 
 import (
 	"reflect"
