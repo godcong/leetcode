@@ -16,7 +16,11 @@ var pathPaths = map[string]string{
 	"InterviewQuestion": "qustion",
 }
 
-func GetWorkPath(name string) string {
+// GetWorkPath ...
+// @Description: 获取工作目录
+// @param string
+// @return string
+func GetWorkPath(group string, name string) string {
 	wd, err := os.Getwd()
 	if err != nil {
 		panic(err)
@@ -28,9 +32,18 @@ func GetWorkPath(name string) string {
 		}
 	}
 
-	path = filepath.Join(wd, path, name)
+	path = filepath.Join(wd, path, group, name)
 	_ = os.MkdirAll(path, 0755)
 	return path
+}
+
+// GetGroupName ...
+// @Description: 获取组名
+func GetGroupName(num string) string {
+	if len(num) > 2 {
+		return fmt.Sprintf("%02v00", num[0:len(num)-2])
+	}
+	return "0000"
 }
 
 var replaceList = map[string]string{
@@ -75,7 +88,7 @@ func WriteCodeJSON(name string, code Code) {
 	if err != nil {
 		return
 	}
-	codePath := GetWorkPath(name)
+	codePath := GetWorkPath(name, "")
 	_ = os.MkdirAll(codePath, 0755)
 	err = ioutil.WriteFile(filepath.Join(codePath, name+".json"), indent, 0755)
 	if err != nil {

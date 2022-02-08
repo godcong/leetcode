@@ -40,8 +40,12 @@ func main() {
 	if query.DEBUG {
 		fmt.Println("Workspace:", name)
 	}
+	group := query.GetGroupName(code.Result.Number)
+	if query.DEBUG {
+		fmt.Println("Group:", group)
+	}
 
-	path := query.GetWorkPath(name)
+	path := query.GetWorkPath(group, name)
 
 	//fmt.Println("content:", code.Data.Question.TranslatedContent)
 
