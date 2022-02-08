@@ -1,4 +1,4 @@
-package _0500
+package _500
 
 import (
 	"unicode"
