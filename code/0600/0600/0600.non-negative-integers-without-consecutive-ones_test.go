@@ -1,4 +1,4 @@
-package _0600
+package _600
 
 import (
 	"testing"

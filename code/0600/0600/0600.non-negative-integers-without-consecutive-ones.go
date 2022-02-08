@@ -1,4 +1,4 @@
-package _0600
+package _600
 
 func findIntegers(n int) int {
 	dp := [31]int{1, 1}
