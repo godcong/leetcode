@@ -1,4 +1,4 @@
-package _1600
+package _600
 
 import (
 	"runtime/debug"
