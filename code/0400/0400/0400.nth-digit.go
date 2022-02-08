@@ -1,4 +1,4 @@
-package _0400
+package _400
 
 import (
 	"math"
