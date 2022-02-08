@@ -26,7 +26,7 @@ func TestWriteMarkdownTo(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			code, err := GetCode()
+			code, err := GetCode("", "")
 			if err != nil {
 				t.Fatal(err)
 			}
