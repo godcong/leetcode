@@ -48,7 +48,7 @@ func main() {
 	path := query.GetWorkPath(group, name)
 
 	//fmt.Println("content:", code.Data.Question.TranslatedContent)
-
+	fmt.Println("Code Generate:", name)
 	readmePath := filepath.Join(path, "README.md")
 	if err := query.WriteMarkdownTo(readmePath, code); err != nil {
 		fmt.Println("write markdown error", err)
@@ -69,7 +69,6 @@ func main() {
 		}
 	}
 
-	fmt.Println("Code Generated:", name)
 	fmt.Println("Generated Time:", time.Now().Format(time.RFC3339))
 
 }
