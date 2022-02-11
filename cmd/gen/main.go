@@ -59,30 +59,52 @@ func main() {
 		return
 	}
 
-	if codePath, err := query.GenCodeWorkspace(path, name, code); err != nil {
+	codePath, err := query.GenCodeWorkspace(path, name, code)
+	if err != nil {
 		fmt.Println("gen workspace error", err)
 		return
-	} else {
-		if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", code.Result.Number, code.Result.Slug)); err != nil {
-			fmt.Println("add to git error", err)
-			return
-		}
+	}
+	if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", code.Result.Number, code.Result.Slug)); err != nil {
+		fmt.Println("add to git error", err)
+		return
+	}
+
+	testPath, err := createTestFile(path)
+	if err != nil {
+		fmt.Println("create test file error", err)
+		return
+	}
+	if err := addToGit(testPath, fmt.Sprintf("code(%v) test for:%v", code.Result.Number, code.Result.Slug)); err != nil {
+		fmt.Println("add to git error", err)
+		return
 	}
 
 	fmt.Println("Generated Time:", time.Now().Format(time.RFC3339))
 
 }
 
-func createTestFile(path string) error {
+func createTestFile(path string) (string, error) {
 	command := exec.Command("gotests")
 	ret, err := command.CombinedOutput()
 	if err != nil {
-		return err
+		return "", err
 	}
 	if query.DEBUG {
 		fmt.Println("gotests found", string(ret))
 	}
-	return nil
+
+	dir, name := filepath.Split(path)
+	testPath := filepath.Join(dir, strings.TrimSuffix(name, ".go")+"_test.go")
+	command = exec.Command("gotests", "--all", "-w", testPath, path)
+	ret, err = command.CombinedOutput()
+	if err != nil {
+		return "", fmt.Errorf("gotests create error: %v", err)
+	}
+	if query.DEBUG {
+		fmt.Println("gotests create", string(ret))
+	}
+
+	return testPath, nil
 }
 
 func addToGit(path string, name string) error {

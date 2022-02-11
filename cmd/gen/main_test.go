@@ -17,7 +17,7 @@ func Test_addToGit(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				path: "E:\\workspace\\project\\leetcode\\code\\0600",
+				path: "",
 			},
 			wantErr: false,
 		},
@@ -44,14 +44,14 @@ func Test_createTestFile(t *testing.T) {
 		{
 			name: "",
 			args: args{
-				path: "main.go",
+				path: "",
 			},
 			wantErr: false,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := createTestFile(tt.args.path); (err != nil) != tt.wantErr {
+			if _, err := createTestFile(tt.args.path); (err != nil) != tt.wantErr {
 				t.Errorf("createTestFile() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
