@@ -74,6 +74,18 @@ func main() {
 
 }
 
+func createTestFile(path string) error {
+	command := exec.Command("gotests")
+	ret, err := command.CombinedOutput()
+	if err != nil {
+		return err
+	}
+	if query.DEBUG {
+		fmt.Println("gotests found", string(ret))
+	}
+	return nil
+}
+
 func addToGit(path string, name string) error {
 	command := exec.Command("git", "version")
 	ret, err := command.CombinedOutput()

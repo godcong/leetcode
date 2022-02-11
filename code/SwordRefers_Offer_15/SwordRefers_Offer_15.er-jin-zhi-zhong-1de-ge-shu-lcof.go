@@ -1,4 +1,4 @@
-package _剑指_Offer_15
+package _SwordRefers_Offer_15
 
 func hammingWeight(num uint32) int {
 	var ones int
