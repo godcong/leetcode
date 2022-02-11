@@ -69,7 +69,7 @@ func main() {
 		return
 	}
 
-	testPath, err := createTestFile(path)
+	testPath, err := createTestFile(codePath)
 	if err != nil {
 		fmt.Println("create test file error", err)
 		return
