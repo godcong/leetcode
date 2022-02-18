@@ -3,8 +3,6 @@ package _0969
 import (
 	"reflect"
 	"testing"
-
-	. "github.com/godcong/leetcode/common"
 )
 
 func Test_pancakeSort(t *testing.T) {
