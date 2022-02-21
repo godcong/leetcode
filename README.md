@@ -13,6 +13,9 @@ All append into def.go
 ## About ##
 This project has compiled and collected relatively efficient problem-solving algorithms
 
+### PS ###
+Code after 2022/02/20 may not be completed
+
 ## All completed questions ##
 
 <!--STA-->
