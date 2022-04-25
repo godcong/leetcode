@@ -54,14 +54,13 @@ func (q Query) questionData(code *Code, name string) error {
 	current := name
 	if current == "" {
 		for i, record := range code.Data.DailyQuestionRecords {
-			fmt.Printf("%+v\n", code.Data)
 			if len(code.Data.TodayRecord) > 0 && record.Date == code.Data.TodayRecord[0].Date {
 				current = code.Data.DailyQuestionRecords[i].Question.QuestionTitleSlug
 				break
 			}
 		}
 
-		if current == "" && len(code.Data.TodayRecord) > 0 {
+		if len(code.Data.TodayRecord) > 0 {
 			current = code.Data.TodayRecord[0].Question.QuestionTitleSlug
 		}
 	}
