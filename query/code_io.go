@@ -37,21 +37,33 @@ func GetWorkPath(group string, name string) string {
 	return path
 }
 
-// GetGroupName ...
-// @Description: 获取组名
-func GetGroupName(num string) string {
-	if len(num) > 2 {
-		return fmt.Sprintf("%02v00", num[0:len(num)-2])
-	}
-	return "0000"
-}
-
 var replaceList = map[string]string{
 	"面试题": "InterviewQuestion",
 	"剑指":  "SwordRefers",
 	".":   "_",
 	"-":   "_",
 	" ":   "_",
+}
+
+func getNum(num string) string {
+	nums := strings.Split(num, " ")
+	if len(nums) == 0 {
+		return num
+	}
+	return nums[len(nums)-1]
+}
+
+// GetGroupName ...
+// @Description: 获取组名
+func GetGroupName(num string) string {
+	nnum := getNum(num)
+	for k, v := range replaceList {
+		num = strings.ReplaceAll(num, k, v)
+	}
+	if len(nnum) > 2 {
+		return strings.ReplaceAll(num, nnum, fmt.Sprintf("%02v00", nnum[0:len(nnum)-2]))
+	}
+	return "0000"
 }
 
 func GenCodeWorkspace(path string, name string, code *Code) (string, error) {
