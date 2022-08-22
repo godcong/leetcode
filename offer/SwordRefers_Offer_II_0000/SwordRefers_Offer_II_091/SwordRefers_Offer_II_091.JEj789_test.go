@@ -2,8 +2,6 @@ package _SwordRefers_Offer_II_091
 
 import (
 	"testing"
-
-	. "github.com/godcong/leetcode/common"
 )
 
 func Test_minCost(t *testing.T) {

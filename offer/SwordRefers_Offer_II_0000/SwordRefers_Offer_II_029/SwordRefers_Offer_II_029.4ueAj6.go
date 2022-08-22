@@ -13,5 +13,5 @@ import (
  */
 
 func insert(aNode *Node, x int) *Node {
-    
+	return nil
 }
