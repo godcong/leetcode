@@ -1,6 +1,6 @@
 package query
 
-var DEBUG = false
+var DEBUG = true
 
 type Code struct {
 	Data   Data   `json:"data"`

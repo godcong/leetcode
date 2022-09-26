@@ -10,10 +10,24 @@ import (
 	"strings"
 )
 
-var pathPaths = map[string]string{
+var codeGroups = map[string]string{
 	//"default": "code",
 	"SwordRefers":       "offer",
 	"InterviewQuestion": "qustion",
+}
+
+var replaceChinese = map[string]string{
+	"面试题": "InterviewQuestion",
+	"剑指":   "SwordRefers",
+	".":      "_",
+	"-":      "_",
+	" ":      "_",
+}
+
+var workspaceGroups = []string{
+	"InterviewQuestion",
+	"SwordRefers_Offer_I",
+	"SwordRefers_Offer_II",
 }
 
 // GetWorkPath ...
@@ -21,12 +35,12 @@ var pathPaths = map[string]string{
 // @param string
 // @return string
 func GetWorkPath(group string, name string) string {
+	path := "code"
 	wd, err := os.Getwd()
 	if err != nil {
-		panic(err)
+		return path
 	}
-	path := "code"
-	for s, s2 := range pathPaths {
+	for s, s2 := range codeGroups {
 		if strings.Contains(name, s) {
 			path = s2
 		}
@@ -35,14 +49,6 @@ func GetWorkPath(group string, name string) string {
 	path = filepath.Join(wd, path, group, name)
 	_ = os.MkdirAll(path, 0755)
 	return path
-}
-
-var replaceList = map[string]string{
-	"面试题": "InterviewQuestion",
-	"剑指":  "SwordRefers",
-	".":   "_",
-	"-":   "_",
-	" ":   "_",
 }
 
 func getNum(num string) string {
@@ -56,10 +62,21 @@ func getNum(num string) string {
 // GetGroupName ...
 // @Description: 获取组名
 func GetGroupName(num string) string {
+	if DEBUG {
+		fmt.Println("GroupName: ", "number", num)
+	}
+
 	nnum := getNum(num)
-	for k, v := range replaceList {
+	for k, v := range replaceChinese {
 		num = strings.ReplaceAll(num, k, v)
 	}
+
+	for _, group := range workspaceGroups {
+		if strings.Contains(nnum, group) {
+			return group
+		}
+	}
+
 	if len(nnum) > 2 {
 		return strings.ReplaceAll(num, nnum, fmt.Sprintf("%02v00", nnum[0:len(nnum)-2]))
 	}
@@ -127,13 +144,14 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 	return json.Unmarshal(all, code)
 }
 
-func WorkspaceName(name string) string {
+//CleanupNameChinese ...
+func CleanupNameChinese(name string) string {
 	if name == "" {
 		fmt.Println("empty name error")
 		return ""
 	}
 
-	for k, v := range replaceList {
+	for k, v := range replaceChinese {
 		name = strings.ReplaceAll(name, k, v)
 	}
 
