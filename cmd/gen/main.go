@@ -34,11 +34,9 @@ func main() {
 		return
 	}
 
-	name := fmt.Sprintf("%04v", code.Result.Number)
-
-	name = query.CleanupNameChinese(name)
+	name := query.GetNameCleanupChinese(code.Result.Number)
 	if query.DEBUG {
-		fmt.Println("Workspace:", name)
+		fmt.Println("The code Name is:", name)
 	}
 	group := query.GetGroupName(code.Result.Number)
 	if query.DEBUG {
@@ -54,7 +52,7 @@ func main() {
 		fmt.Println("write markdown error", err)
 		return
 	}
-	if err := addToGit(readmePath, fmt.Sprintf("code(%v) readme", query.CleanupNameChinese(code.Result.Number))); err != nil {
+	if err := addToGit(readmePath, fmt.Sprintf("code(%v) readme", name)); err != nil {
 		fmt.Println("add to git error", err)
 		return
 	}
@@ -64,7 +62,7 @@ func main() {
 		fmt.Println("gen workspace error", err)
 		return
 	}
-	if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", query.CleanupNameChinese(code.Result.Number), code.Result.Slug)); err != nil {
+	if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", name, code.Result.Slug)); err != nil {
 		fmt.Println("add to git error", err)
 		return
 	}
@@ -74,7 +72,7 @@ func main() {
 		fmt.Println("create test file error", err)
 		return
 	}
-	if err := addToGit(testPath, fmt.Sprintf("code(%v) test for:%v", query.CleanupNameChinese(code.Result.Number), code.Result.Slug)); err != nil {
+	if err := addToGit(testPath, fmt.Sprintf("code(%v) test for:%v", name, code.Result.Slug)); err != nil {
 		fmt.Println("add to git error", err)
 		return
 	}

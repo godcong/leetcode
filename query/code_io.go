@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -18,10 +19,10 @@ var codeGroups = map[string]string{
 
 var replaceChinese = map[string]string{
 	"面试题": "InterviewQuestion",
-	"剑指":  "SwordRefers",
-	".":   "_",
-	"-":   "_",
-	" ":   "_",
+	"剑指":   "SwordRefers",
+	".":      "_",
+	"-":      "_",
+	" ":      "_",
 }
 
 var workspaceGroups = []string{
@@ -80,10 +81,14 @@ func GetGroupName(num string) string {
 		}
 	}
 
-	if len(nnum) > 2 {
-		return strings.ReplaceAll(num, nnum, fmt.Sprintf("%02v00", nnum[0:len(nnum)-2]))
+	if IsNumber(nnum) {
+		if len(nnum) > 2 {
+			return strings.ReplaceAll(num, nnum, fmt.Sprintf("%02v00", nnum[0:len(nnum)-2]))
+		}
+		return "0000"
 	}
-	return "0000"
+
+	return "nogroup"
 }
 
 func GenCodeWorkspace(path string, name string, code *Code) (string, error) {
@@ -147,8 +152,8 @@ func decodeCode(closer io.ReadCloser, code *Code) error {
 	return json.Unmarshal(all, code)
 }
 
-//CleanupNameChinese ...
-func CleanupNameChinese(name string) string {
+//GetNameCleanupChinese ...
+func GetNameCleanupChinese(name string) string {
 	if name == "" {
 		fmt.Println("empty name error")
 		return ""
@@ -165,5 +170,13 @@ func CleanupNameChinese(name string) string {
 		fmt.Println("Generate name:", name)
 	}
 
+	if _, err := strconv.Atoi(name); err == nil {
+		return fmt.Sprintf("%04v", name)
+	}
 	return name
+}
+
+func IsNumber(str string) bool {
+	_, err := strconv.Atoi(str)
+	return err == nil
 }
