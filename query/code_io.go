@@ -18,10 +18,10 @@ var codeGroups = map[string]string{
 
 var replaceChinese = map[string]string{
 	"面试题": "InterviewQuestion",
-	"剑指":   "SwordRefers",
-	".":      "_",
-	"-":      "_",
-	" ":      "_",
+	"剑指":  "SwordRefers",
+	".":   "_",
+	"-":   "_",
+	" ":   "_",
 }
 
 var workspaceGroups = []string{
@@ -35,6 +35,9 @@ var workspaceGroups = []string{
 // @param string
 // @return string
 func GetWorkPath(group string, name string) string {
+	if DEBUG {
+		fmt.Println("GetWorkPath", "group", group, "name", name)
+	}
 	path := "code"
 	wd, err := os.Getwd()
 	if err != nil {
