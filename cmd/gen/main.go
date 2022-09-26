@@ -12,6 +12,11 @@ import (
 )
 
 func main() {
+	if err := checkGit(); err != nil {
+		fmt.Println("Git error:", err)
+		return
+	}
+
 	wd, err := os.Getwd()
 	if err != nil {
 		return
@@ -38,7 +43,7 @@ func main() {
 	if query.DEBUG {
 		fmt.Println("The code Name is:", name)
 	}
-	group := query.GetGroupName(code.Result.Number)
+	group := query.GetGroupName(name)
 	if query.DEBUG {
 		fmt.Println("Group:", group)
 	}
@@ -57,7 +62,7 @@ func main() {
 		return
 	}
 
-	codePath, err := query.GenCodeWorkspace(path, name, code)
+	codePath, err := query.GenCodeWithPath(path, name, code)
 	if err != nil {
 		fmt.Println("gen workspace error", err)
 		return
@@ -106,6 +111,25 @@ func createTestFile(path string) (string, error) {
 }
 
 func addToGit(path string, name string) error {
+	if query.DEBUG {
+		fmt.Println("add path to git:", path)
+	}
+	command := exec.Command("git", "add", path)
+	_, err := command.CombinedOutput()
+	if err != nil {
+		return fmt.Errorf("add to git error: %v", err)
+	}
+
+	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("feat(code): add new %s", name))
+	_, err = command.CombinedOutput()
+	if err != nil {
+		return fmt.Errorf("commit to git error: %v", err)
+	}
+
+	return nil
+}
+
+func checkGit() error {
 	command := exec.Command("git", "version")
 	ret, err := command.CombinedOutput()
 	if err != nil {
@@ -117,24 +141,7 @@ func addToGit(path string, name string) error {
 
 	if !strings.Contains(string(ret), "git version") {
 		//skip if git is not exist
-		return nil
+		return err
 	}
-
-	if query.DEBUG {
-		fmt.Println("add path to git:", path)
-	}
-
-	command = exec.Command("git", "add", path)
-	_, err = command.CombinedOutput()
-	if err != nil {
-		return fmt.Errorf("add to git error: %v", err)
-	}
-
-	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("feat(code): add new %s", name))
-	_, err = command.CombinedOutput()
-	if err != nil {
-		return fmt.Errorf("commit to git error: %v", err)
-	}
-
 	return nil
 }

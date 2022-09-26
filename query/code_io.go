@@ -19,10 +19,10 @@ var codeGroups = map[string]string{
 
 var replaceChinese = map[string]string{
 	"面试题": "InterviewQuestion",
-	"剑指":   "SwordRefers",
-	".":      "_",
-	"-":      "_",
-	" ":      "_",
+	"剑指":  "SwordRefers",
+	".":   "_",
+	"-":   "_",
+	" ":   "_",
 }
 
 var workspaceGroups = []string{
@@ -71,10 +71,6 @@ func GetGroupName(num string) string {
 	}
 
 	nnum := getNum(num)
-	for k, v := range replaceChinese {
-		num = strings.ReplaceAll(num, k, v)
-	}
-
 	for _, group := range workspaceGroups {
 		if strings.Contains(nnum, group) {
 			return group
@@ -91,8 +87,8 @@ func GetGroupName(num string) string {
 	return "nogroup"
 }
 
-func GenCodeWorkspace(path string, name string, code *Code) (string, error) {
-	codeGo := filepath.Join(path, fmt.Sprintf("%v.%v.go", name, code.Result.Slug))
+func GenCodeWithPath(path string, name string, code *Code) (string, error) {
+	codeGo := filepath.Join(path, fmt.Sprintf("%v.go", code.Result.Slug))
 	_, err := os.Stat(codeGo)
 	if err == nil {
 		return codeGo, nil
