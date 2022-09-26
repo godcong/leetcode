@@ -51,7 +51,7 @@ func main() {
 	path := query.GetWorkPath(group, name)
 
 	//fmt.Println("content:", code.Data.Question.TranslatedContent)
-	fmt.Println("Code Generate:", name)
+	fmt.Println("Code Generate:", code.Result.Number)
 	readmePath := filepath.Join(path, "README.md")
 	if err := query.WriteMarkdownTo(readmePath, code); err != nil {
 		fmt.Println("write markdown error", err)
