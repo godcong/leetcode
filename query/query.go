@@ -2,25 +2,35 @@ package query
 
 import (
 	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
 )
 
+// Query ...
 type Query struct {
 	cookie string
-	//token string
+	c      *http.Client
 }
 
-func NewQuery(cookie string) Query {
-	return Query{
+// NewQuery constructor.
+func NewQuery(cookie string) *Query {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	c := &http.Client{
+		Transport: tr,
+	}
+
+	return &Query{
 		cookie: cookie,
-		//token:  token,
+		c:      c,
 	}
 }
 
@@ -176,12 +186,12 @@ func (q Query) questionData(code *Code, name string) error {
 	req.Header.Set("X-Csrftoken", "Q0GQIqMVCZipkRvFVh6YMZG00NIY1DwX4BzekgruSJjHceUAzSYZDqufv5dXbAx2")
 	req.Header.Set("Cookie", q.cookie)
 
-	resp, err := http.DefaultClient.Do(req)
+	resp, err := q.c.Do(req)
 	if err != nil {
 		return err
 	}
 	defer resp.Body.Close()
-	all, err := ioutil.ReadAll(resp.Body)
+	all, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
@@ -296,12 +306,12 @@ func (q Query) problemSetQuestionList(skip, limit int) (Code, error) {
 	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
 	req.Header.Set("Cookie", q.cookie)
 
-	resp, err := http.DefaultClient.Do(req)
+	resp, err := q.c.Do(req)
 	if err != nil {
 		return code, err
 	}
 	defer resp.Body.Close()
-	all, err := ioutil.ReadAll(resp.Body)
+	all, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return code, err
 	}
@@ -384,12 +394,12 @@ func (q Query) dailyQuestionRecords(now time.Time) (Code, error) {
 	req.Header.Set("X-Csrftoken", "wDpBMuy5SYd66d02hXas091gGYxEQTZ6AqXNvKaTzTN8yvM25N5Y0SEc593XfXDP")
 	req.Header.Set("Cookie", q.cookie)
 
-	resp, err := http.DefaultClient.Do(req)
+	resp, err := q.c.Do(req)
 	if err != nil {
 		return code, err
 	}
 	defer resp.Body.Close()
-	all, err := ioutil.ReadAll(resp.Body)
+	all, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return code, err
 	}
@@ -473,13 +483,13 @@ func (q Query) questionOfToday(code *Code) error {
 	req.Header.Set("X-Csrftoken", "Q0GQIqMVCZipkRvFVh6YMZG00NIY1DwX4BzekgruSJjHceUAzSYZDqufv5dXbAx2")
 	req.Header.Set("Cookie", q.cookie)
 
-	resp, err := http.DefaultClient.Do(req)
+	resp, err := q.c.Do(req)
 	if err != nil {
 		return err
 	}
 	defer resp.Body.Close()
 
-	all, err := ioutil.ReadAll(resp.Body)
+	all, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
@@ -551,7 +561,7 @@ func (q Query) getQuestionTranslation(code *Code) error {
 	req.Header.Set("Accept-Language", "zh-CN,zh;q=0.9")
 	req.Header.Set("Cookie", q.cookie)
 
-	resp, err := http.DefaultClient.Do(req)
+	resp, err := q.c.Do(req)
 	if err != nil {
 		return err
 	}
@@ -560,7 +570,7 @@ func (q Query) getQuestionTranslation(code *Code) error {
 	return decodeCode(resp.Body, code)
 }
 
-func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
+func (q Query) getNumberCode(codeNum int64) (*Code, error) {
 	fmt.Println("Get Code:", codeNum)
 	skip := int(codeNum / 50 * 50)
 	limit := 50
@@ -588,7 +598,7 @@ func (q *Query) getNumberCode(codeNum int64) (*Code, error) {
 	return &records, nil
 }
 
-func (q *Query) getTodayCode() (*Code, error) {
+func (q Query) getTodayCode() (*Code, error) {
 	code, err := q.dailyQuestionRecords(time.Now())
 	if err != nil {
 		return nil, fmt.Errorf("dailyQuestionRecords:%v", err)
@@ -627,7 +637,7 @@ func (q *Query) getTodayCode() (*Code, error) {
 	return &code, nil
 }
 
-func (q *Query) getNameCode(codeName string) (*Code, error) {
+func (q Query) getNameCode(codeName string) (*Code, error) {
 	fmt.Println("Get Code:", codeName)
 	t := time.Now()
 
@@ -653,6 +663,7 @@ func (q *Query) getNameCode(codeName string) (*Code, error) {
 	return nil, errors.New("failed to get name code")
 }
 
+// GetCode ...
 func GetCode(cookie string, codeName string) (*Code, error) {
 	var code *Code
 	var err error
