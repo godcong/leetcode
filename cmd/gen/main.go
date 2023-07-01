@@ -50,15 +50,30 @@ func main() {
 
 	path := query.GetWorkPath(group, name)
 
-	//fmt.Println("content:", code.Data.Question.TranslatedContent)
 	fmt.Println("Code Generate:", code.Result.Number)
+
 	readmePath := filepath.Join(path, "README.md")
+	stat, err := os.Stat(readmePath)
+	if err == nil && stat.IsDir() {
+		existFile := filepath.Join(path, time.Now().Format("20060102.exist"))
+		_, err := os.Create(existFile)
+		if err != nil {
+			fmt.Println("skipping existing file error", err)
+		}
+		if err := addToGit(existFile, fmt.Sprintf("code(%v) exists", name)); err != nil {
+			fmt.Printf("add to git error: %v with filename:%v\n", err, existFile)
+			return
+		}
+		fmt.Println(path, "exists")
+		return
+	}
+
 	if err := query.WriteMarkdownTo(readmePath, code); err != nil {
 		fmt.Println("write markdown error", err)
 		return
 	}
 	if err := addToGit(readmePath, fmt.Sprintf("code(%v) readme", name)); err != nil {
-		fmt.Println("add to git error", err)
+		fmt.Printf("add to git error: %v with filename:%v\n", err, readmePath)
 		return
 	}
 
@@ -68,7 +83,7 @@ func main() {
 		return
 	}
 	if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", name, code.Result.Slug)); err != nil {
-		fmt.Println("add to git error", err)
+		fmt.Printf("add to git error: %v with filename:%v\n", err, codePath)
 		return
 	}
 
@@ -78,12 +93,11 @@ func main() {
 		return
 	}
 	if err := addToGit(testPath, fmt.Sprintf("code(%v) test for:%v", name, code.Result.Slug)); err != nil {
-		fmt.Println("add to git error", err)
+		fmt.Printf("add to git error: %v with filename:%v\n", err, testPath)
 		return
 	}
 
 	fmt.Println("Generated Time:", time.Now().Format(time.RFC3339))
-
 }
 
 func createTestFile(path string) (string, error) {
