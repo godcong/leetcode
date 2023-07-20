@@ -53,8 +53,8 @@ func main() {
 	fmt.Println("Code Generate:", code.Result.Number)
 
 	readmePath := filepath.Join(path, "README.md")
-	stat, err := os.Stat(readmePath)
-	if err == nil && stat.IsDir() {
+	_, err = os.Stat(readmePath)
+	if err == nil {
 		existFile := filepath.Join(path, time.Now().Format("20060102.exist"))
 		_, err := os.Create(existFile)
 		if err != nil {
