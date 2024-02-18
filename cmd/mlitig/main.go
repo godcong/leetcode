@@ -26,7 +26,6 @@ func main() {
 			return
 		}
 		for start.Before(today) {
-			start = start.AddDate(0, 0, 1)
 			fmt.Println("Start:", start.Format("2006/01/02"))
 			cmd := exec.Command(filepath.Join(wd, "gen.bat"), start.Format("2006/01/02"))
 			op, err := cmd.CombinedOutput()
@@ -35,7 +34,7 @@ func main() {
 				return
 			}
 			fmt.Println("Output:", string(op))
-
+			start = start.AddDate(0, 0, 1)
 		}
 	}
 }
