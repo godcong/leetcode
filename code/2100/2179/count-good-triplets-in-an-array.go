@@ -1,0 +1,9 @@
+package _2179
+
+import (
+	. "github.com/godcong/leetcode/common"
+)
+
+func goodTriplets(nums1 []int, nums2 []int) int64 {
+    
+}
