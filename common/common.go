@@ -8,6 +8,8 @@ package common
  *     Right *TreeNode
  * }
  */
+
+// TreeNode Definition for a binary tree node.
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -32,6 +34,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// Node Definition for a Node.
 type Node struct {
 	Val      int
 	Left     *Node
@@ -49,14 +52,14 @@ type NestedInteger struct {
 }
 
 // IsInteger Return true if this NestedInteger holds a single integer, rather than a nested list.
-func (n NestedInteger) IsInteger() bool {
+func (n *NestedInteger) IsInteger() bool {
 	return false
 }
 
 // GetInteger Return the single integer that this NestedInteger holds, if it holds a single integer
 // The result is undefined if this NestedInteger holds a nested list
 // So before calling this method, you should have a check
-func (n NestedInteger) GetInteger() int {
+func (n *NestedInteger) GetInteger() int {
 	return 0
 }
 
@@ -69,7 +72,7 @@ func (n *NestedInteger) Add(elem NestedInteger) {}
 // GetList Return the nested list that this NestedInteger holds, if it holds a nested list
 // The list length is zero if this NestedInteger holds a single integer
 // You can access NestedInteger's List element directly if you want to modify it
-func (n NestedInteger) GetList() []*NestedInteger {
+func (n *NestedInteger) GetList() []*NestedInteger {
 	return nil
 }
 
