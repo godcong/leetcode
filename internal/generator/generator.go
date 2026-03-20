@@ -9,23 +9,24 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/godcong/leetcode/internal/markdown"
 	"github.com/godcong/leetcode/internal/types"
 )
 
 var codeGroups = map[string]string{
 	//"default": "code",
-	"SwordRefers":       "offer",     // Legacy: Sword Refers Offer
-	"InterviewQuestion": "qustion",   // Legacy: Interview Questions
-	"LCR":               "lcr",       // New: LeetCode Classic Review
-	"LCP":               "lcp",       // New: LeetCode Problems (Contest)
+	"SwordRefers":       "offer",   // Legacy: Sword Refers Offer
+	"InterviewQuestion": "qustion", // Legacy: Interview Questions
+	"LCR":               "lcr",     // New: LeetCode Classic Review
+	"LCP":               "lcp",     // New: LeetCode Problems (Contest)
 }
 
 var replaceChinese = map[string]string{
 	"面试题": "InterviewQuestion",
-	"剑指":  "SwordRefers",
-	".":   "_",
-	"-":   "_",
-	" ":   "_",
+	"剑指":   "SwordRefers",
+	".":      "_",
+	"-":      "_",
+	" ":      "_",
 }
 
 var workspaceGroups = []string{
@@ -164,6 +165,12 @@ func GenCodeWithPath(path string, name string, code *types.Code) (string, error)
 		}
 	}
 	return codeGo, nil
+}
+
+// GenerateREADME generates README.md for a problem with optional date
+func GenerateREADME(path string, code *types.Code, date string) error {
+	readmePath := filepath.Join(path, "README.md")
+	return markdown.WriteMarkdownTo(readmePath, code, date)
 }
 
 // WriteCodeJSON writes code data to JSON file

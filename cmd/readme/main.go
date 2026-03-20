@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"runtime/debug"
@@ -17,16 +16,7 @@ const footer = "Last Commit Date: %v\n"
 
 var headLine [][]byte
 var codePath = filepath.Join(getCurrentPath(), "code")
-
-func init() {
-
-}
-
-func getCurrentPath() string {
-	getwd, err := os.Getwd()
-	panicErr(err)
-	return getwd
-}
+var DEBUG = false
 
 //create readme
 func main() {
@@ -46,7 +36,8 @@ func main() {
 	err = rd.Close()
 	panicErr(err)
 
-	files := getAllFiles(codePath, filterList, true)
+	// Scan code/problems directory with new structure
+	files := getAllFilesNew(codePath, filterList, true)
 	printLineArray(files...)
 
 	rd, err = os.OpenFile(
@@ -113,48 +104,47 @@ var filterList = []string{
 	".gitignore",
 }
 
-func getAllFiles(path string, filters []string, filterTest bool) []string {
-	dir, err := ioutil.ReadDir(path)
-	panicErr(err)
+// getAllFilesNew scans the new directory structure (code/problems/xxx-xxx/NNNN/)
+func getAllFilesNew(path string, filters []string, filterTest bool) []string {
+	problemsPath := filepath.Join(path, "problems")
 	var ret []string
-	var need bool
-	for _, info := range dir {
-		need = true
-		if info.IsDir() {
-			for _, filter := range filters {
-				if info.Name() == filter {
-					need = false
-					break
-				}
-			}
-			sub := filepath.Join(path, info.Name())
-			if need {
-				target, err := ioutil.ReadDir(sub)
-				if err != nil {
-					continue
-				}
-				for _, fileInfo := range target {
-					name := readFile(filepath.Join(sub, fileInfo.Name()), filters, filterTest)
-					if name != "" {
-						ret = append(ret, name)
-					}
+	
+	// Walk through problems directory
+	err := filepath.Walk(problemsPath, func(walkPath string, info os.FileInfo, err error) error {
+		if err != nil {
+			return nil // Skip errors, continue walking
+		}
+		
+		// Only process .go files in problem directories (4-digit names)
+		if !info.IsDir() && strings.HasSuffix(info.Name(), ".go") && !strings.HasSuffix(info.Name(), "_test.go") {
+			// Check if we're in a 4-digit directory
+			dir := filepath.Dir(walkPath)
+			dirName := filepath.Base(dir)
+			if dirName != "" && len(dirName) == 4 && isNumeric(dirName) {
+				name := readFile(walkPath, filters, filterTest)
+				if name != "" {
+					ret = append(ret, name)
 				}
 			}
 		}
-		for _, filter := range filters {
-			if info.Name() == filter {
-				need = false
-				break
-			}
-		}
-		if need {
-			name := readFile(filepath.Join(path, info.Name()), filters, filterTest)
-			if name != "" {
-				ret = append(ret, name)
-			}
+		
+		return nil
+	})
+	
+	if err != nil {
+		fmt.Printf("Warning: error scanning problems directory: %v\n", err)
+	}
+	
+	return ret
+}
+
+func isNumeric(s string) bool {
+	for _, ch := range s {
+		if ch < '0' || ch > '9' {
+			return false
 		}
 	}
-	return ret
+	return true
 }
 
 func readFile(path string, filters []string, filterTest bool) string {
@@ -165,9 +155,6 @@ func readFile(path string, filters []string, filterTest bool) string {
 	if stat.IsDir() {
 		return ""
 	}
-	//if filterTest && strings.Index(path, "_test.go") > 0 {
-	//	return ""
-	//}
 
 	for _, filter := range filters {
 		if strings.Contains(stat.Name(), filter) {
@@ -181,4 +168,10 @@ func onlyName(s string) string {
 	s = filepath.Base(s)
 	i := strings.LastIndex(s, ".")
 	return s[:i]
+}
+
+func getCurrentPath() string {
+	getwd, err := os.Getwd()
+	panicErr(err)
+	return getwd
 }

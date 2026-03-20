@@ -13,7 +13,6 @@ import (
 	"github.com/godcong/leetcode/internal/git"
 	"github.com/godcong/leetcode/internal/generator"
 	"github.com/godcong/leetcode/internal/logger"
-	"github.com/godcong/leetcode/internal/markdown"
 	"github.com/godcong/leetcode/internal/types"
 )
 
@@ -54,11 +53,34 @@ func main() {
 	if len(os.Args) > 1 {
 		// Skip flag arguments
 		for _, arg := range os.Args[1:] {
-			if !strings.HasPrefix(arg, "-") {
+			if !strings.HasPrefix(arg, "-") && !strings.HasPrefix(arg, "--") {
 				codeName = arg
 				break
 			}
 		}
+	}
+	
+	// If no codeName provided, fetch today's daily question
+	if codeName == "" {
+		logger.Info("No problem specified, fetching today's daily question")
+		q := fetcher.NewQuery(string(cookie))
+		
+		// Fetch daily question records using public method
+		dailyRecords, err := q.DailyQuestionRecords(time.Now())
+		if err != nil {
+			logger.Error("Failed to fetch daily question records", err)
+			return
+		}
+		
+		if len(dailyRecords.Data.DailyQuestionRecords) == 0 {
+			logger.Error("No daily question found for today", fmt.Errorf("empty daily records"))
+			return
+		}
+		
+		// Get today's question
+		todayRecord := dailyRecords.Data.DailyQuestionRecords[0]
+		codeName = todayRecord.Question.QuestionTitleSlug
+		logger.Info("Today's daily question", "slug", codeName, "date", todayRecord.Date)
 	}
 	
 	logger.Info("Fetching problem", "name", codeName)
@@ -115,11 +137,19 @@ func main() {
 		return
 	}
 
-	if err := markdown.WriteMarkdownTo(readmePath, code); err != nil {
+	// Generate README with date if available
+	date := ""
+	if len(code.Data.DailyQuestionRecords) > 0 {
+		date = code.Data.DailyQuestionRecords[0].Date
+	} else if len(code.Data.TodayRecord) > 0 {
+		date = code.Data.TodayRecord[0].Date
+	}
+	
+	if err := generator.GenerateREADME(path, code, date); err != nil {
 		logger.Error("Failed to write README", err)
 		return
 	}
-	logger.Verbose("README written", "path", readmePath)
+	logger.Verbose("README written", "path", readmePath, "date", date)
 	if err := git.AddAndCommit(readmePath, fmt.Sprintf("code(%v) readme", name), !*noGit); err != nil {
 		logger.Error("Failed to add README to git", err)
 		return

@@ -9,13 +9,17 @@ import (
 
 func getTitleFromDetail(name string) string {
 	rd, err := os.Open(filepath.Join(name))
-	panicErr(err)
+	if err != nil {
+		return ""
+	}
 	defer rd.Close()
 	reader := bufio.NewReader(rd)
 	title := ""
 	for {
 		line, _, err := reader.ReadLine()
-		panicErr(err, name)
+		if err != nil {
+			break
+		}
 		if strings.Index(string(line), "###") != -1 {
 			title = string(line)
 			title = strings.Trim(title, "###")
@@ -23,6 +27,7 @@ func getTitleFromDetail(name string) string {
 			return title
 		}
 	}
+	return title
 }
 
 func getTitle(name string) string {
