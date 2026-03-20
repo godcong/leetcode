@@ -1,0 +1,28 @@
+package _3075
+
+import (
+	"testing"
+
+	. "github.com/godcong/leetcode/common"
+)
+
+func Test_maximumHappinessSum(t *testing.T) {
+	type args struct {
+		happiness []int
+		k         int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int64
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := maximumHappinessSum(tt.args.happiness, tt.args.k); got != tt.want {
+				t.Errorf("maximumHappinessSum() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

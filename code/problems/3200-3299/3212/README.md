@@ -1,0 +1,54 @@
+# 统计 X 和 Y 频数相等的子矩阵数量
+
+## Problem Info
+
+- **Number:** 3212
+- **Daily Question Date:** 2026-03-21
+- **Difficulty:** Medium
+
+## Problem Link
+
+- [LeetCode](https://leetcode-cn.com/problems/count-submatrices-with-equal-frequency-of-x-and-y/)
+
+## Description
+
+给你一个二维字符矩阵 `grid`，其中 `grid[i][j]` 可能是 `'X'`、`'Y'` 或 `'.'`，返回满足以下条件的子矩阵数量：
+
+- 包含 `grid[0][0]`
+- `'X'` 和 `'Y'` 的频数相等。
+- 至少包含一个 `'X'`。
+
+**示例 1：**
+
+**输入：** grid = \[\["X","Y","."],\["Y",".","."]]
+
+**输出：** 3
+
+**解释：**
+
+**![](https://assets.leetcode.com/uploads/2024/06/07/examplems.png)**
+
+**示例 2：**
+
+**输入：** grid = \[\["X","X"],\["X","Y"]]
+
+**输出：** 0
+
+**解释：**
+
+不存在满足 `'X'` 和 `'Y'` 频数相等的子矩阵。
+
+**示例 3：**
+
+**输入：** grid = \[\[".","."],\[".","."]]
+
+**输出：** 0
+
+**解释：**
+
+不存在满足至少包含一个 `'X'` 的子矩阵。
+
+**提示：**
+
+- `1 <= grid.length, grid[i].length <= 1000`
+- `grid[i][j]` 可能是 `'X'`、`'Y'` 或 `'.'`.
