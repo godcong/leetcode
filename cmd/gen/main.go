@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"os/exec"
@@ -8,154 +9,154 @@ import (
 	"strings"
 	"time"
 
-	"github.com/godcong/leetcode/query"
+	"github.com/godcong/leetcode/internal/fetcher"
+	"github.com/godcong/leetcode/internal/git"
+	"github.com/godcong/leetcode/internal/generator"
+	"github.com/godcong/leetcode/internal/logger"
+	"github.com/godcong/leetcode/internal/markdown"
+	"github.com/godcong/leetcode/internal/types"
 )
 
 func main() {
-	if err := checkGit(); err != nil {
-		fmt.Println("Git error:", err)
-		return
+	// Parse flags
+	debug := flag.Bool("debug", false, "Enable debug logging with structured output")
+	noGit := flag.Bool("no-git", false, "Disable git operations (for debugging)")
+	flag.Parse()
+	
+	// Initialize logger
+	logger.Init(*debug)
+	
+	logger.Info("Starting gen tool", "args", os.Args[1:])
+	
+	// Check git only if not disabled
+	if !*noGit {
+		if err := git.Check(); err != nil {
+			logger.Error("Git check failed", err)
+			return
+		}
+		logger.Verbose("Git check passed")
+	} else {
+		logger.Info("Git operations disabled")
 	}
 
 	wd, err := os.Getwd()
 	if err != nil {
+		logger.Error("Failed to get working directory", err)
 		return
 	}
 	cookie, err := os.ReadFile(filepath.Join(wd, "cookie"))
 	if err != nil {
-		fmt.Println("error", err)
+		logger.Error("Failed to read cookie", err)
 		return
 	}
-	fmt.Println("Cookie Loaded")
 
 	codeName := ""
 	if len(os.Args) > 1 {
-		codeName = os.Args[1]
+		// Skip flag arguments
+		for _, arg := range os.Args[1:] {
+			if !strings.HasPrefix(arg, "-") {
+				codeName = arg
+				break
+			}
+		}
 	}
-	var code *query.Code
-	code, err = query.GetCode(string(cookie), codeName)
-	if err != nil {
-		fmt.Println("GetCode error", err)
+	
+	logger.Info("Fetching problem", "name", codeName)
+	
+	// Create fetcher and code instances
+	q := fetcher.NewQuery(string(cookie))
+	code := &types.Code{}
+	
+	// Fetch problem data
+	logger.Debug("Calling GetCode", "name", codeName)
+	if err := q.GetCode(code, codeName); err != nil {
+		logger.Error("GetCode failed", err)
 		return
 	}
+	logger.Info("Fetched problem",
+		"number", code.Result.Number,
+		"title", code.Data.Question.Title)
 
-	name := query.GetNameCleanupChinese(code.Result.Number)
-	if query.DEBUG {
-		fmt.Println("The code Name is:", name)
-	}
-	group := query.GetGroupName(name)
-	if query.DEBUG {
-		fmt.Println("Group:", group)
-	}
+	name := generator.GetNameCleanupChinese(code.Result.Number)
+	group := generator.GetGroupName(name)
 
-	path := query.GetWorkPath(group, name)
+	logger.Verbose("Processing problem info", "originalName", code.Result.Number, "cleanedName", name, "group", group)
 
-	fmt.Println("Code Generate:", code.Result.Number)
+	path := generator.GetWorkPath(group, name)
+
+	logger.Verbose("Generated paths", "path", path)
+	logger.Info("Generating files for", "number", code.Result.Number, "title", code.Data.Question.Title)
 
 	readmePath := filepath.Join(path, "README.md")
 	_, err = os.Stat(readmePath)
 	if err == nil {
+		logger.Info("README already exists", "path", readmePath)
 		existFile := filepath.Join(path, time.Now().Format("20060102.exist"))
 		_, err := os.Create(existFile)
 		if err != nil {
-			fmt.Println("skipping existing file error", err)
+			logger.Error("Failed to create exist file", err, "path", existFile)
+			logger.Error("Skipping existing file", err)
 		}
-		if err := addToGit(existFile, fmt.Sprintf("code(%v) exists", name)); err != nil {
-			fmt.Printf("add to git error: %v with filename:%v\n", err, existFile)
+		if err := git.AddAndCommit(existFile, fmt.Sprintf("code(%v) exists", name), !*noGit); err != nil {
+			logger.Error("Failed to add to git", err, "file", existFile)
 			return
 		}
-		fmt.Println(path, "exists")
+		logger.Info("Path already exists", "path", path)
 		return
 	}
 
-	if err := query.WriteMarkdownTo(readmePath, code); err != nil {
-		fmt.Println("write markdown error", err)
+	if err := markdown.WriteMarkdownTo(readmePath, code); err != nil {
+		logger.Error("Failed to write README", err)
 		return
 	}
-	if err := addToGit(readmePath, fmt.Sprintf("code(%v) readme", name)); err != nil {
-		fmt.Printf("add to git error: %v with filename:%v\n", err, readmePath)
+	logger.Verbose("README written", "path", readmePath)
+	if err := git.AddAndCommit(readmePath, fmt.Sprintf("code(%v) readme", name), !*noGit); err != nil {
+		logger.Error("Failed to add README to git", err)
 		return
 	}
 
-	codePath, err := query.GenCodeWithPath(path, name, code)
+	codePath, err := generator.GenCodeWithPath(path, name, code)
 	if err != nil {
-		fmt.Println("gen workspace error", err)
+		logger.Error("Failed to generate Go file", err)
 		return
 	}
-	if err := addToGit(codePath, fmt.Sprintf("code(%v) %v", name, code.Result.Slug)); err != nil {
-		fmt.Printf("add to git error: %v with filename:%v\n", err, codePath)
+	logger.Verbose("Go file generated", "path", codePath)
+	if err := git.AddAndCommit(codePath, fmt.Sprintf("code(%v) %v", name, code.Result.Slug), !*noGit); err != nil {
+		logger.Error("Failed to add Go file to git", err)
 		return
 	}
 
 	testPath, err := createTestFile(codePath)
 	if err != nil {
-		fmt.Println("create test file error", err)
+		logger.Error("Failed to create test file", err)
 		return
 	}
-	if err := addToGit(testPath, fmt.Sprintf("code(%v) test for:%v", name, code.Result.Slug)); err != nil {
-		fmt.Printf("add to git error: %v with filename:%v\n", err, testPath)
+	logger.Verbose("Test file created", "path", testPath)
+	if err := git.AddAndCommit(testPath, fmt.Sprintf("code(%v) test for:%v", name, code.Result.Slug), !*noGit); err != nil {
+		logger.Error("Failed to add test file to git", err)
 		return
 	}
 
-	fmt.Println("Generated Time:", time.Now().Format(time.RFC3339))
+	logger.Info("Generated", 
+		"number", code.Result.Number,
+		"title", code.Data.Question.Title,
+		"path", path)
 }
 
 func createTestFile(path string) (string, error) {
 	command := exec.Command("gotests")
-	ret, err := command.CombinedOutput()
+	_, err := command.CombinedOutput()
 	if err != nil {
 		return "", err
-	}
-	if query.DEBUG {
-		fmt.Println("gotests found", string(ret))
 	}
 
 	dir, name := filepath.Split(path)
 	testPath := filepath.Join(dir, strings.TrimSuffix(name, ".go")+"_test.go")
 	command = exec.Command("gotests", "--all", "-w", testPath, path)
-	ret, err = command.CombinedOutput()
+	_, err = command.CombinedOutput()
 	if err != nil {
 		return "", fmt.Errorf("gotests create error: %v", err)
 	}
-	if query.DEBUG {
-		fmt.Println("gotests create", string(ret))
-	}
 
 	return testPath, nil
-}
-
-func addToGit(path string, name string) error {
-	if query.DEBUG {
-		fmt.Println("add path to git:", path)
-	}
-	command := exec.Command("git", "add", path)
-	_, err := command.CombinedOutput()
-	if err != nil {
-		return fmt.Errorf("add to git error: %v", err)
-	}
-
-	command = exec.Command("git", "commit", "-a", "-m", fmt.Sprintf("feat(code): add new %s", name))
-	_, err = command.CombinedOutput()
-	if err != nil {
-		return fmt.Errorf("commit to git error: %v", err)
-	}
-
-	return nil
-}
-
-func checkGit() error {
-	command := exec.Command("git", "version")
-	ret, err := command.CombinedOutput()
-	if err != nil {
-		return err
-	}
-	if query.DEBUG {
-		fmt.Println("git version:", string(ret))
-	}
-
-	if !strings.Contains(string(ret), "git version") {
-		//skip if git is not exist
-		return err
-	}
-	return nil
 }
