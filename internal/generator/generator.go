@@ -14,8 +14,10 @@ import (
 
 var codeGroups = map[string]string{
 	//"default": "code",
-	"SwordRefers":       "offer",
-	"InterviewQuestion": "qustion",
+	"SwordRefers":       "offer",     // Legacy: Sword Refers Offer
+	"InterviewQuestion": "qustion",   // Legacy: Interview Questions
+	"LCR":               "lcr",       // New: LeetCode Classic Review
+	"LCP":               "lcp",       // New: LeetCode Problems (Contest)
 }
 
 var replaceChinese = map[string]string{
@@ -41,13 +43,19 @@ func GetWorkPath(group string, name string) string {
 
 	basePath := filepath.Join(wd, "code")
 
-	// Determine category based on name prefix
+	// Determine category and version based on name prefix
 	category := "problems" // default
 	version := ""
 
 	for s, s2 := range codeGroups {
 		if strings.Contains(name, s) {
-			category = "interview"
+			// Legacy rules: SwordRefers -> offer, InterviewQuestion -> qustion
+			if s2 == "offer" || s2 == "qustion" {
+				category = s2
+			} else if s2 == "lcr" || s2 == "lcp" {
+				// New rules: LCR/LCP -> problems/lcr or problems/lcp
+				category = fmt.Sprintf("problems/%s", s2)
+			}
 			version = s2
 			break
 		}
@@ -55,16 +63,20 @@ func GetWorkPath(group string, name string) string {
 
 	// Build directory structure based on type
 	var path string
-	if category == "interview" {
-		// interview/{version}/{range}/{name}/
+	if version != "" && (version == "offer" || version == "qustion") {
+		// Legacy: offer/{range}/{name}/ or qustion/{range}/{name}/
 		rangeDir := getRangeGroup(name)
-		path = filepath.Join(basePath, category, version, rangeDir, name)
+		path = filepath.Join(basePath, category, rangeDir, name)
+	} else if version != "" && (version == "lcr" || version == "lcp") {
+		// New: problems/lcr/{range}/{name}/ or problems/lcp/{range}/{name}/
+		rangeDir := getRangeGroup(name)
+		path = filepath.Join(basePath, category, rangeDir, name)
 	} else if IsNumber(name) {
-		// problems/{range}/{number}/
+		// Normal numbers: problems/{range}/{number}/
 		rangeDir := getRangeGroup(name)
 		path = filepath.Join(basePath, category, rangeDir, name)
 	} else {
-		// contest or other: {category}/{name}/
+		// Other slugs: problems/{name}/
 		path = filepath.Join(basePath, category, name)
 	}
 
@@ -74,12 +86,13 @@ func GetWorkPath(group string, name string) string {
 
 // getRangeGroup returns the range directory (e.g., "0000-0099", "0100-0199")
 func getRangeGroup(name string) string {
-	// Extract number from name
+	// Extract number from name - find all consecutive digits
 	numStr := ""
 	for _, ch := range name {
 		if ch >= '0' && ch <= '9' {
 			numStr += string(ch)
-		} else {
+		} else if numStr != "" {
+			// Stop at first non-digit after we've started collecting digits
 			break
 		}
 	}

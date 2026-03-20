@@ -71,13 +71,17 @@ func (q *Query) GetCode(code *Code, name string) error {
 		return q.getDailyQuestion(code)
 	}
 	
-	// First get the problem slug
-	logger.Debug("Parsing problem number", "name", name)
+	// Check if it's a number or a special name (LCP, Interview, etc.)
 	parsedInt, err := strconv.ParseInt(name, 10, 32)
 	if err != nil {
-		logger.Error("Failed to parse problem number", err, "name", name)
-		return fmt.Errorf("invalid problem number: %v", err)
+		// Not a number, try to get by name/slug directly
+		logger.Debug("Non-numeric name detected, using as slug", "slug", name)
+		// Directly use the name as slug and fetch data
+		return q.questionData(code, name)
 	}
+	
+	// It's a number, use the normal flow
+	logger.Debug("Parsing problem number", "name", name)
 	logger.Debug("Problem number parsed successfully", "parsedInt", parsedInt)
 	
 	logger.Debug("Fetching problem metadata", "number", parsedInt)
@@ -88,7 +92,7 @@ func (q *Query) GetCode(code *Code, name string) error {
 	}
 	
 	if tempCode == nil {
-		logger.Error("getNumberCode returned nil", fmt.Errorf("nil result"), "number", parsedInt)
+		logger.Error("getNumberCode returned nil", fmt.Errorf("nil result"))
 		return fmt.Errorf("getNumberCode returned nil")
 	}
 	
@@ -295,6 +299,7 @@ func (q Query) questionData(code *Code, name string) error {
 		return err
 	}
 	logger.Debug("Response unmarshaled successfully")
+	logger.Verbose("Full response data", "data", string(all))
 	
 	// Set result metadata
 	if code.Data.Question.QuestionFrontendID != "" {

@@ -73,6 +73,16 @@ func main() {
 		logger.Error("GetCode failed", err)
 		return
 	}
+	
+	// Validate fetched data
+	if code.Data.Question.Title == "" || code.Result.Slug == "" {
+		logger.Error("Invalid problem data: missing title or slug", 
+			fmt.Errorf("empty data"),
+			"title", code.Data.Question.Title,
+			"slug", code.Result.Slug)
+		return
+	}
+	
 	logger.Info("Fetched problem",
 		"number", code.Result.Number,
 		"title", code.Data.Question.Title)
